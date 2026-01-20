@@ -1,0 +1,83 @@
+@import "@/assets/front/styles/variable.scss";
+
+.outdoorKitchens {
+  padding: 4rem 0;
+}
+
+.productCard {
+  background-color: #ffffff; // White background as in screenshot
+  border: none; // Remove default border if desired
+  border-radius: 1.25rem; // Soft corners
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 42px -14px;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.badgeCustom {
+  border-radius: 1.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badgeBg {
+  border-radius: 0.6rem;
+  padding: 0.453rem 0.8rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #333;
+}
+.textMuted {
+  color: $gray-2;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.cardImage {
+  height: 260px;
+  display: block;
+  object-fit: cover;
+}
+
+.cardBody {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.cardSubtitle {
+  font-size: 1rem;
+  color: #666;
+}
+
+.cardPrice {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.featureList {
+  margin-bottom: 1rem;
+}
+
+.featureItem {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.viewDetails {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,46 @@
+@import "../../assets/front/styles/variable.scss";
+.header {
+  background-color: $white;
+  padding: 1rem 0;
+}
+
+.nav {
+  > ul {
+    > li {
+      position: relative;
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+      a {
+        color: #2f2f2f;
+        font-size: 15px;
+        font-weight: 600;
+        // text-transform: uppercase;
+        display: block;
+        text-align: center;
+        white-space: nowrap;
+        position: relative;
+        padding: 8px 0;
+        // letter-spacing: 1px;
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          background: $primary;
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.4s ease;
+          height: 1px;
+          width: 100%;
+        }
+        &:hover {
+          &::after {
+            transform: scale(1);
+            transform-origin: left;
+          }
+        }
+      }
+    }
+  }
+}

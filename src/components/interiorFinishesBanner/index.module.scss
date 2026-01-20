@@ -1,0 +1,49 @@
+@import "@/assets/front/styles/variable.scss";
+
+.bannerWrapper {
+  background: linear-gradient(
+    90deg,
+    #fce0d6,
+    #ffffff,
+    #fff2f0
+  ); // Orange-red gradient
+  padding: 4rem 0;
+  //   color: white;
+  text-align: center;
+  position: relative;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button {
+  background-color: $primary;
+  color: $white;
+  border: none;
+  border-radius: 2rem;
+  font-weight: bold;
+  padding: 0.875rem 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  &:hover {
+    background-color: $sccondary-2;
+  }
+}

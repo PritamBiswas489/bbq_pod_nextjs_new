@@ -1,0 +1,71 @@
+@import "@/assets/front/styles/variable.scss";
+.featuresSection {
+  background-color: #ffffff;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.card {
+  background: $white;
+  text-align: center;
+  border-radius: 20px;
+  height: 100%;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 42px -14px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
+    transform: translateY(-5px) scale(1.05);
+  }
+}
+
+.icon {
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  display: flex;
+}
+
+.svgIcon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.icon-red {
+  background-color: #ffcccc;
+  color: #ff0000;
+}
+
+.icon-blue {
+  background-color: #cce5ff;
+  color: #0000ff;
+}
+
+.icon-green {
+  background-color: #ccffcc;
+  color: #008000;
+}
+
+.icon-purple {
+  background-color: #e5ccff;
+  color: #800080;
+}
+
+.icon-cyan {
+  background-color: #ccffff;
+  color: #00ffff;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardDescription {
+  font-size: 0.875rem;
+  color: #666666;
+}

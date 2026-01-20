@@ -1,0 +1,21 @@
+@import "@/assets/front/styles/variable.scss";
+.titleHeader {
+  max-width: 59.375rem;
+  margin: 0 auto 3rem;
+  position: relative;
+  text-align: center;
+}
+
+.whyChoose {
+  color: $primary;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #333333;
+  font-size: 1rem;
+  line-height: 1.5;
+}

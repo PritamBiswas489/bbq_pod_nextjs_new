@@ -1,0 +1,43 @@
+@import "@/assets/front/styles/variable.scss";
+.banner {
+  // background-color: #111827;
+  background: linear-gradient(90deg, #fff2f0, #fff, #fff2f0);
+  padding: 4rem 0;
+  text-align: center;
+}
+.bannerInner {
+  max-width: 42rem;
+  margin: 0 auto;
+  position: relative;
+}
+.title {
+  color: $dark-2;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: $gray; // Light gray
+  margin-bottom: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.button {
+  background-color: #dc2626; // Red
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px; // Fully rounded
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #b91c1c; // Darker red on hover
+  }
+}

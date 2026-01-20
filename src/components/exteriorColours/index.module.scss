@@ -1,0 +1,97 @@
+.exteriorColours {
+  padding: 4rem 0;
+}
+.container {
+  background-color: white;
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.titlesHeader {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+
+  .icon {
+    color: #ff0000; // Red icon as in the screenshot
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); // 5 columns by default
+  gap: 1rem;
+  justify-items: center;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr); // 4 columns on large screens
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr); // 3 columns on medium screens
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); // 2 columns on small screens
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: repeat(1, 1fr); // 1 column on extra small screens
+  }
+}
+
+.swatchWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.swatchLink {
+  display: block;
+  width: 100%;
+  border-radius: 1rem;
+  text-decoration: none; // Remove underline
+  transition: transform 0.3s ease; // Smooth transition for hover effect
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 0 40px -15px;
+  padding: 1.25rem;
+  &:hover {
+    transform: translateY(-5px) scale(1.05); // Hover: translate up 5px and scale up 5%
+  }
+}
+
+.swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1; // Ensures it's a perfect circle (maintains square aspect ratio)
+  border-radius: 50%; // Makes it a circle
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.label {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #333;
+  line-height: 1.2;
+}
