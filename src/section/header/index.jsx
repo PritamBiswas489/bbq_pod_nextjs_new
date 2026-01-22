@@ -27,7 +27,7 @@ const Header = () => {
         <Container fluid="xxl">
           <Row className="align-items-center">
             <Col className={style.logoCol} md="auto">
-              <Link href="/">
+              <Link href="/home">
                 <Image
                   src={logo}
                   alt="logo"
@@ -56,10 +56,10 @@ const Header = () => {
                 </button>
                 <ul className="d-flex align-items-center">
                   <li>
-                    <Link href="/">Home</Link>
+                    <Link href="/home">Home</Link>
                   </li>
                   <li>
-                    <Link href="/">Products</Link>
+                    <Link href="/products">Products</Link>
                   </li>
                   <li>
                     <Link href="/">Order Now</Link>
