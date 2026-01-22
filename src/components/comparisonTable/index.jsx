@@ -66,7 +66,7 @@ const ComparisonTable = () => {
         <div
           className={styles.tableWrapper}
           data-aos="zoom-in-up"
-          data-aos-duration="3000"
+          data-aos-duration="1000"
           data-aos-once="true"
         >
           <Table responsive hover className={styles.comparisonTable}>

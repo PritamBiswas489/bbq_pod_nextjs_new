@@ -16,8 +16,8 @@ const OutdoorKitchens = () => {
   const products = [
     {
       badges: [
-        { text: "Save £1,000", variant: "success", position: "left" },
-        { text: "Most Popular", variant: "danger", position: "right" },
+        { text: "Save £1,000", variant: "save", position: "left" },
+        { text: "Most Popular", variant: "premium", position: "right" },
       ],
       name: "A-Mini",
       description: "Compact Lux for Every Garden",
@@ -32,7 +32,7 @@ const OutdoorKitchens = () => {
     },
     {
       badges: [
-        { text: "SAVE £1,600", variant: "success", position: "left" },
+        { text: "SAVE £1,600", variant: "save", position: "left" },
         // { text: "10% off", variant: "success-subtle", position: "right" },
       ],
       name: "A-Plus",
@@ -48,8 +48,8 @@ const OutdoorKitchens = () => {
     },
     {
       badges: [
-        { text: "SAVE £1,800", variant: "success", position: "left" },
-        { text: "Premium Choice", variant: "danger", position: "right" },
+        { text: "SAVE £1,800", variant: "save", position: "left" },
+        { text: "Premium Choice", variant: "premium", position: "right" },
       ],
       name: "A-Max",
       description: "Maximum Luxury",
@@ -64,7 +64,7 @@ const OutdoorKitchens = () => {
     },
     {
       badges: [
-        { text: "SAVE £1,900", variant: "success", position: "left" },
+        { text: "SAVE £1,900", variant: "save", position: "left" },
         // { text: "Premium Choice", variant: "danger", position: "right" },
       ],
       name: "A-Ultra",
@@ -80,8 +80,8 @@ const OutdoorKitchens = () => {
     },
     {
       badges: [
-        { text: "SAVE £1,600", variant: "success", position: "left" },
-        { text: "New Design", variant: "danger", position: "right" },
+        { text: "SAVE £1,600", variant: "premium", position: "left" },
+        { text: "New Design", variant: "premium", position: "right" },
       ],
       name: "A-Pro",
       description: "All-Weather Luxury with Motorised Awning",
@@ -111,16 +111,26 @@ const OutdoorKitchens = () => {
                 className={`h-100 ${styles.productCard}`}
                 data-aos="zoom-in-up"
                 data-aos-anchor-placement="zoom-in-up"
-                data-aos-duration="3000"
+                data-aos-duration="1000"
                 data-aos-once="true"
               >
                 {product.badges?.map((badge, bIndex) => (
+                  // <Badge
+                  //   key={bIndex}
+                  //   // bg={badge.variant}
+                  //   className={`position-absolute top-0 ${
+                  //     badge.position === "left" ? "start-0" : "end-0"
+                  //   } m-2 ${styles.badgeCustom}`}
+                  // >
+                  //   {badge.text}
+                  // </Badge>
                   <Badge
                     key={bIndex}
-                    bg={badge.variant}
-                    className={`position-absolute top-0 ${
-                      badge.position === "left" ? "start-0" : "end-0"
-                    } m-2 ${styles.badgeCustom}`}
+                    className={`
+                      position-absolute top-0 
+                      ${badge.position === "left" ? "start-0" : "end-0"} m-2 
+                      ${styles.badgeCustom} 
+                      ${styles[badge.variant]}`}
                   >
                     {badge.text}
                   </Badge>
@@ -135,12 +145,10 @@ const OutdoorKitchens = () => {
                   <Card.Title className={styles.cardTitle}>
                     {product.name}
                   </Card.Title>
-                  <Card.Subtitle
-                    className={`mb-2 text-muted ${styles.cardSubtitle}`}
-                  >
+                  <Card.Subtitle className={`mb-2 ${styles.cardSubtitle}`}>
                     {product.description}
                   </Card.Subtitle>
-                  <div className={`text-danger fw-bold ${styles.cardPrice}`}>
+                  <div className={`fw-bold ${styles.cardPrice}`}>
                     {product.oldPrice && (
                       <div className="small d-flex align-items-center mb-1">
                         <del className={`me-2 ${styles.textMuted}`}>
@@ -156,14 +164,14 @@ const OutdoorKitchens = () => {
                   <ul className={`list-unstyled ${styles.featureList}`}>
                     {product.features.map((feature, fIndex) => (
                       <li key={fIndex} className={`mb-1 ${styles.featureItem}`}>
-                        <FiCheckCircle className="text-danger me-2" />
+                        <FiCheckCircle className="me-2" />
                         {feature}
                       </li>
                     ))}
                   </ul>
                   <Button
                     variant="link"
-                    className={`p-0 text-danger ${styles.viewDetails}`}
+                    className={`p-0 ${styles.viewDetails}`}
                   >
                     View Details →
                   </Button>

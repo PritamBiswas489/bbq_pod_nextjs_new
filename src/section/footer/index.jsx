@@ -17,25 +17,25 @@ const Footer = () => {
       <Container>
         <div className={styles.statsWrapper}>
           <Row className={styles.statsSection}>
-            <Col className="text-center">
+            <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
                 <span className={styles.statValue}>A+</span>
                 <span className={styles.statLabel}>Premium Quality</span>
               </div>
             </Col>
-            <Col className="text-center">
+            <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
                 <span className={styles.statValue}>30+</span>
                 <span className={styles.statLabel}>Years Experience</span>
               </div>
             </Col>
-            <Col className="text-center">
+            <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
                 <span className={styles.statValue}>UK</span>
                 <span className={styles.statLabel}>Wide Delivery</span>
               </div>
             </Col>
-            <Col className="text-center">
+            <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
                 <span className={styles.statValue}>100%</span>
                 <span className={styles.statLabel}>Fully Assembled</span>
@@ -46,7 +46,7 @@ const Footer = () => {
         <Row className="align-items-start justify-content-between">
           <Col md={3} className={styles.logoSection}>
             <div className={styles.logo}>
-              <Image src={logo} alt="logo" width={241} height={63} priority />
+              <Image src={logo} alt="logo" width={893} height={137} priority />
             </div>
             <p className={styles.description}>
               Transform your garden with luxury BBQ pods built with

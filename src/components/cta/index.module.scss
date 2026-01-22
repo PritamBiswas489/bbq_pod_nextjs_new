@@ -12,17 +12,11 @@
 }
 
 .title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: $dark-2;
   margin-bottom: 10px;
 }
 
 .subtitle {
-  font-size: 1rem;
-  color: $gray;
   margin-bottom: 20px;
-  line-height: 1.4;
 }
 
 .buttons {
@@ -37,36 +31,34 @@
 }
 
 .callButton {
-  background-color: #ff4d4d !important;
-  border: none !important;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
+  background: $primary;
+  border: none;
+  padding: 0.875rem 2rem;
   border-radius: 30px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+    background: darken($primary, 20%);
   }
 }
 
 .quoteButton {
-  background-color: #4d4d4d !important;
-  border: none !important;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: 600;
+  background: $dark-2;
+  border: none;
+  padding: 0.875rem 2rem;
   border-radius: 30px;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  transition: all ease-in-out 0.3s;
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(77, 77, 77, 0.3);
+    background: darken($black, 20%);
   }
 }
 
@@ -77,7 +69,10 @@
 }
 
 // Responsive adjustments
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .wrapper {
+    padding: 2rem 0;
+  }
   .title {
     font-size: 1.8rem;
   }

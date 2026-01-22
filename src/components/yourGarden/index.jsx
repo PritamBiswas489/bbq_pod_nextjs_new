@@ -1,5 +1,7 @@
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaArrowRight, FaStar } from "react-icons/fa";
+import { TiArrowRightOutline } from "react-icons/ti";
+import { VscGear } from "react-icons/vsc";
 import styles from "./index.module.scss";
 import heroImage from "@/assets/front/images/hero-2.webp";
 import Link from "next/link";
@@ -28,7 +30,7 @@ const YourGarden = () => {
               </h2>
               <p
                 data-aos="fade-up"
-                data-aos-duration="2000"
+                data-aos-duration="1000"
                 data-aos-once="true"
               >
                 Get a personalised quote in under 2 minutes — no obligation from
@@ -45,7 +47,7 @@ const YourGarden = () => {
                 <span
                   className={styles.processQuote}
                   data-aos="zoom-in-right"
-                  data-aos-duration="2000"
+                  data-aos-duration="1000"
                   data-aos-once="true"
                 >
                   <FaArrowRight style={{ fontSize: "1rem" }} /> 2-Minute Quote
@@ -54,7 +56,7 @@ const YourGarden = () => {
                 <span
                   className={styles.processQuote}
                   data-aos="zoom-in-left"
-                  data-aos-duration="2000"
+                  data-aos-duration="1000"
                   data-aos-once="true"
                 >
                   <FaStar style={{ fontSize: "1rem" }} /> No Obligation Quote
@@ -63,6 +65,7 @@ const YourGarden = () => {
               <div
                 style={{
                   display: "flex",
+                  flexWrap: "wrap",
                   justifyContent: "center",
                   gap: "1rem",
                   marginBottom: "3rem",
@@ -72,19 +75,19 @@ const YourGarden = () => {
                   href={"#"}
                   className={styles.personalisedQuoteBtn}
                   data-aos="zoom-in-left"
-                  data-aos-duration="2000"
+                  data-aos-duration="1000"
                   data-aos-once="true"
                 >
-                  Get My Personalised Quote <FaArrowRight />
+                  Get My Personalised Quote <TiArrowRightOutline />
                 </Link>
                 <Link
                   href={"#"}
                   className={styles.configuratorBtn}
                   data-aos="zoom-in-right"
-                  data-aos-duration="2000"
+                  data-aos-duration="1000"
                   data-aos-once="true"
                 >
-                  Try the Configurator <FaStar />
+                  Try the Configurator <VscGear />
                 </Link>
               </div>
               <p
@@ -94,7 +97,7 @@ const YourGarden = () => {
                   marginBottom: 0,
                 }}
                 data-aos="fade-up"
-                data-aos-duration="2000"
+                data-aos-duration="1000"
                 data-aos-once="true"
               >
                 Join 100+ satisfied UK families who transformed their gardens

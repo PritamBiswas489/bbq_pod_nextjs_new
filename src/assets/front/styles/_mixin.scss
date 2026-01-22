@@ -3,7 +3,7 @@
 @mixin mainBtn {
   position: relative;
   color: $white;
-  background: $sccondary;
+  background: $secondary;
   padding: 1rem 3rem;
   border-radius: 0.313rem;
   display: inline-block;
@@ -27,7 +27,7 @@
   font-weight: 600;
 
   &:hover {
-    background: $sccondary;
+    background: $secondary;
     color: $white;
   }
 }
@@ -127,9 +127,9 @@
   font-size: 1rem;
   height: 2.5rem;
   line-height: 1.5;
-  color: $sccondary !important;
+  color: $secondary !important;
   background-color: $white;
-  border: $sccondary 1px solid;
+  border: $secondary 1px solid;
 }
 
 @mixin placeholder {

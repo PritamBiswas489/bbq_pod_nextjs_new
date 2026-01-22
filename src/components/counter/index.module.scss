@@ -1,17 +1,16 @@
 @import "@/assets/front/styles/variable.scss";
 .counterSection {
-  background-color: #f3f3f3;
-  padding: 2rem 0;
+  background: linear-gradient(90deg, #060020, #0d0241, #060020);
+  padding: 2.5rem 0;
 }
 
 .counterItem {
   text-align: center;
-  color: #000000;
-  border-radius: 20px;
+  color: $white;
 }
 
 .number {
-  color: $primary;
+  color: $primary !important;
   font-size: 3rem;
   font-weight: bold;
   color: $dark-2;
@@ -21,4 +20,13 @@
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: 0.25rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .number {
+    font-size: 2rem;
+  }
+  .label {
+    font-size: 0.965rem;
+  }
 }

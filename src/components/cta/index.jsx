@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
 import styles from "./index.module.scss";
+import Link from "next/link";
 
 const Cta = () => {
   return (
@@ -12,7 +13,7 @@ const Cta = () => {
             <h2
               className={styles.title}
               data-aos="zoom-in-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
               Still Have Questions?
@@ -20,7 +21,7 @@ const Cta = () => {
             <p
               className={styles.subtitle}
               data-aos="zoom-in-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
               Our team at Commercial Awnings is here to help. Get in touch for
@@ -29,15 +30,15 @@ const Cta = () => {
             <div
               className={styles.buttons}
               data-aos="zoom-in-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
-              <Button variant="danger" className={styles.callButton}>
+              <Link href={"#"} className={styles.callButton}>
                 <FaPhoneAlt className={styles.icon} /> Call 0808 225 0045
-              </Button>
-              <Button variant="secondary" className={styles.quoteButton}>
+              </Link>
+              <Link href={"#"} className={styles.quoteButton}>
                 Request Quote <FaArrowRight className={styles.icon} />
-              </Button>
+              </Link>
             </div>
           </Col>
         </Row>

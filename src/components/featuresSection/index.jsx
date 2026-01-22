@@ -15,42 +15,42 @@ import TitleHeader from "../titleHeader";
 const featuresData = [
   {
     icon: <IoShieldCheckmarkOutline className={styles.svgIcon} />,
-    color: "red",
+    color: "primary",
     title: "Premium Construction",
     description:
       "Designed for longevity with 6-layer insulated door panels and stainless steel construction. Commercial-grade materials ensure decades of reliable service.",
   },
   {
     icon: <IoPersonOutline className={styles.svgIcon} />,
-    color: "red",
+    color: "primary",
     title: "30+ Years Expertise",
     description:
       "Delivered and installed by Commercial Awnings Limited, UK specialists in premium outdoor structures for over three decades. Every pod benefits from our extensive experience.",
   },
   {
     icon: <FaTruck className={styles.svgIcon} />,
-    color: "blue",
+    color: "primary",
     title: "UK-Wide Delivery",
     description:
       "100% fully assembled delivery and professional installation across the entire UK. No DIY required - your pod arrives ready to use approx. 16 weeks from deposit.",
   },
   {
     icon: <IoHammerOutline className={styles.svgIcon} />,
-    color: "green",
+    color: "primary",
     title: "Professional Grade",
     description:
       "Commercial-quality appliances including grills, integrated refrigeration, and weather-resistant electronics. Built to the same standards as commercial kitchens.",
   },
   {
     icon: <IoColorPaletteOutline className={styles.svgIcon} />,
-    color: "purple",
+    color: "primary",
     title: "Fully Customisable",
     description:
       "Choose from 10 exterior powder-coated colours, 15 interior finishes, and multiple countertop options. Create a pod that perfectly complements your outdoor space.",
   },
   {
     icon: <IoCloudOutline className={styles.svgIcon} />,
-    color: "cyan",
+    color: "primary",
     title: "All-Weather Design",
     description:
       "Designed for the British climate with weatherproof construction, insulated panels, and optional motorised awning. Enjoy outdoor cooking year-round, rain or shine.",
@@ -72,7 +72,7 @@ const FeaturesSection = () => {
               <div
                 className={styles.card}
                 data-aos="zoom-in-up"
-                data-aos-duration="1500"
+                data-aos-duration="1000"
                 data-aos-once="true"
               >
                 <div

@@ -77,7 +77,7 @@ const ExteriorColours = () => {
           <div
             className={styles.titleWrapper}
             data-aos="fade-up"
-            data-aos-duration="2000"
+            data-aos-duration="1000"
             data-aos-once="true"
           >
             <FaPalette className={styles.icon} />
@@ -86,7 +86,7 @@ const ExteriorColours = () => {
           <p
             className={styles.subtitle}
             data-aos="fade-up"
-            data-aos-duration="2000"
+            data-aos-duration="1000"
             data-aos-once="true"
           >
             Choose from 10 premium powder-coated finishes.
@@ -98,7 +98,7 @@ const ExteriorColours = () => {
               key={index}
               className={styles.swatchWrapper}
               data-aos="zoom-in-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
               <Link

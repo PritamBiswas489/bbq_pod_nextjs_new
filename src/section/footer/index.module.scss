@@ -7,23 +7,12 @@
 
 .logoSection {
   .logo {
-    display: flex;
-    align-items: center;
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 15px;
-
-    .flameIcon {
-      color: #ff4d4d;
-      margin-right: 10px;
-      font-size: 2.5rem;
+    img {
+      width: 250px;
+      height: auto;
+      display: block;
+      margin-bottom: 1.5rem;
     }
-  }
-
-  .description {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    opacity: 0.85;
   }
 }
 
@@ -145,7 +134,7 @@
 }
 
 // Responsive
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .footer {
     padding: 40px 0 20px;
   }
@@ -157,8 +146,8 @@
   }
 
   .statsSection {
-    .col {
-      margin-bottom: 20px;
+    div {
+      margin: 0.5rem 0;
     }
   }
 }

@@ -1,6 +1,6 @@
 @import "@/assets/front/styles/variable.scss";
 .testimonials {
-  padding: 80px 0;
+  padding: 4rem 0;
   background: $white;
 }
 
@@ -92,4 +92,20 @@
 .starsGreen {
   color: $bg-green;
   margin-bottom: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .testimonials {
+    padding: 2rem 0;
+  }
+  .ratingBox {
+    padding: 20px 10px;
+    margin-top: 1rem;
+    .ratingBoxInner {
+      &:not(:last-child) {
+        margin-right: 0;
+        padding: 0 1rem;
+      }
+    }
+  }
 }

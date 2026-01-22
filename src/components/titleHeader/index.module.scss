@@ -19,3 +19,10 @@
   font-size: 1rem;
   line-height: 1.5;
 }
+
+@media only screen and (max-width: 768px) {
+  .titleHeader {
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+  }
+}

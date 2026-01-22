@@ -1,23 +1,59 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import style from "./index.module.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import logo from "@/assets/front/images/logo.png";
 
+import { TiArrowRightOutline } from "react-icons/ti";
+import { MdOutlineCall } from "react-icons/md";
+
 const Header = () => {
+  const [isSticky, setIsSticky] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsSticky(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <header className={style.header}>
-        <Container>
+      <header className={`${style.header} ${isSticky ? style.sticky : ""}`}>
+        <Container fluid="xxl">
           <Row className="align-items-center">
-            <Col md="auto">
+            <Col className={style.logoCol} md="auto">
               <Link href="/">
-                <Image src={logo} alt="logo" width={241} height={63} priority />
+                <Image
+                  src={logo}
+                  alt="logo"
+                  width={893}
+                  height={137}
+                  className={style.logo}
+                  priority
+                />
               </Link>
             </Col>
-            <Col>
+
+            <div
+              className={`${style.navArea} ${menuOpen ? style.navOpen : ""}`}
+            >
               <nav className={style.nav}>
+                <button
+                  className={`${style.navToggler} ${
+                    menuOpen ? style.active : ""
+                  }`}
+                  type="button"
+                  onClick={() => setMenuOpen(!menuOpen)}
+                >
+                  <span />
+                  <span />
+                  <span />
+                </button>
                 <ul className="d-flex align-items-center">
                   <li>
                     <Link href="/">Home</Link>
@@ -39,22 +75,21 @@ const Header = () => {
                   </li>
                 </ul>
               </nav>
-            </Col>
-            <Col md="auto">
-              <div className="">
-                <ul className="d-flex align-items-center gap-3">
-                  <li>
-                    <Link href="/">
-                      <i className="fa-solid fa-phone"></i> 0808 225 0045
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/" className="btn btn-primary">
-                      Get Quote
-                    </Link>
-                  </li>
-                </ul>
-              </div>
+            </div>
+
+            <Col className={style.headerBtnCol} md="auto">
+              <ul className="d-flex align-items-center gap-3">
+                <li>
+                  <Link href="/" className={`btn ${style.getQuoteBtnBdr}`}>
+                    <MdOutlineCall size={20} /> 0808 225 0045
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/" className={`btn ${style.getQuoteBtn}`}>
+                    Get Quote <TiArrowRightOutline className="ms-1" />
+                  </Link>
+                </li>
+              </ul>
             </Col>
           </Row>
         </Container>

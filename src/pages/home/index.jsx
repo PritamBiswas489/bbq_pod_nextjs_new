@@ -36,79 +36,87 @@ const Home = () => {
           <Container>
             <Row className="align-items-center">
               {/* LEFT CONTENT */}
-              <Col md={7} className={style.bannerContent}>
-                <div
-                  className={style.nationwide}
-                  data-aos="fade-up"
-                  data-aos-anchor-placement="bottom-center"
-                  data-aos-easing="ease-out-cubic"
-                  data-aos-duration="1500"
-                  data-aos-once="true"
-                >
-                  <i className="fa-regular fa-circle-check" /> UK Nationwide
-                </div>
+              <Col md={7}>
+                <div className={style.bannerContent}>
+                  <div
+                    className={style.nationwide}
+                    data-aos="fade-up"
+                    data-aos-anchor-placement="bottom-center"
+                    data-aos-easing="ease-out-cubic"
+                    data-aos-duration="1500"
+                    data-aos-once="true"
+                  >
+                    <i className="fa-regular fa-circle-check" /> UK Nationwide
+                  </div>
 
-                <h1
-                  data-aos="fade-right"
-                  data-aos-duration="2000"
-                  data-aos-once="true"
-                >
-                  Luxury Outdoor Kitchen Pods
-                </h1>
+                  <h1
+                    data-aos="fade-right"
+                    data-aos-duration="2000"
+                    data-aos-once="true"
+                  >
+                    Luxury Outdoor Kitchen Pods
+                  </h1>
 
-                <h3
-                  data-aos="fade-right"
-                  data-aos-duration="2500"
-                  data-aos-once="true"
-                >
-                  Grill. Gather. Enjoy.
-                </h3>
+                  <h3
+                    data-aos="fade-right"
+                    data-aos-duration="2500"
+                    data-aos-once="true"
+                  >
+                    Grill. Gather. Enjoy.
+                  </h3>
 
-                <p
-                  data-aos="fade-right"
-                  data-aos-duration="3000"
-                  data-aos-once="true"
-                  dangerouslySetInnerHTML={{
-                    __html: `Premium Outdoor Kitchens Delivered from the UK — Built to Last
+                  <p
+                    data-aos="fade-right"
+                    data-aos-duration="3000"
+                    data-aos-once="true"
+                    dangerouslySetInnerHTML={{
+                      __html: `Premium Outdoor Kitchens Delivered from the UK — Built to Last
                   a Lifetime.`,
-                  }}
-                ></p>
+                    }}
+                  ></p>
 
-                <div className={style.actions}>
-                  <Link
-                    href={""}
-                    className={style.callBtn}
-                    data-aos="zoom-out"
-                    data-aos-duration="2500"
-                    data-aos-once="true"
-                  >
-                    Get My Personalised Quote
-                  </Link>
+                  <div className={style.actions}>
+                    <ul>
+                      <li>
+                        <Link
+                          href={""}
+                          className={style.callBtn}
+                          data-aos="zoom-out"
+                          data-aos-duration="2500"
+                          data-aos-once="true"
+                        >
+                          Get My Personalised Quote
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href={""}
+                          className={style.quoteBtn}
+                          data-aos="zoom-out"
+                          data-aos-duration="2500"
+                          data-aos-once="true"
+                        >
+                          Explore Models
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
 
-                  <Link
-                    href={""}
-                    className={style.quoteBtn}
-                    data-aos="zoom-out"
-                    data-aos-duration="2500"
-                    data-aos-once="true"
-                  >
-                    Explore Models
-                  </Link>
-                </div>
-
-                <div className={style.features}>
-                  <ul>
-                    <li>
-                      <i className="fa-solid fa-medal" /> Quality Assured
-                    </li>
-                    <li>
-                      <i className="fa-solid fa-truck-fast" /> UK-Wide Delivery
-                    </li>
-                    <li>
-                      <i className="fa-solid fa-umbrella-beach" /> Fully
-                      Assembled
-                    </li>
-                  </ul>
+                  <div className={style.features}>
+                    <ul>
+                      <li>
+                        <i className="fa-solid fa-medal" /> Quality Assured
+                      </li>
+                      <li>
+                        <i className="fa-solid fa-truck-fast" /> UK-Wide
+                        Delivery
+                      </li>
+                      <li>
+                        <i className="fa-solid fa-umbrella-beach" /> Fully
+                        Assembled
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </Col>
 

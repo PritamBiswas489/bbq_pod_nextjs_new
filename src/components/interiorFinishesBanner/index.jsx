@@ -3,6 +3,7 @@
 import { Container, Button } from "react-bootstrap";
 import { FaArrowRight } from "react-icons/fa";
 import styles from "./index.module.scss";
+import Link from "next/link";
 
 const InteriorFinishesBanner = () => {
   return (
@@ -11,7 +12,7 @@ const InteriorFinishesBanner = () => {
         <h2
           className={styles.title}
           data-aos="zoom-in"
-          data-aos-duration="2000"
+          data-aos-duration="1000"
           data-aos-once="true"
         >
           Plus 15 Interior Finishes
@@ -19,21 +20,21 @@ const InteriorFinishesBanner = () => {
         <p
           className={styles.subtitle}
           data-aos="zoom-in"
-          data-aos-duration="2000"
+          data-aos-duration="1000"
           data-aos-once="true"
         >
           Choose from powder-coated colours, wood grain effects, or premium
           sintered stone interiors to create a truly bespoke outdoor kitchen.
         </p>
-        <Button
-          variant="light"
+        <Link
+          href="#"
           className={styles.button}
           data-aos="zoom-in"
-          data-aos-duration="2000"
+          data-aos-duration="1000"
           data-aos-once="true"
         >
           Explore Full Configurator <FaArrowRight />
-        </Button>
+        </Link>
       </Container>
     </div>
   );

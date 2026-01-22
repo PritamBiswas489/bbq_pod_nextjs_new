@@ -12,11 +12,12 @@ body {
 }
 
 body {
-  color: $dark;
+  color: $dark-3;
   background: $white;
   font-size: 0.938rem;
   font-family: "Montserrat";
-  font-weight: 400;
+  font-weight: normal;
+  line-height: 1.5;
 }
 
 a,
@@ -38,8 +39,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: $dark-3;
-  font-weight: bold;
+  color: $dark;
+  font-weight: 700;
   margin-bottom: 0.625rem;
 }
 
@@ -50,13 +51,16 @@ p {
 }
 
 h2 {
-  font-size: 2.813rem;
+  font-size: 2.913rem;
   margin: 0 0 0.938rem;
   position: relative;
-  font-weight: bold;
-  margin: 0;
+  font-weight: 700;
 }
 h3 {
+  font-size: 2rem;
+  margin: 0 0 0.938rem;
+  position: relative;
+  font-weight: 700;
 }
 h4 {
 }
@@ -64,14 +68,13 @@ h5 {
 }
 h6 {
   font-size: 1rem;
-  margin: 0 0 0.938rem;
 }
 
-// .container {
-//   max-width: 1200px;
-//   margin: 0 auto;
-//   padding: 0 15px;
-// }
-// .row {
-//   margin: 0 -15px;
-// }
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 1.626em;
+  }
+  h6 {
+    font-size: 0.765rem;
+  }
+}

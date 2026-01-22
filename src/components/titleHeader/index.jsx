@@ -8,22 +8,24 @@ const TitleHeader = ({ whyChoose, title, subtitle }) => {
       <p
         className={styles.whyChoose}
         data-aos="fade-up"
-        data-aos-duration="3000"
+        data-aos-duration="1000"
+        data-aos-once="true"
       >
         {whyChoose}
       </p>
-      <h1
+      <h2
         className={styles.title}
         data-aos="fade-up"
-        data-aos-duration="2500"
+        data-aos-duration="1500"
         data-aos-once="true"
       >
         {title}
-      </h1>
+      </h2>
       <p
         className={styles.subtitle}
         data-aos="fade-up"
         data-aos-duration="2000"
+        data-aos-once="true"
       >
         {subtitle}
       </p>

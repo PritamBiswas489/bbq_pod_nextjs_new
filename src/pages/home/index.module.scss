@@ -2,6 +2,7 @@
 .banner {
   background-color: $white;
   padding: 3rem 0;
+  overflow: hidden;
 }
 
 .bannerContent {
@@ -15,7 +16,7 @@
     font-size: 3rem;
     font-weight: 600;
     margin-bottom: 20px;
-    color: $sccondary;
+    color: $secondary;
   }
 
   p {
@@ -27,16 +28,18 @@
 
 .nationwide {
   position: relative;
-  font-size: 26px;
+  font-size: 1.25rem;
   margin-bottom: 30px;
   //   padding-block-start: 1.5rem;
   padding-inline-start: 1rem;
   z-index: 1;
+  color: $primary;
+  font-weight: 600;
   &::after {
     content: "";
     width: 70px;
     height: 70px;
-    background: #d8d1c7;
+    background: $lightGray-2;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -50,24 +53,38 @@
 }
 
 .actions {
-  display: flex;
-  gap: 20px;
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    a {
+      display: inline-block;
+    }
+  }
 }
 
 .callBtn {
-  background: #b7aa99;
-  color: #fff;
-  padding: 14px 22px;
-  text-decoration: none;
+  background: $primary;
+  color: $bg-white;
+  padding: 18px 2rem;
+  border-radius: 2rem;
   font-weight: 600;
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    background: darken($primary, 20%);
+  }
 }
 
 .quoteBtn {
-  border: 2px solid #b7aa99;
-  padding: 14px 22px;
+  border: 2px solid $primary;
+  padding: 16px 2rem;
   font-weight: 600;
-  text-decoration: none;
-  color: #000;
+  border-radius: 2rem;
+  color: $primary;
+  &:hover {
+    background: $primary;
+    color: $bg-white;
+  }
 }
 
 .features {
@@ -113,7 +130,7 @@
   &:after {
     content: "";
     z-index: -1;
-    background-color: $sccondary-2;
+    background-color: $secondary-2;
 
     border-radius: 1.25rem;
     width: 100%;
@@ -146,6 +163,88 @@
 
     span {
       font-size: 14px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bannerContent {
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .actions {
+    ul {
+      gap: 5px;
+      li {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      a {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+  .callBtn {
+    padding: 8px 1.5rem;
+  }
+
+  .quoteBtn {
+    padding: 6px 1.5rem;
+  }
+
+  .bannerImage {
+    padding: 0;
+    &:after {
+      transform: rotate(352deg);
+    }
+  }
+
+  .stats {
+    bottom: 2rem;
+    left: auto;
+    right: 2rem;
+
+    li {
+      padding: 0.6rem 1rem;
+      margin-bottom: 5px;
+      strong {
+        font-size: 18px;
+      }
+
+      span {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .features {
+    margin: 1.5rem 0;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+
+      li {
+        gap: 0;
+        padding: 0;
+        font-size: 0.65rem;
+        border: none;
+        color: $dark;
+        font-weight: 600;
+        i {
+          font-size: 0.75rem;
+          margin-right: 0.313rem;
+          color: $primary;
+        }
+      }
     }
   }
 }

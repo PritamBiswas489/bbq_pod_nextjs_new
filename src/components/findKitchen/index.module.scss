@@ -1,0 +1,95 @@
+@import "@/assets/front/styles/variable.scss";
+.findKitchen {
+  margin-bottom: 1rem;
+}
+.card {
+  background-color: $bg-white;
+  border: none;
+  box-shadow: 0 4px 40px -20px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  h3 {
+    text-align: center;
+  }
+}
+
+.link {
+  color: $dark;
+  text-decoration: none;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+  &:hover {
+    color: $primary;
+  }
+}
+
+.icon {
+  font-size: 0.8rem;
+  margin-left: 0.2rem;
+}
+
+.list {
+  &.listPill {
+    border-bottom: $lightGray 1px solid;
+    padding-bottom: 0.5rem;
+  }
+  li {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.listLink {
+  li {
+    margin-right: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      align-items: center;
+      margin-right: 0;
+      font-weight: 600;
+      display: flex;
+      background: #fdf4f2;
+      padding: 0.5rem;
+      border-radius: 6px;
+      color: #262626;
+    }
+  }
+}
+
+.footer {
+  background-color: $dark;
+  border-radius: 1rem;
+  text-align: center;
+  padding: 2rem;
+  color: $bg-white;
+  margin-top: 2rem;
+  p {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+.footerButton {
+  background-color: $primary;
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    background-color: darken($primary, 10%);
+    color: $bg-white;
+  }
+}
+.buttonIcon {
+  font-size: 0.9rem;
+  margin-left: 0.3rem;
+}

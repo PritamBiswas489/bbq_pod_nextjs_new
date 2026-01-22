@@ -4,6 +4,7 @@ import { FiAward, FiUsers, FiCalendar, FiArrowRight } from "react-icons/fi";
 import styles from "./index.module.scss";
 
 import heroImage from "@/assets/front/images/outdoor/hero-3.webp";
+import Link from "next/link";
 
 const stats = [
   {
@@ -29,11 +30,11 @@ const CraftedBy = () => {
       <Container>
         <Row className="align-items-center">
           {/* LEFT CONTENT */}
-          <Col lg={6}>
+          <Col lg={6} xs={12}>
             <span
               className={styles.badge}
               data-aos="zoom-in-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
               Est. 1995
@@ -41,7 +42,7 @@ const CraftedBy = () => {
 
             <h2
               data-aos="zoom-in-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
               Crafted by <span>Commercial Awnings</span>
@@ -49,7 +50,7 @@ const CraftedBy = () => {
 
             <h4
               data-aos="zoom-in-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
               30 Years of Outdoor Innovation
@@ -57,7 +58,7 @@ const CraftedBy = () => {
 
             <p
               data-aos="zoom-in-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
               Since 1995, Commercial Awnings Limited has been at the forefront
@@ -72,27 +73,27 @@ const CraftedBy = () => {
                   className={styles.statBox}
                   key={index}
                   data-aos="zoom-in-up"
-                  data-aos-duration="2000"
+                  data-aos-duration="1000"
                   data-aos-once="true"
                 >
                   <div
                     className={styles.icon}
                     data-aos="zoom-in-up"
-                    data-aos-duration="2000"
+                    data-aos-duration="1000"
                     data-aos-once="true"
                   >
                     {item.icon}
                   </div>
                   <strong
                     data-aos="zoom-in-up"
-                    data-aos-duration="2000"
+                    data-aos-duration="1000"
                     data-aos-once="true"
                   >
                     {item.value}
                   </strong>
                   <span
                     data-aos="zoom-in-up"
-                    data-aos-duration="2000"
+                    data-aos-duration="1000"
                     data-aos-once="true"
                   >
                     {item.label}
@@ -101,23 +102,25 @@ const CraftedBy = () => {
               ))}
             </div>
 
-            <Button
+            <Link
+              href={"#"}
               className={styles.cta}
               data-aos="zoom-in-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
               Meet Our Team <FiArrowRight />
-            </Button>
+            </Link>
           </Col>
 
           {/* RIGHT IMAGE */}
-          <Col lg={6}>
+          <Col lg={6} xs={12}>
             <div
               className={styles.imageWrap}
               data-aos="flip-left"
               data-aos-easing="ease-out-cubic"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
+              data-aos-once="true"
             >
               <Image
                 src={heroImage.src}
@@ -138,7 +141,7 @@ const CraftedBy = () => {
         <div
           className={styles.quote}
           data-aos="zoom-in-up"
-          data-aos-duration="2000"
+          data-aos-duration="1000"
           data-aos-once="true"
         >
           <p>

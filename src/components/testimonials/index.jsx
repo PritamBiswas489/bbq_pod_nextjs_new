@@ -58,7 +58,7 @@ const Testimonials = () => {
               <div
                 className={styles.card}
                 data-aos="zoom-in-up"
-                data-aos-duration="2000"
+                data-aos-duration="1000"
                 data-aos-once="true"
               >
                 <div className={styles.quoteIcon}>

@@ -1,6 +1,6 @@
 @import "@/assets/front/styles/variable.scss";
 .featuresSection {
-  background-color: #ffffff;
+  background-color: $bg-white;
   padding: 4rem 0;
   text-align: center;
 }
@@ -23,8 +23,8 @@
   border-radius: 50%;
   justify-content: center;
   align-items: center;
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
   margin: 0 auto 1.5rem;
   font-size: 2rem;
   display: flex;
@@ -35,30 +35,30 @@
   height: 2rem;
 }
 
-.icon-red {
-  background-color: #ffcccc;
-  color: #ff0000;
+.icon-primary {
+  background-color: $primary;
+  color: $bg-white;
 }
 
-.icon-blue {
-  background-color: #cce5ff;
-  color: #0000ff;
-}
+// .icon-blue {
+//   background-color: #cce5ff;
+//   color: #0000ff;
+// }
 
-.icon-green {
-  background-color: #ccffcc;
-  color: #008000;
-}
+// .icon-green {
+//   background-color: #ccffcc;
+//   color: #008000;
+// }
 
-.icon-purple {
-  background-color: #e5ccff;
-  color: #800080;
-}
+// .icon-purple {
+//   background-color: #e5ccff;
+//   color: #800080;
+// }
 
-.icon-cyan {
-  background-color: #ccffff;
-  color: #00ffff;
-}
+// .icon-cyan {
+//   background-color: #ccffff;
+//   color: #00ffff;
+// }
 
 .cardTitle {
   font-size: 1.25rem;
@@ -68,4 +68,10 @@
 .cardDescription {
   font-size: 0.875rem;
   color: #666666;
+}
+
+@media only screen and (max-width: 768px) {
+  .featuresSection {
+    padding: 2rem 0;
+  }
 }

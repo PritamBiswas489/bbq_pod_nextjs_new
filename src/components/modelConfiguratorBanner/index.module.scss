@@ -1,7 +1,7 @@
 @import "@/assets/front/styles/variable.scss";
 .banner {
   // background-color: #111827;
-  background: linear-gradient(90deg, #fff2f0, #fff, #fff2f0);
+  background: linear-gradient(90deg, #060020, #000002, #060020);
   padding: 4rem 0;
   text-align: center;
 }
@@ -11,33 +11,71 @@
   position: relative;
 }
 .title {
-  color: $dark-2;
-  font-size: 1.5rem;
+  color: $bg-white;
+  // font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-.description {
-  color: $gray; // Light gray
   margin-bottom: 1rem;
 }
 
-.buttonContainer {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
+.description {
+  color: $lightGray-2;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
-.button {
-  background-color: #dc2626; // Red
-  color: white;
-  padding: 0.5rem 1.5rem;
-  border-radius: 9999px; // Fully rounded
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.buttonContainer {
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    li {
+      a {
+        display: block;
+        color: $bg-white;
+        background-color: $primary;
+        border: none;
+        border-radius: 2rem;
+        align-items: center;
+        gap: 5px;
+        padding: 0.875rem 2rem;
+        font-weight: 600;
+        display: inline-flex;
+        transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #b91c1c; // Darker red on hover
+        &:hover {
+          background-color: darken($primary, 10%);
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .banner {
+    padding: 2rem 0;
+  }
+  .title {
+    color: $bg-white;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .buttonContainer {
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      li {
+        a {
+          gap: 5px;
+          padding: 0.5rem 1rem;
+          font-size: 0.875rem;
+        }
+      }
+    }
   }
 }

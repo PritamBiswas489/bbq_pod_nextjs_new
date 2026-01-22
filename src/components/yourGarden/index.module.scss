@@ -36,8 +36,6 @@
 
 .quoteBannerInner {
   h2 {
-    font-size: 3rem;
-    font-weight: bold;
     color: $lightGray-2;
     margin-bottom: 1rem;
   }
@@ -59,9 +57,9 @@
 }
 
 .personalisedQuoteBtn {
-  background: linear-gradient(135deg, #e7563c 0%, #d33d0f 100%);
+  background: $primary;
   border: none;
-  padding: 15px 40px;
+  padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 50px;
@@ -69,18 +67,28 @@
   align-items: center;
   gap: 10px;
   color: $white;
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    background: darken($primary, 20%);
+    color: $bg-white;
+  }
 }
 .configuratorBtn {
-  background: linear-gradient(135deg, #fdeed9 0%, #fad7cc 100%);
+  background: $secondary-2;
   border: none;
-  padding: 15px 40px;
+  padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: 600;
   border-radius: 50px;
   display: flex;
   align-items: center;
   gap: 10px;
-  color: $primary;
+  color: $dark;
+  transition: all ease-in-out 0.4s;
+  &:hover {
+    background: darken($primary, 10%);
+    color: $bg-white;
+  }
 }
 
 .features {
@@ -165,10 +173,9 @@
   line-height: 1.3;
 }
 
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
   .quoteBanner {
     padding: 40px 15px;
-    margin: 40px auto;
   }
 
   .features {
@@ -184,5 +191,12 @@
     .statsText {
       text-align: center;
     }
+  }
+
+  .personalisedQuoteBtn {
+    padding: 1rem 2rem;
+  }
+  .configuratorBtn {
+    padding: 1rem 2rem;
   }
 }

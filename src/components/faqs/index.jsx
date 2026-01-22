@@ -63,7 +63,7 @@ const Faqs = () => {
               key={index}
               className={styles.item}
               data-aos="fade-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
               <Accordion.Header className={styles.header}>

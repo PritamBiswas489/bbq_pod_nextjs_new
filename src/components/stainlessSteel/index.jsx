@@ -33,7 +33,7 @@ const StainlessSteel = () => {
             <div
               className={styles.quoteBannerInner}
               data-aos="fade-up"
-              data-aos-duration="2000"
+              data-aos-duration="1000"
               data-aos-once="true"
             >
               {materials.map((item, index) => (
@@ -41,7 +41,7 @@ const StainlessSteel = () => {
                   className={styles.quoteBox}
                   key={index}
                   data-aos="zoom-in-right"
-                  data-aos-duration="2000"
+                  data-aos-duration="1000"
                   data-aos-once="true"
                 >
                   <h4>{item.title}</h4>

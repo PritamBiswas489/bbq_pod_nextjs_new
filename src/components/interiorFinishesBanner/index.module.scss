@@ -1,12 +1,7 @@
 @import "@/assets/front/styles/variable.scss";
 
 .bannerWrapper {
-  background: linear-gradient(
-    90deg,
-    #fce0d6,
-    #ffffff,
-    #fff2f0
-  ); // Orange-red gradient
+  background: linear-gradient(90deg, #060020, #000002, #060020);
   padding: 4rem 0;
   //   color: white;
   text-align: center;
@@ -19,17 +14,18 @@
 }
 
 .title {
-  font-size: 1.8rem;
-  font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  color: $bg-white;
 }
 
 .subtitle {
-  font-size: 1rem;
-  margin-bottom: 15px;
+  margin-bottom: 2rem;
   max-width: 800px;
+  color: $lightGray-2;
   margin-left: auto;
   margin-right: auto;
+  font-weight: 500;
+  font-size: 1.25rem;
 }
 
 .button {
@@ -44,6 +40,6 @@
   gap: 5px;
 
   &:hover {
-    background-color: $sccondary-2;
+    background-color: darken($primary, 10%);
   }
 }
