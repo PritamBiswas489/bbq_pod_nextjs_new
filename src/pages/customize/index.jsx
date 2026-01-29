@@ -144,7 +144,7 @@ const Customize = () => {
           <div className="row">
             <div className={style.left}>
               <div className={style.display}>
-                <Image
+                <img
                   src={
                     categoryList.find(
                       (cat) => cat.id === categoryState.selectedCategoryId,
