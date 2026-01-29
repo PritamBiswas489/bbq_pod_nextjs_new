@@ -2,14 +2,21 @@ import React from "react";
 import styles from "./index.module.scss";
 
 import hero1 from "@/assets/front/images/hero-1.webp";
+import Link from "next/link";
+
+import { TiArrowRightOutline } from "react-icons/ti";
 
 const InnerBanner = ({
-  badgeText = "5 PREMIUM MODELS",
-  title = "Premium Outdoor Kitchen Pods -",
-  subtitle = "Compare All Models",
-  description1 = "Discover our handcrafted range of luxury outdoor kitchen pods, engineered for the UK and built to last a lifetime. Each BBQ Pod is constructed from commercial-grade stainless steel with premium materials throughout, offering the perfect balance of design, performance, and durability for your garden or patio.",
-  description2 = "Whether you're upgrading your home's outdoor entertaining area or planning a complete garden transformation, our Premium BBQ Pod models provide tailored options. For every lifestyle— from compact luxury to all-weather performance.",
-  backgroundImage = hero1.src,
+  badgeText,
+  title,
+  subtitle,
+  description1,
+  description2,
+  backgroundImage,
+  links = [
+    { label: "Request Your Quote", href: "#", className: "primaryLink" },
+    { label: "View All Models", href: "#", className: "secondaryLink" },
+  ],
 }) => {
   return (
     <div
@@ -24,12 +31,34 @@ const InnerBanner = ({
       <div
         className={`container py-4 text-white position-relative ${styles.content}`}
       >
-        <div className={styles.badge}>{badgeText}</div>
-        <h1>
+        <div className={styles.badge} data-aos="flip-up" data-aos-once="true">
+          {badgeText}
+        </div>
+        <h1 data-aos="zoom-in" data-aos-once="true">
           {title} <span className={styles.subtitle}>{subtitle}</span>
         </h1>
-        <p className="lead mb-2">{description1}</p>
-        <p className="small">{description2}</p>
+        <p className="lead mb-2" data-aos="zoom-in" data-aos-once="true">
+          {description1}
+        </p>
+        <p className="small" data-aos="zoom-in" data-aos-once="true">
+          {description2}
+        </p>
+        {links.length > 0 && (
+          <ul className={styles.linkList}>
+            {links.map(({ label, href, className }) => (
+              <li
+                key={label}
+                className={styles[className]}
+                data-aos="zoom-in"
+                data-aos-once="true"
+              >
+                <Link href={href}>
+                  {label} <TiArrowRightOutline className="ms-1" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );

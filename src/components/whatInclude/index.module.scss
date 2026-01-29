@@ -1,0 +1,99 @@
+@import "@/assets/front/styles/variable.scss";
+.section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.featureRow {
+  row-gap: 24px;
+}
+
+.featureCol {
+  display: flex;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  background: $bg-white;
+  padding: 1rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  width: 100%;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.checkBox {
+  color: $bg-white;
+  background-color: $primary;
+  border-radius: 12px;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 24px;
+  font-size: 1rem;
+  display: flex;
+}
+
+.featureItem {
+  span {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #333;
+  }
+}
+
+.installationCard {
+  margin-top: 80px;
+  padding: 48px;
+  background: linear-gradient(45deg, #fcdcd6 0%, #f8e9e6 100%);
+  color: white;
+  border-radius: 24px;
+  text-align: center;
+  border: #fad4cd 1px solid;
+  //   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  span {
+    display: inline-block;
+    height: 4rem;
+    width: 4rem;
+    background: $primary;
+    color: $bg-white;
+    border-radius: 50%;
+    font-size: 2rem;
+    line-height: 4rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    // font-size: 2.5rem;
+    // margin-bottom: 24px;
+    // font-weight: 700;
+  }
+
+  p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.7;
+    color: $dark-3;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .featureItem {
+    padding: 20px;
+  }
+
+  .installationCard {
+    padding: 40px 24px;
+  }
+}

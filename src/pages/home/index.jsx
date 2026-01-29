@@ -160,7 +160,13 @@ const Home = () => {
         <FeaturesSection />
         <CounterSection />
         <OutdoorKitchens />
-        <ModelConfiguratorBanner />
+
+        <ModelConfiguratorBanner
+          title="Not Sure Which Model Is Right for You?"
+          description="Use our interactive configurator to explore features, compare models, and visualise your perfect outdoor kitchen. Get a personalised quote in minutes."
+          leftButton="Try Configurator"
+          rightButton="Compare All Models"
+        />
         <ComparisonTable />
         <YourGarden />
         <ExteriorColours />

@@ -1,0 +1,121 @@
+// gallery.module.scss
+@import "@/assets/front/styles/variable.scss";
+
+.buttonWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.filterGroup {
+  gap: 10px;
+}
+
+.filterBtn {
+  border-radius: 30px !important;
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  background: #f6f6f6;
+  color: #333;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: $secondary;
+  }
+}
+
+.active {
+  background: $primary;
+  color: $bg-white !important;
+  box-shadow: 0 6px 16px rgba(230, 57, 70, 0.25);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.gridItem {
+  animation: fadeScaleIn 0.45s ease forwards;
+  a {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 16px;
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(230, 57, 70, 0.25);
+      transition: all ease-in-out 0.4s;
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:hover {
+      &:after {
+        opacity: 1;
+        visibility: visible;
+      }
+      .view {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .label {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    background: #fff;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    z-index: 2;
+  }
+  .image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: transform 0.4s ease;
+  }
+  &:hover {
+    .image {
+      transform: scale(1.05);
+    }
+  }
+  .view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: $bg-white;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+    transition: all ease-in-out 0.4s;
+  }
+}
+
+@keyframes fadeScaleIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.galleryBanner {
+  max-width: 600px;
+}

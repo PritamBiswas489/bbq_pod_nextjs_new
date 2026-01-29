@@ -1,0 +1,216 @@
+@import "@/assets/front/styles/variable.scss";
+.banner {
+  color: #fff;
+  background: linear-gradient(#0a0a0a, #1a1a1a);
+  padding: 3rem 0;
+  overflow: hidden;
+}
+
+.bannerContent {
+  h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: $bg-white;
+  }
+  h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: $primary;
+  }
+
+  p {
+    font-size: 18px;
+    color: $lightGray;
+    margin-bottom: 30px;
+  }
+}
+
+.nationwide {
+  position: relative;
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+  //   padding-block-start: 1.5rem;
+  padding-inline-start: 1rem;
+  z-index: 1;
+  color: $primary;
+  font-weight: 600;
+  &::after {
+    content: "";
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
+}
+
+.actions {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    a {
+      display: inline-block;
+    }
+  }
+}
+
+.callBtn {
+  background: $primary;
+  color: $bg-white;
+  padding: 18px 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  transition: all ease-in-out 0.3s;
+  &:hover {
+    background: darken($primary, 20%);
+  }
+}
+
+.quoteBtn {
+  border: 2px solid $primary;
+  padding: 16px 2rem;
+  font-weight: 600;
+  border-radius: 2rem;
+  color: $primary;
+  &:hover {
+    background: $primary;
+    color: $bg-white;
+  }
+}
+
+.features {
+  margin-bottom: 3rem;
+  ul {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.6);
+      border: rgba(255, 255, 255, 0.3) 1px solid;
+      padding: 0.5rem 1rem;
+      border-radius: 0.313rem;
+
+      i {
+        font-size: 1rem;
+        color: $primary;
+      }
+    }
+  }
+}
+
+.bannerImage {
+  z-index: 1;
+  position: relative;
+  padding: 1.25rem;
+  background: $bg-white;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 0 40px;
+  border-radius: 1.25rem;
+
+  .banImgmage {
+    width: 100%;
+    height: auto;
+    border-radius: 1.25rem;
+    box-shadow: rgba(255, 255, 255, 0.7) 0 0 10px 5px;
+  }
+  &:after {
+    content: "";
+    z-index: -1;
+    background-color: $secondary-2;
+
+    border-radius: 1.25rem;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: rotate(352deg);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .bannerContent {
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .actions {
+    ul {
+      gap: 5px;
+      li {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      a {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+  .callBtn {
+    padding: 8px 1.5rem;
+  }
+
+  .quoteBtn {
+    padding: 6px 1.5rem;
+  }
+
+  .bannerImage {
+    padding: 0;
+    &:after {
+      transform: rotate(352deg);
+    }
+  }
+
+  .features {
+    margin: 1.5rem 0;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem;
+
+      li {
+        gap: 0;
+        padding: 0;
+        font-size: 0.65rem;
+        border: none;
+        color: $dark;
+        font-weight: 600;
+        i {
+          font-size: 0.75rem;
+          margin-right: 0.313rem;
+          color: $primary;
+        }
+      }
+    }
+  }
+}
+
+.topSingleImg {
+  padding: 4rem 0 0;
+}
+.BottomSingleImg {
+  padding: 4rem 0;
+}

@@ -1,6 +1,6 @@
 @import "@/assets/front/styles/variable.scss";
 .banner {
-  padding: 6rem 2rem;
+  padding: 4rem 2rem;
   position: relative;
   min-height: 300px;
   text-align: center;
@@ -52,6 +52,43 @@
   display: inline-block;
   margin-bottom: 1rem;
   text-transform: uppercase;
+}
+
+.linkList {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.primaryLink a {
+  background: $primary;
+  color: $bg-white;
+  padding: 0.7rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: all ease-in-out 0.3s;
+  display: block;
+  &:hover {
+    background: darken($primary, 20%);
+    color: $bg-white;
+  }
+}
+
+.secondaryLink a {
+  background: transparent;
+  color: $primary;
+  padding: 0.7rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  border: 2px solid $primary;
+  transition: all ease-in-out 0.3s;
+  display: block;
+  &:hover {
+    background: darken($primary, 20%);
+    color: $bg-white;
+  }
 }
 
 @media screen and (max-width: 768px) {

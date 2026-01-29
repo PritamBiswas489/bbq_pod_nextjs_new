@@ -5,7 +5,13 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 import { TiArrowRightOutline } from "react-icons/ti";
 
-const ModelConfiguratorBanner = () => {
+const ModelConfiguratorBanner = ({
+  title,
+  description,
+  leftButton,
+  rightButton,
+  showButtons = true,
+}) => {
   return (
     <section className={styles.banner}>
       <div className={styles.bannerInner}>
@@ -15,7 +21,7 @@ const ModelConfiguratorBanner = () => {
           data-aos-duration="1000"
           data-aos-once="true"
         >
-          Not Sure Which Model Is Right for You?
+          {title}
         </h2>
         <p
           className={styles.description}
@@ -23,36 +29,36 @@ const ModelConfiguratorBanner = () => {
           data-aos-duration="1000"
           data-aos-once="true"
         >
-          Use our interactive configurator to explore features, compare models,
-          and visualise your perfect outdoor kitchen. Get a personalised quote
-          in minutes.
+          {description}
         </p>
-        <div className={styles.buttonContainer}>
-          <ul>
-            <li>
-              <Link
-                href="#"
-                className={styles.button}
-                data-aos="zoom-in-up"
-                data-aos-duration="1000"
-                data-aos-once="true"
-              >
-                Try Configurator <TiArrowRightOutline size={20} />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="#"
-                className={styles.button}
-                data-aos="zoom-in-up"
-                data-aos-duration="1000"
-                data-aos-once="true"
-              >
-                Compare All Models
-              </Link>
-            </li>
-          </ul>
-        </div>
+        {showButtons && (
+          <div className={styles.buttonContainer}>
+            <ul>
+              <li>
+                <Link
+                  href="#"
+                  className={styles.leftButton}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
+                  {leftButton} <TiArrowRightOutline size={20} />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className={styles.rightButton}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1000"
+                  data-aos-once="true"
+                >
+                  {rightButton} <TiArrowRightOutline size={20} />
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );

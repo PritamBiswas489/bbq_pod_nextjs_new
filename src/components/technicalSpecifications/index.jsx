@@ -1,0 +1,89 @@
+import React from "react";
+import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
+import {
+  BsArrowLeftRight,
+  BsArrowsVertical,
+  BsFire,
+  //   BsSnowflake,
+} from "react-icons/bs";
+import { GiSnowflake1 } from "react-icons/gi";
+import styles from "./index.module.scss";
+
+const defaultDimensions = [
+  {
+    icon: <BsArrowLeftRight className={styles.icon} />,
+    label: "Length",
+    value: "2210mm",
+  },
+  {
+    icon: <BsArrowLeftRight className={styles.icon} />,
+    label: "Width",
+    value: "1002mm",
+  },
+  {
+    icon: <BsArrowsVertical className={styles.icon} />,
+    label: "Height",
+    value: "2350mm",
+  },
+];
+
+const defaultEquipment = [
+  {
+    icon: <BsFire className={styles.icon} />,
+    label: "Grill",
+    value: '30" three-burner gas grill',
+  },
+  {
+    icon: <GiSnowflake1 className={styles.icon} />,
+    label: "Fridge",
+    value: '21" integrated fridge',
+  },
+];
+
+const TechnicalSpecifications = ({
+  title = "Technical Specifications",
+  subtitle = "Precision-engineered for performance and longevity",
+  dimensions = defaultDimensions,
+  equipment = defaultEquipment,
+}) => {
+  return (
+    <section className={styles.section}>
+      <Container>
+        <h2 className={styles.title}>{title}</h2>
+        <p className={styles.subtitle}>{subtitle}</p>
+        <Card className={styles.specCard}>
+          <Card.Body>
+            <Row>
+              <Col md={6}>
+                <h5 className={styles.cardHeader}>Dimensions</h5>
+                <ListGroup variant="flush">
+                  {dimensions.map((item, index) => (
+                    <ListGroup.Item key={index} className={styles.specItem}>
+                      {item.icon}
+                      <span className={styles.label}>{item.label}</span>
+                      <span className={styles.value}>{item.value}</span>
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+              </Col>
+              <Col md={6}>
+                <h5 className={styles.cardHeader}>Core Equipment</h5>
+                <ListGroup variant="flush">
+                  {equipment.map((item, index) => (
+                    <ListGroup.Item key={index} className={styles.specItem}>
+                      {item.icon}
+                      <span className={styles.label}>{item.label}</span>
+                      <span className={styles.value}>{item.value}</span>
+                    </ListGroup.Item>
+                  ))}
+                </ListGroup>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+      </Container>
+    </section>
+  );
+};
+
+export default TechnicalSpecifications;
