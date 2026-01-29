@@ -73,9 +73,13 @@ const Customize = () => {
   const [categoryState, dispatch] = useReducer(changingCategoryReducer, initialState);
   const [isLoading, setIsLoading] = useState(true);
   const [isLoadingOnCategoryChange, setIsLoadingOnCategoryChange] = useState(false);
+  const [imagesLoaded, setImagesLoaded] = useState({});
+  const [totalImagesToLoad, setTotalImagesToLoad] = useState(0);
 
   useEffect(() => {
     console.log("categoryState changed:", categoryState);
+    // Reset images loaded when category changes
+    setImagesLoaded({});
   }, [categoryState]);
 
   useEffect(() => {
@@ -85,19 +89,41 @@ const Customize = () => {
   }, 2000);
   }, []);
 
-  // Handle loader when category changes
+  // Handle loader when category changes - show until all images load
   useEffect(() => {
     if (isLoadingOnCategoryChange) {
-      const timer = setTimeout(() => {
+      // Count loaded images
+      const loadedCount = Object.values(imagesLoaded).filter(Boolean).length;
+      
+      // Hide loader when all images are loaded or after max timeout
+      if (loadedCount >= totalImagesToLoad && totalImagesToLoad > 0) {
         setIsLoadingOnCategoryChange(false);
-      }, 500); // Adjust duration as needed
-      return () => clearTimeout(timer);
+      }
+      
+      // Safety timeout to hide loader after 3 seconds max
+      const safetyTimer = setTimeout(() => {
+        setIsLoadingOnCategoryChange(false);
+      }, 3000);
+      
+      return () => clearTimeout(safetyTimer);
     }
-  }, [isLoadingOnCategoryChange]);
+  }, [isLoadingOnCategoryChange, imagesLoaded, totalImagesToLoad]);
+
+  const handleImageLoad = (imageId) => {
+    setImagesLoaded(prev => ({
+      ...prev,
+      [imageId]: true
+    }));
+  };
 
   //change product category 
   const changeProductCategory = (category) => {
     setIsLoadingOnCategoryChange(true);
+    setImagesLoaded({});
+    // Count total images for this category
+    const selectedCategory = categoryList.find(cat => cat.id === category);
+    const totalImages = 1 + (selectedCategory?.elements?.length || 0); // 1 main image + elements
+    setTotalImagesToLoad(totalImages);
     dispatch({ type: "CHANGE_CATEGORY", payload: category });
   };
   // change outer frame color
@@ -147,12 +173,14 @@ const Customize = () => {
                 {
                   categoryList.map((cat,index)=>(
                     <Image
+                      key={`cat-img-${cat.id}`}
                       src={
                         cat.image
                       }
                       alt=""
                       height={1493}
                       width={2000}
+                      onLoad={() => handleImageLoad(`cat-${cat.id}`)}
                       style={cat.id === categoryState.selectedCategoryId ? { display: "block" } : { display: "none" }}
                 />
 
@@ -209,6 +237,7 @@ const Customize = () => {
                               alt=""
                               width={1200}
                               height={600}
+                              onLoad={() => handleImageLoad(`element-${categoryState.selectedCategoryId}-${index}`)}
                             />
                           </Link>
                         </li>
