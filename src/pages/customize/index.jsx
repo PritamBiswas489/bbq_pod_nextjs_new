@@ -9,6 +9,7 @@ import { useState, useReducer } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Cta from "@/components/cta";
+import Loader from "@/components/loader";
 import { mini, plus, pro, max, ultra, outerFrame, powerCoting, transferPainting, sinteredStone, stainless, sinterdStone, categoryList } from "@/utils/imageElements";
 
 
@@ -70,11 +71,33 @@ const changingCategoryReducer = (state, action) => {
 const Customize = () => {
   // leftImg
   const [categoryState, dispatch] = useReducer(changingCategoryReducer, initialState);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isLoadingOnCategoryChange, setIsLoadingOnCategoryChange] = useState(false);
+
   useEffect(() => {
     console.log("categoryState changed:", categoryState);
-  },[categoryState])
+  }, [categoryState]);
+
+  useEffect(() => {
+    setIsLoading(false);
+  setTimeout(() => {
+    setIsLoading(false);
+  }, 2000);
+  }, []);
+
+  // Handle loader when category changes
+  useEffect(() => {
+    if (isLoadingOnCategoryChange) {
+      const timer = setTimeout(() => {
+        setIsLoadingOnCategoryChange(false);
+      }, 500); // Adjust duration as needed
+      return () => clearTimeout(timer);
+    }
+  }, [isLoadingOnCategoryChange]);
+
   //change product category 
   const changeProductCategory = (category) => {
+    setIsLoadingOnCategoryChange(true);
     dispatch({ type: "CHANGE_CATEGORY", payload: category });
   };
   // change outer frame color
@@ -106,6 +129,7 @@ const Customize = () => {
   };
   return (
     <Layout>
+      <Loader isVisible={isLoadingOnCategoryChange} />
       <InnerBanner
         badgeText="Customized Outdoor Kitchen"
         title="BBQ Pods"
@@ -358,6 +382,7 @@ const Customize = () => {
           </div>
         </div>
       </section>
+      
       <Cta />
     </Layout>
   );
