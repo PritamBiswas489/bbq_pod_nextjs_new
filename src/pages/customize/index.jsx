@@ -144,16 +144,21 @@ const Customize = () => {
           <div className="row">
             <div className={style.left}>
               <div className={style.display}>
-                <img
-                  src={
-                    categoryList.find(
-                      (cat) => cat.id === categoryState.selectedCategoryId,
-                    ).image
-                  }
-                  alt=""
-                  height={1493}
-                  width={2000}
+                {
+                  categoryList.map((cat,index)=>(
+                    <Image
+                      src={
+                        cat.image
+                      }
+                      alt=""
+                      height={1493}
+                      width={2000}
+                      style={cat.id === categoryState.selectedCategoryId ? { display: "block" } : { display: "none" }}
                 />
+
+                  ))
+                }
+                
                 {/* leftImg */}
                 <ul className={style.mainImg}>
                   {categoryList
