@@ -5,6 +5,12 @@ import InnerBanner from "@/components/innerBanner";
 import hero2 from "@/assets/front/images/hero-2.webp";
 import { useState, useReducer } from "react";
 
+// Kitchen images - preloaded
+import miniKitchen from "@/assets/front/images/kitchen/mini/2210-1.jpg";
+import plusKitchen from "@/assets/front/images/kitchen/plus/1/2690.jpg";
+import proKitchen from "@/assets/front/images/kitchen/pro/1/3180.jpg";
+import maxKitchen from "@/assets/front/images/kitchen/max/1/3500.jpg";
+import ultraKitchen from "@/assets/front/images/kitchen/ultra/1/3760.jpg";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -75,6 +81,19 @@ const Customize = () => {
   const [isLoadingOnCategoryChange, setIsLoadingOnCategoryChange] = useState(false);
   const [imagesLoaded, setImagesLoaded] = useState({});
   const [totalImagesToLoad, setTotalImagesToLoad] = useState(0);
+
+  // Preload kitchen images on component mount
+  useEffect(() => {
+    const kitchenImages = [miniKitchen, plusKitchen, proKitchen, maxKitchen, ultraKitchen];
+    
+    kitchenImages.forEach((img) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = typeof img === 'string' ? img : img.src;
+      document.head.appendChild(link);
+    });
+  }, []);
 
   useEffect(() => {
     console.log("categoryState changed:", categoryState);
