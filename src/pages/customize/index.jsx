@@ -172,7 +172,7 @@ const Customize = () => {
               <div className={style.display}>
                 {
                   categoryList.map((cat,index)=>(
-                    <img
+                    <Image
                       key={`cat-img-${cat.id}`}
                       src={
                         cat.image
