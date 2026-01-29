@@ -178,8 +178,8 @@ const Customize = () => {
                         cat.image
                       }
                       alt=""
-                      height={1493}
-                      width={2000}
+                      height={300}
+                      width={500}
                       onLoad={() => handleImageLoad(`cat-${cat.id}`)}
                       style={cat.id === categoryState.selectedCategoryId ? { display: "block" } : { display: "none" }}
                 />
