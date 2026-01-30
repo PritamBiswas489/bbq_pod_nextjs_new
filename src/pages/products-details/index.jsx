@@ -19,6 +19,14 @@ import ModelConfiguratorBanner from "@/components/modelConfiguratorBanner";
 import Faqs from "@/components/faqs";
 import YourGarden from "@/components/yourGarden";
 import ApplianceOptions from "@/components/applianceOptions";
+import MaterialOptions from "@/components/materialOptions";
+import GalleryImage from "@/components/galleryImage";
+
+import hero1 from "@/assets/front/images/outdoor/hero-1.jpg";
+import hero2 from "@/assets/front/images/outdoor/hero-2.jpg";
+import hero3 from "@/assets/front/images/outdoor/hero-3.webp";
+import hero4 from "@/assets/front/images/outdoor/hero-4.jpg";
+import ExploreOtherModels from "@/components/exploreOtherModels";
 
 export const productFaqs = [
   {
@@ -28,6 +36,51 @@ export const productFaqs = [
   {
     question: "Can the A-Mini handle year-round use?",
     answer: `Yes. Like all our BBQ pods, the A-Mini features weatherproof construction with 6-layer insulated door panels, sealed electronics, and drainage systems. The stainless steel construction and insulation make it perfect for British weather throughout all seasons.`,
+  },
+];
+
+const images = [
+  {
+    id: 1,
+    src: hero1.src,
+    categories: ["lifestyle", "a-mini"],
+    label: "A-Mini",
+  },
+  {
+    id: 2,
+    src: hero2.src,
+    categories: ["technical", "a-mini"],
+    label: "A-Mini",
+  },
+  {
+    id: 3,
+    src: hero3.src,
+    categories: ["lifestyle", "a-plus"],
+    label: "A-Plus",
+  },
+  {
+    id: 4,
+    src: hero4.src,
+    categories: ["technical", "a-plus"],
+    label: "A-Plus",
+  },
+  {
+    id: 5,
+    src: hero4.src,
+    categories: ["technical", "a-plus"],
+    label: "A-Plus",
+  },
+  {
+    id: 6,
+    src: hero3.src,
+    categories: ["technical", "a-finishes"],
+    label: "Finishes",
+  },
+  {
+    id: 7,
+    src: hero2.src,
+    categories: ["technical", "countertops"],
+    label: "Countertops",
   },
 ];
 
@@ -201,6 +254,16 @@ const ProductsDetails = () => {
         footerText={[]}
       />
       <ApplianceOptions />
+      <MaterialOptions />
+      <section className={style.productGallery}>
+        <TitleHeader
+          whyChoose={[]}
+          title="Product Gallery"
+          subtitle="Professional product photography, annotated technical diagrams, and detailed dimension specifications"
+        />
+        <GalleryImage images={images} showFilters={false} showLabel={false} />
+      </section>
+      <ExploreOtherModels />
     </Layout>
   );
 };

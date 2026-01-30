@@ -66,24 +66,25 @@
   background-color: $dark;
   border-radius: 1rem;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 2rem;
   color: $bg-white;
   margin-top: 2rem;
   p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: 1rem;
   }
 }
 .footerButton {
-  background-color: $primary;
-  color: $white;
-  padding: 0.5rem 1rem;
-  border-radius: 50px;
+  color: #fff;
+  background: $primary;
+  // border: 2px solid #0000;
+  border-radius: 2rem;
+  padding: 0.7rem 2rem;
   font-weight: 600;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  transition: all ease-in-out 0.3s;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
   &:hover {
     background-color: darken($primary, 10%);
     color: $bg-white;

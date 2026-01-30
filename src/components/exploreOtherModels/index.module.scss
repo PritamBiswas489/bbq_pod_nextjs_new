@@ -1,0 +1,77 @@
+@import "@/assets/front/styles/variable.scss";
+.wrapper {
+  padding: 4rem 0 6rem;
+  background: #f1eded;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* MODEL BUTTONS */
+.modelBtn {
+  background: $bg-white;
+  border: 1px solid #e5e5e5;
+  padding: 14px 26px;
+  border-radius: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+
+  svg {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+
+    svg {
+      transform: translateX(4px);
+    }
+  }
+}
+
+/* ACTIVE STATE */
+.active {
+  border-color: $primary;
+  color: $primary;
+}
+
+/* COMPARE CTA */
+.compareBtn {
+  background: $primary;
+  color: $bg-white;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+
+  svg {
+    font-size: 18px;
+  }
+
+  &:hover {
+    background: $primary;
+    transform: translateY(-3px);
+    box-shadow: 0 14px 28px rgba(255, 45, 22, 0.35);
+  }
+}

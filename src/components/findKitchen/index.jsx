@@ -109,7 +109,7 @@ const FindKitchen = () => {
           </ul>
 
           <div className={styles.footer}>
-            <p className="mb-2">Still unsure which model is right for you?</p>
+            <p>Still unsure which model is right for you?</p>
             <Link href={"#"} className={styles.footerButton}>
               Get Expert Advice <FaChevronRight className={styles.buttonIcon} />
             </Link>
