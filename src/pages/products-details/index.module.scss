@@ -143,6 +143,9 @@
     transform: rotate(352deg);
   }
 }
+.faqs {
+  padding: 4rem 0;
+}
 
 @media only screen and (max-width: 768px) {
   .bannerContent {
@@ -205,6 +208,9 @@
         }
       }
     }
+  }
+  .faqs {
+    padding: 2rem 0;
   }
 }
 

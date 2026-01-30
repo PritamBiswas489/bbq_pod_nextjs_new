@@ -167,6 +167,10 @@
   }
 }
 
+.faqs {
+  padding: 4rem 0;
+}
+
 @media only screen and (max-width: 768px) {
   .bannerContent {
     h1 {
@@ -246,5 +250,9 @@
         }
       }
     }
+  }
+
+  .faqs {
+    padding: 2rem 0;
   }
 }

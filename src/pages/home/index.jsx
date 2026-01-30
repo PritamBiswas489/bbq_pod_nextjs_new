@@ -5,6 +5,8 @@ import Image from "next/image";
 import style from "./index.module.scss";
 import Layout from "@/section/layout";
 import { Col, Container, Row } from "react-bootstrap";
+import { FaArrowRight, FaStar } from "react-icons/fa";
+import heroImage from "@/assets/front/images/hero-2.webp";
 import bannerImage from "@/assets/front/images/ban-slider/ban-1.jpg";
 import Link from "next/link";
 import FeaturesSection from "@/components/featuresSection";
@@ -20,6 +22,50 @@ import Testimonials from "@/components/testimonials";
 import CraftedBy from "@/components/craftedBy";
 import Faqs from "@/components/faqs";
 import Cta from "@/components/cta";
+import TitleHeader from "@/components/titleHeader";
+
+export const homeFaqs = [
+  {
+    question: "How long is the shipping time?",
+    answer:
+      "Shipping typically takes 4-8 weeks depending on the manufacturer, customization level, and location. For example, prefabricated models may ship in 4-6 weeks, while international freight can add 30-45 days.",
+  },
+  {
+    question: "Do I need planning permission for a BBQ pod?",
+    answer:
+      "In the UK, most BBQ pods fall under permitted development rights and do not require planning permission if they are under 4 meters in height, not a permanent structure, and meet size limits (e.g., covering less than 50% of your garden). Always check with your local authority, especially in conservation areas.",
+  },
+  {
+    question: "What warranty coverage is included?",
+    answer:
+      "Warranties vary by brand but generally include 2-5 years on the structure and parts, with 1-5 years on appliances like grills and refrigerators. Exclusions often apply for misuse or lack of maintenance. Check the manufacturer's documentation for details.",
+  },
+  {
+    question: "Can I use the pod year-round in British weather?",
+    answer:
+      "Yes, most BBQ pods are designed for year-round use with weatherproof materials like 304 stainless steel, insulation, and features like motorized awnings. They can withstand rain, wind, and cold, allowing outdoor cooking even in winter.",
+  },
+  {
+    question: "What utilities do I need for installation?",
+    answer:
+      "Basic requirements include a level concrete base, 240V electrical supply for lights and appliances, gas (natural or propane) for the grill, and water/drainage if including a sink. Professional installation is recommended for safety.",
+  },
+  {
+    question: "How do I choose the right model for my garden?",
+    answer:
+      "Consider your garden size, desired features (e.g., grill size, storage, refrigeration), budget, and customization options like colors or appliances. Measure your space and think about usage—compact models for small gardens, larger ones for entertaining.",
+  },
+  {
+    question: "What ongoing maintenance is required?",
+    answer:
+      "Regular cleaning of grates and burners after each use, deep cleaning every 3 months (scrub interior, check for rust), and annual inspections of gas lines and electrical components. Use mild soap and avoid harsh chemicals to preserve the finish.",
+  },
+  {
+    question: "Can I customise the pod after purchase?",
+    answer:
+      "Major customizations like colors and finishes are typically done at purchase, but you can often add or upgrade accessories, appliances, storage, or lighting post-purchase. Some brands offer modular designs for easy modifications.",
+  },
+];
 
 const Home = () => {
   return (
@@ -160,7 +206,6 @@ const Home = () => {
         <FeaturesSection />
         <CounterSection />
         <OutdoorKitchens />
-
         <ModelConfiguratorBanner
           title="Not Sure Which Model Is Right for You?"
           description="Use our interactive configurator to explore features, compare models, and visualise your perfect outdoor kitchen. Get a personalised quote in minutes."
@@ -168,13 +213,39 @@ const Home = () => {
           rightButton="Compare All Models"
         />
         <ComparisonTable />
-        <YourGarden />
+        <YourGarden
+          title="Ready to Transform Your Garden?"
+          description="Get a personalised quote in under 2 minutes — no obligation from our expert team."
+          backgroundImage={heroImage}
+          badges={[
+            { icon: <FaArrowRight />, text: "2-Minute Quote Process" },
+            { icon: <FaStar />, text: "No Obligation Quote" },
+          ]}
+          primaryButton={{
+            label: "Get My Personalised Quote",
+            href: "",
+          }}
+          secondaryButton={{
+            label: "Try the Configurator",
+            href: "",
+          }}
+          footerText="Join 100+ satisfied UK families who transformed their gardens with BBQ Pods"
+        />
+        ;
         <ExteriorColours />
         <StainlessSteel />
         <InteriorFinishesBanner />
         <Testimonials />
         <CraftedBy />
-        <Faqs />
+        <section className={style.faqs}>
+          <TitleHeader
+            whyChoose="FREQUENTLY ASKED QUESTIONS"
+            title="Got Questions?"
+            subtitle="Everything you need to know about BBQ pods, delivery, and installation."
+          />
+          {/* <Faqs /> */}
+          <Faqs faqs={homeFaqs} />
+        </section>
         <Cta />
       </Layout>
     </>

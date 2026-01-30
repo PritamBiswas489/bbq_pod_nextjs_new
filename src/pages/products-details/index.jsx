@@ -4,6 +4,7 @@ import style from "./index.module.scss";
 import Layout from "@/section/layout";
 import { Col, Container, Row } from "react-bootstrap";
 import bannerImage from "@/assets/front/images/ban-slider/ban-1.jpg";
+import heroImage from "@/assets/front/images/hero-1.jpg";
 import Link from "next/link";
 import { TiArrowRightOutline } from "react-icons/ti";
 import LifestyleFeatures from "@/components/lifestyleFeatures";
@@ -15,6 +16,20 @@ import SingleImage from "@/components/singleImg";
 import TitleHeader from "@/components/titleHeader";
 import WhatInclude from "@/components/whatInclude";
 import ModelConfiguratorBanner from "@/components/modelConfiguratorBanner";
+import Faqs from "@/components/faqs";
+import YourGarden from "@/components/yourGarden";
+import ApplianceOptions from "@/components/applianceOptions";
+
+export const productFaqs = [
+  {
+    question: "Is the A-Mini suitable for small gardens?",
+    answer: `Absolutely. The A-Mini is specifically designed for smaller UK gardens with its compact 2210mm length. Despite its space-efficient footprint, it includes a professional 30" grill, integrated fridge, and full LED lighting - delivering complete outdoor kitchen functionality without overwhelming your garden space.`,
+  },
+  {
+    question: "Can the A-Mini handle year-round use?",
+    answer: `Yes. Like all our BBQ pods, the A-Mini features weatherproof construction with 6-layer insulated door panels, sealed electronics, and drainage systems. The stainless steel construction and insulation make it perfect for British weather throughout all seasons.`,
+  },
+];
 
 const ProductsDetails = () => {
   return (
@@ -163,6 +178,29 @@ const ProductsDetails = () => {
         rightButton="Compare All Models"
         showButtons={false}
       />
+      <section className={style.faqs}>
+        <TitleHeader
+          whyChoose={[]}
+          title="A-Mini FAQs"
+          subtitle="Common questions about this model"
+        />
+        <Faqs faqs={productFaqs} />
+      </section>
+      <YourGarden
+        title="Ready to Transform Your Garden?"
+        description="Get a personalised quote in under 2 minutes. No obligation, instant response from our expert team."
+        backgroundImage={heroImage}
+        primaryButton={{
+          label: "Get Quote for A-Mini",
+          href: "",
+        }}
+        secondaryButton={{
+          label: "Try Configurator",
+          href: "",
+        }}
+        footerText={[]}
+      />
+      <ApplianceOptions />
     </Layout>
   );
 };

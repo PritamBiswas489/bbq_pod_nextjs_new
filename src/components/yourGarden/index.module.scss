@@ -45,6 +45,19 @@
     margin-bottom: 2rem;
   }
 }
+
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
 .processQuote {
   background: rgba(255, 255, 255, 0.2);
   color: $white;
