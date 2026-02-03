@@ -85,7 +85,10 @@ const Header = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className={`btn ${style.getQuoteBtn}`}>
+                  <Link
+                    href="/get-quote"
+                    className={`btn ${style.getQuoteBtn}`}
+                  >
                     Get Quote <TiArrowRightOutline className="ms-1" />
                   </Link>
                 </li>

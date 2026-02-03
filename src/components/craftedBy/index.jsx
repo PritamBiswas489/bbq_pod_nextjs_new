@@ -125,9 +125,11 @@ const CraftedBy = () => {
               <Image
                 src={heroImage.src}
                 alt="Outdoor Kitchen"
-                fill
+                // fill
                 className={styles.image}
-                priority
+                // priority
+                width={636}
+                height={440}
               />
 
               <div className={styles.tag}>

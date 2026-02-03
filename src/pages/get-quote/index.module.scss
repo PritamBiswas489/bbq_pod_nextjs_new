@@ -1,0 +1,330 @@
+@import "@/assets/front/styles/variable.scss";
+
+.getQuote {
+  padding: 4rem 0 6rem;
+  background-color: $lightGray-2;
+}
+.container {
+  background-color: $bg-white;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem;
+  border-radius: 30px;
+}
+
+.formHeader {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  border-bottom: $lightGray 1px solid;
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.description {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #666;
+}
+
+.link {
+  color: $primary;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.noPayment {
+  font-size: 0.775rem;
+  background: $bg-green;
+  color: $bg-white;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+}
+.formBody {
+  h4 {
+    font-size: 1.125rem;
+    margin-top: 1rem;
+  }
+}
+
+.input {
+  background-color: #fafafa;
+  margin-bottom: 10px;
+  border: none !important;
+  height: 2.875rem;
+  font-size: 0.875rem;
+  &::placeholder {
+    color: #6c757d;
+  }
+}
+
+.podSelectionBox {
+  background-color: #ffebee;
+  border-radius: 4px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 20px;
+
+  p {
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  .viewModelButton {
+    color: $bg-white;
+    background: $primary;
+    border-radius: 2rem;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    &:hover {
+      background: darken($primary, 20%);
+    }
+  }
+}
+
+.colorInput {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.linkSmall {
+  font-size: 0.75rem;
+  color: #ff8000;
+  display: block;
+  margin-top: -5px;
+  text-decoration: underline;
+}
+
+.dotIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.5rem;
+  color: #6c757d;
+  z-index: 2;
+}
+
+.question {
+  font-size: 0.875rem;
+  margin-bottom: 5px;
+  display: block;
+  font-weight: 600;
+}
+
+.radioGroup {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+.radioBox {
+  margin-bottom: 1rem;
+}
+.radio {
+  margin-right: 20px;
+  .form-check-label {
+    color: $primary;
+  }
+  .form-check-input {
+    border-color: $primary;
+    width: 1em;
+    height: 1em;
+  }
+  .form-check-input:checked {
+    background-color: $primary;
+    border-color: $primary;
+  }
+  .form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.25);
+  }
+}
+
+.textarea {
+  background-color: #fafafa;
+  border: none !important;
+  margin-bottom: 10px;
+  &::placeholder {
+    color: #6c757d;
+  }
+}
+
+.checkbox {
+  margin-bottom: 20px;
+  .form-check-input:checked {
+    background-color: $primary;
+    border-color: $primary;
+  }
+  .form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 0, 0, 0.25);
+  }
+}
+
+.submitButton {
+  background-color: $primary !important;
+  border: none !important;
+  padding: 15px;
+  border-radius: 50rem !important;
+  width: 100%;
+  font-weight: bold;
+  &:hover {
+    background-color: darken($primary, 10%) !important;
+  }
+}
+
+.terms {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 10px;
+  a {
+    color: $primary;
+  }
+}
+.podCard {
+  cursor: pointer;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.active {
+  border-color: $primary;
+}
+
+.price {
+  font-weight: 700;
+  color: $primary;
+  margin-bottom: 10px;
+}
+
+.selectBtn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  background: #f1f1f1;
+  transition: all 0.3s ease;
+  font-size: 0.775rem;
+
+  &:hover {
+    background: darken(#f1f1f1, 5%);
+  }
+}
+.configureBtn {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  border: none;
+  font-weight: 600;
+  background: $secondary;
+  transition: all 0.3s ease;
+  color: $bg-white;
+  font-size: 0.775rem;
+
+  &:hover {
+    background: darken($secondary, 5%);
+  }
+}
+.selectedPodCol {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 1rem;
+  .input {
+    margin-bottom: 0;
+  }
+}
+.selectedPodColInner {
+  background: $bg-white;
+  padding: 0 1.5rem;
+  height: 2.875rem;
+  border-radius: 0.375rem;
+}
+.selectedPodLable {
+  flex: 100%;
+  text-align: left;
+  max-width: 100%;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: $dark;
+}
+.selected {
+  background: $primary;
+  color: $bg-white;
+}
+
+.selectedPod {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 -1rem;
+}
+
+.changeBtn {
+  background: none;
+  border: none;
+  color: $primary;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.podCard {
+  cursor: pointer;
+  height: 100%;
+}
+
+.podCard {
+}
+.imgWrap {
+  position: relative;
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+  ul {
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    li {
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      color: $bg-white;
+      font-weight: 600;
+      font-size: 0.775rem;
+      &.saveBadge {
+        background: $bg-green;
+      }
+      &.typeBadge {
+        background: $primary;
+      }
+    }
+  }
+}
+
+.active {
+  border: 2px solid #e4572e;
+}
+
+.selectBtn {
+  margin-top: auto;
+}
+
+.selected {
+  background: #e4572e;
+  color: #fff;
+}
