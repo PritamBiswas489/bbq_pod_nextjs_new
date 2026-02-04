@@ -11,8 +11,8 @@ const YourGarden = ({
   backgroundImage,
   badges = [],
   primaryButton,
-  secondaryButton,
-  footerText,
+  secondaryButton = [],
+  footerText = [],
 }) => {
   return (
     <div
@@ -56,42 +56,16 @@ const YourGarden = ({
 
               {/* BUTTONS */}
               <div className={styles.actions}>
-                {primaryButton && (
-                  <Link
-                    href={primaryButton.href}
-                    className={styles.personalisedQuoteBtn}
-                    data-aos="zoom-in-left"
-                    data-aos-duration="1000"
-                    data-aos-once
-                  >
-                    {primaryButton.label} <TiArrowRightOutline />
-                  </Link>
-                )}
-
-                {secondaryButton && (
-                  <Link
-                    href={secondaryButton.href}
-                    className={styles.configuratorBtn}
-                    data-aos="zoom-in-right"
-                    data-aos-duration="1000"
-                    data-aos-once
-                  >
-                    {secondaryButton.label} <VscGear />
-                  </Link>
-                )}
-              </div>
-
-              {/* FOOTER TEXT */}
-              {footerText && (
-                <p
-                  className={styles.footerText}
-                  data-aos="fade-up"
+                <Link
+                  href={primaryButton.href}
+                  className={styles.personalisedQuoteBtn}
+                  data-aos="zoom-in-left"
                   data-aos-duration="1000"
                   data-aos-once
                 >
-                  {footerText}
-                </p>
-              )}
+                  {primaryButton.label} <TiArrowRightOutline />
+                </Link>
+              </div>
             </div>
           </Col>
         </Row>

@@ -36,7 +36,7 @@
 
 .quoteBannerInner {
   h2 {
-    color: $lightGray-2;
+    color: $primary;
     margin-bottom: 1rem;
   }
   p {
@@ -50,19 +50,19 @@
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 .actions {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 2rem;
 }
 .processQuote {
-  background: rgba(255, 255, 255, 0.2);
-  color: $white;
+  background: rgba(255, 255, 255, 0.6);
+  color: $dark;
+  font-weight: 600;
   padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border-radius: 2rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;

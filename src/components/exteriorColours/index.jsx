@@ -11,66 +11,71 @@ const colors = [
     name: "Athens White",
     code: "IEPC-A01",
     hex: "#F8F8F8",
-    slug: "athens-white",
+    // slug: "athens-white",
   }, // Added slug for dynamic links (adjust as needed)
   {
     name: "Matte Beige",
     code: "IEPC-A02",
     hex: "#D7C4B3",
-    slug: "matte-beige",
+    // slug: "matte-beige",
   },
   {
     name: "Khaki Grey Sand",
     code: "IEPC-A03",
     hex: "#A39781",
-    slug: "khaki-grey-sand",
+    // slug: "khaki-grey-sand",
   },
   {
     name: "Grey Sparkle",
     code: "IEPC-A04",
     hex: "#6E6E6E",
-    slug: "grey-sparkle",
+    // slug: "grey-sparkle",
   },
   {
     name: "Light Medium Grey",
     code: "IEPC-A05",
     hex: "#B4B4B4",
-    slug: "light-medium-grey",
+    // slug: "light-medium-grey",
   },
   {
     name: "Silver Grey Sand",
     code: "IEPC-A06",
     hex: "#A8A8A8",
-    slug: "silver-grey-sand",
+    // slug: "silver-grey-sand",
   },
   {
     name: "Medium Grey Sand",
     code: "IEPC-A07",
     hex: "#7D7D7D",
-    slug: "medium-grey-sand",
+    // slug: "medium-grey-sand",
   },
   {
     name: "Grey Shimmer",
     code: "IEPC-A08",
     hex: "#5C5C5C",
-    slug: "grey-shimmer",
+    // slug: "grey-shimmer",
   },
   {
     name: "Purple-Grey Pine",
     code: "IEPC-A09",
     hex: "#5F5366",
-    slug: "purple-grey-pine",
+    // slug: "purple-grey-pine",
   },
-  { name: "Black Sand", code: "IEPC-A10", hex: "#2C2C2C", slug: "black-sand" },
+  {
+    name: "Black Sand",
+    code: "IEPC-A10",
+    hex: "#2C2C2C",
+    //  slug: "black-sand"
+  },
 ];
 
 const ExteriorColours = () => {
   return (
     <div className={styles.exteriorColours}>
       <TitleHeader
-        whyChoose="WHY CHOOSE BBQ PODS UK"
-        title="Premium Quality, Exceptional Service"
-        subtitle="Unlike temporary garden structures, our BBQ pods are designed as permanent outdoor kitchens with commercial-grade construction, UK-based support, and comprehensive manufacturer warranties."
+        whyChoose="Customisation Options"
+        title="A Curated Selection"
+        subtitle="Explore a handpicked preview of exterior colours, interior finishes, wood transfers and worktop options. Every BBQ Pod is made to order, with further customisation available."
       />
       <Container className={styles.container}>
         <div className={styles.titlesHeader}>
@@ -101,10 +106,8 @@ const ExteriorColours = () => {
               data-aos-duration="1000"
               data-aos-once="true"
             >
-              <Link
-                href={`/colors/${color.slug}`}
-                className={styles.swatchLink}
-              >
+              {/* <Link href={`/${color.slug}`} className={styles.swatchLink}> */}
+              <Link href={`#`} className={styles.swatchLink}>
                 <div
                   className={styles.swatch}
                   style={{ backgroundColor: color.hex }}

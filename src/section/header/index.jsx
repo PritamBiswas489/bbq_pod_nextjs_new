@@ -59,26 +59,29 @@ const Header = () => {
                     <Link href="/home">Home</Link>
                   </li>
                   <li>
+                    <Link href="/">About</Link>
+                  </li>
+                  <li>
                     <Link href="/products">Products</Link>
                   </li>
                   <li>
                     <Link href="/">Order Now</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link href="/gallery">Gallery</Link>
                   </li>
                   <li>
                     <Link href="/">Configurator</Link>
-                  </li>
-                  <li>
-                    <Link href="/">About</Link>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
             </div>
 
             <Col className={style.headerBtnCol} md="auto">
-              <ul className="d-flex align-items-center gap-3">
+              <Link href="/get-quote" className={`btn ${style.getQuoteBtn}`}>
+                Get Quote <TiArrowRightOutline className="ms-1" />
+              </Link>
+              {/* <ul className="d-flex align-items-center gap-3">
                 <li>
                   <Link href="/" className={`btn ${style.getQuoteBtnBdr}`}>
                     <MdOutlineCall size={20} /> 0808 225 0045
@@ -92,7 +95,7 @@ const Header = () => {
                     Get Quote <TiArrowRightOutline className="ms-1" />
                   </Link>
                 </li>
-              </ul>
+              </ul> */}
             </Col>
           </Row>
         </Container>

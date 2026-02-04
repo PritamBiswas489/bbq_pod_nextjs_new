@@ -1,6 +1,6 @@
 @import "@/assets/front/styles/variable.scss";
 .counterSection {
-  background: linear-gradient(90deg, #060020, #0d0241, #060020);
+  background: linear-gradient(90deg, #f7502f, #e74120, #f7502f);
   padding: 2.5rem 0;
 }
 
@@ -10,10 +10,9 @@
 }
 
 .number {
-  color: $primary !important;
+  color: $dark;
   font-size: 3rem;
   font-weight: bold;
-  color: $dark-2;
 }
 
 .label {

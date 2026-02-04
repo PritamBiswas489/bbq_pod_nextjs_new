@@ -39,11 +39,11 @@
         font-weight: 600;
         display: inline-flex;
         transition: background-color 0.3s ease;
-        &.leftButton {
+        &.rightButton {
           color: $bg-white;
           background-color: $primary;
         }
-        &.rightButton {
+        &.leftButton {
           color: $bg-white;
           background-color: $secondary;
         }

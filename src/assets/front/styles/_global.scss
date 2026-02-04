@@ -12,8 +12,8 @@ body {
 }
 
 body {
-  color: $dark-3;
-  background: $white;
+  color: $white;
+  background: $black;
   font-size: 0.938rem;
   font-family: "Montserrat";
   font-weight: normal;
@@ -39,7 +39,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $dark;
+  color: $bg-white;
   font-weight: 700;
   margin-bottom: 0.625rem;
 }

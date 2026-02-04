@@ -16,44 +16,51 @@ const featuresData = [
   {
     icon: <IoShieldCheckmarkOutline className={styles.svgIcon} />,
     color: "primary",
-    title: "Premium Construction",
+    title: "A New Standard for Outdoor Cooking",
     description:
-      "Designed for longevity with 6-layer insulated door panels and stainless steel construction. Commercial-grade materials ensure decades of reliable service.",
+      "Designed for life outdoors in Spain, our BBQ Pods are permanent, fully integrated outdoor kitchens - not temporary garden structures. Built with commercial-grade materials to handle sun, heat and year-round use, every pod is supported locally and protected by comprehensive manufacturer warranties.",
   },
   {
     icon: <IoPersonOutline className={styles.svgIcon} />,
     color: "primary",
-    title: "30+ Years Expertise",
+    title: "Premium Construction",
     description:
-      "Delivered and installed by Commercial Awnings Limited, UK specialists in premium outdoor structures for over three decades. Every pod benefits from our extensive experience.",
+      "Designed for long-term outdoor use, with 6-layer insulated door panels and stainless-steel construction. Commercial-grade materials deliver strength, durability and reliable performance for decades.",
   },
   {
     icon: <FaTruck className={styles.svgIcon} />,
     color: "primary",
-    title: "UK-Wide Delivery",
+    title: "Specialist Outdoor Kitchens",
     description:
-      "100% fully assembled delivery and professional installation across the entire UK. No DIY required - your pod arrives ready to use approx. 16 weeks from deposit.",
+      "BBQ Pod Spain focuses exclusively on premium outdoor kitchens, combining carefully selected manufacturing partners with hands-on project management to deliver exceptional results from order to installation",
   },
   {
     icon: <IoHammerOutline className={styles.svgIcon} />,
     color: "primary",
-    title: "Professional Grade",
+    title: "Spain-Wide Delivery",
     description:
-      "Commercial-quality appliances including grills, integrated refrigeration, and weather-resistant electronics. Built to the same standards as commercial kitchens.",
+      "Fully assembled delivery and professional installation across mainland Spain. No DIY required, your BBQ Pod arrives ready to use, typically around 16 weeks from deposit.",
   },
   {
     icon: <IoColorPaletteOutline className={styles.svgIcon} />,
     color: "primary",
-    title: "Fully Customisable",
+    title: "Professional Grade",
     description:
-      "Choose from 10 exterior powder-coated colours, 15 interior finishes, and multiple countertop options. Create a pod that perfectly complements your outdoor space.",
+      "High-performance appliances including grills, integrated refrigeration and sealed, weather-resistant electronics. Specified for continuous outdoor use and built to professional kitchen standards.",
   },
   {
     icon: <IoCloudOutline className={styles.svgIcon} />,
     color: "primary",
-    title: "All-Weather Design",
+    title: "Fully Customisable",
     description:
-      "Designed for the British climate with weatherproof construction, insulated panels, and optional motorised awning. Enjoy outdoor cooking year-round, rain or shine.",
+      "Select from 4 powder-coated exterior colours, 20 interior finishes and a choice of worktop options. Configure a BBQ Pod that fits seamlessly into your outdoor space.",
+  },
+  {
+    icon: <IoCloudOutline className={styles.svgIcon} />,
+    color: "primary",
+    title: "Built for the Spanish Climate",
+    description:
+      "Designed to handle sun, heat, dust and rain, our BBQ Pods remain clean and protected when closed. Open the pod and enjoy shaded, comfortable outdoor cooking throughout the year.",
   },
 ];
 
@@ -66,7 +73,7 @@ const FeaturesSection = () => {
           title="Premium Quality, Exceptional Service"
           subtitle="Unlike temporary garden structures, our BBQ pods are designed as permanent outdoor kitchens with commercial-grade construction, UK-based support, and comprehensive manufacturer warranties."
         />
-        <Row>
+        <Row className="justify-content-center">
           {featuresData.map((feature, index) => (
             <Col md={4} key={index} className="mb-4">
               <div

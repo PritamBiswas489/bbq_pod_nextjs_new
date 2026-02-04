@@ -3,7 +3,6 @@
   padding: 4rem 0;
 }
 .container {
-  background: $bg-white;
   border-radius: 8px;
   max-width: 1200px;
   margin: 0 auto;
@@ -72,7 +71,7 @@
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.15) 0 0 40px -15px;
   padding: 1.25rem;
-  background: $bg-white;
+  // background: $bg-white;
   &:hover {
     transform: translateY(-5px) scale(1.05);
   }
@@ -90,7 +89,8 @@
   text-align: center;
   font-size: 0.9rem;
   margin-top: 10px;
-  color: #333;
+  color: $primary;
+  font-weight: 600;
   line-height: 1.2;
 }
 

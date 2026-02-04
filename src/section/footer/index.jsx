@@ -19,26 +19,26 @@ const Footer = () => {
           <Row className={styles.statsSection}>
             <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
-                <span className={styles.statValue}>A+</span>
-                <span className={styles.statLabel}>Premium Quality</span>
+                <span className={styles.statValue}>Built for Spain</span>
+                <span className={styles.statLabel}>Mediterranean design</span>
               </div>
             </Col>
             <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
-                <span className={styles.statValue}>30+</span>
-                <span className={styles.statLabel}>Years Experience</span>
+                <span className={styles.statValue}>Up to 16 Weeks</span>
+                <span className={styles.statLabel}>Order to install</span>
               </div>
             </Col>
             <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
-                <span className={styles.statValue}>UK</span>
-                <span className={styles.statLabel}>Wide Delivery</span>
+                <span className={styles.statValue}>Spain-Wide</span>
+                <span className={styles.statLabel}>Delivery & install</span>
               </div>
             </Col>
             <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
-                <span className={styles.statValue}>100%</span>
-                <span className={styles.statLabel}>Fully Assembled</span>
+                <span className={styles.statValue}>Fully Assembled</span>
+                <span className={styles.statLabel}>Ready to use</span>
               </div>
             </Col>
           </Row>
@@ -49,28 +49,28 @@ const Footer = () => {
               <Image src={logo} alt="logo" width={893} height={137} priority />
             </div>
             <p className={styles.description}>
-              Transform your garden with luxury BBQ pods built with
-              commercial-grade materials. Designed and installed by Commercial
-              Awnings Ltd with over 30 years of experience.
+              Permanent, fully integrated outdoor kitchens designed for life
+              outdoors in Spain. Built with commercial-grade materials and
+              tailored to how you cook, host and live.
             </p>
           </Col>
           <Col md={2} className={styles.menuSection}>
             <h5>Our Products</h5>
             <ul>
               <li>
-                <a href="#">A-Mini</a>
+                <a href="#">Core</a>
               </li>
               <li>
-                <a href="#">A-Plus</a>
+                <a href="#">Prime</a>
               </li>
               <li>
-                <a href="#">A-Max</a>
+                <a href="#">Apex</a>
               </li>
               <li>
-                <a href="#">A-Ultra</a>
+                <a href="#">Pinnacle</a>
               </li>
               <li>
-                <a href="#">A-Pro</a>
+                <a href="#">Aero</a>
               </li>
             </ul>
           </Col>
@@ -78,13 +78,13 @@ const Footer = () => {
             <h5>Company</h5>
             <ul>
               <li>
-                <a href="#">About Us</a>
+                <a href="#">About us</a>
               </li>
               <li>
-                <a href="#">Gallery</a>
+                <a href="#">Products</a>
               </li>
               <li>
-                <a href="#">Configurator</a>
+                <a href="#">Brochure</a>
               </li>
               <li>
                 <a href="#">Contact</a>
@@ -95,21 +95,18 @@ const Footer = () => {
             <h5>Contact Us</h5>
             <ul>
               <li>
-                <FaPhoneAlt /> 0808 225 0045
+                <FaMapMarkerAlt /> Alhaurín de la Torre, Málaga
               </li>
               <li>
-                <FaEnvelope /> info@commercialawning.co.uk
+                <FaEnvelope /> sales@bbqpodspain.com
               </li>
               <li>
-                <FaMapMarkerAlt /> Unit 2266 Dunbeath Road, Swindon, Wiltshire
-                SN2 8EA
+                <FaPhoneAlt /> +34 672 021 437
               </li>
               <li>
-                <FaClock /> Mon-Fri: 9am - 5pm
+                <FaClock /> Mon - Sat: 9:00–17:00
                 <br />
-                Sat: By appointment
-                <br />
-                Sun: Closed
+                Visits by appointment only
               </li>
             </ul>
           </Col>
@@ -128,11 +125,8 @@ const Footer = () => {
                 <a href="#">Warranty Information</a>
               </li>
             </ul>
-            <p>&copy; 2026 Commercial Awnings Limited. All rights reserved.</p>
-            <p>
-              BBQ Pods is a trading name of Commercial Awnings Limited, a
-              company registered in England and Wales.
-            </p>
+            <p>&copy; 2026 BBQ Pod Spain SL. All rights reserved.</p>
+            <p>B24971665</p>
           </Col>
         </Row>
       </Container>

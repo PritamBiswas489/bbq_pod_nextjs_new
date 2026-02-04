@@ -1,5 +1,8 @@
+@import "@/assets/front/styles/variable.scss";
+.quickComparison {
+  padding: 4rem 0;
+}
 .container {
-  padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -23,7 +26,7 @@
 }
 
 .tableWrapper {
-  background: white;
+  background: rgba(255, 255, 255, 0.07);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -39,7 +42,14 @@
     padding: 16px 12px;
     vertical-align: middle;
     border: none;
-    border-bottom: #eee solid 1px;
+    border-bottom: #2b2b2b solid 1px;
+    background-color: transparent;
+    color: $bg-white;
+  }
+  tr {
+    &:hover {
+      background: $secondary;
+    }
   }
 }
 
@@ -127,7 +137,7 @@
   display: block;
   font-weight: 600;
   font-size: 15px;
-  color: #333;
+  color: $bg-green-2;
   margin-bottom: 8px;
 }
 
@@ -195,6 +205,9 @@
 }
 
 @media (max-width: 768px) {
+  .quickComparison {
+    padding: 4rem 0;
+  }
   .title {
     font-size: 1.8rem;
   }

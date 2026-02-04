@@ -6,61 +6,55 @@ import TitleHeader from "../titleHeader";
 const ComparisonTable = () => {
   const tableData = [
     {
-      model: "A-Mini →",
+      model: "CORE →",
       length: "2210mm",
-      grillSize: '30" three-burner gas grill',
-      keyFeature: "Premium quality",
+      grillSize: '30" premium gas BBQ',
+      keyFeature: "Compact integrated kitchen",
       bestFor: "Small gardens",
       color: "blue",
     },
     {
-      model: "A-Plus →",
+      model: "PRIME →",
       length: "2690mm",
-      grillSize: '30" three-burner gas grill',
-      keyFeature: '32" weatherproof outdoor TV',
-      bestFor: "Entertainers",
+      grillSize: ' 30" premium gas BBQ',
+      keyFeature: " Integrated TV & entertaining layout",
+      bestFor: "Entertaining",
       color: "purple",
     },
     {
-      model: "A-Max →",
+      model: "APEX →",
       length: "3500mm",
-      grillSize: '36" four-burner professional gas grill',
-      keyFeature: '42" weatherproof outdoor TV',
-      bestFor: "Luxury seekers",
+      grillSize: '36" premium gas BBQ',
+      keyFeature: "Larger cooking & prep space",
+      bestFor: "Premium living",
       color: "gold",
     },
     {
-      model: "A-Ultra →",
+      model: "PINNACLE →",
       length: "3760mm",
-      grillSize: '46" five-burner professional gas grill',
-      keyFeature: "Premium quality",
-      bestFor: "Grill masters",
+      grillSize: '46" premium gas BBQ',
+      keyFeature:
+        "Full-spec outdoor kitchen with motorised roof and luxury features",
+      bestFor: "Statement outdoor kitchens & hosting",
       color: "red",
     },
     {
-      model: "A-Pro →",
-      length: "3180mm",
-      grillSize: "Professional gas grill",
-      keyFeature: "Motorised retractable awning with remote",
-      bestFor: "All-weather use",
+      model: "AERO →",
+      length: "3139mm",
+      grillSize: '36" premium gas BBQ',
+      keyFeature: "Open-air design with awning",
+      bestFor: "Open air",
       color: "green",
     },
   ];
 
   return (
-    <section>
+    <section className={styles.quickComparison}>
       <Container className={styles.container}>
-        {/* <div className={styles.header}>
-        <h2 className={styles.title}>Quick Comparison</h2>
-        <p className={styles.subtitle}>
-          Compare our premium outdoor kitchen models
-        </p>
-      </div> */}
-
         <TitleHeader
           // whyChoose="Quick Comparison"
           title="Quick Comparison"
-          subtitle="Compare our premium outdoor kitchen models"
+          subtitle="Our premium outdoor kitchen range at a glance"
         />
 
         <div
@@ -95,7 +89,7 @@ const ComparisonTable = () => {
                       <div
                         className={styles.progressFill}
                         style={{
-                          width: `${(parseInt(row.length) / 3760) * 80}%`,
+                          width: `${(parseInt(row.length) / 3760) * 100}%`,
                         }}
                       ></div>
                     </div>

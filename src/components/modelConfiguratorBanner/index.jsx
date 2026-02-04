@@ -11,6 +11,8 @@ const ModelConfiguratorBanner = ({
   leftButton,
   rightButton,
   showButtons = true,
+  leftButtonWrap = true,
+  rightButtonWrap = true,
 }) => {
   return (
     <section className={styles.banner}>
@@ -34,28 +36,32 @@ const ModelConfiguratorBanner = ({
         {showButtons && (
           <div className={styles.buttonContainer}>
             <ul>
-              <li>
-                <Link
-                  href="#"
-                  className={styles.leftButton}
-                  data-aos="zoom-in-up"
-                  data-aos-duration="1000"
-                  data-aos-once="true"
-                >
-                  {leftButton} <TiArrowRightOutline size={20} />
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#"
-                  className={styles.rightButton}
-                  data-aos="zoom-in-up"
-                  data-aos-duration="1000"
-                  data-aos-once="true"
-                >
-                  {rightButton} <TiArrowRightOutline size={20} />
-                </Link>
-              </li>
+              {leftButtonWrap && (
+                <li>
+                  <Link
+                    href="#"
+                    className={styles.leftButton}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1000"
+                    data-aos-once="true"
+                  >
+                    {leftButton} <TiArrowRightOutline size={20} />
+                  </Link>
+                </li>
+              )}
+              {rightButtonWrap && (
+                <li>
+                  <Link
+                    href="#"
+                    className={styles.rightButton}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1000"
+                    data-aos-once="true"
+                  >
+                    {rightButton} <TiArrowRightOutline size={20} />
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
         )}

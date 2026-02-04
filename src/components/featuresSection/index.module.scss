@@ -1,21 +1,20 @@
 @import "@/assets/front/styles/variable.scss";
 .featuresSection {
-  background-color: $bg-white;
   padding: 4rem 0;
   text-align: center;
 }
 
 .card {
-  background: $white;
   text-align: center;
+  background: rgba(255, 255, 255, 0.07);
   border-radius: 20px;
   height: 100%;
   padding: 2rem;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 42px -14px;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 42px -14px $black;
   &:hover {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 8px 24px;
-    transform: translateY(-5px) scale(1.05);
+    box-shadow: rgba(255, 255, 255, 0.2) 0px 8px 24px;
+    transform: translateY(-5px) scale(1.05) !important;
   }
 }
 
@@ -63,11 +62,12 @@
 .cardTitle {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  // color: $dark;
 }
 
 .cardDescription {
   font-size: 0.875rem;
-  color: #666666;
+  color: $lightGray-2;
 }
 
 @media only screen and (max-width: 768px) {

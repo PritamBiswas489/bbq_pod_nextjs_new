@@ -101,8 +101,8 @@ const OutdoorKitchens = () => {
       <Container>
         <TitleHeader
           whyChoose="5 PREMIUM MODELS"
-          title="Choose Your Perfect Outdoor Kitchen"
-          subtitle="From compact garden solutions to professional-grade outdoor kitchens, each model is engineered with commercial-grade materials including stainless steel construction and premium appliances."
+          title="Find the Right BBQ Pod for Your Space"
+          subtitle="Whether you’re working with a smaller garden or a larger outdoor area, every model is engineered with commercial-grade materials, stainless-steel construction and high-quality appliances."
         />
         <Row className={`g-4 justify-content-center ${styles.productGrid}`}>
           {products.map((product, index) => (

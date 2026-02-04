@@ -84,7 +84,7 @@ const Testimonials = () => {
         </Row>
 
         {/* Bottom Rating Box */}
-        <div className={styles.ratingBox}>
+        {/* <div className={styles.ratingBox}>
           <div className={styles.ratingBoxInner}>
             <div className={styles.starsGreen}>
               {[...Array(5)].map((_, i) => (
@@ -104,7 +104,7 @@ const Testimonials = () => {
             <strong>100%</strong>
             <p>Satisfaction Rate</p>
           </div>
-        </div>
+        </div> */}
       </Container>
     </section>
   );

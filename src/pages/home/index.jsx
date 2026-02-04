@@ -24,46 +24,49 @@ import Faqs from "@/components/faqs";
 import Cta from "@/components/cta";
 import TitleHeader from "@/components/titleHeader";
 
+import bannerBg from "@/assets/front/images/coming-soon.png";
+import { TiArrowRightOutline } from "react-icons/ti";
+
 export const homeFaqs = [
   {
-    question: "How long is the shipping time?",
+    question: "How long does delivery take?",
     answer:
-      "Shipping typically takes 4-8 weeks depending on the manufacturer, customization level, and location. For example, prefabricated models may ship in 4-6 weeks, while international freight can add 30-45 days.",
+      "From order confirmation, delivery and installation typically take up to 16 weeks. In quieter periods this can be closer to 14 weeks, depending on production schedules and your chosen specification. We’ll always confirm lead times before securing your order.",
   },
   {
-    question: "Do I need planning permission for a BBQ pod?",
+    question: "What warranty is included?",
     answer:
-      "In the UK, most BBQ pods fall under permitted development rights and do not require planning permission if they are under 4 meters in height, not a permanent structure, and meet size limits (e.g., covering less than 50% of your garden). Always check with your local authority, especially in conservation areas.",
+      "All BBQ Pods come with a 10-year structural warranty and a 2-year warranty on appliances, as detailed in our brochure. This covers normal residential use and manufacturing defects.",
   },
   {
-    question: "What warranty coverage is included?",
+    question: "What is required for installation?",
     answer:
-      "Warranties vary by brand but generally include 2-5 years on the structure and parts, with 1-5 years on appliances like grills and refrigerators. Exclusions often apply for misuse or lack of maintenance. Check the manufacturer's documentation for details.",
+      "The pod must be installed on solid, level ground capable of supporting its weight. An external electrical socket is required, along with a water supply and waste connection if a sink is included. Due to the weight of the units, suitable access for delivery and crane placement is also necessary.",
   },
   {
-    question: "Can I use the pod year-round in British weather?",
+    question: "Can the BBQ Pod be used year-round?",
     answer:
-      "Yes, most BBQ pods are designed for year-round use with weatherproof materials like 304 stainless steel, insulation, and features like motorized awnings. They can withstand rain, wind, and cold, allowing outdoor cooking even in winter.",
+      "Yes. BBQ Pods are designed for outdoor living in the Spanish climate. When closed, the interior remains clean and protected from dust and rain. When open, integrated shading and lighting allow comfortable outdoor cooking throughout the year.",
   },
   {
-    question: "What utilities do I need for installation?",
+    question: "How do I choose the right model?",
     answer:
-      "Basic requirements include a level concrete base, 240V electrical supply for lights and appliances, gas (natural or propane) for the grill, and water/drainage if including a sink. Professional installation is recommended for safety.",
+      "The right model depends on your available space, how you plan to use the pod, and your preferred features. We’re happy to advise and can prepare a visualisation to help you choose with confidence.",
   },
   {
-    question: "How do I choose the right model for my garden?",
+    question: "What maintenance is required?",
     answer:
-      "Consider your garden size, desired features (e.g., grill size, storage, refrigeration), budget, and customization options like colors or appliances. Measure your space and think about usage—compact models for small gardens, larger ones for entertaining.",
+      "Maintenance is simple and minimal. Regular cleaning of cooking surfaces and occasional care of stainless-steel areas will keep your BBQ Pod performing and looking its best.",
   },
   {
-    question: "What ongoing maintenance is required?",
+    question: "Can I customise the pod after ordering?",
     answer:
-      "Regular cleaning of grates and burners after each use, deep cleaning every 3 months (scrub interior, check for rust), and annual inspections of gas lines and electrical components. Use mild soap and avoid harsh chemicals to preserve the finish.",
+      "All major customisation is completed before production begins. Once an order is confirmed, changes are limited, so we’ll guide you through all options carefully to ensure everything is right from the start.",
   },
   {
-    question: "Can I customise the pod after purchase?",
+    question: "Need Further Information?",
     answer:
-      "Major customizations like colors and finishes are typically done at purchase, but you can often add or upgrade accessories, appliances, storage, or lighting post-purchase. Some brands offer modular designs for easy modifications.",
+      "Speak with our team for personalised advice on selecting the right BBQ Pod for your home.",
   },
 ];
 
@@ -78,13 +81,21 @@ const Home = () => {
       </Head>
 
       <Layout>
-        <section className={style.banner}>
+        <section
+          className={style.banner}
+          style={{
+            backgroundImage: `url(${bannerBg.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <Container>
             <Row className="align-items-center">
               {/* LEFT CONTENT */}
-              <Col md={7}>
+              <Col md={12}>
                 <div className={style.bannerContent}>
-                  <div
+                  {/* <div
                     className={style.nationwide}
                     data-aos="fade-up"
                     data-aos-anchor-placement="bottom-center"
@@ -93,14 +104,15 @@ const Home = () => {
                     data-aos-once="true"
                   >
                     <i className="fa-regular fa-circle-check" /> UK Nationwide
-                  </div>
+                  </div> */}
 
                   <h1
                     data-aos="fade-right"
                     data-aos-duration="2000"
                     data-aos-once="true"
                   >
-                    Luxury Outdoor Kitchen Pods
+                    Outdoor cooking, Redefined.
+                    {/* Luxury Outdoor Kitchen Pods */}
                   </h1>
 
                   <h3
@@ -108,10 +120,11 @@ const Home = () => {
                     data-aos-duration="2500"
                     data-aos-once="true"
                   >
-                    Grill. Gather. Enjoy.
+                    Luxury Outdoor Kitchen Pods
+                    {/* Grill. Gather. Enjoy. */}
                   </h3>
 
-                  <p
+                  {/* <p
                     data-aos="fade-right"
                     data-aos-duration="3000"
                     data-aos-once="true"
@@ -119,19 +132,28 @@ const Home = () => {
                       __html: `Premium Outdoor Kitchens Delivered from the UK — Built to Last
                   a Lifetime.`,
                     }}
-                  ></p>
+                  ></p> */}
 
                   <div className={style.actions}>
-                    <ul>
+                    <Link
+                      href={"/products"}
+                      className={style.exploreBtn}
+                      data-aos="zoom-out"
+                      data-aos-duration="2500"
+                      data-aos-once="true"
+                    >
+                      Explore Products <TiArrowRightOutline className="ms-1" />
+                    </Link>
+                    {/* <ul>
                       <li>
                         <Link
-                          href={""}
-                          className={style.callBtn}
+                          href={"/products"}
+                          className={style.exploreBtn}
                           data-aos="zoom-out"
                           data-aos-duration="2500"
                           data-aos-once="true"
                         >
-                          Get My Personalised Quote
+                          Explore Products
                         </Link>
                       </li>
                       <li>
@@ -145,10 +167,10 @@ const Home = () => {
                           Explore Models
                         </Link>
                       </li>
-                    </ul>
+                    </ul> */}
                   </div>
 
-                  <div className={style.features}>
+                  {/* <div className={style.features}>
                     <ul>
                       <li>
                         <i className="fa-solid fa-medal" /> Quality Assured
@@ -162,12 +184,12 @@ const Home = () => {
                         Assembled
                       </li>
                     </ul>
-                  </div>
+                  </div> */}
                 </div>
               </Col>
 
               {/* RIGHT IMAGE */}
-              <Col md={5}>
+              {/* <Col md={4}>
                 <div
                   className={style.bannerImage}
                   data-aos="flip-left"
@@ -199,7 +221,7 @@ const Home = () => {
                     </li>
                   </ul>
                 </div>
-              </Col>
+              </Col> */}
             </Row>
           </Container>
         </section>
@@ -207,22 +229,30 @@ const Home = () => {
         <CounterSection />
         <OutdoorKitchens />
         <ModelConfiguratorBanner
-          title="Not Sure Which Model Is Right for You?"
-          description="Use our interactive configurator to explore features, compare models, and visualise your perfect outdoor kitchen. Get a personalised quote in minutes."
-          leftButton="Try Configurator"
-          rightButton="Compare All Models"
+          title="Find the Right BBQ Pod for Your Space"
+          description="Compare models, explore configurations and visualise your outdoor kitchen before receiving a personalised quote."
+          rightButton="Compare Models"
+          leftButtonWrap={false}
+          // rightButtonWrap={true}
         />
         <ComparisonTable />
         <YourGarden
-          title="Ready to Transform Your Garden?"
-          description="Get a personalised quote in under 2 minutes — no obligation from our expert team."
+          title="Discover the BBQ Pod Spain Range"
+          description="Receive our full brochure by email and explore all models, features and finishes at your own pace."
           backgroundImage={heroImage}
           badges={[
-            { icon: <FaArrowRight />, text: "2-Minute Quote Process" },
-            { icon: <FaStar />, text: "No Obligation Quote" },
+            {
+              icon: <FaArrowRight />,
+              text: "Full model range & specifications",
+            },
+            { icon: <FaArrowRight />, text: "Pricing guidance" },
+            {
+              icon: <FaArrowRight />,
+              text: "Designed for the Spanish lifestyle",
+            },
           ]}
           primaryButton={{
-            label: "Get My Personalised Quote",
+            label: "Send Me the Brochure",
             href: "",
           }}
           secondaryButton={{
@@ -231,17 +261,16 @@ const Home = () => {
           }}
           footerText="Join 100+ satisfied UK families who transformed their gardens with BBQ Pods"
         />
-        ;
         <ExteriorColours />
-        <StainlessSteel />
-        <InteriorFinishesBanner />
+        {/* <StainlessSteel /> */}
+        {/* <InteriorFinishesBanner /> */}
         <Testimonials />
-        <CraftedBy />
+        {/* <CraftedBy /> */}
         <section className={style.faqs}>
           <TitleHeader
-            whyChoose="FREQUENTLY ASKED QUESTIONS"
-            title="Got Questions?"
-            subtitle="Everything you need to know about BBQ pods, delivery, and installation."
+            whyChoose="Frequently Asked Questions"
+            title="Helpful Information"
+            subtitle="Details on our BBQ Pods, delivery and installation, all in one place."
           />
           {/* <Faqs /> */}
           <Faqs faqs={homeFaqs} />
