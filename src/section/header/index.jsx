@@ -7,6 +7,8 @@ import logo from "@/assets/front/images/logo.png";
 
 import { TiArrowRightOutline } from "react-icons/ti";
 import { MdOutlineCall } from "react-icons/md";
+import enFlag from "@/assets/front/images/united-kingdom.png";
+import { MdOutlineArrowDropDown } from "react-icons/md";
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -26,7 +28,7 @@ const Header = () => {
       <header className={`${style.header} ${isSticky ? style.sticky : ""}`}>
         <Container fluid="xxl">
           <Row className="align-items-center">
-            <Col className={style.logoCol} md="auto">
+            {/* <Col className={style.logoCol} md="auto">
               <Link href="/home">
                 <Image
                   src={logo}
@@ -37,7 +39,11 @@ const Header = () => {
                   priority
                 />
               </Link>
-            </Col>
+            </Col> */}
+
+            <Link href="/home" className={style.mobLogo}>
+              <Image src={logo} alt="Logo" width={180} height={28} priority />
+            </Link>
 
             <div
               className={`${style.navArea} ${menuOpen ? style.navOpen : ""}`}
@@ -54,7 +60,7 @@ const Header = () => {
                   <span />
                   <span />
                 </button>
-                <ul className="d-flex align-items-center">
+                {/* <ul className="d-flex align-items-center">
                   <li>
                     <Link href="/home">Home</Link>
                   </li>
@@ -67,35 +73,44 @@ const Header = () => {
                   <li>
                     <Link href="/">Order Now</Link>
                   </li>
-                  {/* <li>
-                    <Link href="/gallery">Gallery</Link>
+                  
+                </ul> */}
+                <ul className={`${menuOpen ? style.navOpen : ""}`}>
+                  <li>
+                    <Link href="/home">Home</Link>
                   </li>
                   <li>
-                    <Link href="/">Configurator</Link>
-                  </li> */}
+                    <Link href="/about">About</Link>
+                  </li>
+
+                  {/* CENTER LOGO */}
+                  <li className={style.centerLogo}>
+                    <Link href="/home">
+                      <Image
+                        src={logo}
+                        alt="Logo"
+                        width={180}
+                        height={28}
+                        priority
+                      />
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link href="/products">Products</Link>
+                  </li>
+                  <li>
+                    <Link href="/order">Order</Link>
+                  </li>
                 </ul>
               </nav>
             </div>
 
-            <Col className={style.headerBtnCol} md="auto">
-              <Link href="/get-quote" className={`btn ${style.getQuoteBtn}`}>
-                Get Quote <TiArrowRightOutline className="ms-1" />
-              </Link>
-              {/* <ul className="d-flex align-items-center gap-3">
-                <li>
-                  <Link href="/" className={`btn ${style.getQuoteBtnBdr}`}>
-                    <MdOutlineCall size={20} /> 0808 225 0045
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/get-quote"
-                    className={`btn ${style.getQuoteBtn}`}
-                  >
-                    Get Quote <TiArrowRightOutline className="ms-1" />
-                  </Link>
-                </li>
-              </ul> */}
+            <Col md="auto" className={style.langCol}>
+              <button className={style.langBtn} title="Switch language">
+                <Image src={enFlag} alt="English" width={22} height={22} />
+                <span>En</span> <MdOutlineArrowDropDown />
+              </button>
             </Col>
           </Row>
         </Container>

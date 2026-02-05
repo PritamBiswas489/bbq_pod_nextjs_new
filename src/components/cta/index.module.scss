@@ -6,7 +6,7 @@
 }
 
 .container {
-  max-width: 900;
+  max-width: 1000;
   width: 100%;
   margin: 0 auto;
 }
@@ -38,8 +38,8 @@
   font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: #fff;
+  // gap: 8px;
+  color: $bg-white;
   transition: all ease-in-out 0.3s;
   &:hover {
     background: darken($primary, 20%);
@@ -64,8 +64,7 @@
 
 .icon {
   margin-right: 8px; // For phone icon
-  margin-left: 8px; // For arrow icon (overrides for quote button)
-  font-size: 0.9rem;
+  font-size: 1.3rem;
 }
 
 // Responsive adjustments

@@ -24,7 +24,8 @@ import Faqs from "@/components/faqs";
 import Cta from "@/components/cta";
 import TitleHeader from "@/components/titleHeader";
 
-import bannerBg from "@/assets/front/images/coming-soon.png";
+import bannerBg from "@/assets/front/images/home-banner.avif";
+
 import { TiArrowRightOutline } from "react-icons/ti";
 
 export const homeFaqs = [
@@ -228,13 +229,13 @@ const Home = () => {
         <FeaturesSection />
         <CounterSection />
         <OutdoorKitchens />
-        <ModelConfiguratorBanner
+        {/* <ModelConfiguratorBanner
           title="Find the Right BBQ Pod for Your Space"
           description="Compare models, explore configurations and visualise your outdoor kitchen before receiving a personalised quote."
           rightButton="Compare Models"
           leftButtonWrap={false}
           // rightButtonWrap={true}
-        />
+        /> */}
         <ComparisonTable />
         <YourGarden
           title="Discover the BBQ Pod Spain Range"
@@ -270,7 +271,7 @@ const Home = () => {
           <TitleHeader
             whyChoose="Frequently Asked Questions"
             title="Helpful Information"
-            subtitle="Details on our BBQ Pods, delivery and installation, all in one place."
+            subtitle="Details on our BBQ Pods, delivery and installation, all in one place"
           />
           {/* <Faqs /> */}
           <Faqs faqs={homeFaqs} />

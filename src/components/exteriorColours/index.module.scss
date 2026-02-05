@@ -53,6 +53,9 @@
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr); // 2 columns on small screens
   }
+  @media (max-width: 414px) {
+    grid-template-columns: repeat(4, 1fr); // 2 columns on small screens
+  }
 }
 
 .swatchWrapper {
@@ -82,7 +85,6 @@
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1rem;
 }
 
 .label {
@@ -92,6 +94,21 @@
   color: $primary;
   font-weight: 600;
   line-height: 1.2;
+}
+
+.viewOptionsBtn {
+  background: $primary;
+  color: $bg-white;
+  padding: 0.7rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: all ease-in-out 0.3s;
+  display: block;
+  &:hover {
+    background: darken($primary, 20%);
+    color: $bg-white;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -106,5 +123,11 @@
   }
   .swatchLink {
     padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .swatchLink {
+    padding: 0;
   }
 }

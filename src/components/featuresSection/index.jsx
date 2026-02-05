@@ -14,13 +14,6 @@ import TitleHeader from "../titleHeader";
 
 const featuresData = [
   {
-    icon: <IoShieldCheckmarkOutline className={styles.svgIcon} />,
-    color: "primary",
-    title: "A New Standard for Outdoor Cooking",
-    description:
-      "Designed for life outdoors in Spain, our BBQ Pods are permanent, fully integrated outdoor kitchens - not temporary garden structures. Built with commercial-grade materials to handle sun, heat and year-round use, every pod is supported locally and protected by comprehensive manufacturer warranties.",
-  },
-  {
     icon: <IoPersonOutline className={styles.svgIcon} />,
     color: "primary",
     title: "Premium Construction",
@@ -69,9 +62,9 @@ const FeaturesSection = () => {
     <section className={styles.featuresSection}>
       <Container>
         <TitleHeader
-          whyChoose="WHY CHOOSE BBQ PODS UK"
-          title="Premium Quality, Exceptional Service"
-          subtitle="Unlike temporary garden structures, our BBQ pods are designed as permanent outdoor kitchens with commercial-grade construction, UK-based support, and comprehensive manufacturer warranties."
+          whyChoose="Why choose BBQ Pods Spain?"
+          title="A New Standard for Outdoor Cooking"
+          subtitle="Designed for life outdoors in Spain, our BBQ Pods are permanent, fully integrated outdoor kitchens - not temporary garden structures. Built with commercial-grade materials to handle sun, heat and year-round use, every pod is supported locally and protected by comprehensive manufacturer warranties."
         />
         <Row className="justify-content-center">
           {featuresData.map((feature, index) => (

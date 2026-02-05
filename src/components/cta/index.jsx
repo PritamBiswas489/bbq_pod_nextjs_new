@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
+import { SlEnvolope } from "react-icons/sl";
 import styles from "./index.module.scss";
 import Link from "next/link";
 
@@ -16,7 +17,7 @@ const Cta = () => {
               data-aos-duration="1000"
               data-aos-once="true"
             >
-              Still Have Questions?
+              Need Further Information?
             </h2>
             <p
               className={styles.subtitle}
@@ -24,8 +25,8 @@ const Cta = () => {
               data-aos-duration="1000"
               data-aos-once="true"
             >
-              Our team at Commercial Awnings is here to help. Get in touch for
-              expert advice on choosing the perfect BBQ pod for your garden.
+              Speak with our team for personalised advice on selecting the right
+              BBQ Pod for your home.
             </p>
             <div
               className={styles.buttons}
@@ -34,11 +35,11 @@ const Cta = () => {
               data-aos-once="true"
             >
               <Link href={"#"} className={styles.callButton}>
-                <FaPhoneAlt className={styles.icon} /> Call 0808 225 0045
+                <SlEnvolope className={styles.icon} /> Email us
               </Link>
-              <Link href={"#"} className={styles.quoteButton}>
+              {/* <Link href={"#"} className={styles.quoteButton}>
                 Request Quote <FaArrowRight className={styles.icon} />
-              </Link>
+              </Link> */}
             </div>
           </Col>
         </Row>

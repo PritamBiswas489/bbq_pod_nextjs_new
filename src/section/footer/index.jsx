@@ -7,7 +7,7 @@ import {
   FaMapMarkerAlt,
   FaClock,
 } from "react-icons/fa";
-import logo from "@/assets/front/images/logo-w.png";
+import logo from "@/assets/front/images/logo.png";
 import styles from "./index.module.scss";
 import Image from "next/image";
 
@@ -48,13 +48,13 @@ const Footer = () => {
             <div className={styles.logo}>
               <Image src={logo} alt="logo" width={893} height={137} priority />
             </div>
-            <p className={styles.description}>
+            {/* <p className={styles.description}>
               Permanent, fully integrated outdoor kitchens designed for life
               outdoors in Spain. Built with commercial-grade materials and
               tailored to how you cook, host and live.
-            </p>
+            </p> */}
           </Col>
-          <Col md={2} className={styles.menuSection}>
+          <Col md={2} xs={6} className={styles.menuSection}>
             <h5>Our Products</h5>
             <ul>
               <li>
@@ -74,7 +74,7 @@ const Footer = () => {
               </li>
             </ul>
           </Col>
-          <Col md={2} className={styles.menuSection}>
+          <Col md={2} xs={6} className={styles.menuSection}>
             <h5>Company</h5>
             <ul>
               <li>

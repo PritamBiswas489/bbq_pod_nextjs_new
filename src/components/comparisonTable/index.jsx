@@ -35,7 +35,7 @@ const ComparisonTable = () => {
       grillSize: '46" premium gas BBQ',
       keyFeature:
         "Full-spec outdoor kitchen with motorised roof and luxury features",
-      bestFor: "Statement outdoor kitchens & hosting",
+      bestFor: "Largest model",
       color: "red",
     },
     {
@@ -53,7 +53,7 @@ const ComparisonTable = () => {
       <Container className={styles.container}>
         <TitleHeader
           // whyChoose="Quick Comparison"
-          title="Quick Comparison"
+          title="Model Comparison"
           subtitle="Our premium outdoor kitchen range at a glance"
         />
 
