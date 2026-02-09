@@ -269,9 +269,11 @@ const Home = () => {
         {/* <CraftedBy /> */}
         <section className={style.faqs}>
           <TitleHeader
-            whyChoose="Frequently Asked Questions"
-            title="Helpful Information"
-            subtitle="Details on our BBQ Pods, delivery and installation, all in one place"
+            whyChoose={[]}
+            // title="Helpful Information"
+            // subtitle="Details on our BBQ Pods, delivery and installation, all in one place"
+            title="Trusted by Homeowners Across Spain"
+            subtitle="Join customers who have transformed their outdoor spaces into premium places to cook, host and relax"
           />
           {/* <Faqs /> */}
           <Faqs faqs={homeFaqs} />

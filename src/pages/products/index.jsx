@@ -43,8 +43,8 @@ export default function Products() {
         badgeText="5 PREMIUM MODELS"
         title="Premium Outdoor Kitchen Pods -"
         subtitle="Compare All Models"
-        description1="Discover our handcrafted range of luxury outdoor kitchen pods, engineered for the UK and built to last a lifetime. Each BBQ Pod is constructed from commercial-grade stainless steel with premium materials throughout, offering the perfect balance of design, performance, and durability for your garden or patio."
-        description2="Whether you're upgrading your home's outdoor entertaining area or planning a complete garden transformation, our five premium BBQ Pod models provide tailored options for every lifestyle — from compact luxury to all-weather performance."
+        description1="Discover our range of premium outdoor kitchen pods, designed for life outdoors in Spain and built for long-term use. Each BBQ Pod is constructed using commercial-grade stainless steel and high-quality materials throughout, combining refined design, performance and durability."
+        description2="Whether you’re upgrading your outdoor entertaining space or creating a dedicated cooking area in your garden or terrace, our five BBQ Pod models offer tailored solutions — from compact layouts to fully equipped, all-season outdoor kitchens"
         backgroundImage={hero1.src}
         links={[]}
       />

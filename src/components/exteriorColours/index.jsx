@@ -74,30 +74,11 @@ const ExteriorColours = () => {
   return (
     <div className={styles.exteriorColours}>
       <TitleHeader
-        whyChoose="Customisation Options"
+        whyChoose={[]}
         title="A Curated Selection"
         subtitle="Explore a handpicked preview of exterior colours, interior finishes, wood transfers and worktop options. Every BBQ Pod is made to order, with further customisation available."
       />
       <Container className={styles.container}>
-        <div className={styles.titlesHeader}>
-          <div
-            className={styles.titleWrapper}
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-once="true"
-          >
-            <FaPalette className={styles.icon} />
-            <h3 className={styles.title}>Exterior Colours</h3>
-          </div>
-          <p
-            className={styles.subtitle}
-            data-aos="fade-up"
-            data-aos-duration="1000"
-            data-aos-once="true"
-          >
-            Choose from 10 premium powder-coated finishes.
-          </p>
-        </div>
         <div className={styles.colorGrid}>
           {colors.map((color, index) => (
             <div

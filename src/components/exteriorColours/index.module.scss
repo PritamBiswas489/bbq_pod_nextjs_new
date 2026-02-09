@@ -7,34 +7,6 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-.titlesHeader {
-  text-align: center;
-  margin-bottom: 30px;
-}
-.titleWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px;
-
-  .icon {
-    color: $primary;
-    font-size: 1.5rem;
-    margin-right: 10px;
-  }
-
-  .title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0;
-  }
-}
-
-.subtitle {
-  font-size: 1rem;
-  color: #6c757d;
-  margin-bottom: 20px;
-}
 
 .colorGrid {
   display: grid;

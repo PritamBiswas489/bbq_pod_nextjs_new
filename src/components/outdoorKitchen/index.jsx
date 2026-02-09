@@ -16,81 +16,81 @@ const OutdoorKitchens = () => {
   const products = [
     {
       badges: [
-        { text: "Save £1,000", variant: "save", position: "left" },
-        { text: "Most Popular", variant: "premium", position: "right" },
+        // { text: "Save £1,000", variant: "save", position: "left" },
+        // { text: "Most Popular", variant: "premium", position: "right" },
       ],
-      name: "A-Mini",
-      description: "Compact Lux for Every Garden",
-      oldPrice: [{ text: "£9,999" }, { text: "10%" }],
-      price: "From £8,999",
+      name: "CORE",
+      description: "Compact outdoor kitchen",
+      // oldPrice: [{ text: "£9,999" }, { text: "10%" }],
+      price: "From 12,500 € IVA included",
       features: [
-        'Professional 30" gas grill with three burners',
-        "Integrated 2 drinks cooler",
-        "LED ambient lighting system",
+        '30" premium gas BBQ',
+        "Fully integrated stainless-steel kitchen",
+        "Compact, space-efficient layout",
       ],
       image: hero1.src,
     },
     {
       badges: [
-        { text: "SAVE £1,600", variant: "save", position: "left" },
+        // { text: "SAVE £1,600", variant: "save", position: "left" },
         // { text: "10% off", variant: "success-subtle", position: "right" },
       ],
-      name: "A-Plus",
-      description: "Entertainment Elevated",
-      oldPrice: [{ text: "£15,999" }, { text: "10%" }],
-      price: "From £14,399",
+      name: "PRIME (Most Popular)",
+      description: "Balanced for everyday entertaining",
+      // oldPrice: [{ text: "£15,999" }, { text: "10%" }],
+      price: "From 15,500 € IVA included",
       features: [
-        'Professional 30" gas grill',
-        "Range hood extract",
-        '32" weatherproof TV',
+        '30" premium gas BBQ',
+        "Integrated outdoor TV",
+        "Entertaining-focused layout",
       ],
       image: hero2.src,
     },
     {
       badges: [
-        { text: "SAVE £1,800", variant: "save", position: "left" },
-        { text: "Premium Choice", variant: "premium", position: "right" },
+        // { text: "SAVE £1,800", variant: "save", position: "left" },
+        // { text: "Premium Choice", variant: "premium", position: "right" },
       ],
-      name: "A-Max",
-      description: "Maximum Luxury",
-      oldPrice: [{ text: "£17,999" }, { text: "10%" }],
-      price: "From £16,199",
+      name: "APEX",
+      description: "More space, more flexibility",
+      // oldPrice: [{ text: "£17,999" }, { text: "10%" }],
+      price: "More space, more flexibility",
       features: [
-        'Massive 36" professional gas grill',
-        'Larger 42" integrated TV',
-        'Stunning 42" waterproof TV',
+        '36" premium gas BBQ',
+        "Expanded cooking & prep space",
+        "Increased storage capacity",
       ],
       image: hero3.src,
     },
     {
       badges: [
-        { text: "SAVE £1,900", variant: "save", position: "left" },
+        // { text: "SAVE £1,900", variant: "save", position: "left" },
         // { text: "Premium Choice", variant: "danger", position: "right" },
       ],
-      name: "A-Ultra",
-      description: "For Those Who Take Grilling Seriously",
-      oldPrice: [{ text: "£22,332" }, { text: "10%" }],
-      price: "From £20,099",
+      name: "PINNACLE (Premium Choice)",
+      description: "Flagship outdoor kitchen",
+      // oldPrice: [{ text: "£22,332" }, { text: "10%" }],
+      price: "From 20,900 € IVA included",
       features: [
-        'Colossal 46" professional gas grill',
-        "Maximum counter workspace",
-        '24" integrated fridge',
+        '46" premium gas BBQ',
+        "Full-width kitchen layout",
+        "Highest specification finish",
       ],
       image: hero4.src,
     },
     {
       badges: [
-        { text: "SAVE £1,600", variant: "premium", position: "left" },
-        { text: "New Design", variant: "premium", position: "right" },
+        // { text: "SAVE £1,600", variant: "premium", position: "left" },
+        // { text: "New Design", variant: "premium", position: "right" },
       ],
-      name: "A-Pro",
-      description: "All-Weather Luxury with Motorised Awning",
-      oldPrice: [{ text: "£17,110" }, { text: "10%" }],
-      price: "From £15,399",
+      name: "AERO",
+      description: "Open-air outdoor cooking",
+      // oldPrice: [{ text: "£17,110" }, { text: "10%" }],
+      price: "From 16,500 € IVA included",
       features: [
-        "Motorised retractable awning",
-        "Wider 1200mm design",
-        "Professional gas grill system",
+        '36" premium gas BBQ',
+        "Open-air configuration",
+        "Integrated shading system",
       ],
       image: hero5.src,
     },
@@ -100,7 +100,7 @@ const OutdoorKitchens = () => {
     <section className={styles.outdoorKitchens}>
       <Container>
         <TitleHeader
-          whyChoose="5 PREMIUM MODELS"
+          whyChoose={[]}
           title="Find the Right BBQ Pod for Your Space"
           subtitle="Whether you’re working with a smaller garden or a larger outdoor area, every model is engineered with commercial-grade materials, stainless-steel construction and high-quality appliances."
         />
@@ -151,9 +151,9 @@ const OutdoorKitchens = () => {
                   <div className={`fw-bold ${styles.cardPrice}`}>
                     {product.oldPrice && (
                       <div className="small d-flex align-items-center mb-1">
-                        <del className={`me-2 ${styles.textMuted}`}>
+                        {/* <del className={`me-2 ${styles.textMuted}`}>
                           {product.oldPrice[0].text}
-                        </del>
+                        </del> */}
                         <Badge bg="success-subtle" className={styles.badgeBg}>
                           {product.oldPrice[1].text}
                         </Badge>

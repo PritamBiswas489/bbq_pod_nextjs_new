@@ -6,40 +6,40 @@ import TitleHeader from "../titleHeader";
 
 const testimonials = [
   {
-    text: "The A-Max has completely transformed our garden. We host family BBQs every weekend now, and guests are always amazed by the quality. The 42\" TV and professional grill make it feel like a luxury outdoor restaurant. Best investment we've made for our home.",
-    name: "James & Sarah Mitchell",
-    location: "Surrey",
-    owner: "A-Max Owner",
+    text: "We use the Pinnacle most weekends now. Cooking, eating and just sitting outside feels easier because everything is already there. It’s changed how we use our garden without feeling over the top",
+    name: "James & Laura",
+    location: "Málaga",
+    owner: "Pinnacle",
   },
   {
-    text: "After 30 years of dodgy garden sheds and temporary structures, finding Commercial Awnings was a revelation. The build quality is exceptional – you can tell this is built to last a lifetime. Installation was seamless.",
-    name: "David Thompson",
-    location: "Manchester",
-    owner: "A-Plus Owner",
+    text: "The Prime felt like the right balance for us. Big enough to entertain, but not massive. Everything feels solid and well finished, and the install was straightforward.",
+    name: "David",
+    location: "Marbella",
+    owner: "Prime",
   },
   {
-    text: "We live in Cornwall where weather can be unpredictable. The A-Pro’s motorised awning is brilliant – we can cook outdoors even when it’s drizzling.",
-    name: "Emma & Tom Harrison",
-    location: "Cornwall",
-    owner: "A-Pro Owner",
+    text: "We wanted something open rather than fully enclosed, and the Aero suits us perfectly. The awning is useful for shade, and it still feels like proper outdoor cooking.",
+    name: "Emma & Carlos",
+    location: "Alicante",
+    owner: "Aero",
   },
   {
-    text: "Perfect for our smaller garden. The A-Mini doesn’t compromise on quality despite being compact. Highly recommend BBQ Pods UK.",
-    name: "Richard & Claire Foster",
-    location: "Yorkshire",
-    owner: "A-Mini Owner",
+    text: "Our space is quite small, so we were worried it might feel cramped. The Core fits really well and doesn’t feel like a compromise at all.",
+    name: "Richard & Claire",
+    location: "Valencia",
+    owner: "Core",
   },
   {
-    text: 'As a serious home cook, the A-Ultra’s 46" grill was exactly what I needed. Worth every penny.',
-    name: "Michael Stevens",
-    location: "Edinburgh",
-    owner: "A-Ultra Owner",
+    text: "I cook a lot, so the Apex made sense for me. The extra worktop space and larger grill are noticeable day to day. It feels practical, not just for show.",
+    name: "Miguel",
+    location: "Madrid",
+    owner: "Apex",
   },
   {
-    text: "The customer service from Commercial Awnings was outstanding. The pod itself is absolutely stunning.",
-    name: "Sophie & Andrew Wright",
-    location: "Hampshire",
-    owner: "A-Plus Owner",
+    text: "The whole process was calm and clear. No pressure, no rushing. The pod looks exactly how we expected and we’re really happy with how it turned out.",
+    name: "Sophie & Daniel",
+    location: "Estepona",
+    owner: "Prime",
   },
 ];
 
@@ -47,7 +47,7 @@ const Testimonials = () => {
   return (
     <section className={styles.testimonials}>
       <TitleHeader
-        whyChoose="CUSTOMER REVIEWS"
+        whyChoose={[]}
         title="Loved by UK Families"
         subtitle="Join hundreds of satisfied customers who have transformed their gardens into luxury outdoor entertaining spaces."
       />

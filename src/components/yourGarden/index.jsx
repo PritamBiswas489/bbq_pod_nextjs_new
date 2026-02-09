@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 import { TiArrowRightOutline } from "react-icons/ti";
 import { VscGear } from "react-icons/vsc";
 import styles from "./index.module.scss";
 import Link from "next/link";
+import LanguageCheckbox from "../languageCheckbox";
+import BrochureModal from "../brochureModal";
 
 const YourGarden = ({
   title,
@@ -14,6 +17,7 @@ const YourGarden = ({
   secondaryButton = [],
   footerText = [],
 }) => {
+  const [openModal, setOpenModal] = useState(false);
   return (
     <div
       className={styles.quoteBanner}
@@ -54,17 +58,60 @@ const YourGarden = ({
                 </div>
               )}
 
-              {/* BUTTONS */}
-              <div className={styles.actions}>
-                <Link
-                  href={primaryButton.href}
-                  className={styles.personalisedQuoteBtn}
-                  data-aos="zoom-in-left"
-                  data-aos-duration="1000"
-                  data-aos-once
-                >
-                  {primaryButton.label} <TiArrowRightOutline />
-                </Link>
+              <div className={styles.formArea}>
+                <form action="" method="get">
+                  <ul className="d-flex align-items-center">
+                    <li>
+                      <label>Name</label>
+                      <input
+                        type="text"
+                        name=""
+                        id=""
+                        className={styles.input}
+                      />
+                    </li>
+                    <li>
+                      <label>Email address</label>
+                      <input
+                        type="email"
+                        name=""
+                        id=""
+                        className={styles.input}
+                      />
+                    </li>
+                  </ul>
+                  <div
+                    className={`${styles.cbArea} d-flex justify-content-center`}
+                  >
+                    <LanguageCheckbox />
+                  </div>
+                  {/* BUTTONS */}
+                  {/* <div className={styles.actions}>
+                    <Link
+                      href={primaryButton.href}
+                      className={styles.personalisedQuoteBtn}
+                      data-aos="zoom-in-left"
+                      data-aos-duration="1000"
+                      data-aos-once
+                    >
+                      {primaryButton.label} <TiArrowRightOutline />
+                    </Link>
+                  </div> */}
+                  <div className={styles.actions}>
+                    <button
+                      type="button"
+                      className={styles.personalisedQuoteBtn}
+                      onClick={() => setOpenModal(true)}
+                    >
+                      {primaryButton.label} <TiArrowRightOutline />
+                    </button>
+                  </div>
+
+                  <BrochureModal
+                    open={openModal}
+                    onClose={() => setOpenModal(false)}
+                  />
+                </form>
               </div>
             </div>
           </Col>

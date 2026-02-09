@@ -11,14 +11,14 @@ const FindKitchen = () => {
         <Card className={styles.card}>
           <h3>Find Your Perfect Outdoor Kitchen</h3>
 
-          <h5 className="mb-3 text-dark">Explore Individual Models:</h5>
+          <h5 className="mb-3">Explore Individual Models:</h5>
 
           <ul
             className={`list-unstyled d-flex flex-wrap mb-4 ${styles.list} ${styles.listPill}`}
           >
             <li className="me-2 mb-2">
               <Button
-                variant="outline-dark"
+                variant="outline-light"
                 className="rounded-pill px-3 py-1"
                 as="a"
                 href="#"
@@ -28,7 +28,7 @@ const FindKitchen = () => {
             </li>
             <li className="me-2 mb-2">
               <Button
-                variant="outline-dark"
+                variant="outline-light"
                 className="rounded-pill px-3 py-1"
                 as="a"
                 href="#"
@@ -38,7 +38,7 @@ const FindKitchen = () => {
             </li>
             <li className="me-2 mb-2">
               <Button
-                variant="outline-dark"
+                variant="outline-light"
                 className="rounded-pill px-3 py-1"
                 as="a"
                 href="#"
@@ -48,7 +48,7 @@ const FindKitchen = () => {
             </li>
             <li className="me-2 mb-2">
               <Button
-                variant="outline-dark"
+                variant="outline-light"
                 className="rounded-pill px-3 py-1"
                 as="a"
                 href="#"
@@ -58,7 +58,7 @@ const FindKitchen = () => {
             </li>
             <li className="me-2 mb-2">
               <Button
-                variant="outline-dark"
+                variant="outline-light"
                 className="rounded-pill px-3 py-1"
                 as="a"
                 href="#"
@@ -68,7 +68,7 @@ const FindKitchen = () => {
             </li>
           </ul>
 
-          <h5 className="mb-3 text-dark">Helpful Resources:</h5>
+          <h5 className="mb-3">Helpful Resources:</h5>
           <ul
             className={`d-flex flex-wrap align-items-center ${styles.listLink}`}
           >

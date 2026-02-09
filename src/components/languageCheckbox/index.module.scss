@@ -1,0 +1,44 @@
+.wrapper {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  user-select: none;
+
+  input {
+    display: none;
+  }
+}
+
+.box {
+  width: 22px;
+  height: 22px;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+  color: white;
+  background: transparent;
+
+  svg {
+    font-size: 12px;
+  }
+}
+
+.checked {
+  background: #111;
+  border-color: #111;
+}
+
+.label {
+  font-size: 16px;
+}
