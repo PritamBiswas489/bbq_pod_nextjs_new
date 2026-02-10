@@ -2,27 +2,29 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import styles from "./index.module.scss";
+import { useTranslation } from 'next-i18next';
 
 const countersData = [
   {
-    number: "6",
-    label: "Layer Door Panels",
+    numberKey: "counter1Number",
+    labelKey: "counter1Label",
   },
   {
-    number: "100%",
-    label: "Stainless Steel",
+    numberKey: "counter2Number",
+    labelKey: "counter2Label",
   },
   {
-    number: "16",
-    label: "Weeks Delivery",
+    numberKey: "counter3Number",
+    labelKey: "counter3Label",
   },
   {
-    number: "5",
-    label: "Premium Models",
+    numberKey: "counter4Number",
+    labelKey: "counter4Label",
   },
 ];
 
 const CounterSection = () => {
+  const { t } = useTranslation('common');
   return (
     <section className={styles.counterSection}>
       <Container>
@@ -38,7 +40,7 @@ const CounterSection = () => {
                   data-aos-duration="1500"
                   data-aos-once="true"
                 >
-                  {counter.number}
+                  {t(counter.numberKey)}
                 </div>
                 <div
                   className={styles.label}
@@ -48,7 +50,7 @@ const CounterSection = () => {
                   data-aos-duration="1000"
                   data-aos-once="true"
                 >
-                  {counter.label}
+                  {t(counter.labelKey)}
                 </div>
               </div>
             </Col>

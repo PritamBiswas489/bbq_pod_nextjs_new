@@ -2,8 +2,10 @@ import React from "react";
 import styles from "./index.module.scss";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
+import { useTranslation } from 'next-i18next';
 
 const BrochureModal = ({ open, onClose }) => {
+  const { t } = useTranslation('common');
   if (!open) return null;
 
   return (
@@ -13,34 +15,29 @@ const BrochureModal = ({ open, onClose }) => {
           <IoClose />
         </button>
 
-        <h2>Your Brochure Is on Its Way</h2>
+        <h2>{t('brochureModalTitle')}</h2>
 
         <p>
-          Thanks for your interest in BBQ Pod Spain.
+          {t('brochureModalParagraph1')}
           <br />
           <br />
-          We’ve just sent you our full brochure in your chosen language,
-          including models, specifications and pricing guidance to your email
-          address.
+          {t('brochureModalParagraph2')}
           <br />
           <br />
-          Take your time exploring the range. If you’d like help choosing the
-          right BBQ Pod or visualising it in your space, we’re here when you’re
-          ready.
+          {t('brochureModalParagraph3')}
         </p>
 
         <div className={styles.actions}>
           <Link href="/models" className={styles.primaryBtn}>
-            Explore the Models
+            {t('brochureModalExploreModelsButton')}
           </Link>
           <Link href="/contact" className={styles.secondaryBtn}>
-            Contact Us
+            {t('brochureModalContactUsButton')}
           </Link>
         </div>
 
         <span className={styles.note}>
-          If you don’t see the email within a few minutes, please check your
-          spam folder.
+          {t('brochureModalNote')}
         </span>
       </div>
     </div>

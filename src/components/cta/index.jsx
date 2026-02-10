@@ -4,8 +4,10 @@ import { FaArrowRight, FaPhoneAlt } from "react-icons/fa";
 import { SlEnvolope } from "react-icons/sl";
 import styles from "./index.module.scss";
 import Link from "next/link";
+import { useTranslation } from 'next-i18next';
 
 const Cta = () => {
+  const { t } = useTranslation('common');
   return (
     <div className={styles.wrapper}>
       <Container fluid className={styles.container}>
@@ -17,7 +19,7 @@ const Cta = () => {
               data-aos-duration="1000"
               data-aos-once="true"
             >
-              Need Further Information?
+              {t('ctaTitle')}
             </h2>
             <p
               className={styles.subtitle}
@@ -25,8 +27,7 @@ const Cta = () => {
               data-aos-duration="1000"
               data-aos-once="true"
             >
-              Speak with our team for personalised advice on selecting the right
-              BBQ Pod for your home.
+              {t('ctaSubtitle')}
             </p>
             <div
               className={styles.buttons}
@@ -35,7 +36,7 @@ const Cta = () => {
               data-aos-once="true"
             >
               <Link href={"#"} className={styles.callButton}>
-                <SlEnvolope className={styles.icon} /> Email us
+                <SlEnvolope className={styles.icon} /> {t('ctaEmailButtonText')}
               </Link>
               {/* <Link href={"#"} className={styles.quoteButton}>
                 Request Quote <FaArrowRight className={styles.icon} />

@@ -6,6 +6,8 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 import TitleHeader from "../titleHeader";
 import { TiArrowRightOutline } from "react-icons/ti";
+import { useTranslation } from 'next-i18next'
+
 
 const colors = [
   {
@@ -71,12 +73,13 @@ const colors = [
 ];
 
 const ExteriorColours = () => {
+  const { t } = useTranslation('common')
   return (
     <div className={styles.exteriorColours}>
       <TitleHeader
         whyChoose={[]}
-        title="A Curated Selection"
-        subtitle="Explore a handpicked preview of exterior colours, interior finishes, wood transfers and worktop options. Every BBQ Pod is made to order, with further customisation available."
+        title={t('curatedSelectionTitle')}
+        subtitle={t('curatedSelectionSubtitle')}
       />
       <Container className={styles.container}>
         <div className={styles.colorGrid}>
@@ -102,7 +105,7 @@ const ExteriorColours = () => {
         </div>
         <div className="d-flex justify-content-center mt-5">
           <Link href={"/products"} className={styles.viewOptionsBtn}>
-            View All Options <TiArrowRightOutline className="ms-1" />
+            {t('viewAllOptionsButton')} <TiArrowRightOutline className="ms-1" />
           </Link>
         </div>
       </Container>

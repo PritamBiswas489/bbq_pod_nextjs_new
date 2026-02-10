@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "next-i18next";
 import { Container, Row, Col } from "react-bootstrap";
 import {
   FaFire,
@@ -12,6 +13,7 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 
 const Footer = () => {
+  const { t } = useTranslation('common');
   return (
     <footer className={styles.footer}>
       <Container>
@@ -19,26 +21,26 @@ const Footer = () => {
           <Row className={styles.statsSection}>
             <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
-                <span className={styles.statValue}>Built for Spain</span>
-                <span className={styles.statLabel}>Mediterranean design</span>
+                <span className={styles.statValue}>{t('footerStat1Value')}</span>
+                <span className={styles.statLabel}>{t('footerStat1Label')}</span>
               </div>
             </Col>
             <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
-                <span className={styles.statValue}>Up to 16 Weeks</span>
-                <span className={styles.statLabel}>Order to install</span>
+                <span className={styles.statValue}>{t('footerStat2Value')}</span>
+                <span className={styles.statLabel}>{t('footerStat2Label')}</span>
               </div>
             </Col>
             <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
-                <span className={styles.statValue}>Spain-Wide</span>
-                <span className={styles.statLabel}>Delivery & install</span>
+                <span className={styles.statValue}>{t('footerStat3Value')}</span>
+                <span className={styles.statLabel}>{t('footerStat3Label')}</span>
               </div>
             </Col>
             <Col lg md sm={6} xs={6} className="text-center">
               <div className={styles.stat}>
-                <span className={styles.statValue}>Fully Assembled</span>
-                <span className={styles.statLabel}>Ready to use</span>
+                <span className={styles.statValue}>{t('footerStat4Value')}</span>
+                <span className={styles.statLabel}>{t('footerStat4Label')}</span>
               </div>
             </Col>
           </Row>
@@ -46,7 +48,7 @@ const Footer = () => {
         <Row className="align-items-start justify-content-between">
           <Col md={3} className={styles.logoSection}>
             <div className={styles.logo}>
-              <Image src={logo} alt="logo" width={893} height={137} priority />
+              <Image src={logo} alt={t('footerLogoAlt')} width={893} height={137} priority />
             </div>
             {/* <p className={styles.description}>
               Permanent, fully integrated outdoor kitchens designed for life
@@ -55,58 +57,58 @@ const Footer = () => {
             </p> */}
           </Col>
           <Col md={2} xs={6} className={styles.menuSection}>
-            <h5>Our Products</h5>
+            <h5>{t('footerProductsHeading')}</h5>
             <ul>
               <li>
-                <a href="#">Core</a>
+                <a href="#">{t('footerProductCore')}</a>
               </li>
               <li>
-                <a href="#">Prime</a>
+                <a href="#">{t('footerProductPrime')}</a>
               </li>
               <li>
-                <a href="#">Apex</a>
+                <a href="#">{t('footerProductApex')}</a>
               </li>
               <li>
-                <a href="#">Pinnacle</a>
+                <a href="#">{t('footerProductPinnacle')}</a>
               </li>
               <li>
-                <a href="#">Aero</a>
+                <a href="#">{t('footerProductAero')}</a>
               </li>
             </ul>
           </Col>
           <Col md={2} xs={6} className={styles.menuSection}>
-            <h5>Company</h5>
+            <h5>{t('footerCompanyHeading')}</h5>
             <ul>
               <li>
-                <a href="#">About us</a>
+                <a href="#">{t('footerCompanyAbout')}</a>
               </li>
               <li>
-                <a href="#">Products</a>
+                <a href="#">{t('footerCompanyProducts')}</a>
               </li>
               <li>
-                <a href="#">Brochure</a>
+                <a href="#">{t('footerCompanyBrochure')}</a>
               </li>
               <li>
-                <a href="#">Contact</a>
+                <a href="#">{t('footerCompanyContact')}</a>
               </li>
             </ul>
           </Col>
           <Col md={3} className={styles.contactSection}>
-            <h5>Contact Us</h5>
+            <h5>{t('footerContactHeading')}</h5>
             <ul>
               <li>
-                <FaMapMarkerAlt /> Alhaurín de la Torre, Málaga
+                <FaMapMarkerAlt /> {t('footerContactLocation')}
               </li>
               <li>
-                <FaEnvelope /> sales@bbqpodspain.com
+                <FaEnvelope /> {t('footerContactEmail')}
               </li>
               <li>
-                <FaPhoneAlt /> +34 672 021 437
+                <FaPhoneAlt /> {t('footerContactPhone')}
               </li>
               <li>
-                <FaClock /> Mon - Sat: 9:00–17:00
+                <FaClock /> {t('footerContactHours')}
                 <br />
-                Visits by appointment only
+                {t('footerContactAppointment')}
               </li>
             </ul>
           </Col>
@@ -116,17 +118,17 @@ const Footer = () => {
           <Col className="text-center">
             <ul className={styles.bottomLinks}>
               <li>
-                <a href="#">Privacy Policy</a>
+                <a href="#">{t('footerPrivacyPolicy')}</a>
               </li>
               <li>
-                <a href="#">Terms & Conditions</a>
+                <a href="#">{t('footerTermsConditions')}</a>
               </li>
               <li>
-                <a href="#">Warranty Information</a>
+                <a href="#">{t('footerWarrantyInfo')}</a>
               </li>
             </ul>
-            <p>&copy; 2026 BBQ Pod Spain SL. All rights reserved.</p>
-            <p>B24971665</p>
+            <p>{t('footerCopyright')}</p>
+            <p>{t('footerCompanyId')}</p>
           </Col>
         </Row>
       </Container>

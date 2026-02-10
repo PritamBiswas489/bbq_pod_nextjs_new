@@ -1,3 +1,4 @@
+import React from "react";
 import style from "./index.module.scss";
 import InnerBanner from "@/components/innerBanner";
 import hero1 from "@/assets/front/images/hero-1.webp";
@@ -8,64 +9,279 @@ import ComparisonTable from "@/components/comparisonTable";
 import Faqs from "@/components/faqs";
 import FindKitchen from "@/components/findKitchen";
 import TitleHeader from "@/components/titleHeader";
-export const homeFaqs = [
-  {
-    question: "Do I need planning permission for a BBQ Pod?",
-    answer:
-      "In most cases, planning permission isn't required for residential BBQ pods as they are considered permitted development for garden structures under 2.5 meters in height. However, regulations vary by location and property type (listed buildings, conservation areas, flats). We recommend checking with your local planning authority, and we're happy to provide technical specifications to support your enquiry.",
-  },
-  {
-    question: "How long is the shipping time?",
-    answer:
-      "Approx. 16 weeks from 50% deposit being paid. Each BBQ pod arrives 100% fully assembled from our UK facility. Our professional installation team will position it in your garden and complete all utility connections (gas, electric, water if applicable) in a single day. You can start cooking immediately after installation.",
-  },
-  {
-    question: "Are BBQ Pods suitable for year-round use?",
-    answer:
-      "Absolutely. Each outdoor kitchen pod features weatherproof insulation, 6-layer door panels, and commercial-grade stainless steel construction engineered to perform in British weather all year round. The sealed electronics and integrated drainage systems protect against rain and moisture. Many customers use their pods throughout winter for Christmas gatherings and New Year celebrations. The A-Pro model's motorised awning provides additional rain protection when needed.",
-  },
-  {
-    question: "What utilities do I need for installation?",
-    answer:
-      "Standard outdoor electrical connection (13A socket) and either mains gas or space for a propane tank are required. Some models benefit from a garden hose connection for easy cleaning. Our installation team will advise on the optimal placement considering utility access, level ground requirements, and clearance specifications. We can also arrange utility connections if needed through our network of certified contractors.",
-  },
-  {
-    question: "What warranty coverage is included?",
-    answer:
-      "BBQ Pods feature commercial-grade construction with stainless steel frames, 6-layer insulated door panels, and weatherproof materials designed for long-term durability. All integrated appliances (grill, fridge, TV) come with manufacturer warranties typically ranging from 1-5 years. Full warranty documentation and terms are provided with your quote.",
-  },
-];
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "@/../next-i18next.config.js";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import YourGarden from "@/components/yourGarden";
+import heroImage from "@/assets/front/images/hero-2.webp";
+import { FaArrowRight, FaStar } from "react-icons/fa";
+import Head from "next/head";
+import ExteriorProductPage from "@/components/exteriorProductPage";
+
+import REF005 from "@/assets/front/images/RefImage/REF005.png";
+import REF001 from "@/assets/front/images/RefImage/REF001.png";
+import REF002 from "@/assets/front/images/RefImage/REF002.png";
+import REF003 from "@/assets/front/images/RefImage/REF003.png";
+import REF004 from "@/assets/front/images/RefImage/REF004.png";
 
 export default function Products() {
+  const { t } = useTranslation("common");
+  const router = useRouter();
+  const currentLocale = router.locale;
+  console.log("Current locale:", currentLocale);
+
+  const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
+  console.log("Current URL:", currentUrl);
+  React.useEffect(() => {
+    if (!router.query.locale && currentLocale) {
+      const newUrl = `/${currentLocale}${router.asPath}`;
+
+      window.history.replaceState(null, "", newUrl);
+    }
+  }, [router, currentLocale]);
   return (
-    <Layout>
-      <InnerBanner
-        badgeText="5 PREMIUM MODELS"
-        title="Premium Outdoor Kitchen Pods -"
-        subtitle="Compare All Models"
-        description1="Discover our range of premium outdoor kitchen pods, designed for life outdoors in Spain and built for long-term use. Each BBQ Pod is constructed using commercial-grade stainless steel and high-quality materials throughout, combining refined design, performance and durability."
-        description2="Whether you’re upgrading your outdoor entertaining space or creating a dedicated cooking area in your garden or terrace, our five BBQ Pod models offer tailored solutions — from compact layouts to fully equipped, all-season outdoor kitchens"
-        backgroundImage={hero1.src}
-        links={[]}
-      />
-      <OutdoorKitchens />
-      <ModelConfiguratorBanner
-        title="Not Sure Which Model Is Right for You?"
-        description="Use our interactive configurator to explore features, compare models, and visualise your perfect outdoor kitchen. Get a personalised quote in minutes."
-        leftButton="Try Configurator"
-        rightButton="Compare All Models"
-        showButtons={true}
-      />
-      <ComparisonTable />
-      <section className={style.faqs}>
+    <>
+      <Head>
+        <title>{t("productsPageTitle")}</title>
+        <meta name="description" content={t("productsPageDescription")} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Layout>
+        <InnerBanner
+          badgeText={t("productsBadgeText")}
+          title={t("productsBannerTitle")}
+          subtitle={t("productsBannerSubtitle")}
+          description1={t("productsBannerDescription1")}
+          description2={t("productsBannerDescription2")}
+          backgroundImage={hero1.src}
+          links={[]}
+        />
+        <OutdoorKitchens />
+        <YourGarden
+          title={t("brochureTitle")}
+          description={t("brochureDescription")}
+          backgroundImage={heroImage}
+          badges={[
+            {
+              icon: <FaArrowRight />,
+              text: t("badge1"),
+            },
+            { icon: <FaArrowRight />, text: t("badge2") },
+            {
+              icon: <FaArrowRight />,
+              text: t("badge3"),
+            },
+          ]}
+          primaryButton={{
+            label: t("primaryButtonLabel"),
+            href: "",
+          }}
+          secondaryButton={{
+            label: t("secondaryButtonLabel"),
+            href: "",
+          }}
+          footerText={t("footerText")}
+        />
+        <ComparisonTable />
         <TitleHeader
           whyChoose={[]}
-          title="Frequently Asked Questions"
-          subtitle={[]}
+          title={t("customizeYourPodTitle")}
+          subtitle={t("customizeYourPodSubtitle")}
         />
-        <Faqs faqs={homeFaqs} />
-      </section>
-      <FindKitchen />
-    </Layout>
+        <ExteriorProductPage
+          title={t("exteriorPodFrameTitle")}
+          subtitle={t("exteriorPodFrameSubtitle")}
+          imageRef={REF001}
+          imageReftwo={null}
+          items={[
+            {
+              colorName: "ATHENS WHITE",
+              modelName: "SP00321",
+              image: null,
+            },
+            {
+              colorName: "MEDIUM GRAY",
+              modelName: "SP00071",
+              image: null,
+            },
+            {
+              colorName: "PURPLE GRAY",
+              modelName: "CP63203SF",
+              image: null,
+            },
+            {
+              colorName: "BLACK SAND",
+              modelName: "SP00368",
+              image: null,
+            },
+          ]}
+        />
+        <ExteriorProductPage
+          title={t("interiorCabinetColoursTitle")}
+          subtitle={t("interiorCabinetColoursSubtitle")}
+          imageRef={REF002}
+          imageReftwo={null}
+          items={[
+            {
+              colorName: "BEIGE MATTE",
+              modelName: "CY0011",
+              image: null,
+            },
+            {
+              colorName: "STARRY SILVER",
+              modelName: "CPJ103",
+              image: null,
+            },
+            {
+              colorName: "KHAKI GRAY",
+              modelName: "FTE1014898T",
+              image: null,
+            },
+            {
+              colorName: "MORANDI GRAY",
+              modelName: "CY0037",
+              image: null,
+            },
+            {
+              colorName: "LIGHT GRAY",
+              modelName: "SP00598",
+              image: null,
+            },
+            {
+              colorName: "SILVER GRAY",
+              modelName: "CP61773SF",
+              image: null,
+            },
+            {
+              colorName: "TRAFFIC GRAY",
+              modelName: "FTE101554",
+              image: null,
+            },
+            {
+              colorName: "GRAY FLASH",
+              modelName: "SP00111",
+              image: null,
+            },
+            {
+              colorName: "LIGHT GREEN",
+              modelName: "CY35109",
+              image: null,
+            },
+            {
+              colorName: "RETRO GREEN",
+              modelName: "CY0047",
+              image: null,
+            },
+            {
+              colorName: "OLIVE GREEN",
+              modelName: "CP71732C",
+              image: null,
+            },
+            {
+              colorName: "LAKE GREEN",
+              modelName: "JXBD0089",
+              image: null,
+            },
+          ]}
+        />
+        <ExteriorProductPage
+          title={t("interiorCabinetsWoodTitle")}
+          subtitle={t("interiorCabinetsWoodSubtitle")}
+          imageRef={null}
+          imageReftwo={null}
+          items={[
+            {
+              colorName: "CAMEL GRAY",
+              modelName: "CP63195S + JC-8193Y-2",
+              image: null,
+            },
+            {
+              colorName: "KHAKI WOOD",
+              modelName: "XGHY-P2412 + XCH-PS9015",
+              image: null,
+            },
+            {
+              colorName: "BLACK WALNUT",
+              modelName: "CP24938SF + JT4K9015-3",
+              image: null,
+            },
+            {
+              colorName: "CHERRY BLOSSOM",
+              modelName: "M243556P + JR-H1823",
+              image: null,
+            },
+          ]}
+        />
+        <ExteriorProductPage
+          title={t("countertopStainlessSteelTitle")}
+          subtitle={t("countertopStainlessSteelSubtitle")}
+          imageRef={REF003}
+          imageReftwo={REF004}
+          items={[
+            {
+              colorName: "TREE BARK",
+              modelName: null,
+              image: require('@/assets/front/images/ss-tree-bark.jpg'),
+            },
+            {
+              colorName: "RHINO SKIN",
+              modelName: null,
+              image: require('@/assets/front/images/ss-rhino-skin.jpg'),
+            },
+          ]}
+        />
+        <ExteriorProductPage
+          title={t("countertopSinteredStoneTitle")}
+          subtitle={t("countertopSinteredStoneSubtitle")}
+          imageRef={REF005}
+          imageReftwo={null}
+          items={[
+            {
+              colorName: "CALACATTA WHITE",
+              modelName: null,
+              image: null,
+            },
+            {
+              colorName: "CAVE STONE BEIGE",
+              modelName: null,
+              image: null,
+            },
+            {
+              colorName: "BOSNIA GREY",
+              modelName: null,
+              image: null,
+            },
+            {
+              colorName: "SPANISH BLACK AND WHITE ROOT",
+              modelName: null,
+              image: null,
+            },
+          ]}
+        />
+        <ModelConfiguratorBanner
+          title="Still unsure which model is right for you?"
+          leftButtonWrap={false}
+          rightButton="Get Expert Advice"
+          showButtons={true}
+        />
+      </Layout>
+    </>
   );
+}
+
+export async function getStaticProps({ locale }) {
+  const defaultLocale = nextI18NextConfig.i18n.defaultLocale;
+  const localeToUse = locale || defaultLocale;
+
+  return {
+    props: {
+      ...(await serverSideTranslations(
+        localeToUse,
+        ["common"],
+        nextI18NextConfig,
+      )),
+    },
+  };
 }

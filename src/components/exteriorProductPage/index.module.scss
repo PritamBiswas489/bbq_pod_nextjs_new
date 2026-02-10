@@ -1,0 +1,105 @@
+@import "@/assets/front/styles/variable.scss";
+.exteriorColours {
+  padding: 4rem 0;
+}
+.container {
+  border-radius: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.colorGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); // 5 columns by default
+  gap: 1rem;
+  justify-items: center;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr); // 4 columns on large screens
+  }
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr); // 3 columns on medium screens
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); // 2 columns on small screens
+  }
+  @media (max-width: 414px) {
+    grid-template-columns: repeat(4, 1fr); // 2 columns on small screens
+  }
+}
+
+.swatchWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.swatchLink {
+  display: block;
+  width: 100%;
+  border-radius: 1rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 0 40px -15px;
+  padding: 1.25rem;
+  // background: $bg-white;
+  &:hover {
+    transform: translateY(-5px) scale(1.05);
+  }
+}
+
+.swatch {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.label {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: $primary;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.viewOptionsBtn {
+  background: $primary;
+  color: $bg-white;
+  padding: 0.7rem 2rem;
+  border-radius: 2rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: all ease-in-out 0.3s;
+  display: block;
+  &:hover {
+    background: darken($primary, 20%);
+    color: $bg-white;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .exteriorColours {
+    padding: 2rem 0;
+  }
+  .titleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .swatchLink {
+    padding: 1rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .swatchLink {
+    padding: 0;
+  }
+}

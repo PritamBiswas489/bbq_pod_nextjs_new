@@ -3,53 +3,55 @@ import { FaStar } from "react-icons/fa";
 import styles from "./index.module.scss";
 import { LuQuote } from "react-icons/lu";
 import TitleHeader from "../titleHeader";
+import { useTranslation } from 'next-i18next';
 
 const testimonials = [
   {
-    text: "We use the Pinnacle most weekends now. Cooking, eating and just sitting outside feels easier because everything is already there. It’s changed how we use our garden without feeling over the top",
-    name: "James & Laura",
-    location: "Málaga",
-    owner: "Pinnacle",
+    textKey: "testimonial1Text",
+    nameKey: "testimonial1Name",
+    locationKey: "testimonial1Location",
+    ownerKey: "testimonial1Owner",
   },
   {
-    text: "The Prime felt like the right balance for us. Big enough to entertain, but not massive. Everything feels solid and well finished, and the install was straightforward.",
-    name: "David",
-    location: "Marbella",
-    owner: "Prime",
+    textKey: "testimonial2Text",
+    nameKey: "testimonial2Name",
+    locationKey: "testimonial2Location",
+    ownerKey: "testimonial2Owner",
   },
   {
-    text: "We wanted something open rather than fully enclosed, and the Aero suits us perfectly. The awning is useful for shade, and it still feels like proper outdoor cooking.",
-    name: "Emma & Carlos",
-    location: "Alicante",
-    owner: "Aero",
+    textKey: "testimonial3Text",
+    nameKey: "testimonial3Name",
+    locationKey: "testimonial3Location",
+    ownerKey: "testimonial3Owner",
   },
   {
-    text: "Our space is quite small, so we were worried it might feel cramped. The Core fits really well and doesn’t feel like a compromise at all.",
-    name: "Richard & Claire",
-    location: "Valencia",
-    owner: "Core",
+    textKey: "testimonial4Text",
+    nameKey: "testimonial4Name",
+    locationKey: "testimonial4Location",
+    ownerKey: "testimonial4Owner",
   },
   {
-    text: "I cook a lot, so the Apex made sense for me. The extra worktop space and larger grill are noticeable day to day. It feels practical, not just for show.",
-    name: "Miguel",
-    location: "Madrid",
-    owner: "Apex",
+    textKey: "testimonial5Text",
+    nameKey: "testimonial5Name",
+    locationKey: "testimonial5Location",
+    ownerKey: "testimonial5Owner",
   },
   {
-    text: "The whole process was calm and clear. No pressure, no rushing. The pod looks exactly how we expected and we’re really happy with how it turned out.",
-    name: "Sophie & Daniel",
-    location: "Estepona",
-    owner: "Prime",
+    textKey: "testimonial6Text",
+    nameKey: "testimonial6Name",
+    locationKey: "testimonial6Location",
+    ownerKey: "testimonial6Owner",
   },
 ];
 
 const Testimonials = () => {
+  const { t } = useTranslation('common');
   return (
     <section className={styles.testimonials}>
       <TitleHeader
         whyChoose={[]}
-        title="Loved by UK Families"
-        subtitle="Join hundreds of satisfied customers who have transformed their gardens into luxury outdoor entertaining spaces."
+        title={t('sectionTitle')}
+        subtitle={t('sectionSubtitle')}
       />
       <Container>
         <Row className="g-4">
@@ -70,12 +72,12 @@ const Testimonials = () => {
                   ))}
                 </div>
 
-                <p className={styles.text}>"{item.text}"</p>
+                <p className={styles.text}>"{t(item.textKey)}"</p>
 
                 <div className={styles.footer}>
-                  <strong>{item.name}</strong>
+                  <strong>{t(item.nameKey)}</strong>
                   <span>
-                    {item.location} • {item.owner}
+                    {t(item.locationKey)} • {t(item.ownerKey)}
                   </span>
                 </div>
               </div>

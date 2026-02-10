@@ -2,48 +2,49 @@ import React from "react";
 import { Table, Container } from "react-bootstrap";
 import styles from "./index.module.scss";
 import TitleHeader from "../titleHeader";
+import { useTranslation } from 'next-i18next';
 
 const ComparisonTable = () => {
+  const { t } = useTranslation('common');
   const tableData = [
     {
-      model: "CORE →",
-      length: "2210mm",
-      grillSize: '30" premium gas BBQ',
-      keyFeature: "Compact integrated kitchen",
-      bestFor: "Small gardens",
+      modelKey: "coreTableModel",
+      lengthKey: "coreTableLength",
+      grillSizeKey: "coreTableGrillSize",
+      keyFeatureKey: "coreTableKeyFeature",
+      bestForKey: "coreTableBestFor",
       color: "blue",
     },
     {
-      model: "PRIME →",
-      length: "2690mm",
-      grillSize: ' 30" premium gas BBQ',
-      keyFeature: " Integrated TV & entertaining layout",
-      bestFor: "Entertaining",
+      modelKey: "primeTableModel",
+      lengthKey: "primeTableLength",
+      grillSizeKey: "primeTableGrillSize",
+      keyFeatureKey: "primeTableKeyFeature",
+      bestForKey: "primeTableBestFor",
       color: "purple",
     },
     {
-      model: "APEX →",
-      length: "3500mm",
-      grillSize: '36" premium gas BBQ',
-      keyFeature: "Larger cooking & prep space",
-      bestFor: "Premium living",
+      modelKey: "apexTableModel",
+      lengthKey: "apexTableLength",
+      grillSizeKey: "apexTableGrillSize",
+      keyFeatureKey: "apexTableKeyFeature",
+      bestForKey: "apexTableBestFor",
       color: "gold",
     },
     {
-      model: "PINNACLE →",
-      length: "3760mm",
-      grillSize: '46" premium gas BBQ',
-      keyFeature:
-        "Full-spec outdoor kitchen with motorised roof and luxury features",
-      bestFor: "Largest model",
+      modelKey: "pinnacleTableModel",
+      lengthKey: "pinnacleTableLength",
+      grillSizeKey: "pinnacleTableGrillSize",
+      keyFeatureKey: "pinnacleTableKeyFeature",
+      bestForKey: "pinnacleTableBestFor",
       color: "red",
     },
     {
-      model: "AERO →",
-      length: "3139mm",
-      grillSize: '36" premium gas BBQ',
-      keyFeature: "Open-air design with awning",
-      bestFor: "Open air",
+      modelKey: "aeroTableModel",
+      lengthKey: "aeroTableLength",
+      grillSizeKey: "aeroTableGrillSize",
+      keyFeatureKey: "aeroTableKeyFeature",
+      bestForKey: "aeroTableBestFor",
       color: "green",
     },
   ];
@@ -52,9 +53,8 @@ const ComparisonTable = () => {
     <section className={styles.quickComparison}>
       <Container className={styles.container}>
         <TitleHeader
-          // whyChoose="Quick Comparison"
-          title="Model Comparison"
-          subtitle="Our premium outdoor kitchen range at a glance"
+          title={t('comparisonTableTitle')}
+          subtitle={t('comparisonTableSubtitle')}
         />
 
         <div
@@ -66,11 +66,11 @@ const ComparisonTable = () => {
           <Table responsive hover className={styles.comparisonTable}>
             <thead>
               <tr>
-                <th className={styles.headerCell}>Model</th>
-                <th className={styles.headerCell}>Length</th>
-                <th className={styles.headerCell}>Grill Size</th>
-                <th className={styles.headerCell}>Key Feature</th>
-                <th className={styles.headerCell}>Best For</th>
+                <th className={styles.headerCell}>{t('tableHeaderModel')}</th>
+                <th className={styles.headerCell}>{t('tableHeaderLength')}</th>
+                <th className={styles.headerCell}>{t('tableHeaderGrillSize')}</th>
+                <th className={styles.headerCell}>{t('tableHeaderKeyFeature')}</th>
+                <th className={styles.headerCell}>{t('tableHeaderBestFor')}</th>
               </tr>
             </thead>
             <tbody>
@@ -80,27 +80,27 @@ const ComparisonTable = () => {
                     <div
                       className={`${styles.modelBadge} ${styles[row.color]}`}
                     >
-                      {row.model}
+                      {t(row.modelKey)}
                     </div>
                   </td>
                   <td className={styles.dataCell}>
-                    <span className={styles.lengthText}>{row.length}</span>
+                    <span className={styles.lengthText}>{t(row.lengthKey)}</span>
                     <div className={styles.progressBar}>
                       <div
                         className={styles.progressFill}
                         style={{
-                          width: `${(parseInt(row.length) / 3760) * 100}%`,
+                          width: `${(parseInt(t(row.lengthKey)) / 3760) * 100}%`,
                         }}
                       ></div>
                     </div>
                   </td>
-                  <td className={styles.dataCell}>{row.grillSize}</td>
-                  <td className={styles.dataCell}>{row.keyFeature}</td>
+                  <td className={styles.dataCell}>{t(row.grillSizeKey)}</td>
+                  <td className={styles.dataCell}>{t(row.keyFeatureKey)}</td>
                   <td className={styles.dataCell}>
                     <span
                       className={`${styles.bestForTag} ${styles[row.color]}`}
                     >
-                      {row.bestFor}
+                      {t(row.bestForKey)}
                     </span>
                   </td>
                 </tr>
