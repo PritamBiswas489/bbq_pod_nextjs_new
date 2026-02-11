@@ -40,7 +40,7 @@ const InnerBanner = ({
         <p className="lead mb-2" data-aos="zoom-in" data-aos-once="true">
           {description1}
         </p>
-        <p className="small" data-aos="zoom-in" data-aos-once="true">
+        <p className="lead" data-aos="zoom-in" data-aos-once="true">
           {description2}
         </p>
         {links.length > 0 && (

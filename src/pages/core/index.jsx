@@ -227,7 +227,7 @@ const ProductsDetails = () => {
           </Row>
         </Container>
       </section>
-      <LifestyleFeatures />
+     
       <EngineeringExcellence />
       <DimensionsSection />
       <TechnicalSpecifications />
@@ -245,7 +245,7 @@ const ProductsDetails = () => {
           </Row>
         </Container>
       </section>
-      <WhatInclude />
+      
       <ModelConfiguratorBanner
         title="Perfect For"
         description="Perfect for homeowners with smaller gardens who want a professional-grade outdoor kitchen. Ideal for couples, small families, intimate garden parties, and year-round outdoor cooking without compromising on space."
@@ -253,39 +253,6 @@ const ProductsDetails = () => {
         rightButton="Compare All Models"
         showButtons={false}
       />
-      <section className={style.faqs}>
-        <TitleHeader
-          whyChoose={[]}
-          title="A-Mini FAQs"
-          subtitle="Common questions about this model"
-        />
-        <Faqs faqs={productFaqs} />
-      </section>
-      <YourGarden
-        title="Ready to Transform Your Garden?"
-        description="Get a personalised quote in under 2 minutes. No obligation, instant response from our expert team."
-        backgroundImage={heroImage}
-        primaryButton={{
-          label: "Get Quote for A-Mini",
-          href: "",
-        }}
-        secondaryButton={{
-          label: "Try Configurator",
-          href: "",
-        }}
-        footerText={[]}
-      />
-      <ApplianceOptions />
-      <MaterialOptions />
-      <section className={style.productGallery}>
-        <TitleHeader
-          whyChoose={[]}
-          title="Product Gallery"
-          subtitle="Professional product photography, annotated technical diagrams, and detailed dimension specifications"
-        />
-        <GalleryImage images={images} showFilters={false} showLabel={false} />
-      </section>
-      <ExploreOtherModels />
     </Layout>
   );
 };
@@ -300,6 +267,5 @@ export async function getStaticProps({ locale }) {
     },
   };
 }
-
 
 export default ProductsDetails;

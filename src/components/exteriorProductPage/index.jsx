@@ -30,8 +30,8 @@ const ExteriorProductPage = ({
                 <Image
                   src={imageRef}
                   alt="Product Image One"
-                  width={800}
-                  height={600}
+                  width={1000}
+                  height={800}
                 />
               </div>
             )}
@@ -71,9 +71,7 @@ const ExteriorProductPage = ({
                   )}
 
                   <h6>{item.colorName}</h6>
-                  {item.modelName && (
-                    <p className={styles.label}>{item.modelName}</p>
-                  )}
+                   
                 </Link>
               </div>
             ))}
