@@ -1,6 +1,6 @@
 @import "@/assets/front/styles/variable.scss";
 .exteriorColours {
-  padding: 4rem 0;
+  padding: 2rem 0;
 }
 .container {
   border-radius: 8px;
@@ -8,9 +8,27 @@
   margin: 0 auto;
 }
 
+.imgWrap {
+  flex: 0 0 60%;
+  max-width: 60%;
+  margin: 0 auto 2rem;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  display: flex;
+  gap: 20px;
+  .imageBox {
+    flex: 1;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+  }
+}
+
 .colorGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); // 5 columns by default
+  grid-template-columns: repeat(4, 1fr); // 5 columns by default
   gap: 1rem;
   justify-items: center;
 
@@ -49,6 +67,12 @@
   // background: $bg-white;
   &:hover {
     transform: translateY(-5px) scale(1.05);
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
   }
 }
 
