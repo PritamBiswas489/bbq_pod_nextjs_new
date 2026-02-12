@@ -5,38 +5,31 @@ import TitleHeader from "../titleHeader";
 import bannerImage from "@/assets/front/images/ban-slider/ban-1.jpg";
 import Image from "next/image";
 
-const DoorAccess = () => {
+const DoorAccess = ({headingTwo, pointText, pointOneHeading, pointOneDescription, pointTwoHeading, pointTwoDescription, pointTwoDescriptionTwo, floorImage  }) => {
   return (
     <section className={style.doorAccessSection}>
       <Container>
         <TitleHeader
           whyChoose={[]}
-          title="Front Door & Access Options"
-          subtitle="The Core can be configured with different front door styles,
-                depending on your space and how you plan to use the pod:"
+          title={headingTwo}
+          subtitle={pointText}
         />
         <Row className="align-items-center g-5">
           <Col lg={6}>
             <div className={style.doorAccessLeft}>
               <div className={style.doorAccessLeftBox}>
-                <h4>Lift up stainless-steel door</h4>
+                <h4>{pointOneHeading}</h4>
                 <p>
-                  Opens upwards to provide overhead shade while cooking and
-                  offers the highest level of protection from sun, rain and dust
-                  when closed.
+                  {pointOneDescription}
                 </p>
               </div>
               <div className={style.doorAccessLeftBox}>
-                <h4>Roller style door (fabric mesh or metal)</h4>
+                <h4>{pointTwoHeading}</h4>
                 <p>
-                  A space efficient option where a lift up door isn’t practical.
-                  Provides quick access and helps reduce exposure when closed,
-                  while maintaining an open, lightweight feel when in use.
+                  {pointTwoDescription}
                 </p>
                 <p>
-                  Both options are designed to keep the interior tidy and
-                  protected when not in use, while remaining practical and
-                  comfortable during cooking.
+                  {pointTwoDescriptionTwo}
                 </p>
               </div>
             </div>
@@ -50,7 +43,7 @@ const DoorAccess = () => {
               data-aos-once="true"
             >
               <Image
-                src={bannerImage}
+                src={floorImage}
                 alt="Landscape"
                 width={600}
                 height={450}

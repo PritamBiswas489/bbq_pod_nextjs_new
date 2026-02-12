@@ -26,73 +26,180 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import nextI18NextConfig from "../../../next-i18next.config";
+import Head from "next/head";
 
 import hero1 from "@/assets/front/images/outdoor/hero-1.jpg";
 import hero2 from "@/assets/front/images/outdoor/hero-2.jpg";
 import hero3 from "@/assets/front/images/outdoor/hero-3.webp";
 import hero4 from "@/assets/front/images/outdoor/hero-4.jpg";
+
+
+import dmhero1 from "@/assets/front/images/dimensions-open.webp";
+import dmhero1Big from "@/assets/front/images/dimensions-open-big.webp";
+import dmhero2 from "@/assets/front/images/dimensions-closed.jpg";
+import dmhero2Big from "@/assets/front/images/dimensions-closed-big.jpg";
+
+
+
+import technical1 from "@/assets/front/images/specs.jpg";
+import floorImage from "@/assets/front/images/flrr.png";
 import ExploreOtherModels from "@/components/exploreOtherModels";
 import bannerBg from "@/assets/front/images/core-ban.jpg";
 import DoorAccess from "@/components/doorAccess";
+import ProductsDetails from "../products-details";
 
-export const productFaqs = [
-  {
-    question: "Is the A-Mini suitable for small gardens?",
-    answer: `Absolutely. The A-Mini is specifically designed for smaller UK gardens with its compact 2210mm length. Despite its space-efficient footprint, it includes a professional 30" grill, integrated fridge, and full LED lighting - delivering complete outdoor kitchen functionality without overwhelming your garden space.`,
-  },
-  {
-    question: "Can the A-Mini handle year-round use?",
-    answer: `Yes. Like all our BBQ pods, the A-Mini features weatherproof construction with 6-layer insulated door panels, sealed electronics, and drainage systems. The stainless steel construction and insulation make it perfect for British weather throughout all seasons.`,
-  },
-];
-
-const images = [
-  {
-    id: 1,
-    src: hero1.src,
-    categories: ["lifestyle", "a-mini"],
-    label: "A-Mini",
-  },
-  {
-    id: 2,
-    src: hero2.src,
-    categories: ["technical", "a-mini"],
-    label: "A-Mini",
-  },
-  {
-    id: 3,
-    src: hero3.src,
-    categories: ["lifestyle", "a-plus"],
-    label: "A-Plus",
-  },
-  {
-    id: 4,
-    src: hero4.src,
-    categories: ["technical", "a-plus"],
-    label: "A-Plus",
-  },
-  {
-    id: 5,
-    src: hero4.src,
-    categories: ["technical", "a-plus"],
-    label: "A-Plus",
-  },
-  {
-    id: 6,
-    src: hero3.src,
-    categories: ["technical", "a-finishes"],
-    label: "Finishes",
-  },
-  {
-    id: 7,
-    src: hero2.src,
-    categories: ["technical", "countertops"],
-    label: "Countertops",
-  },
-];
-
-const ProductsDetails = () => {
+const CoreProductDetails = () => {
   const { t } = useTranslation("common");
+  const PRODUCT_DETAILS = {
+    productName: t('workcoreProductName'),
+    productHeading: t('workcoreProductHeading'),
+    bannerItem: [
+      {
+        icon: "fa-solid fa-medal",
+        text: t('workcoreBannerItemOne'),
+      },
+      {
+        icon: "fa-solid fa-truck-fast",
+        text: t('workcoreBannerItemTwo'),
+      },
+      {
+        icon: "fa-solid fa-umbrella-beach",
+        text: t('workcoreBannerItemThree'),
+      },
+    ],
+    bannerBg: bannerBg,
+    bannerImage: bannerImage,
+    secondProductImage: hero1,
+    descriptionOne: t('workcoreDescriptionOne'),
+    descriptionTwo: t('workcoreDescriptionTwo'),
+    buttonOneText: t('workcoreButtonOneText'),
+    headingOne: t('workcoreHeadingOne'),
+    headingOneDescription: t('workcoreHeadingOneDescription'),
+    specifications: [
+      t('workcoreSpecificationOne'),
+      t('workcoreSpecificationTwo'),
+      t('workcoreSpecificationThree'),
+      t('workcoreSpecificationFour'),
+      t('workcoreSpecificationFive'),
+      t('workcoreSpecificationSix'),
+      t('workcoreSpecificationSeven'),
+      t('workcoreSpecificationEight'),
+      t('workcoreSpecificationNine'),
+      t('workcoreSpecificationTen'),
+      t('workcoreSpecificationEleven'),
+      t('workcoreSpecificationTwelve'),
+    ],
+    headingTwo: t('workcoreHeadingTwo'),
+    pointText: t('workcorePointText'),
+    pointOneHeading: t('workcorePointOneHeading'),
+    pointOneDescription: t('workcorePointOneDescription'),
+    pointTwoHeading: t('workcorePointTwoHeading'),
+    pointTwoDescription: t('workcorePointTwoDescription'),
+    pointTwoDescriptionTwo: t('workcorePointTwoDescriptionTwo'),
+    dimensionHeading: t('workkoreDimensionHeading'),
+    dimentionImages: [
+          {
+            src: dmhero1.src, // Replace with actual full image path
+            thumb: dmhero1Big.src, // Replace with actual thumbnail path
+            label: t('workkoreDimensionFullyExtended'),
+          },
+          {
+            src: dmhero2.src, // Replace with actual full image path
+            thumb: dmhero2Big.src, // Replace with actual thumbnail path
+            label: t('workkoreDimensionCompactClosed'),
+          },
+        ],
+    techinicalheading: t('workkoreTechnicalHeading'),
+    technicalDescription: t('workcoreTechnicalDescription'),
+    technicalOverViewImage: technical1,
+    technicalItems: {
+      Overall_Dimensions: {
+        heading: t('workcoreOverallDimensionsHeading'),
+        items: [
+          {
+            heading: t('workcoreOverallDimensionsWidth'),
+            value: t('workcoreOverallDimensionsWidthValue'),
+          },
+          {
+            heading: t('workcoreOverallDimensionsDepthClosed'),
+            value: t('workcoreOverallDimensionsDepthClosedValue'),
+          },
+          {
+            heading: t('workcoreOverallDimensionsDepthOpen'),
+            value: t('workcoreOverallDimensionsDepthOpenValue'),
+          },
+          {
+            heading: t('workcoreOverallDimensionsHeightClosed'),
+            value: t('workcoreOverallDimensionsHeightClosedValue'),
+          },
+        ],
+      },
+      Weight: {
+        heading: t('workcoreWeightHeading'),
+        items: [
+          {
+            heading: t('workkoreTotalWeight'),
+            value: t('workkoreTotalWeightValue'),
+          },
+        ],
+      },
+      Construction_Materials: {
+        heading: t('workcoreConstructionMaterialsHeading'),
+        items: [
+          t('workcoreConstructionMaterialsOne'),
+          t('workcoreConstructionMaterialsTwo'),
+          t('workcoreConstructionMaterialsThree'),
+          t('workcoreConstructionMaterialsFour'),
+        ],
+      },
+      Front_Door_System: {
+        heading: t('workkoreFrontDoorSystemHeading'),
+        items: [
+          t('workkoreFrontDoorSystemOne'),
+          t('workkoreFrontDoorSystemTwo'),
+        ],
+      },
+      Cooking_Appliances: {
+        heading: t('workkoreCookingAppliancesHeading'),
+        items: [
+          t('workkoreCookingAppliancesOne'),
+          t('workkoreCookingAppliancesTwo'),
+          t('workkoreCookingAppliancesThree'),
+        ],
+      },
+      Lighting_Electrical: {
+        heading: t('workkoreLightingElectricalHeading'),
+        items: [
+          t('workkoreLightingElectricalOne'),
+          t('workkoreLightingElectricalTwo'),
+          t('workkoreLightingElectricalThree'),
+        ],
+      },
+
+      Finish_Options: {
+        heading: t('workcoreFinishOptionsHeading'),
+        items: [
+          t('workcoreFinishOptionsOne'),
+          t('workcoreFinishOptionsTwo'),
+          t('workcoreFinishOptionsThree'),
+        ],
+      },
+      Warranty: {
+        heading: t('workcoreWarrantyHeading'),
+        items: [
+          t('workcoreWarrantyOne'),
+          t('workcoreWarrantyTwo'),
+        ],
+      },
+    },
+    headingThree: t('workcoreHeadingThree'),
+    descriptionThree: t('workcoreDescriptionThree'),
+    descriptionFour: t('workcoreDescriptionFour'),
+    buttonThreeText: t('workcoreButtonThreeText'),
+    buttonFourText: t('workcoreButtonFourText'),
+    headingTechnicalOverview: t('workcoreHeadingTechnicalOverview'),
+    descriptionTechnicalOverview: t('workcoreDescriptionTechnicalOverview'),
+  };
   const router = useRouter();
   const currentLocale = router.locale;
   console.log("Current locale:", currentLocale);
@@ -108,159 +215,179 @@ const ProductsDetails = () => {
   }, [router, currentLocale]);
 
   return (
-    <Layout>
-      {/* <section className={style.banner}> */}
-      <section
-        className={style.banner}
-        style={{
-          backgroundImage: `url(${bannerBg.src})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <Container>
-          <Row className="align-items-center g-5">
-            <Col lg={6} md={6} sm={6} xs={12}>
-              <div className={style.bannerContent}>
-                {/* <div
-                  className={style.nationwide}
-                  data-aos="fade-up"
-                  data-aos-anchor-placement="bottom-center"
-                  data-aos-easing="ease-out-cubic"
-                  data-aos-duration="1500"
-                  data-aos-once="true"
-                >
-                  <i className="fa-regular fa-circle-check" /> Most Popular
-                </div> */}
+    <>
+      <Head>
+        <title>{PRODUCT_DETAILS.productName}</title>
+        <meta name="description" content="Generated by create next app" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-                <h1
-                  data-aos="fade-right"
+      <Layout>
+        {/* <section className={style.banner}> */}
+        <section
+          className={style.banner}
+          style={{
+            backgroundImage: `url(${PRODUCT_DETAILS.bannerBg.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <Container>
+            <Row className="align-items-center g-5">
+              <Col lg={6} md={6} sm={6} xs={12}>
+                <div className={style.bannerContent}>
+                  <h1
+                    data-aos="fade-right"
+                    data-aos-duration="2000"
+                    data-aos-once="true"
+                  >
+                    {PRODUCT_DETAILS.productName}
+                  </h1>
+
+                  <h3
+                    data-aos="fade-right"
+                    data-aos-duration="2500"
+                    data-aos-once="true"
+                  >
+                    {PRODUCT_DETAILS.productHeading}
+                  </h3>
+
+                  <p
+                    data-aos="fade-right"
+                    data-aos-duration="3000"
+                    data-aos-once="true"
+                    dangerouslySetInnerHTML={{
+                      __html: PRODUCT_DETAILS.descriptionOne.replace(
+                        /\n/g,
+                        "<br />",
+                      ),
+                    }}
+                  ></p>
+
+                  <p
+                    data-aos="fade-right"
+                    data-aos-duration="3000"
+                    data-aos-once="true"
+                    dangerouslySetInnerHTML={{
+                      __html: PRODUCT_DETAILS.descriptionTwo.replace(
+                        /\n/g,
+                        "<br />",
+                      ),
+                    }}
+                  ></p>
+
+                  <div className={style.features}>
+                    {" "}
+                    <ul>
+                      {" "}
+                      {PRODUCT_DETAILS.bannerItem.map((item, index) => (
+                        <li key={index}>
+                          {" "}
+                          <i className={item.icon} /> {item.text}{" "}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className={style.actions}>
+                    <ul>
+                      <li>
+                        <Link
+                          href={""}
+                          className={style.callBtn}
+                          data-aos="zoom-out"
+                          data-aos-duration="2500"
+                          data-aos-once="true"
+                        >
+                          {PRODUCT_DETAILS.buttonOneText}{" "}
+                          <TiArrowRightOutline />
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </Col>
+              <Col lg={6} md={6} sm={6} xs={12}>
+                <div
+                  className={style.bannerImage}
+                  data-aos="flip-left"
+                  data-aos-easing="ease-out-cubic"
                   data-aos-duration="2000"
                   data-aos-once="true"
                 >
-                  A-Mini
-                </h1>
-
-                <h3
-                  data-aos="fade-right"
-                  data-aos-duration="2500"
-                  data-aos-once="true"
-                >
-                  Compact Luxury for Every Garden
-                </h3>
-
-                <p
-                  data-aos="fade-right"
-                  data-aos-duration="3000"
-                  data-aos-once="true"
-                  dangerouslySetInnerHTML={{
-                    __html: `The perfect starter BBQ pod for smaller gardens. The A-Mini combines essential outdoor cooking features with commercial-grade construction quality. Ideal for couples or small families who want premium outdoor entertaining without compromising on space.`,
-                  }}
-                ></p>
-
-                <div className={style.features}>
-                  <ul>
-                    <li>
-                      <i className="fa-solid fa-medal" /> 2210mm Length
-                    </li>
-                    <li>
-                      <i className="fa-solid fa-truck-fast" /> 30" three-burner
-                      gas grill
-                    </li>
-                    <li>
-                      <i className="fa-solid fa-umbrella-beach" /> Premium
-                      Quality
-                    </li>
-                  </ul>
+                  <Image
+                    src={PRODUCT_DETAILS.bannerImage}
+                    alt="Landscape"
+                    width={600}
+                    height={450}
+                    className={style.banImgmage}
+                    priority
+                  />
                 </div>
-
-                <div className={style.actions}>
-                  <ul>
-                    <li>
-                      <Link
-                        href={""}
-                        className={style.callBtn}
-                        data-aos="zoom-out"
-                        data-aos-duration="2500"
-                        data-aos-once="true"
-                      >
-                        Get Personalised Quote <TiArrowRightOutline />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href={""}
-                        className={style.quoteBtn}
-                        data-aos="zoom-out"
-                        data-aos-duration="2500"
-                        data-aos-once="true"
-                      >
-                        Try Configurator <TiArrowRightOutline />
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </Col>
-            <Col lg={6} md={6} sm={6} xs={12}>
-              <div
-                className={style.bannerImage}
-                data-aos="flip-left"
-                data-aos-easing="ease-out-cubic"
-                data-aos-duration="2000"
-                data-aos-once="true"
-              >
-                <Image
-                  src={bannerImage}
-                  alt="Landscape"
-                  width={600}
-                  height={450}
-                  className={style.banImgmage}
-                  priority
-                />
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-      <section className={style.topSingleImg}>
-        <Container>
-          <Row className="align-items-center">
-            <Col lg={12}>
-              <SingleImage />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      <EngineeringExcellence />
-      <DoorAccess />
-      <DimensionsSection />
-      <TechnicalSpecifications />
-      <section className={style.BottomSingleImg}>
-        <TitleHeader
-          whyChoose={[]}
-          title="Technical Overview"
-          subtitle="Complete specification diagram with all features labeled"
+              </Col>
+            </Row>
+          </Container>
+        </section>
+        <section className={style.topSingleImg}>
+          <Container>
+            <Row className="align-items-center">
+              <Col lg={12}>
+                <SingleImage img={PRODUCT_DETAILS.secondProductImage} />
+              </Col>
+            </Row>
+          </Container>
+        </section>
+        <EngineeringExcellence
+          headingOne={PRODUCT_DETAILS.headingOne}
+          descriptionTwo={PRODUCT_DETAILS.descriptionTwo}
+          specifications={PRODUCT_DETAILS.specifications}
         />
-        <Container>
-          <Row className="align-items-center">
-            <Col lg={12}>
-              <SingleImage />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
-      <ModelConfiguratorBanner
-        title="Perfect For"
-        description="Perfect for homeowners with smaller gardens who want a professional-grade outdoor kitchen. Ideal for couples, small families, intimate garden parties, and year-round outdoor cooking without compromising on space."
-        leftButton="Try Configurator"
-        rightButton="Compare All Models"
-        showButtons={false}
-      />
-    </Layout>
+        <DoorAccess
+          headingTwo={PRODUCT_DETAILS.headingTwo}
+          pointText={PRODUCT_DETAILS.pointText}
+          pointOneHeading={PRODUCT_DETAILS.pointOneHeading}
+          pointOneDescription={PRODUCT_DETAILS.pointOneDescription}
+          pointTwoHeading={PRODUCT_DETAILS.pointTwoHeading}
+          pointTwoDescription={PRODUCT_DETAILS.pointTwoDescription}
+          pointTwoDescriptionTwo={PRODUCT_DETAILS.pointTwoDescriptionTwo}
+          floorImage={floorImage}
+        />
+        <DimensionsSection 
+        title={PRODUCT_DETAILS.dimensionHeading}
+        images = {PRODUCT_DETAILS.dimentionImages}
+        
+        />
+        <TechnicalSpecifications
+          title={PRODUCT_DETAILS.techinicalheading}
+          subtitle={PRODUCT_DETAILS.technicalDescription}
+          technicalItems={PRODUCT_DETAILS.technicalItems}
+        />
+        <section className={style.BottomSingleImg}>
+          <TitleHeader
+            whyChoose={[]}
+            title={PRODUCT_DETAILS.headingTechnicalOverview}
+            subtitle={PRODUCT_DETAILS.descriptionTechnicalOverview}
+          />
+          <Container>
+            <Row className="align-items-center">
+              <Col lg={12}>
+                <SingleImage img={PRODUCT_DETAILS.technicalOverViewImage} />
+              </Col>
+            </Row>
+          </Container>
+        </section>
+        <ModelConfiguratorBanner
+          title={PRODUCT_DETAILS.headingThree}
+          subtitle={PRODUCT_DETAILS.descriptionThree}
+          description={PRODUCT_DETAILS.descriptionFour}
+          leftButton={PRODUCT_DETAILS.buttonThreeText}
+          rightButton={PRODUCT_DETAILS.buttonFourText}
+          showButtons={true}
+        />{" "}
+      </Layout>
+    </>
   );
 };
 
@@ -279,4 +406,4 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default ProductsDetails;
+export default CoreProductDetails;

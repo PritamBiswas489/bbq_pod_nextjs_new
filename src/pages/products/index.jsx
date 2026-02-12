@@ -25,6 +25,10 @@ import REF002 from "@/assets/front/images/RefImage/REF002.png";
 import REF003 from "@/assets/front/images/RefImage/REF003.png";
 import REF004 from "@/assets/front/images/RefImage/REF004.png";
 
+
+import REF001ES from "@/assets/front/images/RefImage/ExteriorInteriroDEMOSPAIN.png";
+import REF002ES from "@/assets/front/images/RefImage/CabinetcolourDEMOspanish.png";
+
 import bg1 from "@/assets/front/images/image-shade/athens-white.webp";
 import bg2 from "@/assets/front/images/image-shade/medium-gray.webp";
 import bg3 from "@/assets/front/images/image-shade/purple-gray.webp";
@@ -124,7 +128,7 @@ export default function Products() {
         <ExteriorProductPage
           title={t("exteriorPodFrameTitle")}
           subtitle={t("exteriorPodFrameSubtitle")}
-          imageRef={REF001}
+          imageRef={currentLocale === "es" ? REF001ES : REF001}
           imageReftwo={null}
           items={[
             {
@@ -152,7 +156,7 @@ export default function Products() {
         <ExteriorProductPage
           title={t("interiorCabinetColoursTitle")}
           subtitle={t("interiorCabinetColoursSubtitle")}
-          imageRef={REF002}
+          imageRef={currentLocale === "es" ? REF002ES : REF002}
           imageReftwo={null}
           items={[
             {

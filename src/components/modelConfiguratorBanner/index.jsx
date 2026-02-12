@@ -13,6 +13,7 @@ const ModelConfiguratorBanner = ({
   showButtons = true,
   leftButtonWrap = true,
   rightButtonWrap = true,
+  subtitle = null
 }) => {
   return (
     <section className={styles.banner}>
@@ -25,6 +26,17 @@ const ModelConfiguratorBanner = ({
         >
           {title}
         </h2>
+        {subtitle && (
+          <h3
+            className={styles.subtitle}
+            data-aos="zoom-in-up"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
+            {subtitle}
+          </h3>
+        )}
+
         <p
           className={styles.description}
           data-aos="zoom-in-up"
