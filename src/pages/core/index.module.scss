@@ -1,9 +1,28 @@
 @import "@/assets/front/styles/variable.scss";
+// .banner {
+//   color: #fff;
+//   background: linear-gradient(#0a0a0a, #1a1a1a);
+//   padding: 3rem 0;
+//   overflow: hidden;
+// }
 .banner {
-  color: #fff;
-  background: linear-gradient(#0a0a0a, #1a1a1a);
-  padding: 3rem 0;
   overflow: hidden;
+  position: relative;
+  height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+  }
 }
 
 .bannerContent {
@@ -118,30 +137,32 @@
 .bannerImage {
   z-index: 1;
   position: relative;
-  padding: 1.25rem;
-  background: $bg-white;
-  box-shadow: rgba(0, 0, 0, 0.15) 0 0 40px;
+  // padding: 1.25rem;
+  // background: $bg-white;
+  box-shadow: rgba(136, 1, 1, 0.3) 0 0 40px 0;
   border-radius: 1.25rem;
 
   .banImgmage {
     width: 100%;
     height: auto;
     border-radius: 1.25rem;
-    box-shadow: rgba(255, 255, 255, 0.7) 0 0 10px 5px;
+    height: 468px;
+    object-fit: cover;
+    // box-shadow: rgba(255, 255, 255, 0.7) 0 0 10px 5px;
   }
-  &:after {
-    content: "";
-    z-index: -1;
-    background-color: $secondary-2;
+  // &:after {
+  //   content: "";
+  //   z-index: -1;
+  //   background-color: $secondary-2;
 
-    border-radius: 1.25rem;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: rotate(352deg);
-  }
+  //   border-radius: 1.25rem;
+  //   width: 100%;
+  //   height: 100%;
+  //   position: absolute;
+  //   bottom: 0;
+  //   left: 0;
+  //   transform: rotate(352deg);
+  // }
 }
 .faqs,
 .productGallery {

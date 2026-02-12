@@ -99,3 +99,13 @@
     }
   }
 }
+@media screen and (max-width: 840px) {
+  .content {
+    h1 {
+      font-size: 1.5rem;
+    }
+    p {
+      font-size: 0.875rem;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import "@/assets/front/styles/variable.scss";
+.doorAccessSection {
+  background: rgba(243, 79, 3, 0.1);
+  padding: 4rem 0;
+}
+
+.bannerImage {
+  z-index: 1;
+  position: relative;
+  // padding: 1.25rem;
+  // background: $bg-white;
+  box-shadow: rgba(136, 1, 1, 0.3) 0 0 40px 0;
+  border-radius: 1.25rem;
+
+  .banImgmage {
+    width: 100%;
+    height: auto;
+    border-radius: 1.25rem;
+    height: 468px;
+    object-fit: cover;
+  }
+}
+
+.doorAccessLeft {
+  width: 100%;
+  h4 {
+    color: $primary;
+  }
+  p {
+    color: $lightGray;
+  }
+}
+.doorAccessLeftBox:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.doorAccessLeftBox p:not(:last-child) {
+  margin-bottom: 1.5rem;
+}

@@ -13,65 +13,44 @@ const ExteriorProductPage = ({
   imageRef,
   imageReftwo,
   items,
+  gridCols = 4, // ✅ default
 }) => {
-  const { t } = useTranslation("common");
-
   return (
     <div className={styles.exteriorColours}>
       <TitleHeader whyChoose={[]} title={title} subtitle={subtitle} />
 
       <Container className={styles.container}>
         <div className="d-flex flex-wrap align-items-center">
-          {/* ✅ IMAGE WRAPPER */}
           <div className={styles.imgWrap}>
-            {/* 🔹 First Image */}
             {imageRef && (
               <div className={styles.imageBox}>
-                <Image
-                  src={imageRef}
-                  alt="Product Image One"
-                  width={1000}
-                  height={800}
-                />
+                <Image src={imageRef} alt="" width={1000} height={800} />
               </div>
             )}
 
-            {/* 🔹 Second Image */}
             {imageReftwo && (
               <div className={styles.imageBox}>
-                <Image
-                  src={imageReftwo}
-                  alt="Product Image Two"
-                  width={800}
-                  height={600}
-                />
+                <Image src={imageReftwo} alt="" width={800} height={600} />
               </div>
             )}
           </div>
 
-          {/* ✅ COLOR GRID */}
-          <div className={styles.colorGrid}>
+          {/* ✅ Dynamic grid columns */}
+          <div
+            className={styles.colorGrid}
+            style={{ gridTemplateColumns: `repeat(${gridCols}, 1fr)` }}
+          >
             {items.map((item, index) => (
-              <div
-                key={index}
-                className={styles.swatchWrapper}
-                data-aos="zoom-in-up"
-                data-aos-duration="1000"
-                data-aos-once="true"
-              >
+              <div key={index} className={styles.swatchWrapper}>
                 <Link href="#" className={styles.swatchLink}>
-                  {item.image && (
-                    <Image
-                      src={item.image}
-                      alt={item.colorName}
-                      width={300}
-                      height={300}
-                      style={{ borderRadius: "20px" }}
-                    />
-                  )}
-
+                  <Image
+                    src={item.image}
+                    alt={item.colorName}
+                    width={160}
+                    height={160}
+                    style={{ borderRadius: "20px" }}
+                  />
                   <h6>{item.colorName}</h6>
-                   
                 </Link>
               </div>
             ))}

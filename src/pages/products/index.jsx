@@ -250,6 +250,7 @@ export default function Products() {
           subtitle={t("countertopStainlessSteelSubtitle")}
           imageRef={REF003}
           imageReftwo={REF004}
+          gridCols={2}
           items={[
             {
               colorName: "TREE BARK",

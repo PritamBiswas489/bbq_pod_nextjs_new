@@ -240,3 +240,14 @@
     padding: 1rem 2rem;
   }
 }
+
+@media only screen and (max-width: 480px) {
+  .formArea {
+    ul {
+      li {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}

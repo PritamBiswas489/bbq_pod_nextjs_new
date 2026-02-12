@@ -7,7 +7,7 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 import LanguageCheckbox from "../languageCheckbox";
 import BrochureModal from "../brochureModal";
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "next-i18next";
 
 const YourGarden = ({
   title,
@@ -18,7 +18,7 @@ const YourGarden = ({
   secondaryButton = [],
   footerText = [],
 }) => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   const [openModal, setOpenModal] = useState(false);
   return (
     <div
@@ -62,9 +62,9 @@ const YourGarden = ({
 
               <div className={styles.formArea}>
                 <form action="" method="get">
-                  <ul className="d-flex align-items-center">
+                  <ul className="d-flex align-items-center flex-wrap">
                     <li>
-                      <label>{t('yourGardenNameLabel')}</label>
+                      <label>{t("yourGardenNameLabel")}</label>
                       <input
                         type="text"
                         name=""
@@ -73,7 +73,7 @@ const YourGarden = ({
                       />
                     </li>
                     <li>
-                      <label>{t('yourGardenEmailLabel')}</label>
+                      <label>{t("yourGardenEmailLabel")}</label>
                       <input
                         type="email"
                         name=""
@@ -87,7 +87,7 @@ const YourGarden = ({
                   >
                     <LanguageCheckbox />
                   </div>
-                   
+
                   <div className={styles.actions}>
                     <button
                       type="button"

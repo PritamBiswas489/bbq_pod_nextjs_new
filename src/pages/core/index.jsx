@@ -22,18 +22,18 @@ import ApplianceOptions from "@/components/applianceOptions";
 import MaterialOptions from "@/components/materialOptions";
 import GalleryImage from "@/components/galleryImage";
 
-import { useTranslation } from 'next-i18next'
-import { useRouter } from 'next/router'
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import nextI18NextConfig from "../../../next-i18next.config"; 
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "../../../next-i18next.config";
 
 import hero1 from "@/assets/front/images/outdoor/hero-1.jpg";
 import hero2 from "@/assets/front/images/outdoor/hero-2.jpg";
 import hero3 from "@/assets/front/images/outdoor/hero-3.webp";
 import hero4 from "@/assets/front/images/outdoor/hero-4.jpg";
 import ExploreOtherModels from "@/components/exploreOtherModels";
-
-
+import bannerBg from "@/assets/front/images/core-ban.jpg";
+import DoorAccess from "@/components/doorAccess";
 
 export const productFaqs = [
   {
@@ -92,30 +92,38 @@ const images = [
 ];
 
 const ProductsDetails = () => {
-  const { t } = useTranslation('common')
-    const router = useRouter()
-    const currentLocale = router.locale
-    console.log('Current locale:', currentLocale)
-  
-    const currentUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}${router.asPath}`
-      console.log('Current URL:', currentUrl)
-      React.useEffect(() => {
-        if (!router.query.locale && currentLocale) {
-          const newUrl = `/${currentLocale}${router.asPath}`;
-           
-          window.history.replaceState(null, '', newUrl);
-        }
-      }, [router, currentLocale]);
-  
+  const { t } = useTranslation("common");
+  const router = useRouter();
+  const currentLocale = router.locale;
+  console.log("Current locale:", currentLocale);
+
+  const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
+  console.log("Current URL:", currentUrl);
+  React.useEffect(() => {
+    if (!router.query.locale && currentLocale) {
+      const newUrl = `/${currentLocale}${router.asPath}`;
+
+      window.history.replaceState(null, "", newUrl);
+    }
+  }, [router, currentLocale]);
+
   return (
     <Layout>
-      <section className={style.banner}>
+      {/* <section className={style.banner}> */}
+      <section
+        className={style.banner}
+        style={{
+          backgroundImage: `url(${bannerBg.src})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+      >
         <Container>
-          <Row className="align-items-center">
-            {/* LEFT CONTENT */}
-            <Col md={7}>
+          <Row className="align-items-center g-5">
+            <Col lg={6} md={6} sm={6} xs={12}>
               <div className={style.bannerContent}>
-                <div
+                {/* <div
                   className={style.nationwide}
                   data-aos="fade-up"
                   data-aos-anchor-placement="bottom-center"
@@ -124,7 +132,7 @@ const ProductsDetails = () => {
                   data-aos-once="true"
                 >
                   <i className="fa-regular fa-circle-check" /> Most Popular
-                </div>
+                </div> */}
 
                 <h1
                   data-aos="fade-right"
@@ -195,9 +203,7 @@ const ProductsDetails = () => {
                 </div>
               </div>
             </Col>
-
-            {/* RIGHT IMAGE */}
-            <Col md={5}>
+            <Col lg={6} md={6} sm={6} xs={12}>
               <div
                 className={style.bannerImage}
                 data-aos="flip-left"
@@ -227,8 +233,9 @@ const ProductsDetails = () => {
           </Row>
         </Container>
       </section>
-     
+
       <EngineeringExcellence />
+      <DoorAccess />
       <DimensionsSection />
       <TechnicalSpecifications />
       <section className={style.BottomSingleImg}>
@@ -245,7 +252,7 @@ const ProductsDetails = () => {
           </Row>
         </Container>
       </section>
-      
+
       <ModelConfiguratorBanner
         title="Perfect For"
         description="Perfect for homeowners with smaller gardens who want a professional-grade outdoor kitchen. Ideal for couples, small families, intimate garden parties, and year-round outdoor cooking without compromising on space."
@@ -263,7 +270,11 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      ...(await serverSideTranslations(localeToUse, ['common'], nextI18NextConfig)),
+      ...(await serverSideTranslations(
+        localeToUse,
+        ["common"],
+        nextI18NextConfig,
+      )),
     },
   };
 }
