@@ -92,202 +92,202 @@ const images = [
 ];
 
 const ProductsDetails = () => {
-  const { t } = useTranslation('common')
-    const router = useRouter()
-    const currentLocale = router.locale
-    console.log('Current locale:', currentLocale)
+  // const { t } = useTranslation('common')
+  //   const router = useRouter()
+  //   const currentLocale = router.locale
+  //   console.log('Current locale:', currentLocale)
   
-    const currentUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}${router.asPath}`
-      console.log('Current URL:', currentUrl)
-      React.useEffect(() => {
-        if (!router.query.locale && currentLocale) {
-          const newUrl = `/${currentLocale}${router.asPath}`;
+  //   const currentUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}${router.asPath}`
+  //     console.log('Current URL:', currentUrl)
+  //     React.useEffect(() => {
+  //       if (!router.query.locale && currentLocale) {
+  //         const newUrl = `/${currentLocale}${router.asPath}`;
            
-          window.history.replaceState(null, '', newUrl);
-        }
-      }, [router, currentLocale]);
+  //         window.history.replaceState(null, '', newUrl);
+  //       }
+  //     }, [router, currentLocale]);
   
-  return (
-    <Layout>
-      <section className={style.banner}>
-        <Container>
-          <Row className="align-items-center">
-            {/* LEFT CONTENT */}
-            <Col md={7}>
-              <div className={style.bannerContent}>
-                <div
-                  className={style.nationwide}
-                  data-aos="fade-up"
-                  data-aos-anchor-placement="bottom-center"
-                  data-aos-easing="ease-out-cubic"
-                  data-aos-duration="1500"
-                  data-aos-once="true"
-                >
-                  <i className="fa-regular fa-circle-check" /> Most Popular
-                </div>
+  // return (
+  //   <Layout>
+  //     <section className={style.banner}>
+  //       <Container>
+  //         <Row className="align-items-center">
+  //           {/* LEFT CONTENT */}
+  //           <Col md={7}>
+  //             <div className={style.bannerContent}>
+  //               <div
+  //                 className={style.nationwide}
+  //                 data-aos="fade-up"
+  //                 data-aos-anchor-placement="bottom-center"
+  //                 data-aos-easing="ease-out-cubic"
+  //                 data-aos-duration="1500"
+  //                 data-aos-once="true"
+  //               >
+  //                 <i className="fa-regular fa-circle-check" /> Most Popular
+  //               </div>
 
-                <h1
-                  data-aos="fade-right"
-                  data-aos-duration="2000"
-                  data-aos-once="true"
-                >
-                  A-Mini
-                </h1>
+  //               <h1
+  //                 data-aos="fade-right"
+  //                 data-aos-duration="2000"
+  //                 data-aos-once="true"
+  //               >
+  //                 A-Mini
+  //               </h1>
 
-                <h3
-                  data-aos="fade-right"
-                  data-aos-duration="2500"
-                  data-aos-once="true"
-                >
-                  Compact Luxury for Every Garden
-                </h3>
+  //               <h3
+  //                 data-aos="fade-right"
+  //                 data-aos-duration="2500"
+  //                 data-aos-once="true"
+  //               >
+  //                 Compact Luxury for Every Garden
+  //               </h3>
 
-                <p
-                  data-aos="fade-right"
-                  data-aos-duration="3000"
-                  data-aos-once="true"
-                  dangerouslySetInnerHTML={{
-                    __html: `The perfect starter BBQ pod for smaller gardens. The A-Mini combines essential outdoor cooking features with commercial-grade construction quality. Ideal for couples or small families who want premium outdoor entertaining without compromising on space.`,
-                  }}
-                ></p>
+  //               <p
+  //                 data-aos="fade-right"
+  //                 data-aos-duration="3000"
+  //                 data-aos-once="true"
+  //                 dangerouslySetInnerHTML={{
+  //                   __html: `The perfect starter BBQ pod for smaller gardens. The A-Mini combines essential outdoor cooking features with commercial-grade construction quality. Ideal for couples or small families who want premium outdoor entertaining without compromising on space.`,
+  //                 }}
+  //               ></p>
 
-                <div className={style.features}>
-                  <ul>
-                    <li>
-                      <i className="fa-solid fa-medal" /> 2210mm Length
-                    </li>
-                    <li>
-                      <i className="fa-solid fa-truck-fast" /> 30" three-burner
-                      gas grill
-                    </li>
-                    <li>
-                      <i className="fa-solid fa-umbrella-beach" /> Premium
-                      Quality
-                    </li>
-                  </ul>
-                </div>
+  //               <div className={style.features}>
+  //                 <ul>
+  //                   <li>
+  //                     <i className="fa-solid fa-medal" /> 2210mm Length
+  //                   </li>
+  //                   <li>
+  //                     <i className="fa-solid fa-truck-fast" /> 30" three-burner
+  //                     gas grill
+  //                   </li>
+  //                   <li>
+  //                     <i className="fa-solid fa-umbrella-beach" /> Premium
+  //                     Quality
+  //                   </li>
+  //                 </ul>
+  //               </div>
 
-                <div className={style.actions}>
-                  <ul>
-                    <li>
-                      <Link
-                        href={""}
-                        className={style.callBtn}
-                        data-aos="zoom-out"
-                        data-aos-duration="2500"
-                        data-aos-once="true"
-                      >
-                        Get Personalised Quote <TiArrowRightOutline />
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        href={""}
-                        className={style.quoteBtn}
-                        data-aos="zoom-out"
-                        data-aos-duration="2500"
-                        data-aos-once="true"
-                      >
-                        Try Configurator <TiArrowRightOutline />
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </Col>
+  //               <div className={style.actions}>
+  //                 <ul>
+  //                   <li>
+  //                     <Link
+  //                       href={""}
+  //                       className={style.callBtn}
+  //                       data-aos="zoom-out"
+  //                       data-aos-duration="2500"
+  //                       data-aos-once="true"
+  //                     >
+  //                       Get Personalised Quote <TiArrowRightOutline />
+  //                     </Link>
+  //                   </li>
+  //                   <li>
+  //                     <Link
+  //                       href={""}
+  //                       className={style.quoteBtn}
+  //                       data-aos="zoom-out"
+  //                       data-aos-duration="2500"
+  //                       data-aos-once="true"
+  //                     >
+  //                       Try Configurator <TiArrowRightOutline />
+  //                     </Link>
+  //                   </li>
+  //                 </ul>
+  //               </div>
+  //             </div>
+  //           </Col>
 
-            {/* RIGHT IMAGE */}
-            <Col md={5}>
-              <div
-                className={style.bannerImage}
-                data-aos="flip-left"
-                data-aos-easing="ease-out-cubic"
-                data-aos-duration="2000"
-                data-aos-once="true"
-              >
-                <Image
-                  src={bannerImage}
-                  alt="Landscape"
-                  width={600}
-                  height={450}
-                  className={style.banImgmage}
-                  priority
-                />
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-      <section className={style.topSingleImg}>
-        <Container>
-          <Row className="align-items-center">
-            <Col lg={12}>
-              <SingleImage />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-      <LifestyleFeatures />
-      <EngineeringExcellence />
-      <DimensionsSection />
-      <TechnicalSpecifications />
-      <section className={style.BottomSingleImg}>
-        <TitleHeader
-          whyChoose={[]}
-          title="Technical Overview"
-          subtitle="Complete specification diagram with all features labeled"
-        />
-        <Container>
-          <Row className="align-items-center">
-            <Col lg={12}>
-              <SingleImage />
-            </Col>
-          </Row>
-        </Container>
-      </section>
-      <WhatInclude />
-      <ModelConfiguratorBanner
-        title="Perfect For"
-        description="Perfect for homeowners with smaller gardens who want a professional-grade outdoor kitchen. Ideal for couples, small families, intimate garden parties, and year-round outdoor cooking without compromising on space."
-        leftButton="Try Configurator"
-        rightButton="Compare All Models"
-        showButtons={false}
-      />
-      <section className={style.faqs}>
-        <TitleHeader
-          whyChoose={[]}
-          title="A-Mini FAQs"
-          subtitle="Common questions about this model"
-        />
-        <Faqs faqs={productFaqs} />
-      </section>
-      <YourGarden
-        title="Ready to Transform Your Garden?"
-        description="Get a personalised quote in under 2 minutes. No obligation, instant response from our expert team."
-        backgroundImage={heroImage}
-        primaryButton={{
-          label: "Get Quote for A-Mini",
-          href: "",
-        }}
-        secondaryButton={{
-          label: "Try Configurator",
-          href: "",
-        }}
-        footerText={[]}
-      />
-      <ApplianceOptions />
-      <MaterialOptions />
-      <section className={style.productGallery}>
-        <TitleHeader
-          whyChoose={[]}
-          title="Product Gallery"
-          subtitle="Professional product photography, annotated technical diagrams, and detailed dimension specifications"
-        />
-        <GalleryImage images={images} showFilters={false} showLabel={false} />
-      </section>
-      <ExploreOtherModels />
-    </Layout>
-  );
+  //           {/* RIGHT IMAGE */}
+  //           <Col md={5}>
+  //             <div
+  //               className={style.bannerImage}
+  //               data-aos="flip-left"
+  //               data-aos-easing="ease-out-cubic"
+  //               data-aos-duration="2000"
+  //               data-aos-once="true"
+  //             >
+  //               <Image
+  //                 src={bannerImage}
+  //                 alt="Landscape"
+  //                 width={600}
+  //                 height={450}
+  //                 className={style.banImgmage}
+  //                 priority
+  //               />
+  //             </div>
+  //           </Col>
+  //         </Row>
+  //       </Container>
+  //     </section>
+  //     <section className={style.topSingleImg}>
+  //       <Container>
+  //         <Row className="align-items-center">
+  //           <Col lg={12}>
+  //             <SingleImage />
+  //           </Col>
+  //         </Row>
+  //       </Container>
+  //     </section>
+  //     <LifestyleFeatures />
+  //     <EngineeringExcellence />
+  //     <DimensionsSection />
+  //     <TechnicalSpecifications />
+  //     <section className={style.BottomSingleImg}>
+  //       <TitleHeader
+  //         whyChoose={[]}
+  //         title="Technical Overview"
+  //         subtitle="Complete specification diagram with all features labeled"
+  //       />
+  //       <Container>
+  //         <Row className="align-items-center">
+  //           <Col lg={12}>
+  //             <SingleImage />
+  //           </Col>
+  //         </Row>
+  //       </Container>
+  //     </section>
+  //     <WhatInclude />
+  //     <ModelConfiguratorBanner
+  //       title="Perfect For"
+  //       description="Perfect for homeowners with smaller gardens who want a professional-grade outdoor kitchen. Ideal for couples, small families, intimate garden parties, and year-round outdoor cooking without compromising on space."
+  //       leftButton="Try Configurator"
+  //       rightButton="Compare All Models"
+  //       showButtons={false}
+  //     />
+  //     <section className={style.faqs}>
+  //       <TitleHeader
+  //         whyChoose={[]}
+  //         title="A-Mini FAQs"
+  //         subtitle="Common questions about this model"
+  //       />
+  //       <Faqs faqs={productFaqs} />
+  //     </section>
+  //     <YourGarden
+  //       title="Ready to Transform Your Garden?"
+  //       description="Get a personalised quote in under 2 minutes. No obligation, instant response from our expert team."
+  //       backgroundImage={heroImage}
+  //       primaryButton={{
+  //         label: "Get Quote for A-Mini",
+  //         href: "",
+  //       }}
+  //       secondaryButton={{
+  //         label: "Try Configurator",
+  //         href: "",
+  //       }}
+  //       footerText={[]}
+  //     />
+  //     <ApplianceOptions />
+  //     <MaterialOptions />
+  //     <section className={style.productGallery}>
+  //       <TitleHeader
+  //         whyChoose={[]}
+  //         title="Product Gallery"
+  //         subtitle="Professional product photography, annotated technical diagrams, and detailed dimension specifications"
+  //       />
+  //       <GalleryImage images={images} showFilters={false} showLabel={false} />
+  //     </section>
+  //     <ExploreOtherModels />
+  //   </Layout>
+  // );
 };
 
 export async function getStaticProps({ locale }) {
