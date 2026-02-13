@@ -37,3 +37,15 @@
 .doorAccessLeftBox p:not(:last-child) {
   margin-bottom: 1.5rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .doorAccessSection {
+    padding: 2rem 0;
+  }
+
+  .bannerImage {
+    .banImgmage {
+      height: 320px;
+    }
+  }
+}

@@ -1,18 +1,12 @@
 @import "@/assets/front/styles/variable.scss";
-// .banner {
-//   color: #fff;
-//   background: linear-gradient(#0a0a0a, #1a1a1a);
-//   padding: 3rem 0;
-//   overflow: hidden;
-// }
 .banner {
   overflow: hidden;
   position: relative;
-  height: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1;
+  padding: 4rem 0;
   &:after {
     content: "";
     position: absolute;
@@ -168,7 +162,12 @@
 .productGallery {
   padding: 4rem 0;
 }
-
+.topSingleImg {
+  padding: 4rem 0 0;
+}
+.BottomSingleImg {
+  padding: 4rem 0;
+}
 @media only screen and (max-width: 768px) {
   .bannerContent {
     h1 {
@@ -218,15 +217,10 @@
 
       li {
         gap: 0;
-        padding: 0;
         font-size: 0.65rem;
-        border: none;
-        color: $dark;
-        font-weight: 600;
         i {
           font-size: 0.75rem;
           margin-right: 0.313rem;
-          color: $primary;
         }
       }
     }
@@ -237,9 +231,27 @@
   }
 }
 
-.topSingleImg {
-  padding: 4rem 0 0;
-}
-.BottomSingleImg {
-  padding: 4rem 0;
+@media only screen and (max-width: 600px) {
+  .BottomSingleImg {
+    padding: 2rem 0;
+  }
+  .bannerContent {
+    p {
+      font-size: 0.875rem;
+    }
+  }
+  .features {
+    margin-bottom: 3rem;
+    ul {
+      li {
+        flex-grow: 1;
+      }
+    }
+  }
+  .banner {
+    padding: 2rem 0;
+  }
+  .topSingleImg {
+    padding: 2rem 0 0;
+  }
 }

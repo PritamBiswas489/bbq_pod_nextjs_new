@@ -33,13 +33,10 @@ import hero2 from "@/assets/front/images/outdoor/hero-2.jpg";
 import hero3 from "@/assets/front/images/outdoor/hero-3.webp";
 import hero4 from "@/assets/front/images/outdoor/hero-4.jpg";
 
-
 import dmhero1 from "@/assets/front/images/dimensions-open.webp";
 import dmhero1Big from "@/assets/front/images/dimensions-open-big.webp";
 import dmhero2 from "@/assets/front/images/dimensions-closed.jpg";
 import dmhero2Big from "@/assets/front/images/dimensions-closed-big.jpg";
-
-
 
 import technical1 from "@/assets/front/images/specs.jpg";
 import floorImage from "@/assets/front/images/flrr.png";
@@ -51,154 +48,151 @@ import ProductsDetails from "../products-details";
 const CoreProductDetails = () => {
   const { t } = useTranslation("common");
   const PRODUCT_DETAILS = {
-    productName: t('workcoreProductName'),
-    productHeading: t('workcoreProductHeading'),
+    productName: t("workcoreProductName"),
+    productHeading: t("workcoreProductHeading"),
     bannerItem: [
       {
         icon: "fa-solid fa-medal",
-        text: t('workcoreBannerItemOne'),
+        text: t("workcoreBannerItemOne"),
       },
       {
         icon: "fa-solid fa-truck-fast",
-        text: t('workcoreBannerItemTwo'),
+        text: t("workcoreBannerItemTwo"),
       },
       {
         icon: "fa-solid fa-umbrella-beach",
-        text: t('workcoreBannerItemThree'),
+        text: t("workcoreBannerItemThree"),
       },
     ],
     bannerBg: bannerBg,
     bannerImage: bannerImage,
     secondProductImage: hero1,
-    descriptionOne: t('workcoreDescriptionOne'),
-    descriptionTwo: t('workcoreDescriptionTwo'),
-    buttonOneText: t('workcoreButtonOneText'),
-    headingOne: t('workcoreHeadingOne'),
-    headingOneDescription: t('workcoreHeadingOneDescription'),
+    descriptionOne: t("workcoreDescriptionOne"),
+    descriptionTwo: t("workcoreDescriptionTwo"),
+    buttonOneText: t("workcoreButtonOneText"),
+    headingOne: t("workcoreHeadingOne"),
+    headingOneDescription: t("workcoreHeadingOneDescription"),
     specifications: [
-      t('workcoreSpecificationOne'),
-      t('workcoreSpecificationTwo'),
-      t('workcoreSpecificationThree'),
-      t('workcoreSpecificationFour'),
-      t('workcoreSpecificationFive'),
-      t('workcoreSpecificationSix'),
-      t('workcoreSpecificationSeven'),
-      t('workcoreSpecificationEight'),
-      t('workcoreSpecificationNine'),
-      t('workcoreSpecificationTen'),
-      t('workcoreSpecificationEleven'),
-      t('workcoreSpecificationTwelve'),
+      t("workcoreSpecificationOne"),
+      t("workcoreSpecificationTwo"),
+      t("workcoreSpecificationThree"),
+      t("workcoreSpecificationFour"),
+      t("workcoreSpecificationFive"),
+      t("workcoreSpecificationSix"),
+      t("workcoreSpecificationSeven"),
+      t("workcoreSpecificationEight"),
+      t("workcoreSpecificationNine"),
+      t("workcoreSpecificationTen"),
+      t("workcoreSpecificationEleven"),
+      t("workcoreSpecificationTwelve"),
     ],
-    headingTwo: t('workcoreHeadingTwo'),
-    pointText: t('workcorePointText'),
-    pointOneHeading: t('workcorePointOneHeading'),
-    pointOneDescription: t('workcorePointOneDescription'),
-    pointTwoHeading: t('workcorePointTwoHeading'),
-    pointTwoDescription: t('workcorePointTwoDescription'),
-    pointTwoDescriptionTwo: t('workcorePointTwoDescriptionTwo'),
-    dimensionHeading: t('workkoreDimensionHeading'),
+    headingTwo: t("workcoreHeadingTwo"),
+    pointText: t("workcorePointText"),
+    pointOneHeading: t("workcorePointOneHeading"),
+    pointOneDescription: t("workcorePointOneDescription"),
+    pointTwoHeading: t("workcorePointTwoHeading"),
+    pointTwoDescription: t("workcorePointTwoDescription"),
+    pointTwoDescriptionTwo: t("workcorePointTwoDescriptionTwo"),
+    dimensionHeading: t("workkoreDimensionHeading"),
     dimentionImages: [
-          {
-            src: dmhero1.src, // Replace with actual full image path
-            thumb: dmhero1Big.src, // Replace with actual thumbnail path
-            label: t('workkoreDimensionFullyExtended'),
-          },
-          {
-            src: dmhero2.src, // Replace with actual full image path
-            thumb: dmhero2Big.src, // Replace with actual thumbnail path
-            label: t('workkoreDimensionCompactClosed'),
-          },
-        ],
-    techinicalheading: t('workkoreTechnicalHeading'),
-    technicalDescription: t('workcoreTechnicalDescription'),
+      {
+        src: dmhero1.src, // Replace with actual full image path
+        thumb: dmhero1Big.src, // Replace with actual thumbnail path
+        label: t("workkoreDimensionFullyExtended"),
+      },
+      {
+        src: dmhero2.src, // Replace with actual full image path
+        thumb: dmhero2Big.src, // Replace with actual thumbnail path
+        label: t("workkoreDimensionCompactClosed"),
+      },
+    ],
+    techinicalheading: t("workkoreTechnicalHeading"),
+    technicalDescription: t("workcoreTechnicalDescription"),
     technicalOverViewImage: technical1,
     technicalItems: {
       Overall_Dimensions: {
-        heading: t('workcoreOverallDimensionsHeading'),
+        heading: t("workcoreOverallDimensionsHeading"),
         items: [
           {
-            heading: t('workcoreOverallDimensionsWidth'),
-            value: t('workcoreOverallDimensionsWidthValue'),
+            heading: t("workcoreOverallDimensionsWidth"),
+            value: t("workcoreOverallDimensionsWidthValue"),
           },
           {
-            heading: t('workcoreOverallDimensionsDepthClosed'),
-            value: t('workcoreOverallDimensionsDepthClosedValue'),
+            heading: t("workcoreOverallDimensionsDepthClosed"),
+            value: t("workcoreOverallDimensionsDepthClosedValue"),
           },
           {
-            heading: t('workcoreOverallDimensionsDepthOpen'),
-            value: t('workcoreOverallDimensionsDepthOpenValue'),
+            heading: t("workcoreOverallDimensionsDepthOpen"),
+            value: t("workcoreOverallDimensionsDepthOpenValue"),
           },
           {
-            heading: t('workcoreOverallDimensionsHeightClosed'),
-            value: t('workcoreOverallDimensionsHeightClosedValue'),
+            heading: t("workcoreOverallDimensionsHeightClosed"),
+            value: t("workcoreOverallDimensionsHeightClosedValue"),
           },
         ],
       },
       Weight: {
-        heading: t('workcoreWeightHeading'),
+        heading: t("workcoreWeightHeading"),
         items: [
           {
-            heading: t('workkoreTotalWeight'),
-            value: t('workkoreTotalWeightValue'),
+            heading: t("workkoreTotalWeight"),
+            value: t("workkoreTotalWeightValue"),
           },
         ],
       },
       Construction_Materials: {
-        heading: t('workcoreConstructionMaterialsHeading'),
+        heading: t("workcoreConstructionMaterialsHeading"),
         items: [
-          t('workcoreConstructionMaterialsOne'),
-          t('workcoreConstructionMaterialsTwo'),
-          t('workcoreConstructionMaterialsThree'),
-          t('workcoreConstructionMaterialsFour'),
+          t("workcoreConstructionMaterialsOne"),
+          t("workcoreConstructionMaterialsTwo"),
+          t("workcoreConstructionMaterialsThree"),
+          t("workcoreConstructionMaterialsFour"),
         ],
       },
       Front_Door_System: {
-        heading: t('workkoreFrontDoorSystemHeading'),
+        heading: t("workkoreFrontDoorSystemHeading"),
         items: [
-          t('workkoreFrontDoorSystemOne'),
-          t('workkoreFrontDoorSystemTwo'),
+          t("workkoreFrontDoorSystemOne"),
+          t("workkoreFrontDoorSystemTwo"),
         ],
       },
       Cooking_Appliances: {
-        heading: t('workkoreCookingAppliancesHeading'),
+        heading: t("workkoreCookingAppliancesHeading"),
         items: [
-          t('workkoreCookingAppliancesOne'),
-          t('workkoreCookingAppliancesTwo'),
-          t('workkoreCookingAppliancesThree'),
+          t("workkoreCookingAppliancesOne"),
+          t("workkoreCookingAppliancesTwo"),
+          t("workkoreCookingAppliancesThree"),
         ],
       },
       Lighting_Electrical: {
-        heading: t('workkoreLightingElectricalHeading'),
+        heading: t("workkoreLightingElectricalHeading"),
         items: [
-          t('workkoreLightingElectricalOne'),
-          t('workkoreLightingElectricalTwo'),
-          t('workkoreLightingElectricalThree'),
+          t("workkoreLightingElectricalOne"),
+          t("workkoreLightingElectricalTwo"),
+          t("workkoreLightingElectricalThree"),
         ],
       },
 
       Finish_Options: {
-        heading: t('workcoreFinishOptionsHeading'),
+        heading: t("workcoreFinishOptionsHeading"),
         items: [
-          t('workcoreFinishOptionsOne'),
-          t('workcoreFinishOptionsTwo'),
-          t('workcoreFinishOptionsThree'),
+          t("workcoreFinishOptionsOne"),
+          t("workcoreFinishOptionsTwo"),
+          t("workcoreFinishOptionsThree"),
         ],
       },
       Warranty: {
-        heading: t('workcoreWarrantyHeading'),
-        items: [
-          t('workcoreWarrantyOne'),
-          t('workcoreWarrantyTwo'),
-        ],
+        heading: t("workcoreWarrantyHeading"),
+        items: [t("workcoreWarrantyOne"), t("workcoreWarrantyTwo")],
       },
     },
-    headingThree: t('workcoreHeadingThree'),
-    descriptionThree: t('workcoreDescriptionThree'),
-    descriptionFour: t('workcoreDescriptionFour'),
-    buttonThreeText: t('workcoreButtonThreeText'),
-    buttonFourText: t('workcoreButtonFourText'),
-    headingTechnicalOverview: t('workcoreHeadingTechnicalOverview'),
-    descriptionTechnicalOverview: t('workcoreDescriptionTechnicalOverview'),
+    headingThree: t("workcoreHeadingThree"),
+    descriptionThree: t("workcoreDescriptionThree"),
+    descriptionFour: t("workcoreDescriptionFour"),
+    buttonThreeText: t("workcoreButtonThreeText"),
+    buttonFourText: t("workcoreButtonFourText"),
+    headingTechnicalOverview: t("workcoreHeadingTechnicalOverview"),
+    descriptionTechnicalOverview: t("workcoreDescriptionTechnicalOverview"),
   };
   const router = useRouter();
   const currentLocale = router.locale;
@@ -236,7 +230,7 @@ const CoreProductDetails = () => {
         >
           <Container>
             <Row className="align-items-center g-5">
-              <Col lg={6} md={6} sm={6} xs={12}>
+              <Col lg={6} md={6} sm={12} xs={12}>
                 <div className={style.bannerContent}>
                   <h1
                     data-aos="fade-right"
@@ -309,7 +303,7 @@ const CoreProductDetails = () => {
                   </div>
                 </div>
               </Col>
-              <Col lg={6} md={6} sm={6} xs={12}>
+              <Col lg={6} md={6} sm={12} xs={12}>
                 <div
                   className={style.bannerImage}
                   data-aos="flip-left"
@@ -354,10 +348,9 @@ const CoreProductDetails = () => {
           pointTwoDescriptionTwo={PRODUCT_DETAILS.pointTwoDescriptionTwo}
           floorImage={floorImage}
         />
-        <DimensionsSection 
-        title={PRODUCT_DETAILS.dimensionHeading}
-        images = {PRODUCT_DETAILS.dimentionImages}
-        
+        <DimensionsSection
+          title={PRODUCT_DETAILS.dimensionHeading}
+          images={PRODUCT_DETAILS.dimentionImages}
         />
         <TechnicalSpecifications
           title={PRODUCT_DETAILS.techinicalheading}

@@ -43,7 +43,7 @@ const defaultEquipment = [
 const TechnicalSpecifications = ({
   title = "Technical Specifications",
   subtitle = "Precision-engineered for performance and longevity",
-  technicalItems
+  technicalItems,
 }) => {
   return (
     <section className={styles.section}>
@@ -54,20 +54,26 @@ const TechnicalSpecifications = ({
           <Card.Body>
             <Row>
               <Col md={6}>
-                <h5 className={styles.cardHeader}>{technicalItems.Overall_Dimensions.heading}</h5>
+                <h5 className={styles.cardHeader}>
+                  {technicalItems.Overall_Dimensions.heading}
+                </h5>
                 <ListGroup variant="flush">
-                  {technicalItems.Overall_Dimensions.items.map((item, index) => (
-                    <ListGroup.Item key={index} className={styles.specItem}>
-                      {item.icon}
-                      <span className={styles.label}>{item.heading}</span>
-                      <span className={styles.value}>{item.value}</span>
-                    </ListGroup.Item>
-                  ))}
+                  {technicalItems.Overall_Dimensions.items.map(
+                    (item, index) => (
+                      <ListGroup.Item key={index} className={styles.specItem}>
+                        {item.icon}
+                        <span className={styles.label}>{item.heading}</span>
+                        <span className={styles.value}>{item.value}</span>
+                      </ListGroup.Item>
+                    ),
+                  )}
                 </ListGroup>
               </Col>
 
-               <Col md={6}>
-                <h5 className={styles.cardHeader}>{technicalItems.Weight.heading}</h5>
+              <Col md={6}>
+                <h5 className={styles.cardHeader}>
+                  {technicalItems.Weight.heading}
+                </h5>
                 <ListGroup variant="flush">
                   {technicalItems.Weight.items.map((item, index) => (
                     <ListGroup.Item key={index} className={styles.specItem}>
@@ -78,101 +84,103 @@ const TechnicalSpecifications = ({
                   ))}
                 </ListGroup>
               </Col>
-              
-               
             </Row>
 
-
-              <Row>
+            <Row>
               <Col md={6}>
-                <h5 className={styles.cardHeader}>{technicalItems.Construction_Materials.heading}</h5>
+                <h5 className={styles.cardHeader}>
+                  {technicalItems.Construction_Materials.heading}
+                </h5>
                 <ListGroup variant="flush">
-                  {technicalItems.Construction_Materials.items.map((item, index) => (
-                    <ListGroup.Item key={index} className={styles.specItem}>
-                      {item.icon}
-                      <span className={styles.label}>{item}</span>
-                      
-                    </ListGroup.Item>
-                  ))}
+                  {technicalItems.Construction_Materials.items.map(
+                    (item, index) => (
+                      <ListGroup.Item key={index} className={styles.specItem}>
+                        {item.icon}
+                        <span className={styles.label}>{item}</span>
+                      </ListGroup.Item>
+                    ),
+                  )}
                 </ListGroup>
               </Col>
 
-
               <Col md={6}>
-                <h5 className={styles.cardHeader}>{technicalItems.Front_Door_System.heading}</h5>
+                <h5 className={styles.cardHeader}>
+                  {technicalItems.Front_Door_System.heading}
+                </h5>
                 <ListGroup variant="flush">
                   {technicalItems.Front_Door_System.items.map((item, index) => (
                     <ListGroup.Item key={index} className={styles.specItem}>
                       {item.icon}
                       <span className={styles.label}>{item}</span>
-                      
                     </ListGroup.Item>
                   ))}
                 </ListGroup>
               </Col>
-
-                
-               
             </Row>
 
             <Row>
               <Col md={6}>
-                <h5 className={styles.cardHeader}>{technicalItems.Cooking_Appliances.heading}</h5>
+                <h5 className={styles.cardHeader}>
+                  {technicalItems.Cooking_Appliances.heading}
+                </h5>
                 <ListGroup variant="flush">
-                  {technicalItems.Cooking_Appliances.items.map((item, index) => (
-                    <ListGroup.Item key={index} className={styles.specItem}>
-                      {item.icon}
-                      <span className={styles.label}>{item}</span>
-                      
-                    </ListGroup.Item>
-                  ))}
+                  {technicalItems.Cooking_Appliances.items.map(
+                    (item, index) => (
+                      <ListGroup.Item key={index} className={styles.specItem}>
+                        {item.icon}
+                        <span className={styles.label}>{item}</span>
+                      </ListGroup.Item>
+                    ),
+                  )}
                 </ListGroup>
               </Col>
 
-               <Col md={6}>
-                <h5 className={styles.cardHeader}>{technicalItems.Lighting_Electrical.heading}</h5>
+              <Col md={6}>
+                <h5 className={styles.cardHeader}>
+                  {technicalItems.Lighting_Electrical.heading}
+                </h5>
                 <ListGroup variant="flush">
-                  {technicalItems.Lighting_Electrical.items.map((item, index) => (
-                    <ListGroup.Item key={index} className={styles.specItem}>
-                      {item.icon}
-                      <span className={styles.label}>{item}</span>
-                      
-                    </ListGroup.Item>
-                  ))}
+                  {technicalItems.Lighting_Electrical.items.map(
+                    (item, index) => (
+                      <ListGroup.Item key={index} className={styles.specItem}>
+                        {item.icon}
+                        <span className={styles.label}>{item}</span>
+                      </ListGroup.Item>
+                    ),
+                  )}
                 </ListGroup>
               </Col>
             </Row>
 
-
-             <Row>
+            <Row>
               <Col md={6}>
-                <h5 className={styles.cardHeader}>{technicalItems.Finish_Options.heading}</h5>
+                <h5 className={styles.cardHeader}>
+                  {technicalItems.Finish_Options.heading}
+                </h5>
                 <ListGroup variant="flush">
                   {technicalItems.Finish_Options.items.map((item, index) => (
                     <ListGroup.Item key={index} className={styles.specItem}>
                       {item.icon}
                       <span className={styles.label}>{item}</span>
-                      
                     </ListGroup.Item>
                   ))}
                 </ListGroup>
               </Col>
 
-               <Col md={6}>
-                <h5 className={styles.cardHeader}>{technicalItems.Warranty.heading}</h5>
+              <Col md={6}>
+                <h5 className={styles.cardHeader}>
+                  {technicalItems.Warranty.heading}
+                </h5>
                 <ListGroup variant="flush">
                   {technicalItems.Warranty.items.map((item, index) => (
                     <ListGroup.Item key={index} className={styles.specItem}>
                       {item.icon}
                       <span className={styles.label}>{item}</span>
-                      
                     </ListGroup.Item>
                   ))}
                 </ListGroup>
               </Col>
             </Row>
-             
-            
           </Card.Body>
         </Card>
       </Container>
