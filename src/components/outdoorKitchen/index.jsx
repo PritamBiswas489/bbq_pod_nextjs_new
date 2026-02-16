@@ -26,6 +26,7 @@ const OutdoorKitchens = () => {
       priceKey: "coreProductPrice",
       featuresKeys: ["coreFeature1", "coreFeature2", "coreFeature3"],
       image: hero1.src,
+      link: "/core",
     },
     {
       badges: [],
@@ -34,6 +35,7 @@ const OutdoorKitchens = () => {
       priceKey: "primeProductPrice",
       featuresKeys: ["primeFeature1", "primeFeature2", "primeFeature3"],
       image: hero2.src,
+      link: "/prime",
     },
     {
       badges: [],
@@ -42,6 +44,7 @@ const OutdoorKitchens = () => {
       priceKey: "apexProductPrice",
       featuresKeys: ["apexFeature1", "apexFeature2", "apexFeature3"],
       image: hero3.src,
+      link: "/apex",
     },
     {
       badges: [],
@@ -54,6 +57,7 @@ const OutdoorKitchens = () => {
         "pinnacleFeature3",
       ],
       image: hero4.src,
+      link: "/pinnacle",
     },
     {
       badges: [],
@@ -62,6 +66,7 @@ const OutdoorKitchens = () => {
       priceKey: "aeroProductPrice",
       featuresKeys: ["aeroFeature1", "aeroFeature2", "aeroFeature3"],
       image: hero5.src,
+      link: "/aero",
     },
   ];
 
@@ -129,6 +134,7 @@ const OutdoorKitchens = () => {
                   <Button
                     variant="link"
                     className={`p-0 ${styles.viewDetails}`}
+                    href={product.link}
                   >
                     {t("viewDetailsButton")}
                   </Button>

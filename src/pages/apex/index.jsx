@@ -3,7 +3,6 @@ import Image from "next/image";
 import style from "./index.module.scss";
 import Layout from "@/section/layout";
 import { Col, Container, Row } from "react-bootstrap";
-import bannerImage from "@/assets/front/images/ban-slider/ban-1.jpg";
 import Link from "next/link";
 import { TiArrowRightOutline } from "react-icons/ti";
 import EngineeringExcellence from "@/components/engineeringExcellence";
@@ -27,158 +26,171 @@ import technical1 from "@/assets/front/images/specs.jpg";
 import floorImage from "@/assets/front/images/flrr.png";
 import bannerBg from "@/assets/front/images/core-ban.jpg";
 import DoorAccess from "@/components/doorAccess";
+
+import bannerImage from "@/assets/front/images/apeximages/hero-1.jpg";
+import dimensionsClosed from "@/assets/front/images/apeximages/dimensions-closed.jpg";
+import dimensionsOpen from "@/assets/front/images/apeximages/dimensions-open.jpg";
+import specs from "@/assets/front/images/apeximages/specs.jpg";
  
  
 
-const CoreProductDetails = () => {
+const ApexProductDetails = () => {
   const { t } = useTranslation("common");
-  const PRODUCT_DETAILS = {
-    productName: t("workcoreProductName"),
-    productHeading: t("workcoreProductHeading"),
-    bannerItem: [
-      {
-        icon: "fa-solid fa-medal",
-        text: t("workcoreBannerItemOne"),
+   const PRODUCT_DETAILS = {
+      productName: t("workapexProductName"),
+      productHeading: t("workapexProductHeading"),
+      bannerItem: [
+        {
+          icon: "fa-solid fa-medal",
+          text: t("workapexBannerItemOne"),
+        },
+        {
+          icon: "fa-solid fa-truck-fast",
+          text: t("workapexBannerItemTwo"),
+        },
+        {
+          icon: "fa-solid fa-umbrella-beach",
+          text: t("workapexBannerItemThree"),
+        },
+         {
+          icon: "fa-solid fa-tv",
+          text: t("workapexBannerItemFour"),
+        },
+      ],
+      bannerBg: bannerImage,
+      bannerImage: bannerImage,
+      secondProductImage: bannerImage,
+      descriptionOne: t("workapexDescriptionOne"),
+      descriptionTwo: t("workapexDescriptionTwo"),
+      buttonOneText: t("workapexButtonOneText"),
+      headingOne: t("workapexHeadingOne"),
+      headingOneDescription: t("workapexHeadingOneDescription"),
+      specifications: [
+        t("workapexSpecificationOne"),
+        t("workapexSpecificationTwo"),
+        t("workapexSpecificationThree"),
+        t("workapexSpecificationFour"),
+        t("workapexSpecificationFive"),
+        t("workapexSpecificationSix"),
+        t("workapexSpecificationSeven"),
+        t("workapexSpecificationEight"),
+        t("workapexSpecificationNine"),
+        t("workapexSpecificationTen"),
+        t("workapexSpecificationEleven"),
+        t("workapexSpecificationTwelve"),
+        t("workapexSpecificationThirteen"),
+        t("workapexSpecificationFourteen"),
+      ],
+      headingTwo: t("workapexHeadingTwo"),
+      pointText: t("workapexPointText"),
+      pointOneHeading: t("workapexPointOneHeading"),
+      pointOneDescription: t("workapexPointOneDescription"),
+      pointTwoHeading: t("workapexPointTwoHeading"),
+      pointTwoDescription: t("workapexPointTwoDescription"),
+      pointTwoDescriptionTwo: t("workapexPointTwoDescriptionTwo"),
+      dimensionHeading: t("workapexDimensionHeading"),
+      dimentionImages: [
+        {
+          src: dimensionsOpen.src, // Replace with actual full image path
+          thumb: dimensionsOpen.src, // Replace with actual thumbnail path
+          label: t("workapexDimensionFullyExtended"),
+        },
+        {
+          src: dimensionsClosed.src, // Replace with actual full image path
+          thumb: dimensionsClosed.src, // Replace with actual thumbnail path
+          label: t("workapexDimensionCompactClosed"),
+        },
+      ],
+      techinicalheading: t("workapexTechnicalHeading"),
+      technicalDescription: t("workapexTechnicalDescription"),
+      technicalOverViewImage: specs,
+      technicalItems: {
+        Overall_Dimensions: {
+          heading: t("workapexOverallDimensionsHeading"),
+          items: [
+            {
+              heading: t("workapexOverallDimensionsWidth"),
+              value: t("workapexOverallDimensionsWidthValue"),
+            },
+            {
+              heading: t("workapexOverallDimensionsDepthClosed"),
+              value: t("workapexOverallDimensionsDepthClosedValue"),
+            },
+            {
+              heading: t("workapexOverallDimensionsDepthOpen"),
+              value: t("workapexOverallDimensionsDepthOpenValue"),
+            },
+            {
+              heading: t("workapexOverallDimensionsHeightClosed"),
+              value: t("workapexOverallDimensionsHeightClosedValue"),
+            },
+          ],
+        },
+        Weight: {
+          heading: t("workapexWeightHeading"),
+          items: [
+            {
+              heading: t("workapexTotalWeight"),
+              value: t("workapexTotalWeightValue"),
+            },
+          ],
+        },
+        Construction_Materials: {
+          heading: t("workapexConstructionMaterialsHeading"),
+          items: [
+            t("workapexConstructionMaterialsOne"),
+            t("workapexConstructionMaterialsTwo"),
+            t("workapexConstructionMaterialsThree"),
+            t("workapexConstructionMaterialsFour"),
+          ],
+        },
+        Front_Door_System: {
+          heading: t("workapexFrontDoorSystemHeading"),
+          items: [
+            t("workapexFrontDoorSystemOne"),
+            t("workapexFrontDoorSystemTwo"),
+          ],
+        },
+        Cooking_Appliances: {
+          heading: t("workapexCookingAppliancesHeading"),
+          items: [
+            t("workapexCookingAppliancesOne"),
+            t("workapexCookingAppliancesTwo"),
+            t("workapexCookingAppliancesThree"),
+             t("workapexCookingAppliancesFour"),
+          ],
+        },
+        Lighting_Electrical: {
+          heading: t("workapexLightingElectricalHeading"),
+          items: [
+            t("workapexLightingElectricalOne"),
+            t("workapexLightingElectricalTwo"),
+            t("workapexLightingElectricalThree"),
+            t("workapexLightingElectricalFour"),
+          ],
+        },
+  
+        Finish_Options: {
+          heading: t("workapexFinishOptionsHeading"),
+          items: [
+            t("workapexFinishOptionsOne"),
+            t("workapexFinishOptionsTwo"),
+            t("workapexFinishOptionsThree"),
+          ],
+        },
+        Warranty: {
+          heading: t("workapexWarrantyHeading"),
+          items: [t("workapexWarrantyOne"), t("workapexWarrantyTwo")],
+        },
       },
-      {
-        icon: "fa-solid fa-truck-fast",
-        text: t("workcoreBannerItemTwo"),
-      },
-      {
-        icon: "fa-solid fa-umbrella-beach",
-        text: t("workcoreBannerItemThree"),
-      },
-    ],
-    bannerBg: bannerBg,
-    bannerImage: bannerImage,
-    secondProductImage: hero1,
-    descriptionOne: t("workcoreDescriptionOne"),
-    descriptionTwo: t("workcoreDescriptionTwo"),
-    buttonOneText: t("workcoreButtonOneText"),
-    headingOne: t("workcoreHeadingOne"),
-    headingOneDescription: t("workcoreHeadingOneDescription"),
-    specifications: [
-      t("workcoreSpecificationOne"),
-      t("workcoreSpecificationTwo"),
-      t("workcoreSpecificationThree"),
-      t("workcoreSpecificationFour"),
-      t("workcoreSpecificationFive"),
-      t("workcoreSpecificationSix"),
-      t("workcoreSpecificationSeven"),
-      t("workcoreSpecificationEight"),
-      t("workcoreSpecificationNine"),
-      t("workcoreSpecificationTen"),
-      t("workcoreSpecificationEleven"),
-      t("workcoreSpecificationTwelve"),
-    ],
-    headingTwo: t("workcoreHeadingTwo"),
-    pointText: t("workcorePointText"),
-    pointOneHeading: t("workcorePointOneHeading"),
-    pointOneDescription: t("workcorePointOneDescription"),
-    pointTwoHeading: t("workcorePointTwoHeading"),
-    pointTwoDescription: t("workcorePointTwoDescription"),
-    pointTwoDescriptionTwo: t("workcorePointTwoDescriptionTwo"),
-    dimensionHeading: t("workkoreDimensionHeading"),
-    dimentionImages: [
-      {
-        src: dmhero1.src, // Replace with actual full image path
-        thumb: dmhero1Big.src, // Replace with actual thumbnail path
-        label: t("workkoreDimensionFullyExtended"),
-      },
-      {
-        src: dmhero2.src, // Replace with actual full image path
-        thumb: dmhero2Big.src, // Replace with actual thumbnail path
-        label: t("workkoreDimensionCompactClosed"),
-      },
-    ],
-    techinicalheading: t("workkoreTechnicalHeading"),
-    technicalDescription: t("workcoreTechnicalDescription"),
-    technicalOverViewImage: technical1,
-    technicalItems: {
-      Overall_Dimensions: {
-        heading: t("workcoreOverallDimensionsHeading"),
-        items: [
-          {
-            heading: t("workcoreOverallDimensionsWidth"),
-            value: t("workcoreOverallDimensionsWidthValue"),
-          },
-          {
-            heading: t("workcoreOverallDimensionsDepthClosed"),
-            value: t("workcoreOverallDimensionsDepthClosedValue"),
-          },
-          {
-            heading: t("workcoreOverallDimensionsDepthOpen"),
-            value: t("workcoreOverallDimensionsDepthOpenValue"),
-          },
-          {
-            heading: t("workcoreOverallDimensionsHeightClosed"),
-            value: t("workcoreOverallDimensionsHeightClosedValue"),
-          },
-        ],
-      },
-      Weight: {
-        heading: t("workcoreWeightHeading"),
-        items: [
-          {
-            heading: t("workkoreTotalWeight"),
-            value: t("workkoreTotalWeightValue"),
-          },
-        ],
-      },
-      Construction_Materials: {
-        heading: t("workcoreConstructionMaterialsHeading"),
-        items: [
-          t("workcoreConstructionMaterialsOne"),
-          t("workcoreConstructionMaterialsTwo"),
-          t("workcoreConstructionMaterialsThree"),
-          t("workcoreConstructionMaterialsFour"),
-        ],
-      },
-      Front_Door_System: {
-        heading: t("workkoreFrontDoorSystemHeading"),
-        items: [
-          t("workkoreFrontDoorSystemOne"),
-          t("workkoreFrontDoorSystemTwo"),
-        ],
-      },
-      Cooking_Appliances: {
-        heading: t("workkoreCookingAppliancesHeading"),
-        items: [
-          t("workkoreCookingAppliancesOne"),
-          t("workkoreCookingAppliancesTwo"),
-          t("workkoreCookingAppliancesThree"),
-        ],
-      },
-      Lighting_Electrical: {
-        heading: t("workkoreLightingElectricalHeading"),
-        items: [
-          t("workkoreLightingElectricalOne"),
-          t("workkoreLightingElectricalTwo"),
-          t("workkoreLightingElectricalThree"),
-        ],
-      },
-
-      Finish_Options: {
-        heading: t("workcoreFinishOptionsHeading"),
-        items: [
-          t("workcoreFinishOptionsOne"),
-          t("workcoreFinishOptionsTwo"),
-          t("workcoreFinishOptionsThree"),
-        ],
-      },
-      Warranty: {
-        heading: t("workcoreWarrantyHeading"),
-        items: [t("workcoreWarrantyOne"), t("workcoreWarrantyTwo")],
-      },
-    },
-    headingThree: t("workcoreHeadingThree"),
-    descriptionThree: t("workcoreDescriptionThree"),
-    descriptionFour: t("workcoreDescriptionFour"),
-    buttonThreeText: t("workcoreButtonThreeText"),
-    buttonFourText: t("workcoreButtonFourText"),
-    headingTechnicalOverview: t("workcoreHeadingTechnicalOverview"),
-    descriptionTechnicalOverview: t("workcoreDescriptionTechnicalOverview"),
-  };
+      headingThree: t("workapexHeadingThree"),
+      descriptionThree: t("workapexDescriptionThree"),
+      descriptionFour: t("workapexDescriptionFour"),
+      buttonThreeText: t("workapexButtonThreeText"),
+      buttonFourText: t("workapexButtonFourText"),
+      headingTechnicalOverview: t("workapexHeadingTechnicalOverview"),
+      descriptionTechnicalOverview: t("workapexDescriptionTechnicalOverview"),
+    };
   const router = useRouter();
   const currentLocale = router.locale;
   console.log("Current locale:", currentLocale);
@@ -384,4 +396,4 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default CoreProductDetails;
+export default ApexProductDetails;

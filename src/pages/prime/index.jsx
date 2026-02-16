@@ -3,7 +3,7 @@ import Image from "next/image";
 import style from "./index.module.scss";
 import Layout from "@/section/layout";
 import { Col, Container, Row } from "react-bootstrap";
-import bannerImage from "@/assets/front/images/ban-slider/ban-1.jpg";
+ 
 import Link from "next/link";
 import { TiArrowRightOutline } from "react-icons/ti";
 import EngineeringExcellence from "@/components/engineeringExcellence";
@@ -18,166 +18,174 @@ import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import nextI18NextConfig from "../../../next-i18next.config";
 import Head from "next/head";
-import hero1 from "@/assets/front/images/outdoor/hero-1.jpg";
-import dmhero1 from "@/assets/front/images/dimensions-open.webp";
-import dmhero1Big from "@/assets/front/images/dimensions-open-big.webp";
-import dmhero2 from "@/assets/front/images/dimensions-closed.jpg";
-import dmhero2Big from "@/assets/front/images/dimensions-closed-big.jpg";
-import technical1 from "@/assets/front/images/specs.jpg";
 import floorImage from "@/assets/front/images/flrr.png";
-import bannerBg from "@/assets/front/images/core-ban.jpg";
 import DoorAccess from "@/components/doorAccess";
+
+
+
+import bannerImage from "@/assets/front/images/primeImages/bannerImage.jpg";
+import dimensionsClosed from "@/assets/front/images/primeImages/dimensions-closed.jpg";
+import dimensionsOpen from "@/assets/front/images/primeImages/dimensions-open.jpg";
+import specs from "@/assets/front/images/primeImages/specs.jpg";
  
  
 
-const CoreProductDetails = () => {
+const PrimeProductDetails = () => {
   const { t } = useTranslation("common");
   const PRODUCT_DETAILS = {
-    productName: t("workcoreProductName"),
-    productHeading: t("workcoreProductHeading"),
+    productName: t("workprimeProductName"),
+    productHeading: t("workprimeProductHeading"),
     bannerItem: [
       {
         icon: "fa-solid fa-medal",
-        text: t("workcoreBannerItemOne"),
+        text: t("workprimeBannerItemOne"),
       },
       {
         icon: "fa-solid fa-truck-fast",
-        text: t("workcoreBannerItemTwo"),
+        text: t("workprimeBannerItemTwo"),
       },
       {
         icon: "fa-solid fa-umbrella-beach",
-        text: t("workcoreBannerItemThree"),
+        text: t("workprimeBannerItemThree"),
+      },
+       {
+        icon: "fa-solid fa-tv",
+        text: t("workprimeBannerItemFour"),
       },
     ],
-    bannerBg: bannerBg,
+    bannerBg: bannerImage,
     bannerImage: bannerImage,
-    secondProductImage: hero1,
-    descriptionOne: t("workcoreDescriptionOne"),
-    descriptionTwo: t("workcoreDescriptionTwo"),
-    buttonOneText: t("workcoreButtonOneText"),
-    headingOne: t("workcoreHeadingOne"),
-    headingOneDescription: t("workcoreHeadingOneDescription"),
+    secondProductImage: bannerImage,
+    descriptionOne: t("workprimeDescriptionOne"),
+    descriptionTwo: t("workprimeDescriptionTwo"),
+    buttonOneText: t("workprimeButtonOneText"),
+    headingOne: t("workprimeHeadingOne"),
+    headingOneDescription: t("workprimeHeadingOneDescription"),
     specifications: [
-      t("workcoreSpecificationOne"),
-      t("workcoreSpecificationTwo"),
-      t("workcoreSpecificationThree"),
-      t("workcoreSpecificationFour"),
-      t("workcoreSpecificationFive"),
-      t("workcoreSpecificationSix"),
-      t("workcoreSpecificationSeven"),
-      t("workcoreSpecificationEight"),
-      t("workcoreSpecificationNine"),
-      t("workcoreSpecificationTen"),
-      t("workcoreSpecificationEleven"),
-      t("workcoreSpecificationTwelve"),
+      t("workprimeSpecificationOne"),
+      t("workprimeSpecificationTwo"),
+      t("workprimeSpecificationThree"),
+      t("workprimeSpecificationFour"),
+      t("workprimeSpecificationFive"),
+      t("workprimeSpecificationSix"),
+      t("workprimeSpecificationSeven"),
+      t("workprimeSpecificationEight"),
+      t("workprimeSpecificationNine"),
+      t("workprimeSpecificationTen"),
+      t("workprimeSpecificationEleven"),
+      t("workprimeSpecificationTwelve"),
+      t("workprimeSpecificationThirteen"),
+      t("workprimeSpecificationFourteen"),
     ],
-    headingTwo: t("workcoreHeadingTwo"),
-    pointText: t("workcorePointText"),
-    pointOneHeading: t("workcorePointOneHeading"),
-    pointOneDescription: t("workcorePointOneDescription"),
-    pointTwoHeading: t("workcorePointTwoHeading"),
-    pointTwoDescription: t("workcorePointTwoDescription"),
-    pointTwoDescriptionTwo: t("workcorePointTwoDescriptionTwo"),
-    dimensionHeading: t("workkoreDimensionHeading"),
+    headingTwo: t("workprimeHeadingTwo"),
+    pointText: t("workprimePointText"),
+    pointOneHeading: t("workprimePointOneHeading"),
+    pointOneDescription: t("workprimePointOneDescription"),
+    pointTwoHeading: t("workprimePointTwoHeading"),
+    pointTwoDescription: t("workprimePointTwoDescription"),
+    pointTwoDescriptionTwo: t("workprimePointTwoDescriptionTwo"),
+    dimensionHeading: t("workprimeDimensionHeading"),
     dimentionImages: [
       {
-        src: dmhero1.src, // Replace with actual full image path
-        thumb: dmhero1Big.src, // Replace with actual thumbnail path
-        label: t("workkoreDimensionFullyExtended"),
+        src: dimensionsOpen.src, // Replace with actual full image path
+        thumb: dimensionsOpen.src, // Replace with actual thumbnail path
+        label: t("workprimeDimensionFullyExtended"),
       },
       {
-        src: dmhero2.src, // Replace with actual full image path
-        thumb: dmhero2Big.src, // Replace with actual thumbnail path
-        label: t("workkoreDimensionCompactClosed"),
+        src: dimensionsClosed.src, // Replace with actual full image path
+        thumb: dimensionsClosed.src, // Replace with actual thumbnail path
+        label: t("workprimeDimensionCompactClosed"),
       },
     ],
-    techinicalheading: t("workkoreTechnicalHeading"),
-    technicalDescription: t("workcoreTechnicalDescription"),
-    technicalOverViewImage: technical1,
+    techinicalheading: t("workprimeTechnicalHeading"),
+    technicalDescription: t("workprimeTechnicalDescription"),
+    technicalOverViewImage: specs,
     technicalItems: {
       Overall_Dimensions: {
-        heading: t("workcoreOverallDimensionsHeading"),
+        heading: t("workprimeOverallDimensionsHeading"),
         items: [
           {
-            heading: t("workcoreOverallDimensionsWidth"),
-            value: t("workcoreOverallDimensionsWidthValue"),
+            heading: t("workprimeOverallDimensionsWidth"),
+            value: t("workprimeOverallDimensionsWidthValue"),
           },
           {
-            heading: t("workcoreOverallDimensionsDepthClosed"),
-            value: t("workcoreOverallDimensionsDepthClosedValue"),
+            heading: t("workprimeOverallDimensionsDepthClosed"),
+            value: t("workprimeOverallDimensionsDepthClosedValue"),
           },
           {
-            heading: t("workcoreOverallDimensionsDepthOpen"),
-            value: t("workcoreOverallDimensionsDepthOpenValue"),
+            heading: t("workprimeOverallDimensionsDepthOpen"),
+            value: t("workprimeOverallDimensionsDepthOpenValue"),
           },
           {
-            heading: t("workcoreOverallDimensionsHeightClosed"),
-            value: t("workcoreOverallDimensionsHeightClosedValue"),
+            heading: t("workprimeOverallDimensionsHeightClosed"),
+            value: t("workprimeOverallDimensionsHeightClosedValue"),
           },
         ],
       },
       Weight: {
-        heading: t("workcoreWeightHeading"),
+        heading: t("workprimeWeightHeading"),
         items: [
           {
-            heading: t("workkoreTotalWeight"),
-            value: t("workkoreTotalWeightValue"),
+            heading: t("workprimeTotalWeight"),
+            value: t("workprimeTotalWeightValue"),
           },
         ],
       },
       Construction_Materials: {
-        heading: t("workcoreConstructionMaterialsHeading"),
+        heading: t("workprimeConstructionMaterialsHeading"),
         items: [
-          t("workcoreConstructionMaterialsOne"),
-          t("workcoreConstructionMaterialsTwo"),
-          t("workcoreConstructionMaterialsThree"),
-          t("workcoreConstructionMaterialsFour"),
+          t("workprimeConstructionMaterialsOne"),
+          t("workprimeConstructionMaterialsTwo"),
+          t("workprimeConstructionMaterialsThree"),
+          t("workprimeConstructionMaterialsFour"),
         ],
       },
       Front_Door_System: {
-        heading: t("workkoreFrontDoorSystemHeading"),
+        heading: t("workprimeFrontDoorSystemHeading"),
         items: [
-          t("workkoreFrontDoorSystemOne"),
-          t("workkoreFrontDoorSystemTwo"),
+          t("workprimeFrontDoorSystemOne"),
+          t("workprimeFrontDoorSystemTwo"),
         ],
       },
       Cooking_Appliances: {
-        heading: t("workkoreCookingAppliancesHeading"),
+        heading: t("workprimeCookingAppliancesHeading"),
         items: [
-          t("workkoreCookingAppliancesOne"),
-          t("workkoreCookingAppliancesTwo"),
-          t("workkoreCookingAppliancesThree"),
+          t("workprimeCookingAppliancesOne"),
+          t("workprimeCookingAppliancesTwo"),
+          t("workprimeCookingAppliancesThree"),
+           t("workprimeCookingAppliancesFour"),
         ],
       },
       Lighting_Electrical: {
-        heading: t("workkoreLightingElectricalHeading"),
+        heading: t("workprimeLightingElectricalHeading"),
         items: [
-          t("workkoreLightingElectricalOne"),
-          t("workkoreLightingElectricalTwo"),
-          t("workkoreLightingElectricalThree"),
+          t("workprimeLightingElectricalOne"),
+          t("workprimeLightingElectricalTwo"),
+          t("workprimeLightingElectricalThree"),
+          t("workprimeLightingElectricalFour"),
         ],
       },
 
       Finish_Options: {
-        heading: t("workcoreFinishOptionsHeading"),
+        heading: t("workprimeFinishOptionsHeading"),
         items: [
-          t("workcoreFinishOptionsOne"),
-          t("workcoreFinishOptionsTwo"),
-          t("workcoreFinishOptionsThree"),
+          t("workprimeFinishOptionsOne"),
+          t("workprimeFinishOptionsTwo"),
+          t("workprimeFinishOptionsThree"),
         ],
       },
       Warranty: {
-        heading: t("workcoreWarrantyHeading"),
-        items: [t("workcoreWarrantyOne"), t("workcoreWarrantyTwo")],
+        heading: t("workprimeWarrantyHeading"),
+        items: [t("workprimeWarrantyOne"), t("workprimeWarrantyTwo")],
       },
     },
-    headingThree: t("workcoreHeadingThree"),
-    descriptionThree: t("workcoreDescriptionThree"),
-    descriptionFour: t("workcoreDescriptionFour"),
-    buttonThreeText: t("workcoreButtonThreeText"),
-    buttonFourText: t("workcoreButtonFourText"),
-    headingTechnicalOverview: t("workcoreHeadingTechnicalOverview"),
-    descriptionTechnicalOverview: t("workcoreDescriptionTechnicalOverview"),
+    headingThree: t("workprimeHeadingThree"),
+    descriptionThree: t("workprimeDescriptionThree"),
+    descriptionFour: t("workprimeDescriptionFour"),
+    buttonThreeText: t("workprimeButtonThreeText"),
+    buttonFourText: t("workprimeButtonFourText"),
+    headingTechnicalOverview: t("workprimeHeadingTechnicalOverview"),
+    descriptionTechnicalOverview: t("workprimeDescriptionTechnicalOverview"),
   };
   const router = useRouter();
   const currentLocale = router.locale;
@@ -384,4 +392,4 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default CoreProductDetails;
+export default PrimeProductDetails;

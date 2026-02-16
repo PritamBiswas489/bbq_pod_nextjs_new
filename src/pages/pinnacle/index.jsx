@@ -3,7 +3,7 @@ import Image from "next/image";
 import style from "./index.module.scss";
 import Layout from "@/section/layout";
 import { Col, Container, Row } from "react-bootstrap";
-import bannerImage from "@/assets/front/images/ban-slider/ban-1.jpg";
+ 
 import Link from "next/link";
 import { TiArrowRightOutline } from "react-icons/ti";
 import EngineeringExcellence from "@/components/engineeringExcellence";
@@ -27,158 +27,175 @@ import technical1 from "@/assets/front/images/specs.jpg";
 import floorImage from "@/assets/front/images/flrr.png";
 import bannerBg from "@/assets/front/images/core-ban.jpg";
 import DoorAccess from "@/components/doorAccess";
+
+
+import bannerImage from "@/assets/front/images/pinnacleImages/hero-1.jpg";
+import dimensionsClosed from "@/assets/front/images/pinnacleImages/dimensions-closed.jpg";
+import dimensionsOpen from "@/assets/front/images/pinnacleImages/dimensions-open.jpg";
+import specs from "@/assets/front/images/pinnacleImages/specs.jpg";
  
  
 
-const CoreProductDetails = () => {
+const PinnacleProductDetails = () => {
   const { t } = useTranslation("common");
   const PRODUCT_DETAILS = {
-    productName: t("workcoreProductName"),
-    productHeading: t("workcoreProductHeading"),
-    bannerItem: [
-      {
-        icon: "fa-solid fa-medal",
-        text: t("workcoreBannerItemOne"),
-      },
-      {
-        icon: "fa-solid fa-truck-fast",
-        text: t("workcoreBannerItemTwo"),
-      },
-      {
-        icon: "fa-solid fa-umbrella-beach",
-        text: t("workcoreBannerItemThree"),
-      },
-    ],
-    bannerBg: bannerBg,
-    bannerImage: bannerImage,
-    secondProductImage: hero1,
-    descriptionOne: t("workcoreDescriptionOne"),
-    descriptionTwo: t("workcoreDescriptionTwo"),
-    buttonOneText: t("workcoreButtonOneText"),
-    headingOne: t("workcoreHeadingOne"),
-    headingOneDescription: t("workcoreHeadingOneDescription"),
-    specifications: [
-      t("workcoreSpecificationOne"),
-      t("workcoreSpecificationTwo"),
-      t("workcoreSpecificationThree"),
-      t("workcoreSpecificationFour"),
-      t("workcoreSpecificationFive"),
-      t("workcoreSpecificationSix"),
-      t("workcoreSpecificationSeven"),
-      t("workcoreSpecificationEight"),
-      t("workcoreSpecificationNine"),
-      t("workcoreSpecificationTen"),
-      t("workcoreSpecificationEleven"),
-      t("workcoreSpecificationTwelve"),
-    ],
-    headingTwo: t("workcoreHeadingTwo"),
-    pointText: t("workcorePointText"),
-    pointOneHeading: t("workcorePointOneHeading"),
-    pointOneDescription: t("workcorePointOneDescription"),
-    pointTwoHeading: t("workcorePointTwoHeading"),
-    pointTwoDescription: t("workcorePointTwoDescription"),
-    pointTwoDescriptionTwo: t("workcorePointTwoDescriptionTwo"),
-    dimensionHeading: t("workkoreDimensionHeading"),
-    dimentionImages: [
-      {
-        src: dmhero1.src, // Replace with actual full image path
-        thumb: dmhero1Big.src, // Replace with actual thumbnail path
-        label: t("workkoreDimensionFullyExtended"),
-      },
-      {
-        src: dmhero2.src, // Replace with actual full image path
-        thumb: dmhero2Big.src, // Replace with actual thumbnail path
-        label: t("workkoreDimensionCompactClosed"),
-      },
-    ],
-    techinicalheading: t("workkoreTechnicalHeading"),
-    technicalDescription: t("workcoreTechnicalDescription"),
-    technicalOverViewImage: technical1,
-    technicalItems: {
-      Overall_Dimensions: {
-        heading: t("workcoreOverallDimensionsHeading"),
-        items: [
+       productName: t("workpinnacleProductName"),
+       productHeading: t("workpinnacleProductHeading"),
+       bannerItem: [
+         {
+           icon: "fa-solid fa-medal",
+           text: t("workpinnacleBannerItemOne"),
+         },
+         {
+           icon: "fa-solid fa-truck-fast",
+           text: t("workpinnacleBannerItemTwo"),
+         },
+         {
+           icon: "fa-solid fa-umbrella-beach",
+           text: t("workpinnacleBannerItemThree"),
+         },
           {
-            heading: t("workcoreOverallDimensionsWidth"),
-            value: t("workcoreOverallDimensionsWidthValue"),
-          },
-          {
-            heading: t("workcoreOverallDimensionsDepthClosed"),
-            value: t("workcoreOverallDimensionsDepthClosedValue"),
-          },
-          {
-            heading: t("workcoreOverallDimensionsDepthOpen"),
-            value: t("workcoreOverallDimensionsDepthOpenValue"),
-          },
-          {
-            heading: t("workcoreOverallDimensionsHeightClosed"),
-            value: t("workcoreOverallDimensionsHeightClosedValue"),
-          },
-        ],
-      },
-      Weight: {
-        heading: t("workcoreWeightHeading"),
-        items: [
-          {
-            heading: t("workkoreTotalWeight"),
-            value: t("workkoreTotalWeightValue"),
-          },
-        ],
-      },
-      Construction_Materials: {
-        heading: t("workcoreConstructionMaterialsHeading"),
-        items: [
-          t("workcoreConstructionMaterialsOne"),
-          t("workcoreConstructionMaterialsTwo"),
-          t("workcoreConstructionMaterialsThree"),
-          t("workcoreConstructionMaterialsFour"),
-        ],
-      },
-      Front_Door_System: {
-        heading: t("workkoreFrontDoorSystemHeading"),
-        items: [
-          t("workkoreFrontDoorSystemOne"),
-          t("workkoreFrontDoorSystemTwo"),
-        ],
-      },
-      Cooking_Appliances: {
-        heading: t("workkoreCookingAppliancesHeading"),
-        items: [
-          t("workkoreCookingAppliancesOne"),
-          t("workkoreCookingAppliancesTwo"),
-          t("workkoreCookingAppliancesThree"),
-        ],
-      },
-      Lighting_Electrical: {
-        heading: t("workkoreLightingElectricalHeading"),
-        items: [
-          t("workkoreLightingElectricalOne"),
-          t("workkoreLightingElectricalTwo"),
-          t("workkoreLightingElectricalThree"),
-        ],
-      },
-
-      Finish_Options: {
-        heading: t("workcoreFinishOptionsHeading"),
-        items: [
-          t("workcoreFinishOptionsOne"),
-          t("workcoreFinishOptionsTwo"),
-          t("workcoreFinishOptionsThree"),
-        ],
-      },
-      Warranty: {
-        heading: t("workcoreWarrantyHeading"),
-        items: [t("workcoreWarrantyOne"), t("workcoreWarrantyTwo")],
-      },
-    },
-    headingThree: t("workcoreHeadingThree"),
-    descriptionThree: t("workcoreDescriptionThree"),
-    descriptionFour: t("workcoreDescriptionFour"),
-    buttonThreeText: t("workcoreButtonThreeText"),
-    buttonFourText: t("workcoreButtonFourText"),
-    headingTechnicalOverview: t("workcoreHeadingTechnicalOverview"),
-    descriptionTechnicalOverview: t("workcoreDescriptionTechnicalOverview"),
-  };
+           icon: "fa-solid fa-tv",
+           text: t("workpinnacleBannerItemFour"),
+         },
+       ],
+       bannerBg: bannerImage,
+       bannerImage: bannerImage,
+       secondProductImage: bannerImage,
+       descriptionOne: t("workpinnacleDescriptionOne"),
+       descriptionTwo: t("workpinnacleDescriptionTwo"),
+       buttonOneText: t("workpinnacleButtonOneText"),
+       headingOne: t("workpinnacleHeadingOne"),
+       headingOneDescription: t("workpinnacleHeadingOneDescription"),
+       specifications: [
+         t("workpinnacleSpecificationOne"),
+         t("workpinnacleSpecificationTwo"),
+         t("workpinnacleSpecificationThree"),
+         t("workpinnacleSpecificationFour"),
+         t("workpinnacleSpecificationFive"),
+         t("workpinnacleSpecificationSix"),
+         t("workpinnacleSpecificationSeven"),
+         t("workpinnacleSpecificationEight"),
+         t("workpinnacleSpecificationNine"),
+         t("workpinnacleSpecificationTen"),
+         t("workpinnacleSpecificationEleven"),
+         t("workpinnacleSpecificationTwelve"),
+         t("workpinnacleSpecificationThirteen"),
+         t("workpinnacleSpecificationFourteen"),
+         t("workpinnacleSpecificationFifteen"),
+         t("workpinnacleSpecificationSixteen"),
+         t("workpinnacleSpecificationSeventeen"),
+       ],
+       headingTwo: t("workpinnacleHeadingTwo"),
+       pointText: t("workpinnaclePointText"),
+       pointOneHeading: t("workpinnaclePointOneHeading"),
+       pointOneDescription: t("workpinnaclePointOneDescription"),
+       pointTwoHeading: t("workpinnaclePointTwoHeading"),
+       pointTwoDescription: t("workpinnaclePointTwoDescription"),
+       pointTwoDescriptionTwo: t("workpinnaclePointTwoDescriptionTwo"),
+       dimensionHeading: t("workpinnacleDimensionHeading"),
+       dimentionImages: [
+         {
+           src: dimensionsOpen.src, // Replace with actual full image path
+           thumb: dimensionsOpen.src, // Replace with actual thumbnail path
+           label: t("workpinnacleDimensionFullyExtended"),
+         },
+         {
+           src: dimensionsClosed.src, // Replace with actual full image path
+           thumb: dimensionsClosed.src, // Replace with actual thumbnail path
+           label: t("workpinnacleDimensionCompactClosed"),
+         },
+       ],
+       techinicalheading: t("workpinnacleTechnicalHeading"),
+       technicalDescription: t("workpinnacleTechnicalDescription"),
+       technicalOverViewImage: specs,
+       technicalItems: {
+         Overall_Dimensions: {
+           heading: t("workpinnacleOverallDimensionsHeading"),
+           items: [
+             {
+               heading: t("workpinnacleOverallDimensionsWidth"),
+               value: t("workpinnacleOverallDimensionsWidthValue"),
+             },
+             {
+               heading: t("workpinnacleOverallDimensionsDepthClosed"),
+               value: t("workpinnacleOverallDimensionsDepthClosedValue"),
+             },
+             {
+               heading: t("workpinnacleOverallDimensionsDepthOpen"),
+               value: t("workpinnacleOverallDimensionsDepthOpenValue"),
+             },
+             {
+               heading: t("workpinnacleOverallDimensionsHeightClosed"),
+               value: t("workpinnacleOverallDimensionsHeightClosedValue"),
+             },
+           ],
+         },
+         Weight: {
+           heading: t("workpinnacleWeightHeading"),
+           items: [
+             {
+               heading: t("workpinnacleTotalWeight"),
+               value: t("workpinnacleTotalWeightValue"),
+             },
+           ],
+         },
+         Construction_Materials: {
+           heading: t("workpinnacleConstructionMaterialsHeading"),
+           items: [
+             t("workpinnacleConstructionMaterialsOne"),
+             t("workpinnacleConstructionMaterialsTwo"),
+             t("workpinnacleConstructionMaterialsThree"),
+             t("workpinnacleConstructionMaterialsFour"),
+           ],
+         },
+         Front_Door_System: {
+           heading: t("workpinnacleFrontDoorSystemHeading"),
+           items: [
+             t("workpinnacleFrontDoorSystemOne"),
+             t("workpinnacleFrontDoorSystemTwo"),
+           ],
+         },
+         Cooking_Appliances: {
+           heading: t("workpinnacleCookingAppliancesHeading"),
+           items: [
+             t("workpinnacleCookingAppliancesOne"),
+             t("workpinnacleCookingAppliancesTwo"),
+             t("workpinnacleCookingAppliancesThree"),
+              t("workpinnacleCookingAppliancesFour"),
+           ],
+         },
+         Lighting_Electrical: {
+           heading: t("workpinnacleLightingElectricalHeading"),
+           items: [
+             t("workpinnacleLightingElectricalOne"),
+             t("workpinnacleLightingElectricalTwo"),
+             t("workpinnacleLightingElectricalThree"),
+             t("workpinnacleLightingElectricalFour"),
+           ],
+         },
+   
+         Finish_Options: {
+           heading: t("workpinnacleFinishOptionsHeading"),
+           items: [
+             t("workpinnacleFinishOptionsOne"),
+             t("workpinnacleFinishOptionsTwo"),
+             t("workpinnacleFinishOptionsThree"),
+           ],
+         },
+         Warranty: {
+           heading: t("workpinnacleWarrantyHeading"),
+           items: [t("workpinnacleWarrantyOne"), t("workpinnacleWarrantyTwo")],
+         },
+       },
+       headingThree: t("workpinnacleHeadingThree"),
+       descriptionThree: t("workpinnacleDescriptionThree"),
+       descriptionFour: t("workpinnacleDescriptionFour"),
+       buttonThreeText: t("workpinnacleButtonThreeText"),
+       buttonFourText: t("workpinnacleButtonFourText"),
+       headingTechnicalOverview: t("workpinnacleHeadingTechnicalOverview"),
+       descriptionTechnicalOverview: t("workpinnacleDescriptionTechnicalOverview"),
+     };
   const router = useRouter();
   const currentLocale = router.locale;
   console.log("Current locale:", currentLocale);
@@ -384,4 +401,4 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default CoreProductDetails;
+export default PinnacleProductDetails;

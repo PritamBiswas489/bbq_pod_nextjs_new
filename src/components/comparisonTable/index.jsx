@@ -3,6 +3,7 @@ import { Table, Container } from "react-bootstrap";
 import styles from "./index.module.scss";
 import TitleHeader from "../titleHeader";
 import { useTranslation } from 'next-i18next';
+import Link from "next/link";
 
 const ComparisonTable = () => {
   const { t } = useTranslation('common');
@@ -14,6 +15,7 @@ const ComparisonTable = () => {
       keyFeatureKey: "coreTableKeyFeature",
       bestForKey: "coreTableBestFor",
       color: "blue",
+      link: "/core",
     },
     {
       modelKey: "primeTableModel",
@@ -22,6 +24,7 @@ const ComparisonTable = () => {
       keyFeatureKey: "primeTableKeyFeature",
       bestForKey: "primeTableBestFor",
       color: "purple",
+      link: "/prime",
     },
     {
       modelKey: "apexTableModel",
@@ -30,6 +33,7 @@ const ComparisonTable = () => {
       keyFeatureKey: "apexTableKeyFeature",
       bestForKey: "apexTableBestFor",
       color: "gold",
+      link: "/apex",
     },
     {
       modelKey: "pinnacleTableModel",
@@ -38,6 +42,7 @@ const ComparisonTable = () => {
       keyFeatureKey: "pinnacleTableKeyFeature",
       bestForKey: "pinnacleTableBestFor",
       color: "red",
+      link: "/pinnacle",
     },
     {
       modelKey: "aeroTableModel",
@@ -46,6 +51,7 @@ const ComparisonTable = () => {
       keyFeatureKey: "aeroTableKeyFeature",
       bestForKey: "aeroTableBestFor",
       color: "green",
+      link: "/aero",
     },
   ];
 
@@ -77,11 +83,13 @@ const ComparisonTable = () => {
               {tableData.map((row, index) => (
                 <tr key={index} className={styles.tableRow}>
                   <td className={styles.modelCell}>
-                    <div
-                      className={`${styles.modelBadge} ${styles[row.color]}`}
-                    >
-                      {t(row.modelKey)}
-                    </div>
+                    <Link href={row.link} className={styles.modelLink}>
+                      <div
+                        className={`${styles.modelBadge} ${styles[row.color]}`}
+                      >
+                        {t(row.modelKey)}
+                      </div>
+                    </Link>
                   </td>
                   <td className={styles.dataCell}>
                     <span className={styles.lengthText}>{t(row.lengthKey)}</span>
