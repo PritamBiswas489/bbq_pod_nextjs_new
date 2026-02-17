@@ -1,0 +1,44 @@
+@import "@/assets/front/styles/variable.scss";
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  padding: 30px 28px 32px;
+  height: 100%;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.iconWrap {
+  width: 56px;
+  height: 56px;
+  background: $primary;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+
+  img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: $bg-white;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.7;
+  color: $lightGray-2;
+}

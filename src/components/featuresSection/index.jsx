@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./index.module.scss";
 import { Container, Row, Col } from "react-bootstrap";
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from "next-i18next";
 
 import icon1 from "@/assets/front/images/outdoor-cooking/1.svg";
 import icon2 from "@/assets/front/images/outdoor-cooking/2.svg";
@@ -54,14 +54,14 @@ const featuresData = [
 ];
 
 const FeaturesSection = () => {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation("common");
   return (
     <section className={styles.featuresSection}>
       <Container>
         <TitleHeader
           whyChoose={[]}
-          title={t('featuresSectionTitle')}
-          subtitle={t('featuresSectionSubtitle')}
+          title={t("featuresSectionTitle")}
+          subtitle={t("featuresSectionSubtitle")}
         />
 
         <Row className="justify-content-center">
@@ -87,7 +87,9 @@ const FeaturesSection = () => {
                 </div>
 
                 <h2 className={styles.cardTitle}>{t(feature.titleKey)}</h2>
-                <p className={styles.cardDescription}>{t(feature.descriptionKey)}</p>
+                <p className={styles.cardDescription}>
+                  {t(feature.descriptionKey)}
+                </p>
               </div>
             </Col>
           ))}

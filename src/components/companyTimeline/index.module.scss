@@ -1,0 +1,36 @@
+@import "@/assets/front/styles/variable.scss";
+.timelineCol {
+  text-align: center;
+}
+
+.timelineCard {
+  max-width: 280px;
+  margin: 0 auto;
+}
+
+.yearCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: $primary;
+  color: $bg-white;
+  font-weight: 700;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: $bg-white;
+}
+
+.description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: $lightGray-2;
+}
