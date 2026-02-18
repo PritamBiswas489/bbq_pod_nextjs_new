@@ -9,6 +9,7 @@ const OperationsSection = ({
   title,
   titleHighlight,
   description,
+   description2,
   image,
   features = [], // ✅ default prevents map crash
   address,
@@ -26,6 +27,7 @@ const OperationsSection = ({
             </h2>
 
             {description && <p className={styles.description}>{description}</p>}
+            {description2 && <p className={styles.description}>{description2}</p>}
 
             {/* FEATURES */}
             <ul className={styles.featureList}>

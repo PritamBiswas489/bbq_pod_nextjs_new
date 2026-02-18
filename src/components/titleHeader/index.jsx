@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./index.module.scss";
 
-const TitleHeader = ({ whyChoose, title, subtitle }) => {
+const TitleHeader = ({ whyChoose, title, subtitle, subtitle2=null }) => {
   return (
     <div className={styles.titleHeader}>
       <p
@@ -29,6 +29,16 @@ const TitleHeader = ({ whyChoose, title, subtitle }) => {
       >
         {subtitle}
       </p>
+      {subtitle2 && (
+        <p
+          className={styles.subtitle}
+          data-aos="fade-up"
+          data-aos-duration="2500"
+          data-aos-once="true"
+        >
+          {subtitle2}
+        </p>
+      )}
     </div>
   );
 };

@@ -15,6 +15,7 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 import { useRouter } from "next/router";
 
 const Header = () => {
+   
   const { t } = useTranslation('common');
   const [isSticky, setIsSticky] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,7 +45,7 @@ const Header = () => {
         <Container fluid="xxl">
           <Row className="align-items-center">
            
-            <Link href="/home" className={style.mobLogo}>
+            <Link href={`/${currentLocale}/home`} className={style.mobLogo}>
               <Image src={logo} alt={"BBQ POD SPAIN"} width={180} height={28} priority />
             </Link>
 
@@ -66,15 +67,15 @@ const Header = () => {
                 
                 <ul className={`${menuOpen ? style.navOpen : ""}`}>
                   <li>
-                    <Link href="/home">{t('headerNavHome')}</Link>
+                    <Link href={`/${currentLocale}/home`}>{t('headerNavHome')}</Link>
                   </li>
                   <li>
-                    <Link href="">{t('headerNavAbout')}</Link>
+                    <Link href={`/${currentLocale}/about`}>{t('headerNavAbout')}</Link>
                   </li>
 
                   {/* CENTER LOGO */}
                   <li className={style.centerLogo}>
-                    <Link href="/home">
+                    <Link href={`/${currentLocale}/home`}>
                       <Image
                         src={logo}
                         alt={"BBQ POD SPAIN"}
@@ -86,10 +87,10 @@ const Header = () => {
                   </li>
 
                   <li>
-                    <Link href="/products">{t('headerNavProducts')}</Link>
+                    <Link href={`/${currentLocale}/products`}>{t('headerNavProducts')}</Link>
                   </li>
                   <li>
-                    <Link href="">{t('headerNavOrder')}</Link>
+                    <Link href={`/${currentLocale}/order`}>{t('headerNavOrder')}</Link>
                   </li>
                 </ul>
               </nav>

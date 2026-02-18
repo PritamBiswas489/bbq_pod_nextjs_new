@@ -1,35 +1,40 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import styles from "./index.module.scss";
+import { useTranslation } from "next-i18next";
 
-const timelineData = [
+
+const CompanyTimeline = () => {
+  const { t } = useTranslation("common");
+
+
+  const timelineData = [
   {
-    year: "2005",
-    title: "Company Founded",
-    description:
-      "Commercial Awnings Ltd established in Swindon, specialising in bespoke hand-made commercial awnings.",
+    year: t('aboutusTimelineYear1'),
+    title: t('aboutusTimelineTitle1'),
+    icon: " fa fa-lightbulb",
+    description: t('aboutusTimelineDescription1'),
   },
   {
-    year: "2010s",
-    title: "Industry Leader",
-    description:
-      "Became the UK's trusted name for hand-fitted commercial awnings, serving businesses and homes nationwide.",
+    year: t('aboutusTimelineYear2'),
+    title: t('aboutusTimelineTitle2'),
+    icon: " fa fa-tools",
+    description: t('aboutusTimelineDescription2'),
   },
   {
-    year: "2015",
-    title: "Innovation & Expansion",
-    description:
-      "Invested in advanced manufacturing and R&D, perfecting our hand-making and fitting processes.",
+    year: t('aboutusTimelineYear3'),
+    title: t('aboutusTimelineTitle3'),
+    icon: " fa fa-star",
+    description: t('aboutusTimelineDescription3'),
   },
   {
-    year: "2020s",
-    title: "BBQ Pods Launch",
-    description:
-      "Leveraging over 30 years of expertise to create the UK's finest outdoor kitchen pods.",
+    year: t('aboutusTimelineYear4'),
+    title: t('aboutusTimelineTitle4'),
+    icon: " fa fa-rocket",
+    description: t('aboutusTimelineDescription4'),
   },
 ];
 
-const CompanyTimeline = () => {
   return (
     <section className={styles.timelineSection}>
       <Container>
@@ -44,7 +49,8 @@ const CompanyTimeline = () => {
               className={styles.timelineCol}
             >
               <div className={styles.timelineCard}>
-                <div className={styles.yearCircle}>{item.year}</div>
+                <div className={styles.yearCircle}> <i className={item.icon}></i></div>
+               
                 <h5 className={styles.title}>{item.title}</h5>
                 <p className={styles.description}>{item.description}</p>
               </div>

@@ -5,26 +5,26 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 
 import heritageImg from "@/assets/front/images/hero-2.jpg";
+import { useTranslation } from "next-i18next";
 
-const contentData = [
-  {
-    title: "The Commercial Awnings Heritage",
-    description:
-      "For over 30 years, we've been hand-making and fitting bespoke commercial awnings for homes and businesses across the UK. Our reputation was built on uncompromising quality, innovative engineering, exceptional customer service, and our 5-year guarantee on every awning.",
-  },
-  {
-    title: "Evolution to BBQ Pods",
-    description:
-      "Recognising the growing demand for premium outdoor living spaces, we applied our 30+ years of expertise to source and deliver something extraordinary: fully-equipped outdoor kitchen pods that combine luxury, functionality, and exceptional quality standards, all backed by our UK-based service excellence.",
-  },
-  {
-    title: "The BBQ Pods UK Promise",
-    description:
-      "Every pod is delivered from our Swindon facility to the same exacting quality standards that made us industry leaders in commercial awnings. We don't cut corners. We don't compromise. We deliver outdoor kitchen pods that will serve your family for generations.",
-  },
-];
+
 
 const HeritageSection = () => {
+  const { t } = useTranslation("common");
+  const contentData = [
+  {
+    title: t('aboutusHeritageTitle1'),
+    description: t('aboutusHeritageDescription1'),
+  },
+  {
+    title: t('aboutusHeritageTitle2'),
+    description: t('aboutusHeritageDescription2'),
+  },
+  {
+    title: t('aboutusHeritageTitle3'),
+    description: t('aboutusHeritageDescription3'),
+  }
+];
   return (
     <section className={styles.heritageSection}>
       <Container>

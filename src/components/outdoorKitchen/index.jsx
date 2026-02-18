@@ -4,6 +4,7 @@ import { Row, Col, Card, Button, Badge, Container } from "react-bootstrap";
 import styles from "./index.module.scss";
 import TitleHeader from "../titleHeader";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
  
 
 import { FiCheckCircle } from "react-icons/fi";
@@ -13,10 +14,14 @@ import hero2 from "@/assets/front/images/outdoor/hero-2.jpg";
 import hero3 from "@/assets/front/images/outdoor/hero-3.webp";
 import hero4 from "@/assets/front/images/outdoor/hero-4.jpg";
 import hero5 from "@/assets/front/images/outdoor/hero-5.webp";
+import { useRouter } from "next/router";
  
 
 const OutdoorKitchens = () => {
   const { t } = useTranslation("common");
+  const router = useRouter();
+  const currentLocale = router.locale;
+  
 
   const products = [
     {
@@ -26,7 +31,7 @@ const OutdoorKitchens = () => {
       priceKey: "coreProductPrice",
       featuresKeys: ["coreFeature1", "coreFeature2", "coreFeature3"],
       image: hero1.src,
-      link: "/core",
+      link: `/${currentLocale}/core`,
     },
     {
       badges: [],
@@ -35,7 +40,7 @@ const OutdoorKitchens = () => {
       priceKey: "primeProductPrice",
       featuresKeys: ["primeFeature1", "primeFeature2", "primeFeature3"],
       image: hero2.src,
-      link: "/prime",
+      link: `/${currentLocale}/prime`,
     },
     {
       badges: [],
@@ -44,7 +49,7 @@ const OutdoorKitchens = () => {
       priceKey: "apexProductPrice",
       featuresKeys: ["apexFeature1", "apexFeature2", "apexFeature3"],
       image: hero3.src,
-      link: "/apex",
+      link: `/${currentLocale}/apex`,
     },
     {
       badges: [],
@@ -57,7 +62,7 @@ const OutdoorKitchens = () => {
         "pinnacleFeature3",
       ],
       image: hero4.src,
-      link: "/pinnacle",
+      link: `/${currentLocale}/pinnacle`,
     },
     {
       badges: [],
@@ -66,7 +71,7 @@ const OutdoorKitchens = () => {
       priceKey: "aeroProductPrice",
       featuresKeys: ["aeroFeature1", "aeroFeature2", "aeroFeature3"],
       image: hero5.src,
-      link: "/aero",
+      link: `/${currentLocale}/aero`,
     },
   ];
 
@@ -131,13 +136,13 @@ const OutdoorKitchens = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button
+                  <Link
                     variant="link"
                     className={`p-0 ${styles.viewDetails}`}
                     href={product.link}
                   >
                     {t("viewDetailsButton")}
-                  </Button>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
