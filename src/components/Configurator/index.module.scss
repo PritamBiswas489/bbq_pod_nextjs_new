@@ -1,0 +1,291 @@
+@import "@/assets/front/styles/variable.scss";
+
+.wrapper {
+  padding: 1rem 0;
+}
+.stepHeader {
+  margin-bottom: 3rem;
+}
+/* ===== STEPPER ===== */
+.stepperWrapper {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.progressTrack {
+  height: 4px;
+  background: #eee;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+
+.progressFill {
+  height: 100%;
+  background: $primary;
+  transition: width 0.4s ease;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.stepCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #eee;
+  color: #666;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.active {
+  background: $primary;
+  color: $bg-white;
+}
+
+/* ===== CARDS ===== */
+
+.divider {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+    border-bottom: rgba(223, 65, 3, 0.5) 1px solid;
+    padding-bottom: 2rem;
+  }
+  h5 {
+    margin-bottom: 1rem;
+  }
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+}
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  // grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.imageCard {
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: 0.3s;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+}
+
+.selected {
+  border-color: $primary;
+}
+
+.cardLabel {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.codeLabel {
+  font-weight: 400;
+  font-size: 0.775rem;
+  color: $primary;
+}
+.cardInfo {
+  background: $dark;
+  color: $bg-white;
+  text-align: center;
+  padding: 16px;
+}
+
+/* ===== NAV ===== */
+.nav {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.next {
+  background: $primary;
+  border: none;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+.productCard {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: none;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 42px -14px;
+  &.selected {
+    box-shadow: rgba(223, 65, 3, 0.5) 0 0 0 3px;
+  }
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.badgeCustom {
+  border-radius: 1.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badgeBg {
+  border-radius: 0.6rem;
+  padding: 0.453rem 0.8rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #333;
+}
+.textMuted {
+  color: $gray-2;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.cardImage {
+  height: 260px;
+  display: block;
+  object-fit: cover;
+}
+
+.cardBody {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: $bg-white;
+}
+
+.cardSubtitle {
+  font-size: 1rem;
+  color: $lightGray-2;
+}
+
+.cardPrice {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: $primary;
+}
+
+.featureList {
+  margin-bottom: 1rem;
+  color: $dark-2;
+  font-weight: 500;
+  svg {
+    color: $bg-green;
+  }
+}
+
+.featureItem {
+  font-size: 0.95rem;
+  color: $lightGray;
+}
+
+.viewDetails {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: $primary;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.save {
+  background-color: $bg-green !important;
+}
+
+.premium {
+  background-color: $primary !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .outdoorKitchens {
+    padding: 2rem 0;
+  }
+}
+
+// +++++++++++++++++ 2nd part of recent edits +++++++++++++++++
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  // padding: 12px;
+  cursor: pointer;
+  // border: 2px solid transparent;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+  &.active {
+    box-shadow: rgba(223, 65, 3, 0.5) 0 0 0 3px;
+  }
+}
+
+.active {
+  border: 2px solid #000;
+}
+
+.colorBox {
+  height: 120px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: $primary;
+  color: $bg-white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.info {
+  margin-top: 10px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.code {
+  font-size: 12px;
+  color: $primary;
+}

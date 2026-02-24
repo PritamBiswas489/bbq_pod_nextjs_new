@@ -25,7 +25,6 @@ import REF002 from "@/assets/front/images/RefImage/REF002.png";
 import REF003 from "@/assets/front/images/RefImage/REF003.png";
 import REF004 from "@/assets/front/images/RefImage/REF004.png";
 
-
 import REF001ES from "@/assets/front/images/RefImage/ExteriorInteriroDEMOSPAIN.png";
 import REF002ES from "@/assets/front/images/RefImage/CabinetcolourDEMOspanish.png";
 
