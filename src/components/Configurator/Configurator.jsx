@@ -12,6 +12,7 @@ import StepFeatures from "./StepFeatures";
 import StepReview from "./StepReview";
 import styles from "./index.module.scss";
 import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
+import ConfigSummary from "./ConfigSummary";
 
 const TOTAL_STEPS = 7;
 
@@ -39,6 +40,8 @@ export default function Configurator() {
         return data.interior;
       case 4:
         return data.appliances.length;
+      case 5:
+        return data.features.length;
       default:
         return true;
     }
@@ -90,7 +93,9 @@ export default function Configurator() {
             {step === 6 && <StepReview data={data} />}
           </div>
         </Col>
-        <Col md={4} className={styles.sidebar}></Col>
+        <Col md={4} className={styles.sidebar}>
+          <ConfigSummary config={data} />
+        </Col>
       </Row>
 
       <div className={styles.nav}>

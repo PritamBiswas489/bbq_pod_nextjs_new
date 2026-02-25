@@ -1,5 +1,5 @@
 export default function StepReview({ data }) {
-  if (!data) return null; // safety guard
+  // if (!data) return null; // safety guard
 
   return (
     <div>

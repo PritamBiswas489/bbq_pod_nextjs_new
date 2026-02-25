@@ -14,7 +14,7 @@ export default function ConfigSummary({ config }) {
         Features: {config.features.length ? config.features.join(", ") : "-"}
       </p>
       <hr />
-      <h4>£{config.price.toLocaleString()}</h4>
+      {/* <h4>£{config.price.toLocaleString()}</h4> */}
     </div>
   );
 }

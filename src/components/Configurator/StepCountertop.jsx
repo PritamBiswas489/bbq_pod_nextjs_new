@@ -14,6 +14,8 @@ import hero9 from "@/assets/front/images/image-shade/saronlan.webp";
 // import hero4 from "@/assets/front/images/outdoor/hero-4.jpg";
 // import hero5 from "@/assets/front/images/outdoor/hero-5.webp";
 
+import { FaCheck } from "react-icons/fa";
+
 const countertops = [
   {
     title: "Texture: Tree Bark",
@@ -86,6 +88,11 @@ const StepCountertop = ({ value, onChange }) => {
                 <div className={styles.cardLabel}>{item.title}</div>
                 <div className={styles.codeLabel}>{item.code}</div>
               </div>
+              {value === item.title && (
+                <div className={styles.check}>
+                  <FaCheck />
+                </div>
+              )}
             </div>
           ))}
         </div>
@@ -107,6 +114,11 @@ const StepCountertop = ({ value, onChange }) => {
                 <div className={styles.cardLabel}>{item.title}</div>
                 <div className={styles.codeLabel}>{item.code}</div>
               </div>
+              {value === item.title && (
+                <div className={styles.check}>
+                  <FaCheck />
+                </div>
+              )}
             </div>
           ))}
         </div>
