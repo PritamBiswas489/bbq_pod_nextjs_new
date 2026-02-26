@@ -182,6 +182,17 @@
 .next {
   background: $primary;
   border: none;
+  font-weight: 600;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+.previous {
+  background: $yellow;
+  border: none;
+  color: $dark-2;
+  font-weight: 600;
 
   &:disabled {
     opacity: 0.4;
@@ -351,4 +362,182 @@
 .code {
   font-size: 12px;
   color: $primary;
+}
+.infoWrap {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+.reviewContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 1rem;
+  border-radius: 1rem;
+  .reviewImg {
+    flex: 0 0 45%;
+    max-width: 45%;
+    .reviewImgPlaceholder {
+      width: 100%;
+      height: 330px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+.reviewContent {
+  flex: 0 0 55%;
+  max-width: 55%;
+  color: $bg-white;
+  padding-left: 1.5rem;
+}
+.reviewContentInnerTop {
+  h5 {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    span {
+      color: $primary;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+  p {
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: $lightGray-2;
+  }
+}
+
+.reviewContentInnerBottom {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+.RevViewDetails {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 1rem;
+  margin: 0.355rem 0;
+  h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.3rem;
+  }
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $primary;
+    margin-bottom: 0.3rem;
+  }
+  p {
+    font-size: 0.875rem;
+    color: $lightGray-2;
+  }
+  small {
+    font-size: 0.775rem;
+    color: $lightGray-3;
+    font-weight: 500;
+  }
+}
+.information {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+  .informationLeft,
+  .informationRight {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 1rem;
+    margin: 0.355rem 0;
+  }
+}
+.informationBtm {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 0 1rem;
+  margin: 1rem 0 0;
+  p {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: $lightGray-2;
+  }
+}
+.formGroup {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+}
+.formInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: $bg-white;
+  font-size: 1rem;
+
+  &::placeholder {
+    color: $lightGray-2;
+  }
+}
+.messageInput {
+  height: 236px;
+  resize: none;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: $bg-white;
+  font-size: 1rem;
+}
+.submitBtn {
+  background: $primary;
+  border: none;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+  color: $bg-white;
+  font-size: 1rem;
+  font-weight: 600;
+  display: block;
+  width: 100%;
+}
+
+.summary {
+  position: sticky;
+  top: 10rem;
+  background: rgba(248, 152, 63, 0.07);
+  padding: 2rem;
+  border-radius: 1rem;
+  h4 {
+    color: $primary;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: rgba(223, 65, 3, 0.5) 1px solid;
+    padding-bottom: 1rem;
+  }
+  p {
+    font-weight: 700;
+    span {
+      font-weight: 600;
+      color: $primary;
+    }
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
 }

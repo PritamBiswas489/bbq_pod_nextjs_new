@@ -100,7 +100,7 @@ export default function Configurator() {
 
       <div className={styles.nav}>
         <Button
-          variant="outline-dark"
+          className={styles.previous}
           disabled={step === 0}
           onClick={() => setStep(step - 1)}
         >

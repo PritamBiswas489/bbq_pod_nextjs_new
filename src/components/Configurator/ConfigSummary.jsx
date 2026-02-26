@@ -3,18 +3,21 @@ import styles from "./index.module.scss";
 export default function ConfigSummary({ config }) {
   return (
     <div className={styles.summary}>
-      <h5>Your Config</h5>
-      <p>Model: {config.model || "-"}</p>
-      <p>Color: {config.color || "-"}</p>
+      <h4>Your Config</h4>
+      <p>
+        Model : <span>{config.model || "-"}</span>
+      </p>
+      <p>
+        Color : <span>{config.color || "-"}</span>
+      </p>
       <p>
         Appliances:{" "}
         {/* {config.appliances.length ? config.appliances.join(", ") : "-"} */}
       </p>
       <p>
-        Features: 
+        Features:
         {/* {config.features.length ? config.features.join(", ") : "-"} */}
       </p>
-      <hr />
       {/* <h4>£{config.price.toLocaleString()}</h4> */}
     </div>
   );
