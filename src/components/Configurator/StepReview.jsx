@@ -20,12 +20,12 @@ export default function StepReview({ data }) {
 
       <p>
         <strong>Appliances:</strong>{" "}
-        {data.appliances.length ? data.appliances.join(", ") : "None"}
+        {/* {data.appliances.length ? data.appliances.join(", ") : "None"} */}
       </p>
 
       <p>
         <strong>Features:</strong>{" "}
-        {data.features.length ? data.features.join(", ") : "None"}
+        {/* {data.features.length ? data.features.join(", ") : "None"} */}
       </p>
     </div>
   );

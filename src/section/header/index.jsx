@@ -90,7 +90,7 @@ const Header = () => {
                     <Link href={`/${currentLocale}/products`}>{t('headerNavProducts')}</Link>
                   </li>
                   <li>
-                    <Link href={`/${currentLocale}/order`}>{t('headerNavOrder')}</Link>
+                    <Link href={`/${currentLocale}/configurator`}>{t('headerNavConfigurator')}</Link>
                   </li>
                 </ul>
               </nav>

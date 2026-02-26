@@ -8,10 +8,11 @@ export default function ConfigSummary({ config }) {
       <p>Color: {config.color || "-"}</p>
       <p>
         Appliances:{" "}
-        {config.appliances.length ? config.appliances.join(", ") : "-"}
+        {/* {config.appliances.length ? config.appliances.join(", ") : "-"} */}
       </p>
       <p>
-        Features: {config.features.length ? config.features.join(", ") : "-"}
+        Features: 
+        {/* {config.features.length ? config.features.join(", ") : "-"} */}
       </p>
       <hr />
       {/* <h4>£{config.price.toLocaleString()}</h4> */}

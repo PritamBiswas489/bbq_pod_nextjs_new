@@ -24,8 +24,8 @@ export default function Configurator() {
     color: null,
     countertop: null,
     interior: null,
-    appliances: [],
-    features: [],
+    appliances: null,
+    features: null,
   });
 
   const canNext = () => {
@@ -39,9 +39,9 @@ export default function Configurator() {
       case 3:
         return data.interior;
       case 4:
-        return data.appliances.length;
+        return data.appliances;
       case 5:
-        return data.features.length;
+        return data.features;
       default:
         return true;
     }
