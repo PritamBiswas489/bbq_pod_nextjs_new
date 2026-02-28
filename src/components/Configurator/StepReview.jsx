@@ -1,21 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./index.module.scss";
 import Image from "next/image";
 import hero1 from "@/assets/front/images/hero-1.jpg";
 
+import ConfirmationModal from "./ConfirmationModal";
+
 const StepReview = ({ data }) => {
-  // if (!data) return null; // safety guard
+  const [modalOpen, setModalOpen] = useState(false);
+  const [formData, setFormData] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setModalOpen(true);
+    // Here you would also send the email to sales@bbqpodspain.com
+  };
 
   return (
     <>
       <div className={styles.stepHeader}>
-        <h2>Review Your Configuration</h2>
+        <h2>Your Details</h2>
         <p>
-          Review your selections and submit to receive your custom quote based
-          on this configuration.
+          Please provide your information so we can review your configuration and contact you to finalise pricing, availability and installation planning.
+
         </p>
       </div>
-      <div className={styles.infoWrap}>
+      {/* <div className={styles.infoWrap}>
         <h3>Your Configuration</h3>
         <div className={styles.reviewContainer}>
           <div className={styles.reviewImg}>
@@ -70,11 +84,11 @@ const StepReview = ({ data }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className={styles.infoWrap}>
         <h3>Your Contact Information</h3>
-        <form action="" method="get">
+        <form onSubmit={handleSubmit}>
           <div className={styles.information}>
             <div className={styles.informationLeft}>
               <div className={styles.formGroup}>
@@ -84,6 +98,9 @@ const StepReview = ({ data }) => {
                   id="fullName"
                   name="fullName"
                   className={styles.formInput}
+                  value={formData.fullName || ""}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               <div className={styles.formGroup}>
@@ -93,6 +110,9 @@ const StepReview = ({ data }) => {
                   id="email"
                   name="email"
                   className={styles.formInput}
+                  value={formData.email || ""}
+                  onChange={handleChange}
+                  required
                 />
               </div>
               <div className={styles.formGroup}>
@@ -102,7 +122,70 @@ const StepReview = ({ data }) => {
                   id="phone"
                   name="phone"
                   className={styles.formInput}
+                  value={formData.phone || ""}
+                  onChange={handleChange}
+                  required
                 />
+              </div>
+              <div className={styles.formGroup}>
+                <label>Installation Address <span style={{color: 'red'}}>*</span></label>
+                <input
+                  type="text"
+                  name="installStreet"
+                  placeholder="Street Address"
+                  className={styles.formInput}
+                  value={formData.installStreet || ""}
+                  onChange={handleChange}
+                  required
+                />
+                <input
+                  type="text"
+                  name="installCity"
+                  placeholder="Town / City"
+                  className={styles.formInput}
+                  value={formData.installCity || ""}
+                  onChange={handleChange}
+                  required
+                  style={{marginTop: 8}}
+                />
+                <input
+                  type="text"
+                  name="installPostcode"
+                  placeholder="Postcode"
+                  className={styles.formInput}
+                  value={formData.installPostcode || ""}
+                  onChange={handleChange}
+                  required
+                  style={{marginTop: 8}}
+                />
+                <input
+                  type="text"
+                  name="installProvince"
+                  placeholder="Province"
+                  className={styles.formInput}
+                  value={formData.installProvince || ""}
+                  onChange={handleChange}
+                  required
+                  style={{marginTop: 8}}
+                />
+              </div>
+              <div className={styles.formGroup}>
+                <label htmlFor="howDidYouHear">How did you hear about us? <span style={{color: '#888', fontWeight: 400}}>(Optional)</span></label>
+                <select
+                  id="howDidYouHear"
+                  name="howDidYouHear"
+                  className={styles.formInput}
+                  value={formData.howDidYouHear || ""}
+                  onChange={handleChange}
+                  style={{marginTop: 4}}
+                >
+                  <option value="" disabled>Select an option</option>
+                  <option value="Instagram">Instagram</option>
+                  <option value="Google">Google</option>
+                  <option value="Referral">Referral</option>
+                  <option value="Driving past showroom">Driving past showroom</option>
+                  <option value="Other">Other</option>
+                </select>
               </div>
             </div>
             <div className={styles.informationRight}>
@@ -113,6 +196,8 @@ const StepReview = ({ data }) => {
                   name="message"
                   rows="5"
                   className={styles.messageInput}
+                  value={formData.message || ""}
+                  onChange={handleChange}
                 ></textarea>
               </div>
             </div>
@@ -121,14 +206,30 @@ const StepReview = ({ data }) => {
                 Request Personalised Quote 🎄
               </button>
               <p>
-                No payment required. By submitting, you agree to be contacted
-                about your BBQ Pod configuration and receive a personalised
-                quote within 24 hours.
+                Submitting this form does not process payment. A member of our team will contact you to confirm your project details.
               </p>
             </div>
           </div>
         </form>
       </div>
+      <ConfirmationModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        orderDetails={
+          <div>
+            <p><b>Name:</b> {formData.fullName}</p>
+            <p><b>Email:</b> {formData.email}</p>
+            <p><b>Phone:</b> {formData.phone}</p>
+            <p><b>Installation Address:</b><br />
+              {formData.installStreet}<br />
+              {formData.installCity}, {formData.installProvince} {formData.installPostcode}
+            </p>
+            <p><b>How did you hear about us?</b> {formData.howDidYouHear}</p>
+            <p><b>Message:</b> {formData.message}</p>
+            {/* Add more details/specs/price/model as needed */}
+          </div>
+        }
+      />
     </>
   );
 };

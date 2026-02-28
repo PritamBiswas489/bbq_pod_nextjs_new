@@ -7,14 +7,16 @@ import StepModel from "./StepModel";
 import StepColor from "./StepColor";
 import StepCountertop from "./StepCountertop";
 import StepInterior from "./StepInterior";
-import StepAppliances from "./StepAppliances";
+import StepDoorConfig from "./StepDoorConfig";
 import StepFeatures from "./StepFeatures";
 import StepReview from "./StepReview";
 import styles from "./index.module.scss";
 import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
 import ConfigSummary from "./ConfigSummary";
+import StepBbqStyle from "./StepBbqStyle";
+import StepInstallationRequirements from "./StepInstallationRequirements";
 
-const TOTAL_STEPS = 7;
+const TOTAL_STEPS = 8;
 
 export default function Configurator() {
   const [step, setStep] = useState(0);
@@ -29,22 +31,23 @@ export default function Configurator() {
   });
 
   const canNext = () => {
-    switch (step) {
-      case 0:
-        return data.model;
-      case 1:
-        return data.color;
-      case 2:
-        return data.countertop;
-      case 3:
-        return data.interior;
-      case 4:
-        return data.appliances;
-      case 5:
-        return data.features;
-      default:
-        return true;
-    }
+       return true;
+    // switch (step) {
+    //   case 0:
+    //     return data.model;
+    //   case 1:
+    //     return data.color;
+    //   case 2:
+    //     return data.countertop;
+    //   case 3:
+    //     return data.interior;
+    //   case 4:
+    //     return data.appliances;
+    //   case 5:
+    //     return data.features;
+    //   default:
+    //     return true;
+    // }
   };
 
   return (
@@ -67,30 +70,34 @@ export default function Configurator() {
               />
             )}
             {step === 2 && (
-              <StepCountertop
-                value={data.countertop}
-                onChange={(v) => setData({ ...data, countertop: v })}
-              />
-            )}
-            {step === 3 && (
-              <StepInterior
+               <StepInterior
                 value={data.interior}
                 onChange={(v) => setData({ ...data, interior: v })}
               />
             )}
+            {step === 3 && (
+               <StepCountertop
+                value={data.countertop}
+                onChange={(v) => setData({ ...data, countertop: v })}
+              />
+            )}
             {step === 4 && (
-              <StepAppliances
+              <StepDoorConfig
                 value={data.appliances}
                 onChange={(v) => setData({ ...data, appliances: v })}
               />
             )}
             {step === 5 && (
-              <StepFeatures
+              <StepBbqStyle
                 value={data.features}
                 onChange={(v) => setData({ ...data, features: v })}
               />
             )}
-            {step === 6 && <StepReview data={data} />}
+            {step === 6 && <StepInstallationRequirements
+                value={data.installationRequirements}
+                onChange={(v) => setData({ ...data, installationRequirements: v })}
+              />}
+            {step === 7 && <StepReview config={data} />}
           </div>
         </Col>
         <Col md={4} className={styles.sidebar}>
@@ -107,13 +114,15 @@ export default function Configurator() {
           <GrFormPreviousLink /> Previous
         </Button>
 
+      {step < TOTAL_STEPS - 1 && (
         <Button
           className={styles.next}
           disabled={!canNext()}
           onClick={() => setStep(step + 1)}
         >
-          {step === TOTAL_STEPS - 1 ? "Finish" : "Continue"} <GrFormNextLink />
+          Continue <GrFormNextLink />
         </Button>
+      )}
       </div>
     </Container>
   );

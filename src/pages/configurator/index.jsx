@@ -48,11 +48,13 @@ export default function ConfiguratorPage() {
           >
             <Container>
               <h1 style={{ fontSize: "42px", marginBottom: "16px" }}>
-                Build Your BBQ Pod
+                Design Your BBQ Pod
               </h1>
               <p style={{ color: "#ccc", maxWidth: "680px", margin: "0 auto" }}>
-                Customize your outdoor kitchen step by step. Choose your model,
-                colors, appliances, and features — see pricing update instantly.
+                Follow the steps below to configure your pod. Once submitted, our team will review your selections and contact you to confirm pricing, availability and delivery timelines.
+              </p>
+              <p style={{ color: "#ccc", maxWidth: "680px", margin: "0 auto" }}>
+                No payment is required at this stage.
               </p>
             </Container>
           </section>

@@ -14,6 +14,8 @@ import hero9 from "@/assets/front/images/image-shade/saronlan.webp";
 // import hero4 from "@/assets/front/images/outdoor/hero-4.jpg";
 // import hero5 from "@/assets/front/images/outdoor/hero-5.webp";
 
+import { countertopStainlessSteelTitle, countertopSinteredStoneTitle  } from "@/utils/exteriorInteriorFinish";
+
 import { FaCheck } from "react-icons/fa";
 
 const countertops = [
@@ -69,26 +71,26 @@ const StepCountertop = ({ value, onChange }) => {
   return (
     <>
       <div className={styles.stepHeader}>
-        <h2>Select Countertop</h2>
-        <p>SChoose a durable and stylish worktop for your BBQ pod</p>
+        <h2>Worktop Selection</h2>
+        <p>Select your preferred worktop material and colour.</p>
       </div>
       <div className={styles.divider}>
         <h5>Stainless Steel</h5>
         <div className={styles.cardGrid}>
-          {countertops.map((item) => (
+          {countertopStainlessSteelTitle.map((item) => (
             <div
               key={item.title}
               className={`${styles.imageCard} ${
-                value === item.title ? styles.selected : ""
+                value === item.modelName ? styles.selected : ""
               }`}
-              onClick={() => onChange(item.title)}
+              onClick={() => onChange(item.modelName)}
             >
-              <Image src={item.img} alt={item.title} width={400} height={260} />
+              <Image src={item.image} alt={item.colorName} width={400} height={260} />
               <div className={styles.cardInfo}>
-                <div className={styles.cardLabel}>{item.title}</div>
-                <div className={styles.codeLabel}>{item.code}</div>
+                <div className={styles.cardLabel}>{item.colorName}</div>
+               
               </div>
-              {value === item.title && (
+              {value === item.modelName && (
                 <div className={styles.check}>
                   <FaCheck />
                 </div>
@@ -99,22 +101,22 @@ const StepCountertop = ({ value, onChange }) => {
       </div>
 
       <div className={styles.divider}>
-        <h5>Sintered Stone (7 Colors)</h5>
+        <h5>Sintered Stone +400€ (REMEMBER add to price amount)</h5>
         <div className={styles.cardGrid}>
-          {countertops2.map((item) => (
+          {countertopSinteredStoneTitle.map((item) => (
             <div
               key={item.title}
               className={`${styles.imageCard} ${
-                value === item.title ? styles.selected : ""
+                value === item.modelName ? styles.selected : ""
               }`}
-              onClick={() => onChange(item.title)}
+              onClick={() => onChange(item.modelName)}
             >
-              <Image src={item.img} alt={item.title} width={400} height={260} />
+              <Image src={item.image} alt={item.colorName} width={400} height={260} />
               <div className={styles.cardInfo}>
-                <div className={styles.cardLabel}>{item.title}</div>
-                <div className={styles.codeLabel}>{item.code}</div>
+                <div className={styles.cardLabel}>{item.colorName}</div>
+                
               </div>
-              {value === item.title && (
+              {value === item.modelName && (
                 <div className={styles.check}>
                   <FaCheck />
                 </div>

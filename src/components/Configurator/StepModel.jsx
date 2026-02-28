@@ -61,10 +61,9 @@ const StepModel = ({ value, onChange }) => {
   return (
     <Container>
       <div className={styles.stepHeader}>
-        <h2>Choose Your BBQ Pod Model</h2>
+        <h2>Select Your Model</h2>
         <p>
-          Select from our 5 premium outdoor kitchen models, each designed for
-          different entertaining needs
+         Choose the pod layout that best suits your space and cooking style.
         </p>
       </div>
 

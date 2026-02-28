@@ -1,3 +1,54 @@
+// Confirmation Modal Styles
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modalContent {
+  background: #fff;
+  color: #222;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 540px;
+  width: 95vw;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  position: relative;
+  text-align: center;
+}
+.modalClose {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.2s;
+}
+.modalClose:hover {
+  color: #d32f2f;
+}
+.orderDetailsSection {
+  background: #f7f7f7;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  margin: 1.5rem 0 0.5rem 0;
+  text-align: left;
+}
+.emailInfo {
+  margin-top: 1.5rem;
+  color: #444;
+  font-size: 1rem;
+}
 @import "@/assets/front/styles/variable.scss";
 
 .wrapper {
@@ -49,6 +100,25 @@
   background: $primary;
   color: $bg-white;
 }
+
+.imgWrap {
+  flex: 0 0 80%;
+  max-width: 80%;
+  margin: 0 auto 2rem;
+  // padding-right: calc(var(--bs-gutter-x) * 0.5);
+  display: flex;
+  gap: 20px;
+  .imageBox {
+    flex: 1;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+  }
+}
+
 
 /* ===== CARDS ===== */
 
@@ -132,6 +202,7 @@
   }
   &.selected {
     box-shadow: rgba(223, 65, 3, 0.5) 0 0 0 3px;
+    transform: translateY(-6px);
   }
   &:hover {
     transform: translateY(-6px);
@@ -307,6 +378,12 @@
   gap: 15px;
 }
 
+.gridDoorConfig {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 15px;
+}
+
 .card {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
@@ -322,6 +399,7 @@
   }
   &.active {
     box-shadow: rgba(223, 65, 3, 0.5) 0 0 0 3px;
+     transform: translateY(-4px);
   }
 }
 
