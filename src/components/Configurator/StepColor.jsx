@@ -3,9 +3,16 @@ import styles from "./index.module.scss";
 import { FaCheck } from "react-icons/fa";
 import { exteriorFinishes } from "@/utils/exteriorInteriorFinish";
 import Image from "next/image";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { setColor } from "@/store/configurator.slice";
 
 
-const StepColor = ({ value, onChange }) => {
+const StepColor = () => {
+  const value = useAppSelector((state) => state.configurator.color);
+  const dispatch = useAppDispatch();
+  const onChange = (color) => {
+    dispatch(setColor(color));
+  };
   return (
     <div className="">
       <div className={styles.stepHeader}>

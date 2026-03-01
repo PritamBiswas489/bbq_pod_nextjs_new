@@ -11,8 +11,16 @@ import {
   interiorCabinetsWoodGrainTransfer,
 } from "@/utils/exteriorInteriorFinish";
 
-// export default function StepInterior({ value, onChange }) {
-const StepInterior = ({ value, onChange }) => {
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { setInterior } from "@/store/configurator.slice";
+
+ 
+const StepInterior = () => {
+  const value = useAppSelector((state) => state.configurator.interior);
+  const dispatch = useAppDispatch();
+  const onChange = (interior) => {
+    dispatch(setInterior(interior));
+  };
   return (
     <>
       <div className={styles.stepHeader}>

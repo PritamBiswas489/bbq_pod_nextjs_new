@@ -3,10 +3,17 @@ import styles from "./index.module.scss";
 import { FaCheck } from "react-icons/fa";
 import { FiLock } from "react-icons/fi";
 import Image from "next/image";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { setBBQStyle } from "@/store/configurator.slice";
 
 import { bbqStyle } from "@/utils/exteriorInteriorFinish";
 
-const StepBbqStyle = ({ value, onChange }) => {
+const StepBbqStyle = () => {
+  const value = useAppSelector((state) => state.configurator.bbqStyle);
+  const dispatch = useAppDispatch();
+  const onChange = (bbqStyle) => {
+    dispatch(setBBQStyle(bbqStyle));
+  };
   return (
     <>
       <div className="">

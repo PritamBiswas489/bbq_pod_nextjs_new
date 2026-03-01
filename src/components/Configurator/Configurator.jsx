@@ -15,93 +15,95 @@ import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr";
 import ConfigSummary from "./ConfigSummary";
 import StepBbqStyle from "./StepBbqStyle";
 import StepInstallationRequirements from "./StepInstallationRequirements";
+import { useAppDispatch, useAppSelector } from '@/store/hooks';
+import {setModel, setColor, setInterior, setCounterTop, setDoorConfig, setBBQStyle, setInstallationRequirements, setCheckoutData} from "@/store/configurator.slice";
 
 const TOTAL_STEPS = 8;
 
 export default function Configurator() {
   const [step, setStep] = useState(0);
-
-  const [data, setData] = useState({
-    model: null,
-    color: null,
-    countertop: null,
-    interior: null,
-    appliances: null,
-    features: null,
-  });
+  const data = useAppSelector((state) => state.configurator);
 
   const canNext = () => {
-       return true;
-    // switch (step) {
-    //   case 0:
-    //     return data.model;
-    //   case 1:
-    //     return data.color;
-    //   case 2:
-    //     return data.countertop;
-    //   case 3:
-    //     return data.interior;
-    //   case 4:
-    //     return data.appliances;
-    //   case 5:
-    //     return data.features;
-    //   default:
-    //     return true;
-    // }
+    switch (step) {
+      case 0:
+        return data.model;
+      case 1:
+        return data.color;
+      case 2:
+        return data.interior;
+      case 3:
+        return data.counterTop;
+      case 4:
+        return data.doorConfig;
+      case 5:
+        return data.bbqStyle;
+      case 6:
+        return ["power", "water", "drainage", "surface", "access"].every(
+          (key) => key in data.installationRequirements
+        );
+      default:
+        return true;
+    }
+  };
+
+  
+  const handleNext = () => {
+    setStep(step + 1);
+    setTimeout(() => {
+      const el = document.getElementById("configurator");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  };
+
+  const handlePrev = () => {
+    setStep(step - 1);
+    setTimeout(() => {
+      const el = document.getElementById("configurator");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
   };
 
   return (
-    <Container className={styles.wrapper}>
+    <Container id="configurator" className={styles.wrapper}>
       <Stepper total={TOTAL_STEPS} active={step} />
 
       <Row>
         <Col md={8}>
           <div className={styles.stepContent}>
             {step === 0 && (
-              <StepModel
-                value={data.model}
-                onChange={(v) => setData({ ...data, model: v })}
-              />
+              <StepModel/>
             )}
             {step === 1 && (
-              <StepColor
-                value={data.color}
-                onChange={(v) => setData({ ...data, color: v })}
-              />
+              <StepColor/>
             )}
             {step === 2 && (
                <StepInterior
-                value={data.interior}
-                onChange={(v) => setData({ ...data, interior: v })}
               />
             )}
             {step === 3 && (
                <StepCountertop
-                value={data.countertop}
-                onChange={(v) => setData({ ...data, countertop: v })}
               />
             )}
             {step === 4 && (
               <StepDoorConfig
-                value={data.appliances}
-                onChange={(v) => setData({ ...data, appliances: v })}
               />
             )}
             {step === 5 && (
-              <StepBbqStyle
-                value={data.features}
-                onChange={(v) => setData({ ...data, features: v })}
+              <StepBbqStyle   
               />
             )}
             {step === 6 && <StepInstallationRequirements
-                value={data.installationRequirements}
-                onChange={(v) => setData({ ...data, installationRequirements: v })}
               />}
             {step === 7 && <StepReview config={data} />}
           </div>
         </Col>
         <Col md={4} className={styles.sidebar}>
-          <ConfigSummary config={data} />
+          <ConfigSummary />
         </Col>
       </Row>
 
@@ -109,7 +111,7 @@ export default function Configurator() {
         <Button
           className={styles.previous}
           disabled={step === 0}
-          onClick={() => setStep(step - 1)}
+          onClick={handlePrev}
         >
           <GrFormPreviousLink /> Previous
         </Button>
@@ -118,7 +120,7 @@ export default function Configurator() {
         <Button
           className={styles.next}
           disabled={!canNext()}
-          onClick={() => setStep(step + 1)}
+          onClick={handleNext}
         >
           Continue <GrFormNextLink />
         </Button>

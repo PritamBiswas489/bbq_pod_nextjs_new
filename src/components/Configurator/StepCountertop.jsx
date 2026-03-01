@@ -11,63 +11,22 @@ import hero7 from "@/assets/front/images/image-shade/marsha-brown.webp";
 import hero8 from "@/assets/front/images/image-shade/titanium-blue.webp";
 import hero9 from "@/assets/front/images/image-shade/saronlan.webp";
 
-// import hero4 from "@/assets/front/images/outdoor/hero-4.jpg";
-// import hero5 from "@/assets/front/images/outdoor/hero-5.webp";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { setCounterTop } from "@/store/configurator.slice";
 
 import { countertopStainlessSteelTitle, countertopSinteredStoneTitle  } from "@/utils/exteriorInteriorFinish";
 
 import { FaCheck } from "react-icons/fa";
 
-const countertops = [
-  {
-    title: "Texture: Tree Bark",
-    code: "SS-A01",
-    img: hero1.src,
-  },
-  {
-    title: "Texture: Rhino Skin",
-    code: "SS-A01",
-    img: hero2.src,
-  },
-];
-const countertops2 = [
-  {
-    title: "Aurora White",
-    code: "CSS-A01",
-    img: hero3.src,
-  },
-  {
-    title: "Saint Blanc Belly White",
-    code: "CSS-A02",
-    img: hero4.src,
-  },
-  {
-    title: "Garda Belly Gold",
-    code: "CSS-A03",
-    img: hero5.src,
-  },
-  {
-    title: "Marsha Gray",
-    code: "CSS-A05",
-    img: hero6.src,
-  },
-  {
-    title: "Marsha Brown",
-    code: "CSS-A06",
-    img: hero7.src,
-  },
-  {
-    title: "Titanium Blue",
-    code: "CSS-A07",
-    img: hero8.src,
-  },
-  {
-    title: "Saronlan",
-    code: "CSS-A08",
-    img: hero9.src,
-  },
-];
-const StepCountertop = ({ value, onChange }) => {
+ 
+const StepCountertop = () => {
+  const value = useAppSelector((state) => state.configurator.counterTop);
+  console.log("selected countertop in step countertop", value);
+  const dispatch = useAppDispatch();
+  const onChange = (countertop) => {
+   
+    dispatch(setCounterTop(countertop));
+  };
   return (
     <>
       <div className={styles.stepHeader}>

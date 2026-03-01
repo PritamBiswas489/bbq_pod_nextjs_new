@@ -3,9 +3,83 @@ import styles from "./index.module.scss";
 import Image from "next/image";
 import hero1 from "@/assets/front/images/hero-1.jpg";
 
+import { useTranslation } from "next-i18next";
+import { exteriorFinishes } from "@/utils/exteriorInteriorFinish";
+import {
+  interiorCabinetBlockColours,
+  interiorCabinetsWoodGrainTransfer,
+} from "@/utils/exteriorInteriorFinish";
+
+import {
+  countertopStainlessSteelTitle,
+  countertopSinteredStoneTitle,
+} from "@/utils/exteriorInteriorFinish";
+
+import { doorCongiguration } from "@/utils/exteriorInteriorFinish";
+import { bbqStyle } from "@/utils/exteriorInteriorFinish";
+
+import { questions } from "@/utils/exteriorInteriorFinish";
+
+import { useAppSelector } from "@/store/hooks";
+
 import ConfirmationModal from "./ConfirmationModal";
+import { useRouter } from "next/router";
+import { current } from "@reduxjs/toolkit";
 
 const StepReview = ({ data }) => {
+  const router = useRouter();
+  const currentLocale = router.locale;
+  const selectedModel = useAppSelector((state) => state.configurator.model);
+  const selectedColor = useAppSelector((state) => state.configurator.color);
+  const selectedInterior = useAppSelector(
+    (state) => state.configurator.interior,
+  );
+  const selectedCountertop = useAppSelector(
+    (state) => state.configurator.counterTop,
+  );
+  const selectedDoorConfig = useAppSelector(
+    (state) => state.configurator.doorConfig,
+  );
+  const selectedBBQStyle = useAppSelector(
+    (state) => state.configurator.bbqStyle,
+  );
+
+  const margedInteriorOptions = [
+    ...interiorCabinetBlockColours,
+    ...interiorCabinetsWoodGrainTransfer,
+  ];
+  const selectedInteriorOption = margedInteriorOptions.find(
+    (c) => c.modelName === selectedInterior,
+  );
+
+  const margedCountertopOptions = [
+    ...countertopStainlessSteelTitle,
+    ...countertopSinteredStoneTitle,
+  ];
+  const selectedCountertopOption = margedCountertopOptions.find(
+    (c) => c.modelName === selectedCountertop,
+  );
+  const selectedDoorConfigOption = doorCongiguration.find(
+    (c) => c.id === selectedDoorConfig,
+  );
+  const selectedBBQStyleOption = bbqStyle.find(
+    (c) => c.id === selectedBBQStyle,
+  );
+  const installationRequirements = useAppSelector(
+    (state) => state.configurator.installationRequirements,
+  );
+
+  const selectedInstallationRequirementOptions = questions
+    .map((q) => {
+      const answer = installationRequirements[q.key];
+      if (!answer) return null;
+      return { ...q, answer };
+    })
+    .filter(Boolean);
+
+  const additionalNotes = installationRequirements.additionalNotes || "";
+
+  const { t } = useTranslation("common");
   const [modalOpen, setModalOpen] = useState(false);
   const [formData, setFormData] = useState({});
 
@@ -16,8 +90,26 @@ const StepReview = ({ data }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setModalOpen(true);
-    // Here you would also send the email to sales@bbqpodspain.com
+    // setModalOpen(true);
+    // // Here you would also send the email to sales@bbqpodspain.com
+    const submissionData = {
+      ...formData,
+      model: t(selectedModel),
+      color: exteriorFinishes.find((c) => c.modelName === selectedColor)?.colorName,
+      interior: selectedInteriorOption?.colorName,
+      countertop: selectedCountertopOption?.colorName,
+      doorConfig: selectedDoorConfigOption?.title,
+      bbqStyle: selectedBBQStyleOption?.title,
+      installationRequirements: selectedInstallationRequirementOptions.map((q) => ({
+        label: q.label,
+        answer: q.answer?.customValue || q.answer?.option || "--",
+      })),
+      additionalNotes: additionalNotes || "--",
+      currentLocale,
+    };
+     
+    console.log("Final form data to submit:", JSON.stringify(submissionData, null, 2));
+    // Reset form or show success message as needed
   };
 
   return (
@@ -25,8 +117,9 @@ const StepReview = ({ data }) => {
       <div className={styles.stepHeader}>
         <h2>Your Details</h2>
         <p>
-          Please provide your information so we can review your configuration and contact you to finalise pricing, availability and installation planning.
-
+          Please provide your information so we can review your configuration
+          and contact you to finalise pricing, availability and installation
+          planning.
         </p>
       </div>
       {/* <div className={styles.infoWrap}>
@@ -128,7 +221,9 @@ const StepReview = ({ data }) => {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label>Installation Address <span style={{color: 'red'}}>*</span></label>
+                <label>
+                  Installation Address <span style={{ color: "red" }}>*</span>
+                </label>
                 <input
                   type="text"
                   name="installStreet"
@@ -146,7 +241,7 @@ const StepReview = ({ data }) => {
                   value={formData.installCity || ""}
                   onChange={handleChange}
                   required
-                  style={{marginTop: 8}}
+                  style={{ marginTop: 8 }}
                 />
                 <input
                   type="text"
@@ -156,7 +251,7 @@ const StepReview = ({ data }) => {
                   value={formData.installPostcode || ""}
                   onChange={handleChange}
                   required
-                  style={{marginTop: 8}}
+                  style={{ marginTop: 8 }}
                 />
                 <input
                   type="text"
@@ -166,24 +261,33 @@ const StepReview = ({ data }) => {
                   value={formData.installProvince || ""}
                   onChange={handleChange}
                   required
-                  style={{marginTop: 8}}
+                  style={{ marginTop: 8 }}
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="howDidYouHear">How did you hear about us? <span style={{color: '#888', fontWeight: 400}}>(Optional)</span></label>
+                <label htmlFor="howDidYouHear">
+                  How did you hear about us?{" "}
+                  <span style={{ color: "#888", fontWeight: 400 }}>
+                    (Optional)
+                  </span>
+                </label>
                 <select
                   id="howDidYouHear"
                   name="howDidYouHear"
                   className={styles.formInput}
                   value={formData.howDidYouHear || ""}
                   onChange={handleChange}
-                  style={{marginTop: 4}}
+                  style={{ marginTop: 4 }}
                 >
-                  <option value="" disabled>Select an option</option>
+                  <option value="" disabled>
+                    Select an option
+                  </option>
                   <option value="Instagram">Instagram</option>
                   <option value="Google">Google</option>
                   <option value="Referral">Referral</option>
-                  <option value="Driving past showroom">Driving past showroom</option>
+                  <option value="Driving past showroom">
+                    Driving past showroom
+                  </option>
                   <option value="Other">Other</option>
                 </select>
               </div>
@@ -206,7 +310,8 @@ const StepReview = ({ data }) => {
                 Request Personalised Quote 🎄
               </button>
               <p>
-                Submitting this form does not process payment. A member of our team will contact you to confirm your project details.
+                Submitting this form does not process payment. A member of our
+                team will contact you to confirm your project details.
               </p>
             </div>
           </div>
@@ -217,15 +322,29 @@ const StepReview = ({ data }) => {
         onClose={() => setModalOpen(false)}
         orderDetails={
           <div>
-            <p><b>Name:</b> {formData.fullName}</p>
-            <p><b>Email:</b> {formData.email}</p>
-            <p><b>Phone:</b> {formData.phone}</p>
-            <p><b>Installation Address:</b><br />
-              {formData.installStreet}<br />
-              {formData.installCity}, {formData.installProvince} {formData.installPostcode}
+            <p>
+              <b>Name:</b> {formData.fullName}
             </p>
-            <p><b>How did you hear about us?</b> {formData.howDidYouHear}</p>
-            <p><b>Message:</b> {formData.message}</p>
+            <p>
+              <b>Email:</b> {formData.email}
+            </p>
+            <p>
+              <b>Phone:</b> {formData.phone}
+            </p>
+            <p>
+              <b>Installation Address:</b>
+              <br />
+              {formData.installStreet}
+              <br />
+              {formData.installCity}, {formData.installProvince}{" "}
+              {formData.installPostcode}
+            </p>
+            <p>
+              <b>How did you hear about us?</b> {formData.howDidYouHear}
+            </p>
+            <p>
+              <b>Message:</b> {formData.message}
+            </p>
             {/* Add more details/specs/price/model as needed */}
           </div>
         }

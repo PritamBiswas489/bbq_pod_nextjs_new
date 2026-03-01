@@ -5,8 +5,15 @@ import { FiLock } from "react-icons/fi";
 import Image from "next/image";
 
 import { doorCongiguration } from "@/utils/exteriorInteriorFinish";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { setDoorConfig } from "@/store/configurator.slice";
 
-const StepDoorConfig = ({ value, onChange }) => {
+const StepDoorConfig = () => {
+  const value = useAppSelector((state) => state.configurator.doorConfig);
+  const dispatch = useAppDispatch();
+  const onChange = (doorConfig) => {
+    dispatch(setDoorConfig(doorConfig));
+  }
   return (
     <>
       <div className="">

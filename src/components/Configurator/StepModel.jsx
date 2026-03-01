@@ -5,59 +5,19 @@ import Image from "next/image";
 import { FiCheckCircle } from "react-icons/fi";
 
 import styles from "./index.module.scss";
+import { products } from "@/utils/exteriorInteriorFinish";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { setModel } from "@/store/configurator.slice";
 
-import hero1 from "@/assets/front/images/outdoor/hero-1.jpg";
-import hero2 from "@/assets/front/images/outdoor/hero-2.jpg";
-import hero3 from "@/assets/front/images/outdoor/hero-3.webp";
-import hero4 from "@/assets/front/images/outdoor/hero-4.jpg";
-import hero5 from "@/assets/front/images/outdoor/hero-5.webp";
-
-const products = [
-  {
-    badges: [],
-    nameKey: "coreProductName",
-    descriptionKey: "coreProductDescription",
-    priceKey: "coreProductPrice",
-    featuresKeys: ["coreFeature1", "coreFeature2", "coreFeature3"],
-    image: hero1.src,
-  },
-  {
-    badges: [],
-    nameKey: "primeProductName",
-    descriptionKey: "primeProductDescription",
-    priceKey: "primeProductPrice",
-    featuresKeys: ["primeFeature1", "primeFeature2", "primeFeature3"],
-    image: hero2.src,
-  },
-  {
-    badges: [],
-    nameKey: "apexProductName",
-    descriptionKey: "apexProductDescription",
-    priceKey: "apexProductPrice",
-    featuresKeys: ["apexFeature1", "apexFeature2", "apexFeature3"],
-    image: hero3.src,
-  },
-  {
-    badges: [],
-    nameKey: "pinnacleProductName",
-    descriptionKey: "pinnacleProductDescription",
-    priceKey: "pinnacleProductPrice",
-    featuresKeys: ["pinnacleFeature1", "pinnacleFeature2", "pinnacleFeature3"],
-    image: hero4.src,
-  },
-  {
-    badges: [],
-    nameKey: "aeroProductName",
-    descriptionKey: "aeroProductDescription",
-    priceKey: "aeroProductPrice",
-    featuresKeys: ["aeroFeature1", "aeroFeature2", "aeroFeature3"],
-    image: hero5.src,
-  },
-];
-
-const StepModel = ({ value, onChange }) => {
+ 
+const StepModel = ({  }) => {
   const { t } = useTranslation("common");
-
+  const selectedModel = useAppSelector((state) => state.configurator.model);
+  const dispatch = useAppDispatch();
+  const onChange = (model) => {
+      dispatch(setModel(model));
+  }
+  
   return (
     <Container>
       <div className={styles.stepHeader}>
@@ -69,7 +29,7 @@ const StepModel = ({ value, onChange }) => {
 
       <Row className={`g-4 justify-content-center ${styles.productGrid}`}>
         {products.map((product, index) => {
-          const isSelected = value === product.nameKey;
+          const isSelected = selectedModel === product.nameKey;
 
           return (
             <Col key={index} xs={12} sm={6} md={4} lg={4}>

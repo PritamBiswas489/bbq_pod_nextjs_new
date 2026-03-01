@@ -5,7 +5,8 @@ import "@/assets/front/fonts/stylesheet.css";
 import "@/assets/front/styles/style.scss";
 import nextI18NextConfig from '../../next-i18next.config.js';
 import { PagesTopLoader } from 'nextjs-toploader/pages';
-
+import { Provider } from "react-redux";
+import { store } from "@/store";
 // import "@/styles/globals.css";
 
 import AOS from "aos";
@@ -16,10 +17,10 @@ function App({ Component, pageProps }) {
     AOS.init();
   }, []);
    return (
-    <>
+    <Provider store={store}>
       <PagesTopLoader />
       <Component {...pageProps} />;
-    </>
+    </Provider>
   );
 }
 

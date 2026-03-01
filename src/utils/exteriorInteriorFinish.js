@@ -209,3 +209,94 @@ export const bbqStyle = [
     img: charcoal.src,
   },
 ];
+
+export const questions = [
+  {
+    key: "power",
+    label: "Do you have an electrical outlet available at the installation site? *",
+    options: [
+      "Yes – existing outdoor power supply",
+      "No – electrical connection required",
+      "Other (please specify)",
+    ],
+  },
+  {
+    key: "water",
+    label: "Do you have a water connection available?",
+    options: [
+      "Yes – existing water source",
+      "No – plumbing connection required",
+      "Other (please specify)",
+    ],
+  },
+  {
+    key: "drainage",
+    label: "Is there a drainage connection available for the sink waste?",
+    options: [
+      "Yes – existing drain connection",
+      "No – drainage connection required",
+      "Other (please specify)",
+    ],
+  },
+  {
+    key: "surface",
+    label: "Is there a solid, flat and level surface prepared for installation?",
+    options: [
+      "Yes – concrete base or equivalent",
+      "No – base preparation required",
+      "Other (please specify)",
+    ],
+  },
+  {
+    key: "access",
+    label: "Is there suitable access for delivery and positioning?",
+    options: [
+      "Yes – clear access for vehicle and crane positioning",
+      "Limited access – requires review",
+      "Unsure – please advise",
+    ],
+  },
+];
+
+export const   products = [
+  {
+    badges: [],
+    nameKey: "coreProductName",
+    descriptionKey: "coreProductDescription",
+    priceKey: "coreProductPrice",
+    featuresKeys: ["coreFeature1", "coreFeature2", "coreFeature3"],
+    image: require("@/assets/front/images/outdoor/hero-1.jpg").default.src,
+  },
+  {
+    badges: [],
+    nameKey: "primeProductName",
+    descriptionKey: "primeProductDescription",
+    priceKey: "primeProductPrice",
+    featuresKeys: ["primeFeature1", "primeFeature2", "primeFeature3"],
+    image: require("@/assets/front/images/outdoor/hero-2.jpg").default.src,
+  },
+  {
+    badges: [],
+    nameKey: "apexProductName",
+    descriptionKey: "apexProductDescription",
+    priceKey: "apexProductPrice",
+    featuresKeys: ["apexFeature1", "apexFeature2", "apexFeature3"],
+    image: require("@/assets/front/images/outdoor/hero-3.webp").default.src,
+  },
+  {
+    badges: [],
+    nameKey: "pinnacleProductName",
+    descriptionKey: "pinnacleProductDescription",
+    priceKey: "pinnacleProductPrice",
+    featuresKeys: ["pinnacleFeature1", "pinnacleFeature2", "pinnacleFeature3"],
+    image: require("@/assets/front/images/outdoor/hero-4.jpg").default.src,
+  },
+  {
+    badges: [],
+    nameKey: "aeroProductName",
+    descriptionKey: "aeroProductDescription",
+    priceKey: "aeroProductPrice",
+    featuresKeys: ["aeroFeature1", "aeroFeature2", "aeroFeature3"],
+    image: require("@/assets/front/images/outdoor/hero-5.webp").default.src,
+  },
+];

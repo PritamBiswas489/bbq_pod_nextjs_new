@@ -3,58 +3,19 @@ import styles from "./index.module.scss";
 import { FaCheck } from "react-icons/fa";
 import { FiLock } from "react-icons/fi";
 import Image from "next/image";
+import { questions } from "@/utils/exteriorInteriorFinish";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { setInstallationRequirements } from "@/store/configurator.slice";
 
 
 
-const questions = [
-	{
-		key: "power",
-		label: "Do you have an electrical outlet available at the installation site? *",
-		options: [
-			"Yes – existing outdoor power supply",
-			"No – electrical connection required",
-			"Other (please specify)",
-		],
-	},
-	{
-		key: "water",
-		label: "Do you have a water connection available?",
-		options: [
-			"Yes – existing water source",
-			"No – plumbing connection required",
-			"Other (please specify)",
-		],
-	},
-	{
-		key: "drainage",
-		label: "Is there a drainage connection available for the sink waste?",
-		options: [
-			"Yes – existing drain connection",
-			"No – drainage connection required",
-			"Other (please specify)",
-		],
-	},
-	{
-		key: "surface",
-		label: "Is there a solid, flat and level surface prepared for installation?",
-		options: [
-			"Yes – concrete base or equivalent",
-			"No – base preparation required",
-			"Other (please specify)",
-		],
-	},
-	{
-		key: "access",
-		label: "Is there suitable access for delivery and positioning?",
-		options: [
-			"Yes – clear access for vehicle and crane positioning",
-			"Limited access – requires review",
-			"Unsure – please advise",
-		],
-	},
-];
+const StepInstallationRequirements = () => {
+	const value = useAppSelector((state) => state.configurator.installationRequirements);
+	const dispatch = useAppDispatch();
+	const onChange = (installationRequirements) => {
+		dispatch(setInstallationRequirements(installationRequirements));
+	};
 
-const StepInstallationRequirements = ({ value = {}, onChange }) => {
 	const handleChange = (key, option, customValue = "") => {
 		if (option === "Other (please specify)") {
 			onChange({ ...value, [key]: { option, customValue } });
