@@ -7,19 +7,22 @@ const languages = [
   { id: "es", label: "Español" },
 ];
 
-const LanguageCheckbox = () => {
-  const [selected, setSelected] = useState([]);
+
+const LanguageCheckbox = ({ onChange }) => {
+  const [selected, setSelected] = useState(null);
 
   const toggleLanguage = (id) => {
-    setSelected((prev) =>
-      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
-    );
+    const newSelected = selected === id ? null : id;
+    setSelected(newSelected);
+    if (onChange) {
+      onChange(newSelected);
+    }
   };
 
   return (
     <div className={styles.wrapper}>
       {languages.map((lang) => {
-        const isChecked = selected.includes(lang.id);
+        const isChecked = selected === lang.id;
 
         return (
           <label key={lang.id} className={styles.checkbox}>

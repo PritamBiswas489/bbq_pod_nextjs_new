@@ -213,47 +213,47 @@ export const bbqStyle = [
 export const questions = [
   {
     key: "power",
-    label: "Do you have an electrical outlet available at the installation site? *",
+    label: "power_label",
     options: [
-      "Yes – existing outdoor power supply",
-      "No – electrical connection required",
-      "Other (please specify)",
+      "power_option_yes",
+      "power_option_no",
+      "power_option_other",
     ],
   },
   {
     key: "water",
-    label: "Do you have a water connection available?",
+    label: "water_label",
     options: [
-      "Yes – existing water source",
-      "No – plumbing connection required",
-      "Other (please specify)",
+      "water_option_yes",
+      "water_option_no",
+      "water_option_other",
     ],
   },
   {
     key: "drainage",
-    label: "Is there a drainage connection available for the sink waste?",
+    label: "drainage_label",
     options: [
-      "Yes – existing drain connection",
-      "No – drainage connection required",
-      "Other (please specify)",
+      "drainage_option_yes",
+      "drainage_option_no",
+      "drainage_option_other",
     ],
   },
   {
     key: "surface",
-    label: "Is there a solid, flat and level surface prepared for installation?",
+    label: "surface_label",
     options: [
-      "Yes – concrete base or equivalent",
-      "No – base preparation required",
-      "Other (please specify)",
+      "surface_option_yes",
+      "surface_option_no",
+      "surface_option_other",
     ],
   },
   {
     key: "access",
-    label: "Is there suitable access for delivery and positioning?",
+    label: "access_label",
     options: [
-      "Yes – clear access for vehicle and crane positioning",
-      "Limited access – requires review",
-      "Unsure – please advise",
+      "access_option_yes",
+      "access_option_limited",
+      "access_option_unsure",
     ],
   },
 ];

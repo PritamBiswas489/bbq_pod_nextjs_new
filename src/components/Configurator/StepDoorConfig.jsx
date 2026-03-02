@@ -7,8 +7,10 @@ import Image from "next/image";
 import { doorCongiguration } from "@/utils/exteriorInteriorFinish";
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import { setDoorConfig } from "@/store/configurator.slice";
+import { useTranslation } from "next-i18next";
 
 const StepDoorConfig = () => {
+  const { t } = useTranslation("common");
   const value = useAppSelector((state) => state.configurator.doorConfig);
   const dispatch = useAppDispatch();
   const onChange = (doorConfig) => {
@@ -18,9 +20,9 @@ const StepDoorConfig = () => {
     <>
       <div className="">
         <div className={styles.stepHeader}>
-          <h2>Door Configuration</h2>
+          <h2>{t('door_configuration')}</h2>
           <p>
-            Choose between lift-up, fabric roller or metal roller door options.
+            {t('choose_door_option')}
           </p>
         </div>
 

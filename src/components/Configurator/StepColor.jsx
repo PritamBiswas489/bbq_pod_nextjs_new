@@ -5,9 +5,11 @@ import { exteriorFinishes } from "@/utils/exteriorInteriorFinish";
 import Image from "next/image";
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import { setColor } from "@/store/configurator.slice";
+import { useTranslation } from "next-i18next";
 
 
 const StepColor = () => {
+  const { t } = useTranslation("common");
   const value = useAppSelector((state) => state.configurator.color);
   const dispatch = useAppDispatch();
   const onChange = (color) => {
@@ -16,8 +18,8 @@ const StepColor = () => {
   return (
     <div className="">
       <div className={styles.stepHeader}>
-        <h2>Exterior Finish</h2>
-        <p>Select the external colour and finish to complement your property.</p>
+        <h2>{t('exterior_finish')}</h2>
+        <p>{t('select_external_colour')}</p>
       </div>
       <div className={styles.grid}>
         {exteriorFinishes.map((c) => (

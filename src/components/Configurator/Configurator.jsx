@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Container, Button, Col, Row } from "react-bootstrap";
+import { useTranslation } from "next-i18next";
 import Stepper from "./Stepper";
 import StepModel from "./StepModel";
 import StepColor from "./StepColor";
@@ -21,6 +22,7 @@ import {setModel, setColor, setInterior, setCounterTop, setDoorConfig, setBBQSty
 const TOTAL_STEPS = 8;
 
 export default function Configurator() {
+  const { t } = useTranslation('common');
   const [step, setStep] = useState(0);
   const data = useAppSelector((state) => state.configurator);
 
@@ -67,6 +69,15 @@ export default function Configurator() {
       }
     }, 100);
   };
+  const backtoStart = () => {
+    setStep(0);
+    setTimeout(() => {
+      const el = document.getElementById("configurator");
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
+  }
 
   return (
     <Container id="configurator" className={styles.wrapper}>
@@ -99,7 +110,7 @@ export default function Configurator() {
             )}
             {step === 6 && <StepInstallationRequirements
               />}
-            {step === 7 && <StepReview config={data} />}
+            {step === 7 && <StepReview  backtoStart={backtoStart} />}
           </div>
         </Col>
         <Col md={4} className={styles.sidebar}>
@@ -113,7 +124,7 @@ export default function Configurator() {
           disabled={step === 0}
           onClick={handlePrev}
         >
-          <GrFormPreviousLink /> Previous
+          <GrFormPreviousLink /> {t('previous')}
         </Button>
 
       {step < TOTAL_STEPS - 1 && (
@@ -122,7 +133,7 @@ export default function Configurator() {
           disabled={!canNext()}
           onClick={handleNext}
         >
-          Continue <GrFormNextLink />
+          {t('continue')} <GrFormNextLink />
         </Button>
       )}
       </div>

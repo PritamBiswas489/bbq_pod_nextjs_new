@@ -20,17 +20,22 @@ import { bbqStyle } from "@/utils/exteriorInteriorFinish";
 
 import { questions } from "@/utils/exteriorInteriorFinish";
 
-import { useAppSelector } from "@/store/hooks";
+import { useAppSelector, useAppDispatch } from "@/store/hooks";
+import { setCheckoutData } from "@/store/configurator.slice";
 
 import ConfirmationModal from "./ConfirmationModal";
 import { useRouter } from "next/router";
-import { current } from "@reduxjs/toolkit";
+import axios from "axios";
+ 
 
-const StepReview = ({ data }) => {
+const StepReview = ({ backtoStart }) => {
+  const dispatch = useAppDispatch();
+ 
   const router = useRouter();
   const currentLocale = router.locale;
   const selectedModel = useAppSelector((state) => state.configurator.model);
   const selectedColor = useAppSelector((state) => state.configurator.color);
+  const [submitbtndisabled, setSubmitbtndisabled] = useState(false);
   const selectedInterior = useAppSelector(
     (state) => state.configurator.interior,
   );
@@ -87,9 +92,11 @@ const StepReview = ({ data }) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
+ // handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSubmitbtndisabled(true);
+    dispatch(setCheckoutData(formData));
     // setModalOpen(true);
     // // Here you would also send the email to sales@bbqpodspain.com
     const submissionData = {
@@ -101,7 +108,7 @@ const StepReview = ({ data }) => {
       doorConfig: selectedDoorConfigOption?.title,
       bbqStyle: selectedBBQStyleOption?.title,
       installationRequirements: selectedInstallationRequirementOptions.map((q) => ({
-        label: q.label,
+        label: t(q.label),
         answer: q.answer?.customValue || q.answer?.option || "--",
       })),
       additionalNotes: additionalNotes || "--",
@@ -110,17 +117,28 @@ const StepReview = ({ data }) => {
      
     console.log("Final form data to submit:", JSON.stringify(submissionData, null, 2));
     // Reset form or show success message as needed
+    const sendEmail = async () => {
+      try {
+        await axios.post("/api/send-order-email", submissionData);
+        setModalOpen(true);
+       
+        setFormData({});
+        setSubmitbtndisabled(false);
+      } catch (err) {
+        console.error("Failed to send email:", err);
+        alert(t("stepReview.errorSubmit"));
+        setSubmitbtndisabled(false);
+      }
+    };
+
+     sendEmail();
   };
 
   return (
     <>
       <div className={styles.stepHeader}>
-        <h2>Your Details</h2>
-        <p>
-          Please provide your information so we can review your configuration
-          and contact you to finalise pricing, availability and installation
-          planning.
-        </p>
+        <h2>{t("stepReview.yourDetails")}</h2>
+        <p>{t("stepReview.provideInfo")}</p>
       </div>
       {/* <div className={styles.infoWrap}>
         <h3>Your Configuration</h3>
@@ -180,12 +198,12 @@ const StepReview = ({ data }) => {
       </div> */}
 
       <div className={styles.infoWrap}>
-        <h3>Your Contact Information</h3>
+        <h3>{t("stepReview.yourContactInfo")}</h3>
         <form onSubmit={handleSubmit}>
           <div className={styles.information}>
             <div className={styles.informationLeft}>
               <div className={styles.formGroup}>
-                <label htmlFor="fullName">Full Name</label>
+                <label htmlFor="fullName">{t("stepReview.fullName")}</label>
                 <input
                   type="text"
                   id="fullName"
@@ -197,7 +215,7 @@ const StepReview = ({ data }) => {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="email">Email Address</label>
+                <label htmlFor="email">{t("stepReview.emailAddress")}</label>
                 <input
                   type="email"
                   id="email"
@@ -209,7 +227,7 @@ const StepReview = ({ data }) => {
                 />
               </div>
               <div className={styles.formGroup}>
-                <label htmlFor="phone">Phone Number</label>
+                <label htmlFor="phone">{t("stepReview.phoneNumber")}</label>
                 <input
                   type="tel"
                   id="phone"
@@ -222,12 +240,12 @@ const StepReview = ({ data }) => {
               </div>
               <div className={styles.formGroup}>
                 <label>
-                  Installation Address <span style={{ color: "red" }}>*</span>
+                  {t("stepReview.installationAddress")} <span style={{ color: "red" }}>*</span>
                 </label>
                 <input
                   type="text"
                   name="installStreet"
-                  placeholder="Street Address"
+                  placeholder={t("stepReview.streetAddress")}
                   className={styles.formInput}
                   value={formData.installStreet || ""}
                   onChange={handleChange}
@@ -236,7 +254,7 @@ const StepReview = ({ data }) => {
                 <input
                   type="text"
                   name="installCity"
-                  placeholder="Town / City"
+                  placeholder={t("stepReview.townCity")}
                   className={styles.formInput}
                   value={formData.installCity || ""}
                   onChange={handleChange}
@@ -246,7 +264,7 @@ const StepReview = ({ data }) => {
                 <input
                   type="text"
                   name="installPostcode"
-                  placeholder="Postcode"
+                  placeholder={t("stepReview.postcode")}
                   className={styles.formInput}
                   value={formData.installPostcode || ""}
                   onChange={handleChange}
@@ -256,7 +274,7 @@ const StepReview = ({ data }) => {
                 <input
                   type="text"
                   name="installProvince"
-                  placeholder="Province"
+                  placeholder={t("stepReview.province")}
                   className={styles.formInput}
                   value={formData.installProvince || ""}
                   onChange={handleChange}
@@ -266,9 +284,9 @@ const StepReview = ({ data }) => {
               </div>
               <div className={styles.formGroup}>
                 <label htmlFor="howDidYouHear">
-                  How did you hear about us?{" "}
+                  {t("stepReview.howDidYouHear")} {" "}
                   <span style={{ color: "#888", fontWeight: 400 }}>
-                    (Optional)
+                    {t("stepReview.optional")}
                   </span>
                 </label>
                 <select
@@ -280,21 +298,19 @@ const StepReview = ({ data }) => {
                   style={{ marginTop: 4 }}
                 >
                   <option value="" disabled>
-                    Select an option
+                    {t("stepReview.selectOption")}
                   </option>
-                  <option value="Instagram">Instagram</option>
-                  <option value="Google">Google</option>
-                  <option value="Referral">Referral</option>
-                  <option value="Driving past showroom">
-                    Driving past showroom
-                  </option>
-                  <option value="Other">Other</option>
+                  <option value="Instagram">{t("stepReview.instagram")}</option>
+                  <option value="Google">{t("stepReview.google")}</option>
+                  <option value="Referral">{t("stepReview.referral")}</option>
+                  <option value="Driving past showroom">{t("stepReview.drivingPastShowroom")}</option>
+                  <option value="Other">{t("stepReview.other")}</option>
                 </select>
               </div>
             </div>
             <div className={styles.informationRight}>
               <div className={styles.formGroup}>
-                <label htmlFor="message">Message</label>
+                <label htmlFor="message">{t("stepReview.message")}</label>
                 <textarea
                   id="message"
                   name="message"
@@ -306,12 +322,19 @@ const StepReview = ({ data }) => {
               </div>
             </div>
             <div className={styles.informationBtm}>
-              <button type="submit" className={styles.submitBtn}>
-                Request Personalised Quote 🎄
+              <button type="submit" disabled={submitbtndisabled} className={styles.submitBtn}>
+                {submitbtndisabled ? (
+                  <span style={{ display: 'inline-flex', alignItems: 'center' }}>
+                    <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                    {t("stepReview.sending")}
+                  </span>
+                ) : (
+                  t("stepReview.requestQuote")
+                )}
               </button>
+             
               <p>
-                Submitting this form does not process payment. A member of our
-                team will contact you to confirm your project details.
+                {t("stepReview.noPayment")}
               </p>
             </div>
           </div>
@@ -319,35 +342,8 @@ const StepReview = ({ data }) => {
       </div>
       <ConfirmationModal
         open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        orderDetails={
-          <div>
-            <p>
-              <b>Name:</b> {formData.fullName}
-            </p>
-            <p>
-              <b>Email:</b> {formData.email}
-            </p>
-            <p>
-              <b>Phone:</b> {formData.phone}
-            </p>
-            <p>
-              <b>Installation Address:</b>
-              <br />
-              {formData.installStreet}
-              <br />
-              {formData.installCity}, {formData.installProvince}{" "}
-              {formData.installPostcode}
-            </p>
-            <p>
-              <b>How did you hear about us?</b> {formData.howDidYouHear}
-            </p>
-            <p>
-              <b>Message:</b> {formData.message}
-            </p>
-            {/* Add more details/specs/price/model as needed */}
-          </div>
-        }
+        onClose={() => {setModalOpen(false); backtoStart();}}
+       
       />
     </>
   );

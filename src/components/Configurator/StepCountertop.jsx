@@ -17,9 +17,11 @@ import { setCounterTop } from "@/store/configurator.slice";
 import { countertopStainlessSteelTitle, countertopSinteredStoneTitle  } from "@/utils/exteriorInteriorFinish";
 
 import { FaCheck } from "react-icons/fa";
+import { useTranslation } from "next-i18next";
 
  
 const StepCountertop = () => {
+  const { t } = useTranslation("common");
   const value = useAppSelector((state) => state.configurator.counterTop);
   console.log("selected countertop in step countertop", value);
   const dispatch = useAppDispatch();
@@ -30,11 +32,11 @@ const StepCountertop = () => {
   return (
     <>
       <div className={styles.stepHeader}>
-        <h2>Worktop Selection</h2>
-        <p>Select your preferred worktop material and colour.</p>
+        <h2>{t('worktop_selection')}</h2>
+        <p>{t('select_preferred_worktop')}</p>
       </div>
       <div className={styles.divider}>
-        <h5>Stainless Steel</h5>
+        <h5>{t('stainless_steel')}</h5>
         <div className={styles.cardGrid}>
           {countertopStainlessSteelTitle.map((item) => (
             <div
@@ -60,7 +62,7 @@ const StepCountertop = () => {
       </div>
 
       <div className={styles.divider}>
-        <h5>Sintered Stone +400€ (REMEMBER add to price amount)</h5>
+        <h5>{t('sintered_stone')}</h5>
         <div className={styles.cardGrid}>
           {countertopSinteredStoneTitle.map((item) => (
             <div

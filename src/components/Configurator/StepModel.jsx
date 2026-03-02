@@ -21,9 +21,9 @@ const StepModel = ({  }) => {
   return (
     <Container>
       <div className={styles.stepHeader}>
-        <h2>Select Your Model</h2>
+        <h2>{t('select_your_model')}</h2>
         <p>
-         Choose the pod layout that best suits your space and cooking style.
+         {t('choose_the_pod_layout')}
         </p>
       </div>
 

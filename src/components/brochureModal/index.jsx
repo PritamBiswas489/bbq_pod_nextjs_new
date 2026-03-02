@@ -28,12 +28,10 @@ const BrochureModal = ({ open, onClose }) => {
         </p>
 
         <div className={styles.actions}>
-          <Link href="/models" className={styles.primaryBtn}>
+          <Link href="/products" className={styles.primaryBtn}>
             {t('brochureModalExploreModelsButton')}
           </Link>
-          <Link href="/contact" className={styles.secondaryBtn}>
-            {t('brochureModalContactUsButton')}
-          </Link>
+         
         </div>
 
         <span className={styles.note}>

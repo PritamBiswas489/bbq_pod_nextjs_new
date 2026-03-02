@@ -45,33 +45,44 @@ export default function ConfigSummary() {
   const { t } = useTranslation("common");
   
   return (
+    selectedModel || selectedInterior || selectedColor || selectedCountertop || selectedDoorConfig || selectedBBQStyle || (selectedInstallationRequirementOptions && selectedInstallationRequirementOptions.length > 0) || additionalNotes ? (
     <div className={styles.summary}>
-      <h4>Your Config</h4>
-      <p>
-        Model:{" "}<span>{t(selectedModel || '--')}</span>
+      <h4>{t('your_config')}</h4>
+     {selectedModel &&  <p>
+        {t('model')} <span>{t(selectedModel || '--')}</span>
+      </p>}
+      {selectedColor && (
+        <p>
+          {t('exterior_finish')} <span>{t(exteriorFinishes.find((c) => c.modelName === selectedColor)?.colorName || '--')}</span>
+        </p>
+      )}
+      {selectedInteriorOption && (
+        <p>
+           {t('interior_cabinetry_colour')} <span>{t(selectedInteriorOption?.colorName || '--')}</span>
       </p>
-      <p>
-        Exterior Finish:{" "}<span>{t(exteriorFinishes.find((c) => c.modelName === selectedColor)?.colorName || '--')}</span>
-      </p>
-      <p>
-         Interior Cabinetry Colour:{" "}<span>{t(selectedInteriorOption?.colorName || '--')}</span>
-      </p>
-      <p>
-        Worktop Selection:{" "}<span>{t(selectedCountertopOption?.colorName || '--')}</span>
-      </p>
-       <p>
-        Door Configuration:{" "}<span>{t(selectedDoorConfigOption?.title || '--')}</span>  
-      </p>
-       <p>
-        BBQ Style:{" "}<span>{t(selectedBBQStyleOption?.title || '--')}</span>  
-      </p>
+      )}
+      {selectedCountertopOption && (
+        <p>
+          {t('worktop_selection')} <span>{t(selectedCountertopOption?.colorName || '--')}</span>
+        </p>
+      )}
+      {selectedDoorConfigOption && (
+        <p>
+          {t('door_configuration')} <span>{t(selectedDoorConfigOption?.title || '--')}</span>  
+        </p>
+      )}
+      {selectedBBQStyleOption && (
+        <p>
+          {t('bbq_style')} <span>{t(selectedBBQStyleOption?.title || '--')}</span>  
+        </p>
+      )}
     {selectedInstallationRequirementOptions && selectedInstallationRequirementOptions.length > 0 && (
       <div>
-        Installation Requirements:{" "}
+        {t('installation_requirements')} 
         <div>
           {selectedInstallationRequirementOptions.map((q) => (
             <div key={q?.key}>
-              <strong style={{ color: "#f7502f" }}>{q?.label}:</strong> <br />
+              <strong style={{ color: "#f7502f" }}>{t(q?.label)}:</strong> <br />
               {q?.answer?.customValue || q?.answer?.option || '--'}
             </div>
           ))}
@@ -81,9 +92,9 @@ export default function ConfigSummary() {
 
       {additionalNotes && (
         <p>
-          Additional Notes: <span>{additionalNotes || '--'}</span>
+          {t('additional_notes')} <span>{additionalNotes || '--'}</span>
         </p>
       )}
     </div>
-  );
+  ) : null)
 }

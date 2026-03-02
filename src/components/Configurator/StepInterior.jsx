@@ -6,6 +6,7 @@ import hero3 from "@/assets/front/images/image-shade/black-walnut.webp";
 import hero4 from "@/assets/front/images/image-shade/titanium-blue.webp";
 import hero5 from "@/assets/front/images/image-shade/italian-black-walnut.webp";
 import { FaCheck } from "react-icons/fa";
+import { useTranslation } from "next-i18next";
 import {
   interiorCabinetBlockColours,
   interiorCabinetsWoodGrainTransfer,
@@ -16,6 +17,7 @@ import { setInterior } from "@/store/configurator.slice";
 
  
 const StepInterior = () => {
+  const { t } = useTranslation("common");
   const value = useAppSelector((state) => state.configurator.interior);
   const dispatch = useAppDispatch();
   const onChange = (interior) => {
@@ -24,12 +26,12 @@ const StepInterior = () => {
   return (
     <>
       <div className={styles.stepHeader}>
-        <h2>Interior Cabinetry Colour</h2>
-        <p>Choose the internal finish for cabinetry and visible surfaces.</p>
+        <h2>{t('interior_cabinetry_colour')}</h2>
+        <p>{t('choose_internal_finish')}</p>
       </div>
 
       <div className={styles.divider}>
-        <h5>Block colours ({interiorCabinetBlockColours.length})</h5>
+        <h5>{t('block_colours')} ({interiorCabinetBlockColours.length})</h5>
         <div className={styles.grid}>
           {interiorCabinetBlockColours.map((c) => (
             <div
@@ -55,7 +57,7 @@ const StepInterior = () => {
         </div>
       </div>
       <div className={styles.divider}>
-        <h5>Wood Grain Transfer ({interiorCabinetsWoodGrainTransfer.length})</h5>
+        <h5>{t('wood_grain_transfer')} ({interiorCabinetsWoodGrainTransfer.length})</h5>
         <div className={styles.cardGrid}>
           {interiorCabinetsWoodGrainTransfer.map((item) => (
             <div

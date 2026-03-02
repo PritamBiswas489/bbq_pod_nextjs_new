@@ -7,8 +7,11 @@ import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import { setBBQStyle } from "@/store/configurator.slice";
 
 import { bbqStyle } from "@/utils/exteriorInteriorFinish";
+import { useTranslation } from "next-i18next";
+
 
 const StepBbqStyle = () => {
+  const { t } = useTranslation("common");
   const value = useAppSelector((state) => state.configurator.bbqStyle);
   const dispatch = useAppDispatch();
   const onChange = (bbqStyle) => {
@@ -18,9 +21,9 @@ const StepBbqStyle = () => {
     <>
       <div className="">
         <div className={styles.stepHeader}>
-          <h2>BBQ Style</h2>
+          <h2>{t('bbq_style')}</h2>
           <p>
-            Select your preferred grill type and appliance configuration.
+            {t('select_grill_type')}
           </p>
         </div>
 

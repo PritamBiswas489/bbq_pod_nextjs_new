@@ -48,13 +48,13 @@ export default function ConfiguratorPage() {
           >
             <Container>
               <h1 style={{ fontSize: "42px", marginBottom: "16px" }}>
-                Design Your BBQ Pod
+                {t('design_your_bbq_pod')}
               </h1>
               <p style={{ color: "#ccc", maxWidth: "680px", margin: "0 auto" }}>
-                Follow the steps below to configure your pod. Once submitted, our team will review your selections and contact you to confirm pricing, availability and delivery timelines.
+                {t('follow_the_steps')}
               </p>
               <p style={{ color: "#ccc", maxWidth: "680px", margin: "0 auto" }}>
-                No payment is required at this stage.
+                {t('no_payment_required')}
               </p>
             </Container>
           </section>
