@@ -8,7 +8,7 @@ export default async function handler(req, res) {
 	}
 
 	let to ="sales@bbqpodspain.com";
-     to = 'pritam.biswas489@gmail.com'; // for testing, replace with actual recipient in production
+    // to = 'pritam.biswas489@gmail.com'; // for testing, replace with actual recipient in production
     const name = req.body?.fullName ;
     const email = req.body?.email;
     const phone = req.body?.phone;
