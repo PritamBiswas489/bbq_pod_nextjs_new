@@ -73,8 +73,10 @@ const StepInstallationRequirements = () => {
                     marginTop: 8,
                     padding: 8,
                     borderRadius: 6,
-                    border: "1px solid #ccc",
+                    border: "1px solid rgba(255, 255, 255, 0.07)",
                     width: "100%",
+                    background: "rgba(255, 255, 255, 0.05)",
+                    color: "#f2f2f2",
                   }}
                 />
               ) : null}
