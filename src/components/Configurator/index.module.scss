@@ -19,7 +19,7 @@
   padding: 2.5rem 2rem 2rem 2rem;
   max-width: 540px;
   width: 95vw;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
   position: relative;
   text-align: center;
 }
@@ -103,9 +103,8 @@
 }
 
 .imgWrap {
-  flex: 0 0 80%;
-  max-width: 80%;
-  margin: 0 auto 2rem;
+  flex: 0 0 100%;
+  max-width: 100%;
   // padding-right: calc(var(--bs-gutter-x) * 0.5);
   display: flex;
   gap: 20px;
@@ -119,7 +118,6 @@
     border-radius: 20px;
   }
 }
-
 
 /* ===== CARDS ===== */
 
@@ -156,7 +154,7 @@
     }
   }
   p {
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
   }
   background: rgba(255, 255, 255, 0.07);
   border-radius: 1.25rem;
@@ -194,7 +192,9 @@
 
   img {
     width: 100%;
-    height: auto;
+    max-height: 248px;
+    object-fit: cover;
+    min-height: 150px;
     &.padImg {
       width: 70%;
       display: inline-block;
@@ -394,13 +394,14 @@
   transition: all 0.2s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: center;
+  padding: 0.775rem;
 
   &:hover {
     transform: translateY(-4px);
   }
   &.active {
     box-shadow: rgba(223, 65, 3, 0.5) 0 0 0 3px;
-     transform: translateY(-4px);
+    transform: translateY(-4px);
   }
 }
 
@@ -527,22 +528,12 @@
     font-weight: 500;
   }
 }
-.information {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -1rem;
-  .informationLeft,
-  .informationRight {
-    flex: 0 0 50%;
-    max-width: 50%;
-    padding: 0 1rem;
-    margin: 0.355rem 0;
-  }
+.formGroup {
+  margin-bottom: 1rem;
 }
 .informationBtm {
   flex: 0 0 100%;
   max-width: 100%;
-  padding: 0 1rem;
   margin: 1rem 0 0;
   p {
     margin-top: 1rem;
@@ -620,7 +611,94 @@
     }
   }
 }
- @keyframes spin {
-                    0% { transform: rotate(0deg); }
-                    100% { transform: rotate(360deg); }
-                  }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+}
+
+/* Hide native radio */
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Custom radio circle */
+.customRadio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+/* Inner dot */
+.customRadio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $primary;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* Checked state */
+.radioInput:checked + .customRadio {
+  border-color: $primary;
+  box-shadow: 0 0 0 3px rgba(223, 65, 3, 0.2);
+}
+
+.radioInput:checked + .customRadio::after {
+  transform: scale(1);
+}
+
+.radioText {
+  user-select: none;
+}
+@media only screen and (max-width: 600px) {
+  .grid,
+  .gridDoorConfig {
+    grid-template-columns: 1fr; /* 100% width */
+    gap: 15px;
+  }
+  .divider {
+    padding: 0.775rem;
+    h5 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+  .summary {
+    margin-top: 1rem;
+    padding: 1rem;
+    top: 10rem;
+    p {
+      font-weight: 600;
+      font-size: 0.875rem;
+      span {
+        font-weight: 600;
+      }
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
