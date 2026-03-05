@@ -43,7 +43,7 @@ const About = () => {
       </Head>
       <Layout>
         <InnerBanner
-          badgeText={t('aboutusBadgeText')}
+          
           title={t('aboutusHeroTitle')}
           subtitle={t('aboutusHeroSubtitle')}
           description1={t('aboutusHeroDescription1')}
@@ -51,12 +51,12 @@ const About = () => {
           links={[
             {
               label: t('aboutusRequestQuoteLink'),
-              href: "#",
+              href: `/${currentLocale}/configurator`,
               className: "primaryLink",
             },
             {
               label: t('aboutusExplorePodsLink'),
-              href: "/products",
+              href: `/${currentLocale}/products`,
               className: "secondaryLink",
             },
           ]}

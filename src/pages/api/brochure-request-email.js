@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     }
 
     let to ="sales@bbqpodspain.com";
-    //  to = 'pritam.biswas489@gmail.com'; // for testing, replace with actual recipient in production
+       to = 'pritam.biswas489@gmail.com'; // for testing, replace with actual recipient in production
     const name = req.body?.fullName ;
     const email = req.body?.email;
     const language = req.body?.language;  
@@ -19,6 +19,8 @@ export default async function handler(req, res) {
     htmlBody = htmlBody.replace(/\[\s*customer_name\s*\]/g, name );
     htmlBody = htmlBody.replace(/\[\s*customer_email\s*\]/g, email );
     htmlBody = htmlBody.replace(/\[\s*customer_language\s*\]/g, language ); 
+    htmlBody = htmlBody.replace(/\[\s*customer_date\s*\]/g, new Date().toLocaleString() );
+    htmlBody = htmlBody.replace(/\[\s*customer_ip\s*\]/g, req.headers['x-forwarded-for'] || req.connection.remoteAddress || '' );
 
         
     try {
@@ -28,6 +30,51 @@ export default async function handler(req, res) {
             subject,
             html: htmlBody,
         });
+
+        
+
+        if(language === "es") { // Spanish Brochure
+           const templatePathEs = path.join(process.cwd(), "public", "bbqpodspain-brochure-email-es.html");
+           let htmlBodyEs = fs.readFileSync(templatePathEs, "utf8");
+           const attchmentPathEs = path.join(process.cwd(), "public", "BBQPODSpainCatálogoEspanyol.pdf");
+           const pdfAttachmentEs = fs.readFileSync(attchmentPathEs);
+           htmlBodyEs = htmlBodyEs.replace(/\[\s*Name\s*\]/g, name );
+           const attamentEs = {
+            filename: "BBQPODSpainCatálogoEspanyol.pdf",
+            content:  pdfAttachmentEs,
+            contentType: "application/pdf",
+           };
+           const esSubject = `Tu catálogo de BBQ Pod Spain 🔥`;
+           const customerEmail = email ;
+              await transporter.sendMail({
+                from: `"BBQPODSPAIN" <sales@bbqpodspain.com>`,
+                to: customerEmail,
+                subject: esSubject,
+                html: htmlBodyEs,
+                attachments: [attamentEs],
+            });
+        }
+        if(language === "en") { // English Brochure
+            const templatePathEn = path.join(process.cwd(), "public", "bbqpodspain-brochure-email.html");
+            let htmlBodyEn = fs.readFileSync(templatePathEn, "utf8");
+            const attchmentPathEn = path.join(process.cwd(), "public", "BBQPodSpainCatalogueEnglish.pdf");
+            const pdfAttachmentEn = fs.readFileSync(attchmentPathEn);
+            htmlBodyEn = htmlBodyEn.replace(/\[\s*Name\s*\]/g, name );
+            const attamentEn = {
+             filename: "BBQPodSpainCatalogueEnglish.pdf",
+             content:  pdfAttachmentEn,
+             contentType: "application/pdf",
+            };
+            const enSubject = `Your BBQ Pod Spain Brochure 🔥`;
+            const customerEmail = email ;
+               await transporter.sendMail({
+                 from: `"BBQPODSPAIN" <sales@bbqpodspain.com>`,
+                 to: customerEmail,
+                 subject: enSubject,
+                 html: htmlBodyEn,
+                 attachments: [attamentEn],
+             });
+        }
 
         return res.status(200).json({ success: true });
     } catch (err) {

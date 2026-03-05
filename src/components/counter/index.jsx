@@ -31,24 +31,23 @@ const CounterSection = () => {
         <Row>
           {countersData.map((counter, index) => (
             <Col key={index} xs={6} sm={3}>
-              <div className={styles.counterItem}>
+              <div className={styles.counterItem}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="50"
+                  data-aos-once="true"
+                  data-aos-offset="0"
+                  data-aos-delay={index * 50}
+              
+              >
                 <div
                   className={styles.number}
-                  data-aos="zoom-in"
-                  data-aos-anchor-placement="bottom-center"
-                  data-aos-easing="ease-out-cubic"
-                  data-aos-duration="1500"
-                  data-aos-once="true"
+                 
                 >
                   {t(counter.numberKey)}
                 </div>
                 <div
                   className={styles.label}
-                  data-aos="zoom-in"
-                  data-aos-anchor-placement="bottom-center"
-                  data-aos-easing="ease-out-cubic"
-                  data-aos-duration="1000"
-                  data-aos-once="true"
+                  
                 >
                   {t(counter.labelKey)}
                 </div>

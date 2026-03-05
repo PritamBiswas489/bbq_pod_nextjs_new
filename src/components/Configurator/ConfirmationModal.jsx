@@ -48,12 +48,7 @@ const ConfirmationModal = ({ open, onClose  }) => {
             {/* Add more details/specs/price/model as needed */}
           </div>
         </div>
-        <div className={styles.emailInfo}>
-          <p style={{ marginTop: 24, fontSize: 16 }}>
-            <b>{t("confirmationModal.note")}</b> {t("confirmationModal.infoSent")} <a href="mailto:sales@bbqpodspain.com">sales@bbqpodspain.com</a><br />
-            <b>{t("confirmationModal.subject")}</b> {t("confirmationModal.subjectText")} {checkoutData?.fullName || "FULL NAME"}
-          </p>
-        </div>
+        
       </div>
     </div>
   );

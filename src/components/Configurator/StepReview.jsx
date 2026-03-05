@@ -146,62 +146,7 @@ const StepReview = ({ backtoStart }) => {
         <h2>{t("stepReview.yourDetails")}</h2>
         <p>{t("stepReview.provideInfo")}</p>
       </div>
-      {/* <div className={styles.infoWrap}>
-        <h3>Your Configuration</h3>
-        <div className={styles.reviewContainer}>
-          <div className={styles.reviewImg}>
-            <div className={styles.reviewImgPlaceholder}>
-              <Image
-                src={hero1.src}
-                alt="Camel Grey Sand"
-                width={400}
-                height={260}
-              />
-            </div>
-          </div>
-          <div className={styles.reviewContent}>
-            <div className={styles.reviewContentInnerTop}>
-              <h5>
-                Starting Price : <span>From £15,999</span>
-              </h5>
-              <p>
-                * Submit to receive your personalised quote based on your
-                configuration.
-              </p>
-            </div>
-            <div className={styles.reviewContentInnerBottom}>
-              <div className={styles.RevViewDetails}>
-                <h6>Model</h6>
-                <h4>A-Pro</h4>
-                <p>All-Weather Luxury with Motorised Awning</p>
-              </div>
-              <div className={styles.RevViewDetails}>
-                <h6>Exterior Color</h6>
-                <p>Black Sand</p>
-                <small>IEPC-A10</small>
-              </div>
-              <div className={styles.RevViewDetails}>
-                <h6>Countertop</h6>
-                <p>Stainless Steel - Rhino Skin</p>
-                <small>SS-A01</small>
-              </div>
-              <div className={styles.RevViewDetails}>
-                <h6>Interior Finish</h6>
-                <p>Powder Coated - Silver Grey</p>
-                <small>IEPC-A06</small>
-              </div>
-              <div className={styles.RevViewDetails}>
-                <h6>Appliances</h6>
-                <p>• 46" BBQ Grill</p>
-              </div>
-              <div className={styles.RevViewDetails}>
-                <h6>Optional Features</h6>
-                <p>• Ecological Fish Pond</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
+      
 
       <div className={styles.infoWrap}>
         <h3>{t("stepReview.yourContactInfo")}</h3>

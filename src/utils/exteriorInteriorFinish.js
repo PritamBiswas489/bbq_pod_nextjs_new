@@ -123,6 +123,26 @@ export const interiorCabinetBlockColours = [
     modelName: "JXBD0089",
     image: bg16,
   },
+   {
+    colorName: "ATHENS WHITE",
+    modelName: "SP00321",
+    image: bg1,
+  },
+  {
+    colorName: "MEDIUM GRAY",
+    modelName: "SP00071",
+    image: bg2,
+  },
+  {
+    colorName: "PURPLE GRAY",
+    modelName: "CP63203SF",
+    image: bg3,
+  },
+  {
+    colorName: "BLACK SAND",
+    modelName: "SP00368",
+    image: bg4,
+  },
 ];
 
 export const interiorCabinetsWoodGrainTransfer = [
@@ -186,12 +206,12 @@ export const countertopSinteredStoneTitle = [
 
 export const doorCongiguration = [
   {
-    title: "Lift up",
+    title: "LIFT UP",
     id: "lift_up",
     img: liftup.src,
   },
   {
-    title: "Roller style",
+    title: "ROLLER STYLE",
     id: "roller_style",
     img: roller.src,
   },
@@ -199,12 +219,12 @@ export const doorCongiguration = [
 
 export const bbqStyle = [
   {
-    title: "Gas",
+    title: "GAS",
     id: "gas",
     img: gasStove.src,
   },
   {
-    title: "Charcoal",
+    title: "CHARCOAL",
     id: "charcoal",
     img: charcoal.src,
   },

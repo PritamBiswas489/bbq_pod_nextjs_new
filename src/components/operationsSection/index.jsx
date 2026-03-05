@@ -67,14 +67,15 @@ const OperationsSection = ({
           {/* RIGHT IMAGE */}
           <Col lg={6}>
             <div className={styles.imageWrap}>
-              <Image
-                src={image}
-                alt={title}
-                width={600}
-                height={500}
-                priority
-                className={styles.image}
-              />
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3199.9934559657186!2d-4.547184325726158!3d36.67465837476888!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72fabf776f41ab%3A0xd85d1f580e5b4413!2sC.%20Do%C3%B1a%20Carmen%2C%2015%2C%2029130%20Alhaur%C3%ADn%20de%20la%20Torre%2C%20M%C3%A1laga%2C%20Spain!5e0!3m2!1sen!2sin!4v1772724265756!5m2!1sen!2sin"
+              width="600"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
             </div>
           </Col>
         </Row>

@@ -31,9 +31,9 @@ const InnerBanner = ({
       <div
         className={`container py-4 text-white position-relative ${styles.content}`}
       >
-        <div className={styles.badge} data-aos="flip-up" data-aos-once="true">
+       {badgeText &&  <div className={styles.badge} data-aos="flip-up" data-aos-once="true">
           {badgeText}
-        </div>
+        </div>}
         <h1 data-aos="zoom-in" data-aos-once="true">
           {title} <span className={styles.subtitle}>{subtitle}</span>
         </h1>
