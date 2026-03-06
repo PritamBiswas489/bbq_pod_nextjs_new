@@ -33,6 +33,7 @@ import bannerImage from "@/assets/front/images/aeroImages/bannerImage.jpg";
 import dimensionsClosed from "@/assets/front/images/aeroImages/dimensions-closed.jpg";
 import dimensionsOpen from "@/assets/front/images/aeroImages/dimensions-open.jpg";
 import specs from "@/assets/front/images/aeroImages/specs.jpg";
+import { pageURLS } from "@/utils/getPageUrls";
  
  
  
@@ -193,6 +194,7 @@ const AeroProductDetails = () => {
       };
   const router = useRouter();
   const currentLocale = router.locale;
+  const pageUrls = pageURLS[currentLocale] || pageURLS["en"]; // Fallback to English if current locale is not found
   console.log("Current locale:", currentLocale);
 
   const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
@@ -286,7 +288,7 @@ const AeroProductDetails = () => {
                     <ul>
                       <li>
                         <Link
-                          href={""}
+                          href={pageUrls.configurator}
                           className={style.callBtn}
                           data-aos="zoom-out"
                           data-aos-duration="2500"
@@ -366,6 +368,8 @@ const AeroProductDetails = () => {
           leftButton={PRODUCT_DETAILS.buttonThreeText}
           rightButton={PRODUCT_DETAILS.buttonFourText}
           showButtons={true}
+          rightButtonLink={pageUrls.products}
+          leftButtonLink={pageUrls.configurator}
         />{" "}
       </Layout>
     </>

@@ -27,6 +27,7 @@ import bannerImage from "@/assets/front/images/primeImages/bannerImage.jpg";
 import dimensionsClosed from "@/assets/front/images/primeImages/dimensions-closed.jpg";
 import dimensionsOpen from "@/assets/front/images/primeImages/dimensions-open.jpg";
 import specs from "@/assets/front/images/primeImages/specs.jpg";
+import { pageURLS } from "@/utils/getPageUrls";
  
  
 
@@ -189,6 +190,7 @@ const PrimeProductDetails = () => {
   };
   const router = useRouter();
   const currentLocale = router.locale;
+   const pageUrls = pageURLS[currentLocale] || pageURLS["en"];  
   console.log("Current locale:", currentLocale);
 
   const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
@@ -282,7 +284,7 @@ const PrimeProductDetails = () => {
                     <ul>
                       <li>
                         <Link
-                          href={""}
+                          href={pageUrls.configurator}
                           className={style.callBtn}
                           data-aos="zoom-out"
                           data-aos-duration="2500"
@@ -371,6 +373,8 @@ const PrimeProductDetails = () => {
           leftButton={PRODUCT_DETAILS.buttonThreeText}
           rightButton={PRODUCT_DETAILS.buttonFourText}
           showButtons={true}
+            rightButtonLink={pageUrls.products}
+            leftButtonLink={pageUrls.configurator}
         />{" "}
       </Layout>
     </>

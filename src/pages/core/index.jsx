@@ -27,6 +27,7 @@ import technical1 from "@/assets/front/images/specs.jpg";
 import floorImage from "@/assets/front/images/flrr.png";
 import bannerBg from "@/assets/front/images/core-ban.jpg";
 import DoorAccess from "@/components/doorAccess";
+import { pageURLS } from "@/utils/getPageUrls";
  
  
 
@@ -81,13 +82,13 @@ const CoreProductDetails = () => {
     dimensionHeading: t("workkoreDimensionHeading"),
     dimentionImages: [
       {
-        src: dmhero1.src, // Replace with actual full image path
-        thumb: dmhero1Big.src, // Replace with actual thumbnail path
+        src: dmhero2.src, // Replace with actual full image path
+        thumb: dmhero2Big.src, // Replace with actual thumbnail path
         label: t("workkoreDimensionFullyExtended"),
       },
       {
-        src: dmhero2.src, // Replace with actual full image path
-        thumb: dmhero2Big.src, // Replace with actual thumbnail path
+        src: dmhero1.src, // Replace with actual full image path
+        thumb: dmhero1Big.src, // Replace with actual thumbnail path
         label: t("workkoreDimensionCompactClosed"),
       },
     ],
@@ -181,6 +182,7 @@ const CoreProductDetails = () => {
   };
   const router = useRouter();
   const currentLocale = router.locale;
+  const pageUrls = pageURLS[currentLocale] || pageURLS["en"]; // Fallback to English if current locale is not found
   console.log("Current locale:", currentLocale);
 
   const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
@@ -274,7 +276,7 @@ const CoreProductDetails = () => {
                     <ul>
                       <li>
                         <Link
-                          href={""}
+                          href={pageUrls.configurator}
                           className={style.callBtn}
                           data-aos="zoom-out"
                           data-aos-duration="2500"
@@ -363,6 +365,8 @@ const CoreProductDetails = () => {
           leftButton={PRODUCT_DETAILS.buttonThreeText}
           rightButton={PRODUCT_DETAILS.buttonFourText}
           showButtons={true}
+          rightButtonLink={pageUrls.products}
+          leftButtonLink={pageUrls.configurator}
         />{" "}
       </Layout>
     </>

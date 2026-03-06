@@ -75,7 +75,8 @@ const Home = () => {
     const { t } = useTranslation('common')
     const [openModal, setOpenModal] = useState(false); 
     const router = useRouter()
-    const currentLocale = router.locale
+    let currentLocale = router.locale
+    
     console.log('Current locale:', currentLocale)
      const pageUrls = pageURLS[currentLocale];
 
@@ -200,12 +201,12 @@ const Home = () => {
           <Faqs faqs={homeFaqs} />
         </section>
         <Cta />
-        
-      </Layout>
-       <BrochureModal
+         <BrochureModal
                     open={openModal}
                     onClose={() => setOpenModal(false)}
                   />
+      </Layout>
+      
     </>
   );
 };

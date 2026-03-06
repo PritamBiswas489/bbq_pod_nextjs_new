@@ -1,62 +1,222 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { FaFire } from "react-icons/fa";
-import styles from "./index.module.scss";
-import heroImage from "@/assets/front/images/coming-soon.png";
-import { useTranslation } from 'next-i18next'
-import { useRouter } from 'next/router'
+import { useState } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import style from "./index.module.scss";
+import Layout from "@/section/layout";
+import { Col, Container, Row } from "react-bootstrap";
+import { FaArrowRight, FaStar } from "react-icons/fa";
+import heroImage from "@/assets/front/images/hero-2.webp";
+import bannerImage from "@/assets/front/images/ban-slider/ban-1.jpg";
+import Link from "next/link";
+import FeaturesSection from "@/components/featuresSection";
+import CounterSection from "@/components/counter";
+import OutdoorKitchens from "@/components/outdoorKitchen";
+import ModelConfiguratorBanner from "@/components/modelConfiguratorBanner";
+import ComparisonTable from "@/components/comparisonTable";
+import YourGarden from "@/components/yourGarden";
+import ExteriorColours from "@/components/exteriorColours";
+import StainlessSteel from "@/components/stainlessSteel";
+import InteriorFinishesBanner from "@/components/interiorFinishesBanner";
+import Testimonials from "@/components/testimonials";
+import CraftedBy from "@/components/craftedBy";
+import Faqs from "@/components/faqs";
+import Cta from "@/components/cta";
+import TitleHeader from "@/components/titleHeader";
+
+import bannerBg from "@/assets/front/images/home-banner.avif";
+
+import { TiArrowRightOutline } from "react-icons/ti";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import nextI18NextConfig from "../../next-i18next.config"; 
-const ComingSoon = () => {
-  const { t } = useTranslation('common')
-  const router = useRouter()
-  const currentLocale = router.locale
-  console.log('Current locale:', currentLocale)
+import nextI18NextConfig from "@/../next-i18next.config.js"; 
+import { useTranslation } from 'next-i18next'
+import { useRouter } from 'next/router';
+import { pageURLS } from "@/utils/getPageUrls";
+import BrochureModal from "@/components/brochureModal";
 
+
+
+export const homeFaqs = [
+  {
+    question: "faq1Question",
+    answer: "faq1Answer",
+  },
+  {
+    question: "faq2Question",
+    answer: "faq2Answer",
+  },
+  {
+    question: "faq3Question",
+    answer: "faq3Answer",
+  },
+  {
+    question: "faq4Question",
+    answer: "faq4Answer",
+  },
+  {
+    question: "faq5Question",
+    answer: "faq5Answer",
+  },
+  {
+    question: "faq6Question",
+    answer: "faq6Answer",
+  },
+  {
+    question: "faq7Question",
+    answer: "faq7Answer",
+  },
+  {
+    question: "faq8Question",
+    answer: "faq8Answer",
+  },
+];
+
+const Home = () => {
+    const { t } = useTranslation('common')
+    const [openModal, setOpenModal] = useState(false); 
+    const router = useRouter()
+    let currentLocale = router.locale
+    
+    console.log('Current locale:', currentLocale)
+     const pageUrls = pageURLS[currentLocale];
+
+     
   const currentUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}${router.asPath}`
-    console.log('Current URL:', currentUrl)
-    React.useEffect(() => {
-      if (!router.query.locale && currentLocale) {
-        const newUrl = `/${currentLocale}${router.asPath}`;
-         
-        window.history.replaceState(null, '', newUrl);
-      }
-    }, [router, currentLocale]);
-
+  console.log('Current URL:', currentUrl)
+  React.useEffect(() => {
+    if (!router.query.locale && currentLocale) {
+      const newUrl = pageURLS[currentLocale]?.home || `/${currentLocale}${router.asPath}`;
+       
+      window.history.replaceState(null, '', newUrl);
+    }
+  }, [router, currentLocale]);
   return (
-    <div
-      className={styles.wrapper}
-      style={{
-        backgroundImage: `url(${heroImage.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <div className={styles.overlay}>
-        <Container>
-          <Row className="justify-content-center text-center">
-            <Col md={8}>
-              <h1 className={styles.title}>
-                <FaFire className={styles.flame} /> {t('comingSoonTitle')}{" "}
-                <FaFire className={styles.flame} />
-              </h1>
-              <h2 className={styles.subtitle}>{t('welcome')}</h2>
-              <p className={styles.description}>
-                {t('comingSoonDescription')}
-              </p>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    </div>
+    <>
+      <Head>
+        <title>BBQ POD SPAIN</title>
+        <meta name="description" content="bbq pod spain" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <Layout>
+        <section
+          className={style.banner}
+          style={{
+            backgroundImage: `url(${bannerBg.src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <Container>
+            <Row className="align-items-center">
+              {/* LEFT CONTENT */}
+              <Col md={12}>
+                <div className={style.bannerContent}>
+                   
+
+                  <h1
+                    data-aos="fade-right"
+                    data-aos-duration="2000"
+                    data-aos-once="true"
+                  >
+                    {t('tagline')}
+                    {/* Luxury Outdoor Kitchen Pods */}
+                  </h1>
+
+                  <h3
+                    data-aos="fade-right"
+                    data-aos-duration="2500"
+                    data-aos-once="true"
+                  >
+                    {t('bannerSubtitle')}
+                  </h3>
+
+                   
+
+                  <div className={style.actions}>
+                    <Link
+                      href={pageUrls.products}
+                      className={style.exploreBtn}
+                      data-aos="zoom-out"
+                      data-aos-duration="2500"
+                      data-aos-once="true"
+                    >
+                      {t('exploreButton')} <TiArrowRightOutline className="ms-1" />
+                    </Link>
+          
+                  </div>
+
+                
+                </div>
+              </Col>
+
+             
+            </Row>
+          </Container>
+        </section>
+        <FeaturesSection />
+        <CounterSection />
+        <OutdoorKitchens />
+        <ComparisonTable />
+        <YourGarden
+          title={t('brochureTitle')}
+          description={t('brochureDescription')}
+          backgroundImage={heroImage}
+          setOpenModal={setOpenModal}
+          badges={[
+            {
+              icon: <FaArrowRight />,
+              text: t('badge1'),
+            },
+            { icon: <FaArrowRight />, text: t('badge2') },
+            {
+              icon: <FaArrowRight />,
+              text: t('badge3'),
+            },
+          ]}
+          primaryButton={{
+            label: t('primaryButtonLabel'),
+            href: "",
+          }}
+          secondaryButton={{
+            label: t('secondaryButtonLabel'),
+            href: "",
+          }}
+          footerText={t('footerText')}
+        />
+        <ExteriorColours />
+        {/* <StainlessSteel /> */}
+        {/* <InteriorFinishesBanner /> */}
+        <Testimonials />
+        {/* <CraftedBy /> */}
+        <section className={style.faqs}>
+          <TitleHeader
+            whyChoose={[]}
+            title={t('faqsTitle')}
+            subtitle={t('faqsSubtitle')}
+          />
+          {/* <Faqs /> */}
+          <Faqs faqs={homeFaqs} />
+        </section>
+        <Cta />
+         <BrochureModal
+                    open={openModal}
+                    onClose={() => setOpenModal(false)}
+                  />
+      </Layout>
+      
+    </>
   );
 };
-
-export async function getStaticProps({ locale }) {
+export async function getServerSideProps({ locale }) {
   const defaultLocale = nextI18NextConfig.i18n.defaultLocale;
   const localeToUse = locale || defaultLocale;
 
+   
+
+ 
   return {
     props: {
       ...(await serverSideTranslations(localeToUse, ['common'], nextI18NextConfig)),
@@ -64,4 +224,4 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default ComingSoon;
+export default Home;

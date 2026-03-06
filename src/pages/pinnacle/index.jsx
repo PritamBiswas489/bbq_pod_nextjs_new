@@ -18,14 +18,9 @@ import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import nextI18NextConfig from "../../../next-i18next.config";
 import Head from "next/head";
-import hero1 from "@/assets/front/images/outdoor/hero-1.jpg";
-import dmhero1 from "@/assets/front/images/dimensions-open.webp";
-import dmhero1Big from "@/assets/front/images/dimensions-open-big.webp";
-import dmhero2 from "@/assets/front/images/dimensions-closed.jpg";
-import dmhero2Big from "@/assets/front/images/dimensions-closed-big.jpg";
-import technical1 from "@/assets/front/images/specs.jpg";
+ 
 import floorImage from "@/assets/front/images/flrr.png";
-import bannerBg from "@/assets/front/images/core-ban.jpg";
+ 
 import DoorAccess from "@/components/doorAccess";
 
 
@@ -33,11 +28,13 @@ import bannerImage from "@/assets/front/images/pinnacleImages/hero-1.jpg";
 import dimensionsClosed from "@/assets/front/images/pinnacleImages/dimensions-closed.jpg";
 import dimensionsOpen from "@/assets/front/images/pinnacleImages/dimensions-open.jpg";
 import specs from "@/assets/front/images/pinnacleImages/specs.jpg";
+import { pageURLS } from "@/utils/getPageUrls";
  
  
 
 const PinnacleProductDetails = () => {
   const { t } = useTranslation("common");
+  
   const PRODUCT_DETAILS = {
        productName: t("workpinnacleProductName"),
        productHeading: t("workpinnacleProductHeading"),
@@ -198,6 +195,7 @@ const PinnacleProductDetails = () => {
      };
   const router = useRouter();
   const currentLocale = router.locale;
+  const pageUrls = pageURLS[currentLocale] || pageURLS["en"]; // Fallback to English if current locale is not found
   console.log("Current locale:", currentLocale);
 
   const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
@@ -291,7 +289,7 @@ const PinnacleProductDetails = () => {
                     <ul>
                       <li>
                         <Link
-                          href={""}
+                          href={pageUrls.configurator}
                           className={style.callBtn}
                           data-aos="zoom-out"
                           data-aos-duration="2500"
@@ -380,6 +378,8 @@ const PinnacleProductDetails = () => {
           leftButton={PRODUCT_DETAILS.buttonThreeText}
           rightButton={PRODUCT_DETAILS.buttonFourText}
           showButtons={true}
+          rightButtonLink={pageUrls.products}
+          leftButtonLink={pageUrls.configurator}
         />{" "}
       </Layout>
     </>

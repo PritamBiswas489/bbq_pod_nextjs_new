@@ -1,7 +1,7 @@
 export const  pageURLS = {
 
         "en": {
-           'home': '/en/home',
+           'home': '/en',
            'about': '/en/about',
            'products': '/en/products',
            'configurator': '/en/configurator',
@@ -19,7 +19,7 @@ export const  pageURLS = {
            
         },
         'es':{
-           'home': '/es/home',
+           'home': '/es',
            'about': '/es/sobre-nosotros',
            'products': '/es/productos',
            'configurator': '/es/configurador',
@@ -39,7 +39,7 @@ export const  pageURLS = {
     export const  pageURLSES = {
 
         "en": {
-           'home': '/en/home',
+           'home': '/en',
            'sobre-nosotros': '/en/about',
            'productos': '/en/products',
            'configurador': '/en/configurator',
@@ -57,7 +57,7 @@ export const  pageURLS = {
            
         },
         'es':{
-           'home': '/es/home',
+           'home': '/es',
            'sobre-nosotros': '/es/sobre-nosotros',
            'productos': '/es/productos',
            'configurador': '/es/configurador',

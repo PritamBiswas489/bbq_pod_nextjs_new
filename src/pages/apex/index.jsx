@@ -31,6 +31,7 @@ import bannerImage from "@/assets/front/images/apeximages/hero-1.jpg";
 import dimensionsClosed from "@/assets/front/images/apeximages/dimensions-closed.jpg";
 import dimensionsOpen from "@/assets/front/images/apeximages/dimensions-open.jpg";
 import specs from "@/assets/front/images/apeximages/specs.jpg";
+import { pageURLS } from "@/utils/getPageUrls";
  
  
 
@@ -194,6 +195,7 @@ const ApexProductDetails = () => {
   const router = useRouter();
   const currentLocale = router.locale;
   console.log("Current locale:", currentLocale);
+  const pageUrls = pageURLS[currentLocale] || pageURLS["en"]; // Fallback to English if current locale is not found
 
   const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
   console.log("Current URL:", currentUrl);
@@ -286,7 +288,7 @@ const ApexProductDetails = () => {
                     <ul>
                       <li>
                         <Link
-                          href={""}
+                          href={pageUrls.configurator}
                           className={style.callBtn}
                           data-aos="zoom-out"
                           data-aos-duration="2500"
@@ -375,6 +377,8 @@ const ApexProductDetails = () => {
           leftButton={PRODUCT_DETAILS.buttonThreeText}
           rightButton={PRODUCT_DETAILS.buttonFourText}
           showButtons={true}
+          rightButtonLink={pageUrls.products}
+          leftButtonLink={pageUrls.configurator}
         />{" "}
       </Layout>
     </>
