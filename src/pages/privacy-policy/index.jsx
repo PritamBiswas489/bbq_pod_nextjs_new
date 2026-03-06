@@ -6,7 +6,7 @@ import nextI18NextConfig from "@/../next-i18next.config.js";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
-import { pageURLS } from "@/utils/getPageUrls";s
+import { pageURLS } from "@/utils/getPageUrls";
 const PrivacyPolicy = () => {
   const { t } = useTranslation("common");
     const router = useRouter();
