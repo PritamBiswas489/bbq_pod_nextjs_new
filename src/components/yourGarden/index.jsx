@@ -18,9 +18,10 @@ const YourGarden = ({
   primaryButton,
   secondaryButton = [],
   footerText = [],
+  setOpenModal,
 }) => {
   const { t } = useTranslation("common");
-  const [openModal, setOpenModal] = useState(false);
+  
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [language, setLanguage] = useState("");
@@ -148,10 +149,7 @@ const YourGarden = ({
                     </button>
                   </div>
 
-                  <BrochureModal
-                    open={openModal}
-                    onClose={() => setOpenModal(false)}
-                  />
+                 
                 </form>
               </div>
             </div>

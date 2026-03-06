@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import style from "./index.module.scss";
@@ -32,6 +32,7 @@ import nextI18NextConfig from "@/../next-i18next.config.js";
 import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router';
 import { pageURLS } from "@/utils/getPageUrls";
+import BrochureModal from "@/components/brochureModal";
 
 
 
@@ -72,6 +73,7 @@ export const homeFaqs = [
 
 const Home = () => {
     const { t } = useTranslation('common')
+    const [openModal, setOpenModal] = useState(false);
     const router = useRouter()
     const currentLocale = router.locale
     console.log('Current locale:', currentLocale)
@@ -161,6 +163,7 @@ const Home = () => {
           title={t('brochureTitle')}
           description={t('brochureDescription')}
           backgroundImage={heroImage}
+          setOpenModal={setOpenModal}
           badges={[
             {
               icon: <FaArrowRight />,
@@ -197,6 +200,10 @@ const Home = () => {
           <Faqs faqs={homeFaqs} />
         </section>
         <Cta />
+         <BrochureModal
+                    open={openModal}
+                    onClose={() => setOpenModal(false)}
+                  />
       </Layout>
     </>
   );
