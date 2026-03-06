@@ -207,15 +207,32 @@ const ApexProductDetails = () => {
     }
   }, [router, currentLocale]);
 
+
+  let metatitle = "Apex Pod | BBQ Pod Spain";
+               let metaDescription = "The Apex Pod — a statement outdoor kitchen designed for entertaining and serious outdoor cooking.";
+               let ogTitle =  "Apex Pod | BBQ Pod Spain";
+               let ogDescription = "The Apex Pod — a statement outdoor kitchen designed for entertaining and serious outdoor cooking.";
+               const ogImage = bannerImage.src;
+  
+  
+     if(currentLocale === "es"){
+        metatitle = "Apex Pod | BBQ Pod Spain";
+        metaDescription = "El Apex Pod es una cocina exterior diseñada para reuniones, barbacoas y entretenimiento al aire libre."
+        ogTitle = "Apex Pod | BBQ Pod Spain"; 
+        ogDescription = "El Apex Pod es una cocina exterior diseñada para reuniones, barbacoas y entretenimiento al aire libre.";
+     }
+
   return (
     <>
       <Head>
-        <title>{PRODUCT_DETAILS.productName}</title>
-        <meta name="description" content="bbq pod spain" />
+               <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Layout>
         {/* <section className={style.banner}> */}
         <section

@@ -195,11 +195,27 @@ const CoreProductDetails = () => {
     }
   }, [router, currentLocale]);
 
+   let metatitle = "Core Pod | BBQ Pod Spain";
+             let metaDescription = "The Core Pod — a compact premium outdoor kitchen designed for modern outdoor living.";
+             let ogTitle =  "Core Pod | BBQ Pod Spain";
+             let ogDescription = "The Core Pod — a compact premium outdoor kitchen designed for modern outdoor living.";
+             const ogImage = bannerImage.src;
+
+
+   if(currentLocale === "es"){
+      metatitle = "Core Pod | BBQ Pod Spain";
+      metaDescription = "El Core Pod es una cocina exterior compacta y elegante diseñada para disfrutar al máximo del espacio exterior."
+      ogTitle = "Core Pod | BBQ Pod Spain"; 
+      ogDescription = "El Core Pod es una cocina exterior compacta y elegante diseñada para disfrutar al máximo del espacio exterior.";
+   }
   return (
     <>
       <Head>
-        <title>{PRODUCT_DETAILS.productName}</title>
-        <meta name="description" content="bbq pod spain" />
+               <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

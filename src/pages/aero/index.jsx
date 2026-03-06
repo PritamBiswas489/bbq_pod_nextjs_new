@@ -207,14 +207,34 @@ const AeroProductDetails = () => {
     }
   }, [router, currentLocale]);
 
+   let metatitle = "Aero Pod | BBQ Pod Spain";
+             let metaDescription = "The Aero Pod — a sleek and modern outdoor kitchen with a distinctive contemporary design.";
+             let ogTitle =  "Aero Pod | BBQ Pod Spain";
+             let ogDescription = "The Aero Pod — a sleek and modern outdoor kitchen with a distinctive contemporary design.";
+             const ogImage = bannerImage.src;
+
+
+  // ...existing code...
+   if(currentLocale === "es"){
+      metatitle = "Aero Pod | BBQ Pod Spain";
+      metaDescription = "El Aero Pod — una cocina exterior elegante y moderna con un diseño contemporáneo distintivo.";
+      ogTitle = "Aero Pod | BBQ Pod Spain"; 
+      ogDescription = "El Aero Pod — una cocina exterior elegante y moderna con un diseño contemporáneo distintivo.";
+   }
+ 
+
   return (
     <>
       <Head>
-        <title>{PRODUCT_DETAILS.productName}</title>
-        <meta name="description" content="bbq pod spain" />
+               <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
 
       <Layout>
         {/* <section className={style.banner}> */}

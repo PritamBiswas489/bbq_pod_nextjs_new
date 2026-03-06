@@ -27,6 +27,7 @@ import REF004 from "@/assets/front/images/RefImage/REF004.png";
 import REF001ES from "@/assets/front/images/RefImage/ExteriorInteriroDEMOSPAIN.png";
 import REF002ES from "@/assets/front/images/RefImage/CabinetcolourDEMOspanish.png";
 import { pageURLS } from "@/utils/getPageUrls";
+import { products } from "@/utils/exteriorInteriorFinish";
 
 import { 
   exteriorFinishes, 
@@ -51,11 +52,20 @@ export default function Products() {
       window.history.replaceState(null, "", newUrl);
     }
   }, [router, currentLocale]);
+
+     let metatitle = "Modelos BBQ Pod | Cocinas Exteriores";
+     let metaDescription = "Descubre nuestra gama de BBQ Pods — Core, Prime, Apex y Pinnacle. Cocinas exteriores premium diseñadas para España.";
+     let ogTitle =  "Modelos BBQ Pod | Cocinas Exteriores";
+     let ogDescription = "Descubre nuestra gama de BBQ Pods — Core, Prime, Apex y Pinnacle. Cocinas exteriores premium diseñadas para España.";
+     const ogImage = products.filter((d)=>d.nameKey === "apexProductName")[0].image;
   return (
     <>
       <Head>
-        <title>{t("productsPageTitle")}</title>
-        <meta name="description" content={t("productsPageDescription")} />
+         <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

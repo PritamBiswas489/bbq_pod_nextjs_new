@@ -203,15 +203,31 @@ const PrimeProductDetails = () => {
     }
   }, [router, currentLocale]);
 
+   let metatitle = "Prime Pod | BBQ Pod Spain";
+               let metaDescription = "The Prime Pod — a spacious outdoor kitchen combining premium materials with functional design.";
+               let ogTitle =  "Prime Pod | BBQ Pod Spain";
+               let ogDescription = "The Prime Pod — a spacious outdoor kitchen combining premium materials with functional design.";
+               const ogImage = bannerImage.src;
+  
+  
+     if(currentLocale === "es"){
+        metatitle = "Prime Pod | BBQ Pod Spain";
+        metaDescription = "El Prime Pod combina espacio, funcionalidad y diseño premium para una cocina exterior completa.";
+        ogTitle = "Prime Pod | BBQ Pod Spain"; 
+        ogDescription = "El Prime Pod combina espacio, funcionalidad y diseño premium para una cocina exterior completa.";
+     }
+
   return (
     <>
-      <Head>
-        <title>{PRODUCT_DETAILS.productName}</title>
-        <meta name="description" content="bbq pod spain" />
+         <Head>
+               <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Layout>
         {/* <section className={style.banner}> */}
         <section

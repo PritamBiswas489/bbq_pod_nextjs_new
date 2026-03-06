@@ -33,6 +33,7 @@ import { useTranslation } from 'next-i18next'
 import { useRouter } from 'next/router';
 import { pageURLS } from "@/utils/getPageUrls";
 import BrochureModal from "@/components/brochureModal";
+import {products} from "@/utils/exteriorInteriorFinish";
 
 
 
@@ -90,11 +91,29 @@ const Home = () => {
       window.history.replaceState(null, '', newUrl);
     }
   }, [router, currentLocale]);
+
+  let metatitle = "BBQ Pod Spain | Premium Outdoor Kitchens";
+  let metaDescription = "Luxury outdoor kitchens designed for life in Spain. Built to handle sun, heat and year-round outdoor living.";
+  let ogTitle = "BBQ Pod Spain | Premium Outdoor Kitchens";
+  let ogDescription = "Luxury outdoor kitchens designed for life in Spain. Built to handle sun, heat and year-round outdoor living.";
+  const ogImage = products.filter((d)=>d.nameKey === "pinnacleProductName")[0].image;
+
+
+  if(currentLocale === 'es') {
+     metatitle = "BBQ Pod Spain | Cocinas Exteriores Premium";
+     metaDescription = "Cocinas exteriores de alta calidad diseñadas para disfrutar del estilo de vida al aire libre en España.";
+     ogTitle = "BBQ Pod Spain | Cocinas Exteriores Premium";
+     ogDescription = "Cocinas exteriores de alta calidad diseñadas para disfrutar del estilo de vida al aire libre en España.";
+  }
+
   return (
     <>
       <Head>
-        <title>BBQ POD SPAIN</title>
-        <meta name="description" content="bbq pod spain" />
+        <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -210,7 +229,7 @@ const Home = () => {
     </>
   );
 };
-export async function getServerSideProps({ locale }) {
+export async function getStaticProps({ locale }) {
   const defaultLocale = nextI18NextConfig.i18n.defaultLocale;
   const localeToUse = locale || defaultLocale;
 

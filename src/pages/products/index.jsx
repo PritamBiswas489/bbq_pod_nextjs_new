@@ -28,7 +28,7 @@ import REF004 from "@/assets/front/images/RefImage/REF004.png";
 import REF001ES from "@/assets/front/images/RefImage/ExteriorInteriroDEMOSPAIN.png";
 import REF002ES from "@/assets/front/images/RefImage/CabinetcolourDEMOspanish.png";
 import { pageURLS } from "@/utils/getPageUrls";
-
+import { products } from "@/utils/exteriorInteriorFinish";
 import { 
   exteriorFinishes, 
   interiorCabinetBlockColours, 
@@ -52,11 +52,21 @@ export default function Products() {
       window.history.replaceState(null, "", newUrl);
     }
   }, [router, currentLocale]);
+
+
+   let metatitle = "BBQ Pod Models | Explore Our Outdoor Kitchens";
+   let metaDescription = "Discover the full range of BBQ Pods — Core, Prime, Apex, Aero and Pinnacle. Premium outdoor kitchens built for Spanish outdoor living.";
+   let ogTitle =  "BBQ Pod Models | Explore Our Outdoor Kitchens";
+   let ogDescription = "Discover the full range of BBQ Pods — Core, Prime, Apex, Aero and Pinnacle. Premium outdoor kitchens built for Spanish outdoor living.";
+   const ogImage = products.filter((d)=>d.nameKey === "apexProductName")[0].image;
   return (
     <>
       <Head>
-        <title>{t("productsPageTitle")}</title>
-        <meta name="description" content={t("productsPageDescription")} />
+       <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

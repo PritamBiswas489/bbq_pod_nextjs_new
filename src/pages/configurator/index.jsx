@@ -11,7 +11,7 @@ import nextI18NextConfig from "../../../next-i18next.config";
 import Layout from "@/section/layout";
 import Head from "next/head";
 import { pageURLS } from "@/utils/getPageUrls";
- 
+import {products} from "@/utils/exteriorInteriorFinish"; 
 
 export default function ConfiguratorPage() {
   const { t } = useTranslation('common');
@@ -28,11 +28,23 @@ export default function ConfiguratorPage() {
         window.history.replaceState(null, "", newUrl);
       }
     }, [router, currentLocale]);
+
+
+      
+    
+     let metatitle = "Build Your BBQ Pod | Outdoor Kitchen Configurator";
+           let metaDescription = "Design your perfect outdoor kitchen with our BBQ Pod configurator. Choose your model, layout and finishes.";
+           let ogTitle =  "Build Your BBQ Pod | Outdoor Kitchen Configurator";
+           let ogDescription = "Design your perfect outdoor kitchen with our BBQ Pod configurator. Choose your model, layout and finishes.";
+           const ogImage = products.filter((d)=>d.nameKey === "pinnacleProductName")[0].image;
   return (
     <>
     <Head>
-        <title>{t('headerNavConfigurator')}</title>
-        <meta name="description" content="bbq pod spain" />
+        <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

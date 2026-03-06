@@ -11,6 +11,7 @@ import nextI18NextConfig from "../../../next-i18next.config";
 import Layout from "@/section/layout";
 import Head from "next/head";
 import { pageURLS } from "@/utils/getPageUrls";
+import {products} from "@/utils/exteriorInteriorFinish"; 
  
 
 export default function ConfiguratorPage() {
@@ -28,11 +29,20 @@ export default function ConfiguratorPage() {
         window.history.replaceState(null, "", newUrl);
       }
     }, [router, currentLocale]);
+
+       let metatitle = "Configurador BBQ Pod | Diseña tu Cocina Exterior";
+    let metaDescription = "Diseña tu BBQ Pod perfecta con nuestro configurador. Elige modelo, acabados y configuración.";
+    let ogTitle =  "Configurador BBQ Pod | Diseña tu Cocina Exterior";
+    let ogDescription = "Diseña tu BBQ Pod perfecta con nuestro configurador. Elige modelo, acabados y configuración.";
+    const ogImage = products.filter((d)=>d.nameKey === "pinnacleProductName")[0].image;
   return (
     <>
     <Head>
-        <title>{t('headerNavConfigurator')}</title>
-        <meta name="description" content="bbq pod spain" />
+        <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

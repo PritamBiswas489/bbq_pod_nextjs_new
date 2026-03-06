@@ -17,6 +17,7 @@ import QualityFeatureCard from "@/components/qualityFeatureCard";
 import shieldIcon from "@/assets/front/images/difference/1.svg";
 import { useRouter } from "next/router";
 import { pageURLS } from "@/utils/getPageUrls";
+import {products} from "@/utils/exteriorInteriorFinish";
  
 
 const About = () => {
@@ -35,11 +36,21 @@ const About = () => {
         window.history.replaceState(null, "", newUrl);
       }
     }, [router, currentLocale]);
+
+      let metatitle = "About BBQ Pod Spain";
+      let metaDescription = "BBQ Pod Spain specialises in premium outdoor kitchens built for Spain’s climate and outdoor lifestyle.";
+      let ogTitle =  "About BBQ Pod Spain";
+      let ogDescription = "BBQ Pod Spain specialises in premium outdoor kitchens built for Spain’s climate and outdoor lifestyle.";
+      const ogImage = products.filter((d)=>d.nameKey === "pinnacleProductName")[0].image;
+    
   return (
     <>
       <Head>
-        <title>{t("aboutusHeroTitle")}</title>
-        <meta name="description" content={t("aboutusHeroDescription1")} />
+        <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

@@ -208,15 +208,31 @@ const PinnacleProductDetails = () => {
     }
   }, [router, currentLocale]);
 
+   let metatitle = "Pinnacle Pod | BBQ Pod Spain";
+               let metaDescription = "The Pinnacle Pod — the ultimate outdoor kitchen experience with maximum space, design and performance.";
+               let ogTitle =  "Pinnacle Pod | BBQ Pod Spain";
+               let ogDescription = "The Pinnacle Pod — the ultimate outdoor kitchen experience with maximum space, design and performance.";
+               const ogImage = bannerImage.src;
+  
+  
+     if(currentLocale === "es"){
+        metatitle = "Pinnacle Pod | BBQ Pod Spain";
+        metaDescription = "El Pinnacle Pod representa la máxima experiencia en cocina exterior con diseño y prestaciones premium."
+        ogTitle = "Pinnacle Pod | BBQ Pod Spain"; 
+        ogDescription = "El Pinnacle Pod representa la máxima experiencia en cocina exterior con diseño y prestaciones premium.";
+     }
+
   return (
     <>
       <Head>
-        <title>{PRODUCT_DETAILS.productName}</title>
-        <meta name="description" content="bbq pod spain" />
+        <title>{metatitle}</title>
+        <meta name="description" content={metaDescription} />
+        <meta property="og:title" content={ogTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:image" content={ogImage} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Layout>
         {/* <section className={style.banner}> */}
         <section
