@@ -17,7 +17,7 @@ const BrochureModal = ({ open, onClose }) => {
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <button className={styles.closeBtn} onClick={onClose}>
-          <IoClose />
+          <IoClose color="black" />
         </button>
 
         <h2>{t('brochureModalTitle')}</h2>

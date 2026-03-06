@@ -19,7 +19,7 @@ function App({ Component, pageProps }) {
    return (
     <Provider store={store}>
       <PagesTopLoader />
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </Provider>
   );
 }

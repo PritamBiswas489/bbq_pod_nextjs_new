@@ -130,11 +130,11 @@ export const exteriorFinishes = [
     modelName: "SP00368",
     image: bg4,
   },
-  {
-    colorName: "OLIVE GREEN",
-    modelName: "CP71732C",
-    image: bg15,
-  },
+  // {
+  //   colorName: "OLIVE GREEN",
+  //   modelName: "CP71732C",
+  //   image: bg15,
+  // },
 ];
 
 export const interiorCabinetBlockColours = [
