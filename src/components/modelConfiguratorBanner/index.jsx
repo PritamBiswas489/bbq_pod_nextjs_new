@@ -13,25 +13,29 @@ const ModelConfiguratorBanner = ({
   showButtons = true,
   leftButtonWrap = true,
   rightButtonWrap = true,
-  subtitle = null
+  subtitle = null,
+  rightButtonLink = "#",
+  leftButtonLink = "#",
+  rightButtonLinkTarget = "_self",
+  leftButtonLinkTarget = "_self",
 }) => {
   return (
     <section className={styles.banner}>
       <div className={styles.bannerInner}>
         <h2
           className={styles.title}
-          data-aos="zoom-in-up"
-          data-aos-duration="1000"
-          data-aos-once="true"
+          // data-aos="zoom-in-up"
+          // data-aos-duration="1000"
+          // data-aos-once="true"
         >
           {title}
         </h2>
         {subtitle && (
           <h3
             className={styles.subtitle}
-            data-aos="zoom-in-up"
-            data-aos-duration="1000"
-            data-aos-once="true"
+            // data-aos="zoom-in-up"
+            // data-aos-duration="1000"
+            // data-aos-once="true"
           >
             {subtitle}
           </h3>
@@ -39,9 +43,9 @@ const ModelConfiguratorBanner = ({
 
         <p
           className={styles.description}
-          data-aos="zoom-in-up"
-          data-aos-duration="1000"
-          data-aos-once="true"
+          // data-aos="zoom-in-up"
+          // data-aos-duration="1000"
+          // data-aos-once="true"
         >
           {description}
         </p>
@@ -51,11 +55,12 @@ const ModelConfiguratorBanner = ({
               {leftButtonWrap && (
                 <li>
                   <Link
-                    href="#"
+                    href={leftButtonLink}
                     className={styles.leftButton}
-                    data-aos="zoom-in-up"
-                    data-aos-duration="1000"
-                    data-aos-once="true"
+                    // data-aos="zoom-in-up"
+                    // data-aos-duration="1000"
+                    // data-aos-once="true"
+                    target={leftButtonLinkTarget}
                   >
                     {leftButton} <TiArrowRightOutline size={20} />
                   </Link>
@@ -64,11 +69,12 @@ const ModelConfiguratorBanner = ({
               {rightButtonWrap && (
                 <li>
                   <Link
-                    href="#"
+                    href={rightButtonLink}
                     className={styles.rightButton}
-                    data-aos="zoom-in-up"
-                    data-aos-duration="1000"
-                    data-aos-once="true"
+                    // data-aos="zoom-in-up"
+                    // data-aos-duration="1000"
+                    // data-aos-once="true"
+                    target={rightButtonLinkTarget}
                   >
                     {rightButton} <TiArrowRightOutline size={20} />
                   </Link>

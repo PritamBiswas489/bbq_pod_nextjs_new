@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import style from "./index.module.scss";
+import style from "../about/index.module.scss";
 import Layout from "@/section/layout";
 import nextI18NextConfig from "@/../next-i18next.config.js";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -24,7 +24,7 @@ const About = () => {
    const router = useRouter();
     const currentLocale = router.locale;
     console.log("Current locale:", currentLocale);
-    const pageUrls = pageURLS[currentLocale];
+     const pageUrls = pageURLS[currentLocale];
   
     const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
     console.log("Current URL:", currentUrl);
@@ -53,7 +53,7 @@ const About = () => {
           links={[
             {
               label: t('aboutusRequestQuoteLink'),
-              href: pageUrls.configurator,
+              href:pageUrls.configurator,
               className: "primaryLink",
             },
             {

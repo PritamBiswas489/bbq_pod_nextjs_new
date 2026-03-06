@@ -13,6 +13,7 @@ import esFlag from "@/assets/front/images/spain-flag.png";
 
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { useRouter } from "next/router";
+import { pageURLS, pageURLSES } from "@/utils/getPageUrls";
 
 const Header = () => {
    
@@ -22,6 +23,7 @@ const Header = () => {
   const router = useRouter()
   const currentLocale = router.locale
   console.log('Header Current locale:', currentLocale)
+  const pageUrls = pageURLS[currentLocale];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +37,20 @@ const Header = () => {
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
   const handleLanguageChange = (locale) => {
-    router.push(router.asPath, router.asPath, { locale });
+    //remove / from router.asPath to prevent double slashes when switching languages
+   const cleanPath = (router.asPath || "").split("?")[0].split("#")[0].replace(/^\/+/, "");
+const path =
+  pageURLS?.[locale]?.[cleanPath] ||
+  pageURLSES?.[locale]?.[cleanPath] ||
+  pageURLS?.[locale]?.home ||
+  "/";
+   //now add other query params and hash back to the path
+   const queryString = router.asPath.includes("?") ? "?" + router.asPath.split("?")[1].split("#")[0] : "";
+   const hashString = router.asPath.includes("#") ? "#" + router.asPath.split("#")[1] : "";
+   const finalPath = path + queryString + hashString;
+    
+   router.push(finalPath, finalPath, { locale });
+    //router.push(router.asPath, router.asPath, { locale });
     setLangDropdownOpen(false);
   };
 
@@ -45,7 +60,7 @@ const Header = () => {
         <Container fluid="xxl">
           <Row className="align-items-center">
            
-            <Link href={`/${currentLocale}/home`} className={style.mobLogo}>
+            <Link href={pageUrls.home} className={style.mobLogo}>
               <Image src={logo} alt={"BBQ POD SPAIN"} width={180} height={28} priority />
             </Link>
 
@@ -67,15 +82,15 @@ const Header = () => {
                 
                 <ul className={`${menuOpen ? style.navOpen : ""}`}>
                   <li>
-                    <Link href={`/${currentLocale}/home`}>{t('headerNavHome')}</Link>
+                    <Link href={pageUrls.home}>{t('headerNavHome')}</Link>
                   </li>
                   <li>
-                    <Link href={`/${currentLocale}/about`}>{t('headerNavAbout')}</Link>
+                    <Link href={pageUrls.about}>{t('headerNavAbout')}</Link>
                   </li>
 
                   {/* CENTER LOGO */}
                   <li className={style.centerLogo}>
-                    <Link href={`/${currentLocale}/home`}>
+                    <Link href={pageUrls.home}>
                       <Image
                         src={logo}
                         alt={"BBQ POD SPAIN"}
@@ -87,10 +102,10 @@ const Header = () => {
                   </li>
 
                   <li>
-                    <Link href={`/${currentLocale}/products`}>{t('headerNavProducts')}</Link>
+                    <Link href={pageUrls.products}>{t('headerNavProducts')}</Link>
                   </li>
                   <li>
-                    <Link href={`/${currentLocale}/configurator`}>{t('headerNavConfigurator')}</Link>
+                    <Link href={pageUrls.configurator}>{t('headerNavConfigurator')}</Link>
                   </li>
                 </ul>
               </nav>

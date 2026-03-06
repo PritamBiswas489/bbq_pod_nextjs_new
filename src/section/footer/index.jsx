@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
 import { Container, Row, Col } from "react-bootstrap";
+import Link from "next/link";
 import {
   FaFire,
   FaPhoneAlt,
@@ -11,9 +12,14 @@ import {
 import logo from "@/assets/front/images/logo.png";
 import styles from "./index.module.scss";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { pageURLS } from "@/utils/getPageUrls";
 
 const Footer = () => {
   const { t } = useTranslation('common');
+  const router = useRouter();
+  const currentLocale = router.locale;
+  const pageUrls = pageURLS[currentLocale];
   return (
     <footer className={styles.footer}>
       <Container>
@@ -60,19 +66,19 @@ const Footer = () => {
             <h5>{t('footerProductsHeading')}</h5>
             <ul>
               <li>
-                <a href="#">{t('footerProductCore')}</a>
+                < Link href={pageUrls.core}>{t('footerProductCore')}</Link>
               </li>
               <li>
-                <a href="#">{t('footerProductPrime')}</a>
+                <Link href={pageUrls.prime}>{t('footerProductPrime')}</Link>
               </li>
               <li>
-                <a href="#">{t('footerProductApex')}</a>
+                <Link href={pageUrls.apex}>{t('footerProductApex')}</Link>
               </li>
               <li>
-                <a href="#">{t('footerProductPinnacle')}</a>
+                <Link href={pageUrls.pinnacle}>{t('footerProductPinnacle')}</Link>
               </li>
               <li>
-                <a href="#">{t('footerProductAero')}</a>
+                <Link href={pageUrls.aero}>{t('footerProductAero')}</Link>
               </li>
             </ul>
           </Col>
@@ -80,17 +86,15 @@ const Footer = () => {
             <h5>{t('footerCompanyHeading')}</h5>
             <ul>
               <li>
-                <a href="#">{t('footerCompanyAbout')}</a>
+                <Link href={pageUrls.about}>{t('footerCompanyAbout')}</Link>
               </li>
               <li>
-                <a href="#">{t('footerCompanyProducts')}</a>
+                <Link href={pageUrls.products}>{t('footerCompanyProducts')}</Link>
               </li>
-              <li>
-                <a href="#">{t('footerCompanyBrochure')}</a>
+               <li>
+                <Link href={pageUrls.configurator}>{t('headerNavConfigurator')}</Link>
               </li>
-              <li>
-                <a href="#">{t('footerCompanyContact')}</a>
-              </li>
+              
             </ul>
           </Col>
           <Col md={3} className={styles.contactSection}>
@@ -117,14 +121,23 @@ const Footer = () => {
         <Row className={styles.bottomSection}>
           <Col className="text-center">
             <ul className={styles.bottomLinks}>
+              
+               
+              
               <li>
-                <a href="#">{t('footerPrivacyPolicy')}</a>
+                <Link   href={pageUrls.privacyPolicy}>{t('footerPrivacyPolicy')}</Link>
               </li>
-              <li>
-                <a href="#">{t('footerTermsConditions')}</a>
+
+               <li>
+                <Link href={pageUrls.cookiePolicy}>{t('footerCookiePolicy')}</Link>
               </li>
+
+               <li>
+                <Link href={pageUrls.legalNotice}>{t('footerLegalNotice')}</Link>
+              </li>
+              
               <li>
-                <a href="#">{t('footerWarrantyInfo')}</a>
+                <Link href={pageUrls.warranty}>{t('footerWarrantyInfo')}</Link>
               </li>
             </ul>
             <p>{t('footerCopyright')}</p>

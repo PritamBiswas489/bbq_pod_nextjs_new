@@ -171,7 +171,7 @@
   "headerLogoAlt": "logo",
   "headerMobileLogo": "Logo",
   "headerNavHome": "Inicio",
-  "headerNavAbout": "Acerca de",
+  "headerNavAbout": "Acerca de nosotros",
   "headerNavProducts": "Productos",
   "headerNavOrder": "Pedir",
   "headerLanguageSwitchTitle": "Cambiar idioma",
@@ -198,7 +198,7 @@
   "footerCompanyBrochure": "Folleto",
   "footerCompanyContact": "Contacto",
   "footerContactHeading": "Contacta con Nosotros",
-  "footerContactLocation": "Alhaurín de la Torre, Málaga",
+  "footerContactLocation": "C. Doña Carmen, 15, 29130 Alhaurín de la Torre, Málaga",
   "footerContactEmail": "sales@bbqpodspain.com",
   "footerContactPhone": "+34 672 021 437",
   "footerContactHours": "Lun - Sáb: 9:00–17:00",
@@ -774,5 +774,9 @@
   "confirmationModal.note": "Nota:",
   "confirmationModal.infoSent": "Toda la información será enviada a",
   "confirmationModal.subject": "Asunto:",
-  "confirmationModal.subjectText": "Envío de diseño en línea"
+  "confirmationModal.subjectText": "Envío de diseño en línea",
+  "StillUnsureWhichModel":"¿Aún no estás seguro de qué modelo es el adecuado para ti?",
+  "GetExpertAdvice":"Obtén Asesoramiento Experto",
+  "footerCookiePolicy": "Política de Cookies",
+  "footerLegalNotice" : "Aviso Legal"
 }

@@ -30,7 +30,10 @@ import { TiArrowRightOutline } from "react-icons/ti";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import nextI18NextConfig from "@/../next-i18next.config.js"; 
 import { useTranslation } from 'next-i18next'
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { pageURLS } from "@/utils/getPageUrls";
+
+
 
 export const homeFaqs = [
   {
@@ -72,13 +75,14 @@ const Home = () => {
     const router = useRouter()
     const currentLocale = router.locale
     console.log('Current locale:', currentLocale)
+     const pageUrls = pageURLS[currentLocale];
 
      
   const currentUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}${router.asPath}`
   console.log('Current URL:', currentUrl)
   React.useEffect(() => {
     if (!router.query.locale && currentLocale) {
-      const newUrl = `/${currentLocale}${router.asPath}`;
+      const newUrl = pageURLS[currentLocale]?.home || `/${currentLocale}${router.asPath}`;
        
       window.history.replaceState(null, '', newUrl);
     }
@@ -130,7 +134,7 @@ const Home = () => {
 
                   <div className={style.actions}>
                     <Link
-                      href={"/products"}
+                      href={pageUrls.products}
                       className={style.exploreBtn}
                       data-aos="zoom-out"
                       data-aos-duration="2500"

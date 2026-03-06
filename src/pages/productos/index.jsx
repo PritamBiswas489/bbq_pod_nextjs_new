@@ -1,5 +1,4 @@
 import React from "react";
-import style from "./index.module.scss";
 import InnerBanner from "@/components/innerBanner";
 import hero1 from "@/assets/front/images/hero-1.webp";
 import Layout from "@/section/layout";

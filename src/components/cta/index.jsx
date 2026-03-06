@@ -35,7 +35,7 @@ const Cta = () => {
               data-aos-duration="1000"
               data-aos-once="true"
             >
-              <Link href={"#"} className={styles.callButton}>
+              <Link target="_blank" href={"mailto:sales@bbqpodspain.com"} className={styles.callButton}>
                 <SlEnvolope className={styles.icon} /> {t('ctaEmailButtonText')}
               </Link>
               {/* <Link href={"#"} className={styles.quoteButton}>

@@ -42,7 +42,7 @@ const ExteriorProductPage = ({
           >
             {items.map((item, index) => (
               <div key={index} className={styles.swatchWrapper}>
-                <Link href="#" className={styles.swatchLink}>
+                <div   className={styles.swatchLink}>
                   <Image
                     src={item.image}
                     alt={item.colorName}
@@ -51,7 +51,7 @@ const ExteriorProductPage = ({
                     style={{ borderRadius: "20px" }}
                   />
                   <h6>{item.colorName}</h6>
-                </Link>
+                </div>
               </div>
             ))}
           </div>

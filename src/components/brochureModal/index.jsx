@@ -3,9 +3,14 @@ import styles from "./index.module.scss";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
 import { useTranslation } from 'next-i18next';
+import { useRouter } from "next/router";
+import { pageURLS } from "@/utils/getPageUrls";
 
 const BrochureModal = ({ open, onClose }) => {
   const { t } = useTranslation('common');
+  const router = useRouter();
+  const currentLocale = router.locale;
+  const pageUrls = pageURLS[currentLocale];
   if (!open) return null;
 
   return (
@@ -28,7 +33,7 @@ const BrochureModal = ({ open, onClose }) => {
         </p>
 
         <div className={styles.actions}>
-          <Link href="/products" className={styles.primaryBtn}>
+          <Link href={pageUrls.products} className={styles.primaryBtn}>
             {t('brochureModalExploreModelsButton')}
           </Link>
          

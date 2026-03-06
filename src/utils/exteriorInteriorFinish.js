@@ -39,6 +39,76 @@ import roller from "@/assets/front/images/flrr.png";
 import charcoal from "@/assets/front/images/charcoal.jpg";
 import gasStove from "@/assets/front/images/GasStove.png";
 
+
+export const homePageColorOptions = [
+{
+    colorName: "ATHENS WHITE",
+    modelName: "SP00321",
+    image: bg1,
+  },
+  {
+    colorName: "MEDIUM GRAY",
+    modelName: "SP00071",
+    image: bg2,
+  },
+   {
+    colorName: "PURPLE GRAY",
+    modelName: "CP63203SF",
+    image: bg3,
+  },
+  {
+    colorName: "BLACK SAND",
+    modelName: "SP00368",
+    image: bg4,
+  },
+   {
+    colorName: "OLIVE GREEN",
+    modelName: "CP71732C",
+    image: bg15,
+  },
+
+   {
+    colorName: "LAKE GREEN",
+    modelName: "JXBD0089",
+    image: bg16,
+  },
+  {
+    colorName: "BLACK WALNUT",
+    modelName: "CP24938SF + JT4K9015-3",
+    image: bg19,
+  },
+
+  {
+    colorName: "CHERRY BLOSSOM",
+    modelName: "M243556P + JR-H1823",
+    image: bg20,
+  },
+
+  {
+    colorName: "CALACATTA WHITE",
+    modelName: "CALACATTA_WHITE",
+    image: bg23,
+  },
+
+   {
+    colorName: "SPANISH BLACK AND WHITE ROOT",
+    modelName: "SPANISH_BLACK_AND_WHITE_ROOT",
+    image: bg26,
+  },
+   {
+    colorName: "BEIGE MATTE",
+    modelName: "CY0011",
+    image: bg5,
+  },
+  {
+    colorName: "STARRY SILVER",
+    modelName: "CPJ103",
+    image: bg6,
+  },
+
+
+];
+
 export const exteriorFinishes = [
   {
     colorName: "ATHENS WHITE",
@@ -60,9 +130,34 @@ export const exteriorFinishes = [
     modelName: "SP00368",
     image: bg4,
   },
+  {
+    colorName: "OLIVE GREEN",
+    modelName: "CP71732C",
+    image: bg15,
+  },
 ];
 
 export const interiorCabinetBlockColours = [
+   {
+    colorName: "ATHENS WHITE",
+    modelName: "SP00321",
+    image: bg1,
+  },
+  {
+    colorName: "MEDIUM GRAY",
+    modelName: "SP00071",
+    image: bg2,
+  },
+  {
+    colorName: "PURPLE GRAY",
+    modelName: "CP63203SF",
+    image: bg3,
+  },
+  {
+    colorName: "BLACK SAND",
+    modelName: "SP00368",
+    image: bg4,
+  },
   {
     colorName: "BEIGE MATTE",
     modelName: "CY0011",
@@ -123,26 +218,7 @@ export const interiorCabinetBlockColours = [
     modelName: "JXBD0089",
     image: bg16,
   },
-   {
-    colorName: "ATHENS WHITE",
-    modelName: "SP00321",
-    image: bg1,
-  },
-  {
-    colorName: "MEDIUM GRAY",
-    modelName: "SP00071",
-    image: bg2,
-  },
-  {
-    colorName: "PURPLE GRAY",
-    modelName: "CP63203SF",
-    image: bg3,
-  },
-  {
-    colorName: "BLACK SAND",
-    modelName: "SP00368",
-    image: bg4,
-  },
+  
 ];
 
 export const interiorCabinetsWoodGrainTransfer = [
