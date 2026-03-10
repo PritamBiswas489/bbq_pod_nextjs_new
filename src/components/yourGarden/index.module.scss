@@ -250,4 +250,15 @@
       }
     }
   }
+  .badges {
+    justify-content: flex-start;
+    text-align: left !important;
+  }
+  .processQuote {
+    align-items: flex-start;
+    svg {
+      position: relative;
+      top: 3px;
+    }
+  }
 }
