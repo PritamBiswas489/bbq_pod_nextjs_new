@@ -12,6 +12,7 @@ const InnerBanner = ({
   subtitle,
   description1,
   description2,
+  description3 = "",
   backgroundImage,
   links = [
     { label: "Request Your Quote", href: "#", className: "primaryLink" },
@@ -42,6 +43,9 @@ const InnerBanner = ({
         </p>
         <p className="lead" data-aos="zoom-in" data-aos-once="true">
           {description2}
+        </p>
+        <p className="lead" data-aos="zoom-in" data-aos-once="true">
+          {description3}
         </p>
         {links.length > 0 && (
           <ul className={styles.linkList}>

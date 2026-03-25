@@ -81,11 +81,12 @@ const path =
                 </button>
                 
                 <ul className={`${menuOpen ? style.navOpen : ""}`}>
-                  <li>
-                    <Link href={pageUrls.home}>{t('headerNavHome')}</Link>
-                  </li>
+                  
                   <li>
                     <Link href={pageUrls.about}>{t('headerNavAbout')}</Link>
+                  </li>
+                   <li>
+                    <Link href={pageUrls.products}>{t('headerNavProducts')}</Link>
                   </li>
 
                   {/* CENTER LOGO */}
@@ -100,10 +101,10 @@ const path =
                       />
                     </Link>
                   </li>
-
                   <li>
-                    <Link href={pageUrls.products}>{t('headerNavProducts')}</Link>
+                    <Link href={pageUrls['in-stock']}>{t('headerNavInStock')}</Link>
                   </li>
+                 
                   <li>
                     <Link href={pageUrls.configurator}>{t('headerNavConfigurator')}</Link>
                   </li>

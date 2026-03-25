@@ -1,0 +1,112 @@
+@import "@/assets/front/styles/variable.scss";
+.outdoorKitchens {
+  padding: 4rem 0;
+}
+
+.productCard {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: none;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 42px -14px;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.badgeCustom {
+  border-radius: 1.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.badgeBgSuccess {
+  border-radius: 0.6rem;
+  padding: 0.453rem 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: $bg-white;
+  background-color: $bg-green !important;
+}
+.badgeBgError {
+  border-radius: 0.6rem;
+  padding: 0.453rem 0.8rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: $bg-white;
+  background-color: red !important;
+}
+.textMuted {
+  color: $gray-2;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.cardImage {
+  height: 260px;
+  display: block;
+  object-fit: cover;
+}
+
+.cardBody {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: $bg-white;
+}
+
+.cardSubtitle {
+  font-size: 1rem;
+  color: $lightGray-2;
+}
+
+.cardPrice {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: $primary;
+}
+
+.featureList {
+  margin-bottom: 1rem;
+  color: $dark-2;
+  font-weight: 500;
+  svg {
+    color: $bg-green;
+  }
+}
+
+.featureItem {
+  font-size: 0.95rem;
+  color: $lightGray;
+}
+
+.viewDetails {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: $primary;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.save {
+  background-color: $bg-green !important;
+}
+
+.premium {
+  background-color: $primary !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .outdoorKitchens {
+    padding: 2rem 0;
+  }
+}

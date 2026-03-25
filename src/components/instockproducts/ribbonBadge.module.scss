@@ -1,0 +1,49 @@
+/* Ribbon badge styles */
+.ribbon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 120px;
+  height: 32px;
+  pointer-events: none;
+}
+
+.ribbonTextSuccess {
+  position: absolute;
+  left: -40px;
+  top: 16px;
+  width: 200px;
+  background: #43a047;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+   
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  padding: 6px 0;
+  transform: rotate(-30deg);
+  box-shadow: none;
+  border-radius: 4px;
+  border: none;
+}
+
+.ribbonTextErrors {
+  position: absolute;
+  left: -40px;
+  top: 16px;
+  width: 200px;
+  background: #d32f2f;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+   
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  padding: 6px 0;
+  transform: rotate(-30deg);
+  box-shadow: none;
+  border-radius: 4px;
+  border: none;
+}
+
