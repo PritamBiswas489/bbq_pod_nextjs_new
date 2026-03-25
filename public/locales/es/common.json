@@ -830,5 +830,7 @@
   "Available_Pods":"Pods Disponibles",
   "Available_Pods_Description":"Una selección de BBQ Pods que ya están construidos y disponibles para entrega e instalación rápida",
   "Available_Pods_Details":"Cada pod mostrado a continuación es una unidad completamente configurada con sus propios acabados, materiales y electrodomésticos.",
-  "Available_Pods_Instruction":"Seleccione un pod disponible para ver la especificación completa."
+  "Available_Pods_Instruction":"Seleccione un pod disponible para ver la especificación completa.",
+  "in_stock_Olive_Green_Interior": "Interior Verde Oliva"
+  
 }
