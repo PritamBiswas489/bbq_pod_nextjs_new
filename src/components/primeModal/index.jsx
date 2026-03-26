@@ -57,7 +57,7 @@ const PrimeModal = ({ open, onClose, modalContent }) => {
         </ul>
         <div className={styles.actions}>
           <a
-            href="mailto:sales@?subject=Reservation%20request"
+            href="mailto:sales@bbqpodspain.com?subject=Reservation%20request"
             className={styles.primaryBtn}
           >
             {t('In_stock_Reserve_This_Pod')}
