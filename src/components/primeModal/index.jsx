@@ -42,10 +42,10 @@ const PrimeModal = ({ open, onClose, modalContent }) => {
         </ul>
         <h3>{t('In_stock_Dimensions')}</h3>
         <ul className={styles.dimensionsList}>
-          <li><b>{t('In_stock_Width')}</b> {t('In_stock_lmm_add_please')}</li>
-          <li><b>{t('In_stock_Height')}</b> {t('In_stock_mm')}</li>
-          <li><b>{t('In_stock_Depth_closed')}</b> {t('In_stock_mm')}</li>
-          <li><b>{t('In_stock_Depth_open')}</b> {t('In_stock_mm')}</li>
+          <li><b>{t('In_stock_Width')}</b> 2690 mm</li>
+          <li><b>{t('In_stock_Height')}</b> 2350 mm</li>
+          <li><b>{t('In_stock_Depth_closed')}</b>1002 mm</li>
+          <li><b>{t('In_stock_Depth_open')}</b> 3202 mm</li>
         </ul>
         <h3>{t('In_stock_Delivery')}</h3>
         <ul className={styles.deliveryList}>
