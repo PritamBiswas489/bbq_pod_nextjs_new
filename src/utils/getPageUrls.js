@@ -1,38 +1,46 @@
-export const  pageURLS = {
+export const pageURLS = {
+   "en": {
+      'home': '/en',
+      'about': '/en/about',
+      'products': '/en/products',
+      'in-stock': '/en/in-stock',
+      'configurator': '/en/configurator',
+      'privacyPolicy': '/en/privacy-policy',
+      'legalNotice': '/en/legal-notice',
+      'warranty': '/en/warranty',
+      'cookiePolicy': '/en/cookie-policy',
+      'prime': '/en/prime',
+      'core': '/en/core',
+      'aero': '/en/aero',
+      'pinnacle': '/en/pinnacle',
+      'apex': '/en/apex',
+   },
+   'es': {
+      'home': '/es',
+      'about': '/es/sobre-nosotros',
+      'products': '/es/productos',
+      'in-stock': '/es/en-stock',
+      'configurator': '/es/configurador',
+      'privacyPolicy': '/es/politica-de-privacidad',
+      'legalNotice': '/es/aviso-legal',
+      'warranty': '/es/garantia',
+      'cookiePolicy': '/es/politica-de-cookies',
+      'prime': '/es/prime',
+      'core': '/es/core',
+      'aero': '/es/aero',
+      'pinnacle': '/es/pinnacle',
+      'apex': '/es/apex',
+   }
+}
 
-        "en": {
-           'home': '/en',
-           'about': '/en/about',
-           'products': '/en/products',
-           'in-stock': '/en/in-stock',
-           'configurator': '/en/configurator',
-           'privacyPolicy':'/en/privacy-policy',
-           'legalNotice' : '/en/legal-notice',
-           'warranty': '/en/warranty',
-           'cookiePolicy': '/en/cookie-policy',
-           'prime': '/en/prime',
-           'core': '/en/core',
-           'aero': '/en/aero',
-           'pinnacle': '/en/pinnacle',
-           'apex':'/en/apex',   
-        },
-        'es':{
-           'home': '/es',
-           'about': '/es/sobre-nosotros',
-           'products': '/es/productos',
-           'in-stock': '/es/en-stock',
-           'configurator': '/es/configurador',
-           'privacyPolicy':'/es/politica-de-privacidad',
-           'legalNotice' : '/es/aviso-legal',
-           'warranty': '/es/garantia',
-           'cookiePolicy': '/es/politica-de-cookies',
-           'prime': '/es/prime',
-           'core': '/es/core',
-           'aero': '/es/aero',
-           'pinnacle': '/es/pinnacle',
-           'apex':'/es/apex',      
-        }
-    }
+// Helper to get all URLs for sitemap
+export const getAllPageUrls = (siteUrl = 'https://bbqpodspain.com') => {
+   return Object.values(pageURLS).flatMap(localeObj =>
+      Object.values(localeObj).map(path => siteUrl + path)
+   );
+}
+
+
 
 
     export const  pageURLSES = {
