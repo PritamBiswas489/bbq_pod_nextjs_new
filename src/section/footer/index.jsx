@@ -15,6 +15,13 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { pageURLS } from "@/utils/getPageUrls";
 
+import partnerImageOne from "@/assets/front/images/partnerimages/bbqpodireland.png";
+import partnerImageTwo from "@/assets/front/images/partnerimages/BBQpodsNZ.png";
+import partnerImageThree from "@/assets/front/images/partnerimages/bbqpodssydney.svg";
+import partnerImageFour from "@/assets/front/images/partnerimages/futureshade.svg";
+import partnerImageFive from "@/assets/front/images/partnerimages/LOGO-NOX-LIGHT-1.svg";
+import partnerImageSix from "@/assets/front/images/partnerimages/pmklogo.png";
+
 const Footer = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
@@ -117,6 +124,30 @@ const Footer = () => {
             </ul>
           </Col>
         </Row>
+
+        <div className={styles.partnersSection}>
+          <h5 className={styles.partnersHeading}>{t('Trusted_International_Partners')}</h5>
+          <div className={styles.partnersGrid}>
+            <a href="https://www.pmkpods.com" target="_blank" rel="noopener noreferrer" className={styles.partnerItem} title="PMK">
+              <Image src={partnerImageSix} alt="PMK" width={120} height={60} />
+            </a>
+            <a href="https://bbqpodsireland.ie" target="_blank" rel="noopener noreferrer" className={styles.partnerItem} title="BBQ Pods Ireland">
+              <Image src={partnerImageOne} alt="BBQ Pods Ireland" width={120} height={60} />
+            </a>
+            <a href="https://www.bbqpods.co.nz" target="_blank" rel="noopener noreferrer" className={styles.partnerItem} title="BBQ Pods NZ">
+              <Image src={partnerImageTwo} alt="BBQ Pods NZ" width={120} height={60} />
+            </a>
+            <a href="https://www.bbqpodsydney.com.au" target="_blank" rel="noopener noreferrer" className={styles.partnerItem} title="BBQ Pods Sydney">
+              <Image src={partnerImageThree} alt="BBQ Pods Sydney" width={120} height={60} />
+            </a>
+            <a href="https://www.futureshade.com.au" target="_blank" rel="noopener noreferrer" className={styles.partnerItem} title="Future Shade">
+              <Image src={partnerImageFour} alt="Future Shade" width={120} height={60} />
+            </a>
+            <a href="https://rpoutdoorliving.com/marque/nox-kitchen/" target="_blank" rel="noopener noreferrer" className={styles.partnerItem} title="NOX France">
+              <Image src={partnerImageFive} alt="NOX France" width={120} height={60} />
+            </a>
+          </div>
+        </div>
 
         <Row className={styles.bottomSection}>
           <Col className="text-center">

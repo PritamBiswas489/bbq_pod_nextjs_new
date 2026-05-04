@@ -36,11 +36,11 @@ export default async function handler(req, res) {
         if(language === "es") { // Spanish Brochure
            const templatePathEs = path.join(process.cwd(), "public", "bbqpodspain-brochure-email-es.html");
            let htmlBodyEs = fs.readFileSync(templatePathEs, "utf8");
-           const attchmentPathEs = path.join(process.cwd(), "public", "BBQPODSpainCatálogoEspanyol.pdf");
+           const attchmentPathEs = path.join(process.cwd(), "public", "BBQPodSpainESP.pdf");
            const pdfAttachmentEs = fs.readFileSync(attchmentPathEs);
            htmlBodyEs = htmlBodyEs.replace(/\[\s*Name\s*\]/g, name );
            const attamentEs = {
-            filename: "BBQPODSpainCatálogoEspanyol.pdf",
+            filename: "BBQPodSpainESP.pdf",
             content:  pdfAttachmentEs,
             contentType: "application/pdf",
            };
@@ -57,11 +57,11 @@ export default async function handler(req, res) {
         if(language === "en") { // English Brochure
             const templatePathEn = path.join(process.cwd(), "public", "bbqpodspain-brochure-email.html");
             let htmlBodyEn = fs.readFileSync(templatePathEn, "utf8");
-            const attchmentPathEn = path.join(process.cwd(), "public", "BBQPodSpainCatalogueEnglish.pdf");
+            const attchmentPathEn = path.join(process.cwd(), "public", "BBQPodSpainENG.pdf");
             const pdfAttachmentEn = fs.readFileSync(attchmentPathEn);
             htmlBodyEn = htmlBodyEn.replace(/\[\s*Name\s*\]/g, name );
             const attamentEn = {
-             filename: "BBQPodSpainCatalogueEnglish.pdf",
+             filename: "BBQPodSpainENG.pdf",
              content:  pdfAttachmentEn,
              contentType: "application/pdf",
             };

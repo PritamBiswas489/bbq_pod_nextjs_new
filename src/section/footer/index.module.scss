@@ -102,6 +102,49 @@
   }
 }
 
+.partnersSection {
+  padding: 2.5rem 0 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+
+  .partnersHeading {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 1.75rem;
+  }
+
+  .partnersGrid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem 2.5rem;
+  }
+
+  .partnerItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.55;
+    filter: grayscale(100%) brightness(1.8);
+    transition: opacity 0.3s ease, filter 0.3s ease;
+
+    img {
+      object-fit: contain;
+      max-height: 50px;
+      width: auto;
+    }
+
+    &:hover {
+      opacity: 1;
+      filter: grayscale(0%) brightness(1);
+    }
+  }
+}
+
 .bottomSection {
   font-size: 0.85rem;
   opacity: 0.7;
