@@ -29,7 +29,7 @@ const InStockProducts = ({ openModal, setModalContent }) => {
 
   const products = [
     {
-      badges: [{ text: "Available", variant: "success", position: "right" }],
+      badges: [{ text: "Reserved", variant: "success", position: "right" }],
       nameKey: "Prime",
       descriptionKey: "",
       priceKey: "14,900€",
