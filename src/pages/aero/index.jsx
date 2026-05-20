@@ -29,7 +29,7 @@ import bannerBg from "@/assets/front/images/core-ban.jpg";
 import DoorAccess from "@/components/doorAccess";
 
 
-import bannerImage from "@/assets/front/images/aeroImages/bannerImage.jpg";
+import bannerImage from "@/assets/front/images/newProductImages/Aero.jpg";
 import dimensionsClosed from "@/assets/front/images/aeroImages/dimensions-closed.jpg";
 import dimensionsOpen from "@/assets/front/images/aeroImages/dimensions-open.jpg";
 import specs from "@/assets/front/images/aeroImages/specs.jpg";

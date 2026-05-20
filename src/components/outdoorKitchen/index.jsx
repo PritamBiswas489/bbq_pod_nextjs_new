@@ -9,11 +9,11 @@ import Link from "next/link";
 
 import { FiCheckCircle } from "react-icons/fi";
 
-import hero1 from "@/assets/front/images/outdoor/hero-1.jpg";
-import hero2 from "@/assets/front/images/outdoor/hero-2.jpg";
-import hero3 from "@/assets/front/images/outdoor/hero-3.webp";
-import hero4 from "@/assets/front/images/outdoor/hero-4.jpg";
-import hero5 from "@/assets/front/images/outdoor/hero-5.webp";
+import hero1 from "@/assets/front/images/newProductImages/core.jpg";
+import hero2 from "@/assets/front/images/newProductImages/prime.jpg";
+import hero3 from "@/assets/front/images/newProductImages/Apex.jpg";
+import hero4 from "@/assets/front/images/newProductImages/Pinnacle.jpg";
+import hero5 from "@/assets/front/images/newProductImages/Aero.jpg";
 import { useRouter } from "next/router";
  
 

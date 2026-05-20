@@ -24,7 +24,7 @@ import floorImage from "@/assets/front/images/flrr.png";
 import DoorAccess from "@/components/doorAccess";
 
 
-import bannerImage from "@/assets/front/images/pinnacleImages/hero-1.jpg";
+import bannerImage from "@/assets/front/images/newProductImages/Pinnacle.jpg";
 import dimensionsClosed from "@/assets/front/images/pinnacleImages/dimensions-closed.jpg";
 import dimensionsOpen from "@/assets/front/images/pinnacleImages/dimensions-open.jpg";
 import specs from "@/assets/front/images/pinnacleImages/specs.jpg";

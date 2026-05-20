@@ -27,7 +27,7 @@ import floorImage from "@/assets/front/images/flrr.png";
 import bannerBg from "@/assets/front/images/core-ban.jpg";
 import DoorAccess from "@/components/doorAccess";
 
-import bannerImage from "@/assets/front/images/apeximages/hero-1.jpg";
+import bannerImage from "@/assets/front/images/newProductImages/Apex.jpg";
 import dimensionsClosed from "@/assets/front/images/apeximages/dimensions-closed.jpg";
 import dimensionsOpen from "@/assets/front/images/apeximages/dimensions-open.jpg";
 import specs from "@/assets/front/images/apeximages/specs.jpg";

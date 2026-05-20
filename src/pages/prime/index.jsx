@@ -23,7 +23,7 @@ import DoorAccess from "@/components/doorAccess";
 
 
 
-import bannerImage from "@/assets/front/images/primeImages/bannerImage.jpg";
+import bannerImage from "@/assets/front/images/newProductImages/prime.jpg";
 import dimensionsClosed from "@/assets/front/images/primeImages/dimensions-closed.jpg";
 import dimensionsOpen from "@/assets/front/images/primeImages/dimensions-open.jpg";
 import specs from "@/assets/front/images/primeImages/specs.jpg";

@@ -21,6 +21,9 @@ import partnerImageThree from "@/assets/front/images/partnerimages/bbqpodssydney
 import partnerImageFour from "@/assets/front/images/partnerimages/futureshade.svg";
 import partnerImageFive from "@/assets/front/images/partnerimages/LOGO-NOX-LIGHT-1.svg";
 import partnerImageSix from "@/assets/front/images/partnerimages/pmklogo.png";
+import partnerImageSeven from "@/assets/front/images/partnerimages/elite-pods-logo.png";
+
+
 
 const Footer = () => {
   const { t } = useTranslation('common');
@@ -146,6 +149,12 @@ const Footer = () => {
             <a href="https://rpoutdoorliving.com/marque/nox-kitchen/" target="_blank" rel="noopener noreferrer" className={styles.partnerItem} title="NOX France">
               <Image src={partnerImageFive} alt="NOX France" width={120} height={60} />
             </a>
+
+<a href="https://elitepods.com.au" target="_blank" rel="noopener noreferrer" className={styles.partnerItem} title="Elite Pods">
+              <Image src={partnerImageSeven} alt="Elite Pods" width={120} height={60} />
+            </a>
+
+            
           </div>
         </div>
 
