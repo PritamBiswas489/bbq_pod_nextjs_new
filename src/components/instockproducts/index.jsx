@@ -17,6 +17,7 @@ import rs2 from "@/assets/front/images/in-stock-images/rs2.jpg";
 import rs3 from "@/assets/front/images/in-stock-images/rs3.jpg";
 import rs4 from "@/assets/front/images/in-stock-images/rs4.jpg";
 import { useRouter } from "next/router";
+import { productsPrice } from "@/utils/productsPrice";
  
 
 const InStockProducts = ({ openModal, setModalContent }) => {
@@ -32,14 +33,14 @@ const InStockProducts = ({ openModal, setModalContent }) => {
       badges: [{ text: "Reserved", variant: "success", position: "right" }],
       nameKey: "Prime",
       descriptionKey: "",
-      priceKey: "14,900€",
+      priceKey: productsPrice["PRIME"].toLocaleString() + "€",
       featuresKeys: ["in_stock_Black_Sand_Exterior", "in_stock_Black_Sand_Interior", "in_stock_Stainless_Steel_Worktop"],
       image: ab1.src,
       link: '',
       popContent:{
         title: "Prime",
         image: ab1.src,
-        price: "14,900€",
+        price: productsPrice["PRIME"].toLocaleString() + "€",
         features: {
          "Exterior_Finish": "Black Sand Exterior",
          "Interior_Finish": "Black Sand Interior",
@@ -51,14 +52,14 @@ const InStockProducts = ({ openModal, setModalContent }) => {
       badges: [{ text: "Available", variant: "success", position: "right" }],
       nameKey: "Prime",
       descriptionKey: "",
-      priceKey: "14,900€",
+      priceKey: productsPrice["PRIME"].toLocaleString() + "€",
       featuresKeys: ["in_stock_Purple_Grey_Exterior", "in_stock_Black_Walnut_Interior", "in_stock_Spanish_Stone_Worktop"],
       image: ab2.src,
       link: '',
       popContent:{
         title: "Prime",
         image: ab2.src,
-        price: "14,900€",
+        price: productsPrice["PRIME"].toLocaleString() + "€",
         features: {
          "Exterior_Finish": "in_stock_Purple_Grey_Exterior",
          "Interior_Finish": "in_stock_Black_Walnut_Interior",
@@ -70,7 +71,7 @@ const InStockProducts = ({ openModal, setModalContent }) => {
       badges: [{ text: "Reserved", variant: "error", position: "right" }],
       nameKey: "Pinnacle",
       descriptionKey: "",
-      priceKey: "18,900€",
+      priceKey: productsPrice["PINNACLE"].toLocaleString() + "€",
       featuresKeys: ["in_stock_Medium_Gray_Exterior", "in_stock_Black_Walnut_Interior", "in_stock_Spanish_Stone_Worktop"],
       image: rs1.src,
       link: '',
@@ -79,7 +80,7 @@ const InStockProducts = ({ openModal, setModalContent }) => {
       badges: [{ text: "Reserved", variant: "error", position: "right" }],
       nameKey: "Prime",
       descriptionKey: "",
-      priceKey: "14,900€",
+      priceKey: productsPrice["PRIME"].toLocaleString() + "€",
       featuresKeys: [
         "in_stock_Black_Sand_Exterior",
         "in_stock_Olive_Green_Interior",
@@ -92,7 +93,7 @@ const InStockProducts = ({ openModal, setModalContent }) => {
       badges: [{ text: "Reserved", variant: "error", position: "right" }],
       nameKey: "Core",
       descriptionKey: "",
-      priceKey: "11,900€",
+      priceKey: productsPrice["CORE"].toLocaleString() + "€",
       featuresKeys: ["in_stock_Medium_Gray_Exterior", "Medium Gray Interior", "in_stock_Calacatta_Stone_Worktop"],
       image: rs3.src,
       link: '',
@@ -101,7 +102,7 @@ const InStockProducts = ({ openModal, setModalContent }) => {
       badges: [{ text: "Reserved", variant: "error", position: "right" }],
       nameKey: "Core",
       descriptionKey: "",
-      priceKey: "11,900€",
+      priceKey: productsPrice["CORE"].toLocaleString() + "€",
       featuresKeys: ["in_stock_Athens_White_Exterior", "in_stock_Khaki_Wood_Interior", "in_stock_Stainless_Steel_Worktop"],
       image: rs4.src,
       link: '',

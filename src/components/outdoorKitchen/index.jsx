@@ -15,6 +15,7 @@ import hero3 from "@/assets/front/images/newProductImages/Apex.jpg";
 import hero4 from "@/assets/front/images/newProductImages/Pinnacle.jpg";
 import hero5 from "@/assets/front/images/newProductImages/Aero.jpg";
 import { useRouter } from "next/router";
+import { productsPrice } from "@/utils/productsPrice";
  
 
 const OutdoorKitchens = () => {
@@ -126,7 +127,7 @@ const OutdoorKitchens = () => {
                         </Badge>
                       </div>
                     )}
-                    {t(product.priceKey)}
+                    {(t(product.priceKey).replace("{price}",productsPrice[product.nameKey.split("ProductName")[0].toUpperCase()].toLocaleString()))}
                   </div>
                   <ul className={`list-unstyled ${styles.featureList}`}>
                     {product.featuresKeys.map((featureKey, fIndex) => (

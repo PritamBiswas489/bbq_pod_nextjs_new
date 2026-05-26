@@ -8,7 +8,7 @@ export default async function handler(req, res) {
 	}
 
 	let to ="sales@bbqpodspain.com";
-    // to = 'pritam.biswas489@gmail.com'; // for testing, replace with actual recipient in production
+    //to = 'pritam.biswas489@gmail.com'; // for testing, replace with actual recipient in production
     const name = req.body?.fullName ;
     const email = req.body?.email;
     const phone = req.body?.phone;
@@ -25,6 +25,10 @@ export default async function handler(req, res) {
     const counterTop = req.body?.countertop;
     const doorConfig = req.body?.doorConfig;
     const bbqStyle = req.body?.bbqStyle;
+    const applianceGas = req.body?.applianceGas;
+    const applianceExtractor = req.body?.applianceExtractor;
+    const applianceSink = req.body?.applianceSink;
+    const applianceFridge = req.body?.applianceFridge;
     const installationRequirements = req.body?.installationRequirements;
     const additionalNotes = req.body?.additionalNotes;
 
@@ -49,6 +53,10 @@ export default async function handler(req, res) {
     htmlBody = htmlBody.replace(/\[\s*countertop\s*\]/g, counterTop );
     htmlBody = htmlBody.replace(/\[\s*door_configuration\s*\]/g, doorConfig );
     htmlBody = htmlBody.replace(/\[\s*bbq_style\s*\]/g, bbqStyle );
+    htmlBody = htmlBody.replace(/\[\s*appliance_gas\s*\]/g, applianceGas ?? '' );
+    htmlBody = htmlBody.replace(/\[\s*appliance_extractor\s*\]/g, applianceExtractor ?? '' );
+    htmlBody = htmlBody.replace(/\[\s*appliance_sink\s*\]/g, applianceSink ?? '' );
+    htmlBody = htmlBody.replace(/\[\s*appliance_fridge\s*\]/g, applianceFridge ?? '' );
     htmlBody = htmlBody.replace(/\[\s*additional_notes\s*\]/g, additionalNotes );
 
     const installationReqsFormatted = installationRequirements

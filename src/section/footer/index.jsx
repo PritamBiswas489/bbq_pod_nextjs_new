@@ -150,7 +150,7 @@ const Footer = () => {
               <Image src={partnerImageFive} alt="NOX France" width={120} height={60} />
             </a>
 
-<a href="https://elitepods.com.au" target="_blank" rel="noopener noreferrer" className={styles.partnerItem} title="Elite Pods">
+            <a href="https://elitepods.com.au" target="_blank" rel="noopener noreferrer" className={styles.partnerItem} title="Elite Pods">
               <Image src={partnerImageSeven} alt="Elite Pods" width={120} height={60} />
             </a>
 

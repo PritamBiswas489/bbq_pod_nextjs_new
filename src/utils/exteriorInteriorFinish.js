@@ -28,8 +28,7 @@ import bg23 from "@/assets/front/images/image-shade/calacatta-white.webp";
 import bg24 from "@/assets/front/images/image-shade/cave-stone-beige.webp";
 import bg25 from "@/assets/front/images/image-shade/bosnia-gray.webp";
 import bg26 from "@/assets/front/images/image-shade/spanish-black-and-whitw-root.webp";
-
-
+import { productsPrice } from "./productsPrice";
 
 
 
@@ -42,66 +41,66 @@ import gasStove from "@/assets/front/images/GasStove.png";
 
 export const homePageColorOptions = [
 {
-    colorName: "ATHENS WHITE",
+    colorName: "Athens White",
     modelName: "SP00321",
     image: bg1,
   },
   {
-    colorName: "MEDIUM GRAY",
+    colorName: "Medium Gray",
     modelName: "SP00071",
     image: bg2,
   },
    {
-    colorName: "PURPLE GRAY",
+    colorName: "Purple Gray",
     modelName: "CP63203SF",
     image: bg3,
   },
   {
-    colorName: "BLACK SAND",
+    colorName: "Black Sand",
     modelName: "SP00368",
     image: bg4,
   },
    {
-    colorName: "OLIVE GREEN",
+    colorName: "Olive Green",
     modelName: "CP71732C",
     image: bg15,
   },
 
    {
-    colorName: "LAKE GREEN",
+    colorName: "Lake Green",
     modelName: "JXBD0089",
     image: bg16,
   },
   {
-    colorName: "BLACK WALNUT",
+    colorName: "Black Walnut",
     modelName: "CP24938SF + JT4K9015-3",
     image: bg19,
   },
 
   {
-    colorName: "CHERRY BLOSSOM",
+    colorName: "Cherry Blossom",
     modelName: "M243556P + JR-H1823",
     image: bg20,
   },
 
   {
-    colorName: "CALACATTA WHITE",
+    colorName: "Calacatta White",
     modelName: "CALACATTA_WHITE",
     image: bg23,
   },
 
    {
-    colorName: "SPANISH BLACK AND WHITE ROOT",
+    colorName: "Spanish Black And White Root",
     modelName: "SPANISH_BLACK_AND_WHITE_ROOT",
     image: bg26,
   },
    {
-    colorName: "BEIGE MATTE",
+    colorName: "Beige Matte",
     modelName: "CY0011",
     image: bg5,
   },
   {
-    colorName: "STARRY SILVER",
+    colorName: "Starry Silver",
     modelName: "CPJ103",
     image: bg6,
   },
@@ -111,27 +110,27 @@ export const homePageColorOptions = [
 
 export const exteriorFinishes = [
   {
-    colorName: "ATHENS WHITE",
+    colorName: "Athens White",
     modelName: "SP00321",
     image: bg1,
   },
   {
-    colorName: "MEDIUM GRAY",
+    colorName: "Medium Gray",
     modelName: "SP00071",
     image: bg2,
   },
   {
-    colorName: "PURPLE GRAY",
+    colorName: "Purple Gray",
     modelName: "CP63203SF",
     image: bg3,
   },
   {
-    colorName: "BLACK SAND",
+    colorName: "Black Sand",
     modelName: "SP00368",
     image: bg4,
   },
   // {
-  //   colorName: "OLIVE GREEN",
+  //   colorName: "Olive Green",
   //   modelName: "CP71732C",
   //   image: bg15,
   // },
@@ -139,82 +138,82 @@ export const exteriorFinishes = [
 
 export const interiorCabinetBlockColours = [
    {
-    colorName: "ATHENS WHITE",
+    colorName: "Athens White",
     modelName: "SP00321",
     image: bg1,
   },
   {
-    colorName: "MEDIUM GRAY",
+    colorName: "Medium Gray",
     modelName: "SP00071",
     image: bg2,
   },
   {
-    colorName: "PURPLE GRAY",
+    colorName: "Purple Gray",
     modelName: "CP63203SF",
     image: bg3,
   },
   {
-    colorName: "BLACK SAND",
+    colorName: "Black Sand",
     modelName: "SP00368",
     image: bg4,
   },
   {
-    colorName: "BEIGE MATTE",
+    colorName: "Beige Matte",
     modelName: "CY0011",
     image: bg5,
   },
   {
-    colorName: "STARRY SILVER",
+    colorName: "Starry Silver",
     modelName: "CPJ103",
     image: bg6,
   },
   {
-    colorName: "KHAKI GRAY",
+    colorName: "Khaki Gray",
     modelName: "FTE1014898T",
     image: bg7,
   },
   {
-    colorName: "MORANDI GRAY",
+    colorName: "Morandi Gray",
     modelName: "CY0037",
     image: bg8,
   },
   {
-    colorName: "LIGHT GRAY",
+    colorName: "Light Gray",
     modelName: "SP00598",
     image: bg9,
   },
   {
-    colorName: "SILVER GRAY",
+    colorName: "Silver Gray",
     modelName: "CP61773SF",
     image: bg10,
   },
   {
-    colorName: "TRAFFIC GRAY",
+    colorName: "Traffic Gray",
     modelName: "FTE101554",
     image: bg11,
   },
   {
-    colorName: "GRAY FLASH",
+    colorName: "Gray Flash",
     modelName: "SP00111",
     image: bg12,
   },
   {
-    colorName: "LIGHT GREEN",
+    colorName: "Light Green",
     modelName: "CY35109",
     image: bg13,
   },
   {
-    colorName: "RETRO GREEN",
+    colorName: "Retro Green",
     modelName: "CY0047",
     image: bg14,
   },
   {
-    colorName: "OLIVE GREEN",
+    colorName: "Olive Green",
     modelName: "CP71732C",
     image: bg15,
   },
   {
-    colorName: "LAKE GREEN",
+    colorName: "Lake Green",
     modelName: "JXBD0089",
     image: bg16,
   },
@@ -223,22 +222,22 @@ export const interiorCabinetBlockColours = [
 
 export const interiorCabinetsWoodGrainTransfer = [
   {
-    colorName: "CAMEL GRAY",
+    colorName: "Camel Gray",
     modelName: "CP63195S + JC-8193Y-2",
     image: bg17,
   },
   {
-    colorName: "KHAKI WOOD",
+    colorName: "Khaki Wood",
     modelName: "XGHY-P2412 + XCH-PS9015",
     image: bg18,
   },
   {
-    colorName: "BLACK WALNUT",
+    colorName: "Black Walnut",
     modelName: "CP24938SF + JT4K9015-3",
     image: bg19,
   },
   {
-    colorName: "CHERRY BLOSSOM",
+    colorName: "Cherry Blossom",
     modelName: "M243556P + JR-H1823",
     image: bg20,
   },
@@ -246,12 +245,12 @@ export const interiorCabinetsWoodGrainTransfer = [
 //counter top stainless steel
 export const countertopStainlessSteelTitle = [
   {
-    colorName: "TREE BARK",
+    colorName: "Tree Bark",
     modelName: "TREE_BARK",
     image: bg21,
   },
   {
-    colorName: "RHINO SKIN",
+    colorName: "Rhino Skin",
     modelName: "RHINO_SKIN",
     image: bg22,
   },
@@ -259,22 +258,22 @@ export const countertopStainlessSteelTitle = [
 //counter top sintered stone
 export const countertopSinteredStoneTitle = [
   {
-    colorName: "CALACATTA WHITE",
+    colorName: "Calacatta White",
     modelName: "CALACATTA_WHITE",
     image: bg23,
   },
   {
-    colorName: "CAVE STONE BEIGE",
+    colorName: "Cave Stone Beige",
     modelName: "CAVE_STONE_BEIGE",
     image: bg24,
   },
   {
-    colorName: "BOSNIA GREY",
+    colorName: "Bosnia Grey",
     modelName: "BOSNIA_GREY",
     image: bg25,
   },
   {
-    colorName: "SPANISH BLACK AND WHITE ROOT",
+    colorName: "Spanish Black And White Root",
     modelName: "SPANISH_BLACK_AND_WHITE_ROOT",
     image: bg26,
   },
@@ -282,12 +281,12 @@ export const countertopSinteredStoneTitle = [
 
 export const doorCongiguration = [
   {
-    title: "LIFT UP",
+    title: "Lift Up",
     id: "lift_up",
     img: liftup.src,
   },
   {
-    title: "ROLLER STYLE",
+    title: "Roller Style",
     id: "roller_style",
     img: roller.src,
   },
@@ -295,12 +294,12 @@ export const doorCongiguration = [
 
 export const bbqStyle = [
   {
-    title: "GAS",
+    title: "Gas",
     id: "gas",
     img: gasStove.src,
   },
   {
-    title: "CHARCOAL",
+    title: "Charcoal",
     id: "charcoal",
     img: charcoal.src,
   },
@@ -359,7 +358,7 @@ export const   products = [
     badges: [],
     nameKey: "coreProductName",
     descriptionKey: "coreProductDescription",
-    priceKey: "coreProductPrice",
+    priceKey: "coreProductPrice".replace("{price}", productsPrice["CORE"]),
     featuresKeys: ["coreFeature1", "coreFeature2", "coreFeature3"],
     image: require("@/assets/front/images/outdoor/hero-1.jpg").default.src,
   },
@@ -367,7 +366,7 @@ export const   products = [
     badges: [],
     nameKey: "primeProductName",
     descriptionKey: "primeProductDescription",
-    priceKey: "primeProductPrice",
+    priceKey: "primeProductPrice".replace("{price}", productsPrice["PRIME"]),
     featuresKeys: ["primeFeature1", "primeFeature2", "primeFeature3"],
     image: require("@/assets/front/images/outdoor/hero-2.jpg").default.src,
   },
@@ -375,7 +374,7 @@ export const   products = [
     badges: [],
     nameKey: "apexProductName",
     descriptionKey: "apexProductDescription",
-    priceKey: "apexProductPrice",
+    priceKey: "apexProductPrice".replace("{price}", productsPrice["APEX"]),
     featuresKeys: ["apexFeature1", "apexFeature2", "apexFeature3"],
     image: require("@/assets/front/images/outdoor/hero-3.webp").default.src,
   },
@@ -383,7 +382,7 @@ export const   products = [
     badges: [],
     nameKey: "pinnacleProductName",
     descriptionKey: "pinnacleProductDescription",
-    priceKey: "pinnacleProductPrice",
+    priceKey: "pinnacleProductPrice".replace("{price}", productsPrice["PINNACLE"]),
     featuresKeys: ["pinnacleFeature1", "pinnacleFeature2", "pinnacleFeature3"],
     image: require("@/assets/front/images/outdoor/hero-4.jpg").default.src,
   },
@@ -391,8 +390,256 @@ export const   products = [
     badges: [],
     nameKey: "aeroProductName",
     descriptionKey: "aeroProductDescription",
-    priceKey: "aeroProductPrice",
+    priceKey: "aeroProductPrice".replace("{price}", productsPrice["AERO"]),
     featuresKeys: ["aeroFeature1", "aeroFeature2", "aeroFeature3"],
     image: require("@/assets/front/images/outdoor/hero-5.webp").default.src,
   },
 ];
+
+
+
+export const gasOptions = {
+  CORE: [
+    {
+      key: "Gas_Grill",
+      size: "30 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Charcoal_Kamado",
+      size: "20 inch",
+      priceAddition: 200,
+    },
+    {
+      key: "Big_Green_Egg_Kamado",
+      size: "18.1 inch",
+      priceAddition: 2099.99,
+    },
+  ],
+  PRIME: [
+    {
+      key: "Gas_Grill",
+      size: "30 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Charcoal_Kamado",
+      size: "20 inch",
+      priceAddition: 200,
+    },
+    {
+      key: "Big_Green_Egg_Kamado",
+      size: "18.1 inch",
+      priceAddition: 2099.99,
+    },
+  ],
+  
+  APEX: [
+    {
+      key: "Gas_Grill",
+      size: "36 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Gas_Grill",
+      size: "42 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Gas_Grill_with_Hob",
+      size: "46 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Charcoal_Kamado",
+      size: "20 inch",
+      priceAddition: 200,
+    },
+    {
+      key: "Big_Green_Egg_Kamado",
+      size: "18.1 inch",
+      priceAddition: 2099.99,
+    },
+    {
+      key: "Gas_Grill_and_Kamado",
+      size: "30 inch + 20 inch",
+      priceAddition: 850,
+    },
+    {
+      key: "Gas_Grill_and_Big_Green_Egg",
+      size: "30 inch",
+      priceAddition: 2499.99,
+    },
+    {
+      key: "Gas_Grill_and_Small_Kamado",
+      size: "42 inch",
+      priceAddition: 450,
+    },
+    {
+      key: "Gas_Grill_with_Hob_and_Small_Kamado",
+      size: "46 inch",
+      priceAddition: 450,
+    },
+  ],
+  PINNACLE: [
+    {
+      key: "Gas_Grill",
+      size: "36 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Gas_Grill",
+      size: "42 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Gas_Grill_with_Hob",
+      size: "46 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Charcoal_Kamado",
+      size: "20 inch",
+      priceAddition: 250,
+    },
+    {
+      key: "Big_Green_Egg_Kamado",
+      size: "18.1 inch",
+      priceAddition: 2099.99,
+    },
+    {
+      key: "Gas_Grill_and_Kamado",
+      size: "30 inch + 20 inch",
+      priceAddition: 850,
+    },
+    {
+      key: "Gas_Grill_and_Big_Green_Egg",
+      size: "30 inch",
+      priceAddition: 2499.99,
+    },
+    {
+      key: "Gas_Grill_and_Small_Kamado",
+      size: "42 inch",
+      priceAddition: 450,
+    },
+    {
+      key: "Gas_Grill_with_Hob_and_Small_Kamado",
+      size: "46 inch",
+      priceAddition: 450,
+    },
+  ],
+  AERO: [
+    {
+      key: "Gas_Grill",
+      size: "36 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Gas_Grill",
+      size: "42 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Gas_Grill_with_Hob",
+      size: "46 inch",
+      priceAddition: 0,
+    },
+    {
+      key: "Charcoal_Kamado",
+      size: "20 inch",
+      priceAddition: 200,
+    },
+    {
+      key: "Big_Green_Egg_Kamado",
+      size: "18.1 inch",
+      priceAddition: 2099.99,
+    },
+  ],
+};
+
+export const extractorAndTv = {
+  CORE:[
+    {
+      key: "Extractor_Hood_Low",
+      priceAddition: 0,
+    },
+    {
+      key: "Extractor_Hood_Ceiling",
+      priceAddition: 0,
+    },
+    {
+      key: "TV_32_inch",
+      priceAddition: 0,
+    },
+  ],
+  PRIME: [],
+  APEX: [],
+  PINNACLE: [],
+  AERO: [],
+}
+
+export const sinkOptions = {
+  CORE:[
+    {
+      key: "Sink_Included",
+      priceAddition: 0,
+    },
+    {
+      key: "Remove_Sink",
+      priceAddition: -100,
+    },
+  ],
+  PRIME: [],
+  APEX: [],
+  PINNACLE: [],
+  AERO: [],
+} 
+
+export const fridgeStyle = {
+  CORE:[
+    {
+      key: "Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Stainless_Steel",
+      priceAddition: 0,
+    },
+  ],
+  PRIME: [
+    {
+      key: "Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Stainless_Steel",
+      priceAddition: 0,
+    },
+  ],
+  APEX: [
+    {
+      key: "Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Black_Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Stainless_Steel",
+      priceAddition: 0,
+    },
+  ],
+  PINNACLE: [],
+  AERO: [
+    {
+      key: "Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Stainless_Steel",
+      priceAddition: 0,
+    },
+  ],
+}
+ 

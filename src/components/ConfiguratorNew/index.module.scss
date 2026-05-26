@@ -1,0 +1,962 @@
+// Confirmation Modal Styles
+// Confirmation Modal Styles
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85); // Darker overlay
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modalContent {
+  background: #111; // Black background
+  color: #fff; // White text
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 540px;
+  width: 95vw;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.18);
+  position: relative;
+  text-align: center;
+}
+.modalClose {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #888;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.2s;
+}
+.modalClose:hover {
+  color: #d32f2f;
+}
+.orderDetailsSection {
+  background: #000;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  margin: 1.5rem 0 0.5rem 0;
+  text-align: left;
+}
+.emailInfo {
+  margin-top: 1.5rem;
+  color: #444;
+  font-size: 1rem;
+}
+@import "@/assets/front/styles/variable.scss";
+
+.wrapper {
+  padding: 1rem 0;
+}
+.stepHeader {
+  margin-bottom: 3rem;
+}
+/* ===== STEPPER ===== */
+.stepperWrapper {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.progressTrack {
+  height: 4px;
+  background: #eee;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+}
+
+.progressFill {
+  height: 100%;
+  background: $primary;
+  transition: width 0.4s ease;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.stepCircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #eee;
+  color: #666;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.active {
+  background: $primary;
+  color: $bg-white;
+}
+
+.imgWrap {
+  flex: 0 0 100%;
+  max-width: 100%;
+  // padding-right: calc(var(--bs-gutter-x) * 0.5);
+  display: flex;
+  gap: 20px;
+  .imageBox {
+    flex: 1;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+  }
+}
+
+/* ===== CARDS ===== */
+
+.divider {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+    border-bottom: rgba(223, 65, 3, 0.5) 1px solid;
+    padding-bottom: 2rem;
+  }
+  h5 {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    span {
+      padding: 0.25rem 0.7rem;
+      border-radius: 0.5rem;
+      font-size: 0.65rem;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+      font-weight: 600;
+      &.reqired {
+        color: $primary;
+        background: $secondary-4;
+      }
+      &.fixed {
+        color: $blue;
+        background: $bg-3-light;
+      }
+      &.optional {
+        color: $dark-3;
+        background: $bg-3-light;
+      }
+    }
+  }
+  p {
+    // margin-bottom: 1rem;
+  }
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+}
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  // grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.imageCard {
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  // border: 3px solid transparent;
+  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  &.largeCard {
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+    .cardLabel {
+      color: $bg-white;
+      font-size: 1rem;
+    }
+    .codeLabel {
+      color: lightGray;
+      font-size: 0.875rem;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-height: 270px;
+    object-fit: cover;
+    min-height: 150px;
+    &.padImg {
+      width: 70%;
+      display: inline-block;
+      margin-top: 1.5rem;
+    }
+  }
+  &.selected {
+    box-shadow: rgba(223, 65, 3, 0.5) 0 0 0 3px;
+    transform: translateY(-6px);
+  }
+  &:hover {
+    transform: translateY(-6px);
+  }
+}
+
+.cardLabel {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.cardPrice {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4caf50;
+  margin-top: 2px;
+}
+.codeLabel {
+  font-weight: 400;
+  font-size: 0.775rem;
+  color: $primary;
+}
+.cardInfo {
+  // background: $dark;
+  color: $bg-white;
+  text-align: center;
+  padding: 16px;
+  .iconImg {
+    background: $primary;
+    border-radius: 0.5rem;
+    width: 46px;
+    height: 46px;
+    margin: -43px auto 12px;
+    position: relative;
+    padding: 10px;
+    svg {
+      width: 100%;
+      height: 100%;
+      color: #eee;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/* ===== NAV ===== */
+.nav {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.next {
+  background: $primary;
+  border: none;
+  font-weight: 600;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+.previous {
+  background: $yellow;
+  border: none;
+  color: $dark-2;
+  font-weight: 600;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+}
+
+.productCard {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: none;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 42px -14px;
+  &.selected {
+    box-shadow: rgba(223, 65, 3, 0.5) 0 0 0 3px;
+  }
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.badgeCustom {
+  border-radius: 1.25rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badgeBg {
+  border-radius: 0.6rem;
+  padding: 0.453rem 0.8rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #333;
+}
+.textMuted {
+  color: $gray-2;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.cardImage {
+  height: 260px;
+  display: block;
+  object-fit: cover;
+}
+
+.cardBody {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: $bg-white;
+}
+
+.cardSubtitle {
+  font-size: 1rem;
+  color: $lightGray-2;
+}
+
+.cardPrice {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: $primary;
+}
+
+.featureList {
+  margin-bottom: 1rem;
+  color: $dark-2;
+  font-weight: 500;
+  svg {
+    color: $bg-green;
+  }
+}
+
+.featureItem {
+  font-size: 0.95rem;
+  color: $lightGray;
+}
+
+.viewDetails {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: $primary;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.save {
+  background-color: $bg-green !important;
+}
+
+.premium {
+  background-color: $primary !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .outdoorKitchens {
+    padding: 2rem 0;
+  }
+}
+
+// +++++++++++++++++ 2nd part of recent edits +++++++++++++++++
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
+.gridDoorConfig {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 15px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  // padding: 12px;
+  cursor: pointer;
+  // border: 2px solid transparent;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  padding: 0.775rem;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+  &.active {
+    box-shadow: rgba(223, 65, 3, 0.5) 0 0 0 3px;
+    transform: translateY(-4px);
+  }
+}
+
+.active {
+  border: 2px solid #000;
+}
+
+.colorBox {
+  height: 120px;
+  border-radius: 12px;
+  position: relative;
+}
+
+.check {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: $primary;
+  color: $bg-white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.info {
+  margin-top: 10px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.code {
+  font-size: 12px;
+  color: $primary;
+}
+.infoWrap {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+.reviewContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 1rem;
+  border-radius: 1rem;
+  .reviewImg {
+    flex: 0 0 45%;
+    max-width: 45%;
+    .reviewImgPlaceholder {
+      width: 100%;
+      height: 330px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+.reviewContent {
+  flex: 0 0 55%;
+  max-width: 55%;
+  color: $bg-white;
+  padding-left: 1.5rem;
+}
+.reviewContentInnerTop {
+  h5 {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+    span {
+      color: $primary;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+  }
+  p {
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: $lightGray-2;
+  }
+}
+
+.reviewContentInnerBottom {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1rem;
+}
+.RevViewDetails {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 1rem;
+  margin: 0.355rem 0;
+  h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.3rem;
+  }
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $primary;
+    margin-bottom: 0.3rem;
+  }
+  p {
+    font-size: 0.875rem;
+    color: $lightGray-2;
+  }
+  small {
+    font-size: 0.775rem;
+    color: $lightGray-3;
+    font-weight: 500;
+  }
+}
+.formGroup {
+  margin-bottom: 1rem;
+}
+.informationBtm {
+  flex: 0 0 100%;
+  max-width: 100%;
+  margin: 1rem 0 0;
+  p {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: $lightGray-2;
+  }
+}
+.formGroup {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+}
+.formInput {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: $bg-white;
+  font-size: 1rem;
+  option {
+    background: #111;
+  }
+  &::placeholder {
+    color: $lightGray-2;
+  }
+}
+.messageInput {
+  height: 236px;
+  resize: none;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: $bg-white;
+  font-size: 1rem;
+}
+.submitBtn {
+  background: $primary;
+  border: none;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+  color: $bg-white;
+  font-size: 1rem;
+  font-weight: 600;
+  display: block;
+  width: 100%;
+}
+
+.summary {
+  position: sticky;
+  top: 10rem;
+  background: rgba(248, 152, 63, 0.07);
+  padding: 2rem;
+  border-radius: 1rem;
+  h4 {
+    color: $primary;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    border-bottom: rgba(223, 65, 3, 0.5) 1px solid;
+    padding-bottom: 1rem;
+  }
+  p {
+    font-weight: 700;
+    span {
+      font-weight: 600;
+      color: $primary;
+    }
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+/* ===== FLOATING PRICE BAR ===== */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.floatingPrice {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 2px solid $primary;
+  box-shadow: 0 -4px 32px rgba(247, 80, 47, 0.18);
+  animation: slideUp 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+  padding: 0.85rem 1.5rem;
+}
+
+.floatingPriceInner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.floatingPriceLeft,
+.floatingPriceRight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.floatingPriceSublabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.floatingPriceModelName {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.floatingPriceDivider {
+  width: 1px;
+  height: 40px;
+  background: rgba(247, 80, 47, 0.35);
+  flex-shrink: 0;
+}
+
+.floatingPriceValue {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: $primary;
+  letter-spacing: 0.01em;
+}
+
+@media only screen and (max-width: 480px) {
+  .floatingPriceInner {
+    gap: 1.25rem;
+  }
+  .floatingPriceModelName,
+  .floatingPriceValue {
+    font-size: 0.95rem;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.radioLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 14px;
+  position: relative;
+}
+
+/* Hide native radio */
+.radioInput {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Custom radio circle */
+.customRadio {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+/* Inner dot */
+.customRadio::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: $primary;
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+/* Checked state */
+/* ===== APPLIANCE OPTION CARDS ===== */
+.applianceGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+  gap: 12px;
+  margin-top: 1rem;
+}
+
+.applianceCard {
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.11);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+  }
+
+  &.applianceSelected {
+    border-color: $primary;
+    background: rgba(223, 65, 3, 0.1);
+
+    .applianceName {
+      color: $primary;
+    }
+  }
+}
+
+.applianceCheck {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: $primary;
+  color: $bg-white;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.applianceCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.applianceName {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #fff;
+  line-height: 1.3;
+  padding-right: 1.75rem;
+  transition: color 0.2s ease;
+}
+
+.applianceSize {
+  font-size: 0.73rem;
+  color: rgba(255, 255, 255, 0.42);
+  font-weight: 400;
+  margin-top: 1px;
+}
+
+.appliancePriceBadge {
+  margin-top: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+// Design notes panel
+.designNotes {
+  margin-top: 2.5rem;
+  border-radius: 10px;
+  background: #111;
+  border-left: 3px solid $primary;
+  padding: 1.4rem 1.6rem;
+}
+
+.designNotesHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.designNotesDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $primary;
+  flex-shrink: 0;
+}
+
+.designNotesTitle {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $primary;
+}
+
+.designNotesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+
+  li {
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.6;
+    padding-left: 1rem;
+    position: relative;
+
+    &::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: $primary;
+    }
+
+    strong {
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 600;
+    }
+  }
+}
+
+.designNotesTag {
+  display: inline-block;
+  margin-left: 6px;
+  margin-top: 4px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: rgba(223, 65, 3, 0.18);
+  color: $primary;
+  border: 1px solid rgba(223, 65, 3, 0.3);
+  vertical-align: middle;
+}
+
+.priceIncluded {
+  color: #4caf50;
+}
+
+.priceAdded {
+  color: $primary;
+}
+
+.priceReduced {
+  color: #4caf50;
+}
+
+.radioInput:checked + .customRadio {
+  border-color: $primary;
+  box-shadow: 0 0 0 3px rgba(223, 65, 3, 0.2);
+}
+
+.radioInput:checked + .customRadio::after {
+  transform: scale(1);
+}
+
+.radioText {
+  user-select: none;
+}
+@media only screen and (max-width: 600px) {
+  .grid,
+  .gridDoorConfig {
+    grid-template-columns: 1fr; /* 100% width */
+    gap: 15px;
+  }
+  .divider {
+    padding: 0.775rem;
+    h5 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+  .summary {
+    margin-top: 1rem;
+    padding: 1rem;
+    top: 10rem;
+    p {
+      font-weight: 600;
+      font-size: 0.875rem;
+      span {
+        font-weight: 600;
+      }
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

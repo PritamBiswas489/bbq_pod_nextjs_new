@@ -9,7 +9,6 @@ import { products } from "@/utils/exteriorInteriorFinish";
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import { setModel } from "@/store/configurator.slice";
 import { productsPrice } from "@/utils/productsPrice";
-
  
 const StepModel = ({  }) => {
   const { t } = useTranslation("common");
