@@ -63,7 +63,7 @@ export default function ConfigSummary({isAero, totalPrice}) {
       {summaryTotalPrice && (
         <div className={styles.summaryTotalPrice}>
           <span className={styles.summaryTotalLabel}>Total Price</span>
-          <span className={styles.summaryTotalValue}>€{summaryTotalPrice}</span>
+          <span className={styles.summaryTotalValue}>{summaryTotalPrice} €</span>
         </div>
       )}
      {selectedModel &&  <p>

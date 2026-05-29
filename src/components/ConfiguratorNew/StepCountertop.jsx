@@ -92,7 +92,7 @@ const StepCountertop = () => {
                       <p className={styles.name}>{c.colorName}</p>
                        {sinteredStonePriceValue > 0 && (
                         <p className={`${styles.cardPrice} ${styles.priceAdded}`}>
-                          + €{sinteredStonePriceValue.toLocaleString()}
+                          + {sinteredStonePriceValue.toLocaleString()}€
                         </p>
                       )}
                     </div>

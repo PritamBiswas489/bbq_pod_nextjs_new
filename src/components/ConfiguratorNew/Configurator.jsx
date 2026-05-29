@@ -221,7 +221,7 @@ export default function Configurator() {
           <div className={styles.floatingPriceDivider} />
           <div className={styles.floatingPriceRight}>
             <span className={styles.floatingPriceSublabel}>Total Price</span>
-            <span className={styles.floatingPriceValue}>€{selectedProductPrice?.toLocaleString()}</span>
+            <span className={styles.floatingPriceValue}>{selectedProductPrice?.toLocaleString()} €</span>
           </div>
           <div className={styles.floatingPriceDivider} />
           <div className={styles.floatingPriceActions}>

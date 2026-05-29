@@ -51,7 +51,7 @@ const StepDoorConfig = () => {
                 <div className={styles.cardInfo}>
                   <div className={styles.cardLabel}>{item.title}</div>
                   {item.id === "roller_style" && rollerReduction > 0 && (
-                    <div className={styles.cardPrice}>− €{rollerReduction.toLocaleString()}</div>
+                    <div className={styles.cardPrice}>− {rollerReduction.toLocaleString()}€</div>
                   )}
                 </div>
 

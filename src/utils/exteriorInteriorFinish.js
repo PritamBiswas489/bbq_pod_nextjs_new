@@ -367,7 +367,7 @@ export const   products = [
     descriptionKey: "coreProductDescription",
     priceKey: "coreProductPrice".replace("{price}", productsPrice["CORE"]),
     featuresKeys: ["coreFeature1", "coreFeature2", "coreFeature3"],
-    image: require("@/assets/front/images/outdoor/hero-1.jpg").default.src,
+    image: require("@/assets/front/images/newProductImages/core.jpg").default.src,
   },
   {
     badges: [],
@@ -375,7 +375,7 @@ export const   products = [
     descriptionKey: "primeProductDescription",
     priceKey: "primeProductPrice".replace("{price}", productsPrice["PRIME"]),
     featuresKeys: ["primeFeature1", "primeFeature2", "primeFeature3"],
-    image: require("@/assets/front/images/outdoor/hero-2.jpg").default.src,
+    image: require("@/assets/front/images/newProductImages/prime.jpg").default.src,
   },
   {
     badges: [],
@@ -383,7 +383,7 @@ export const   products = [
     descriptionKey: "apexProductDescription",
     priceKey: "apexProductPrice".replace("{price}", productsPrice["APEX"]),
     featuresKeys: ["apexFeature1", "apexFeature2", "apexFeature3"],
-    image: require("@/assets/front/images/outdoor/hero-3.webp").default.src,
+    image: require("@/assets/front/images/newProductImages/Apex.jpg").default.src,
   },
   {
     badges: [],
@@ -391,7 +391,7 @@ export const   products = [
     descriptionKey: "pinnacleProductDescription",
     priceKey: "pinnacleProductPrice".replace("{price}", productsPrice["PINNACLE"]),
     featuresKeys: ["pinnacleFeature1", "pinnacleFeature2", "pinnacleFeature3"],
-    image: require("@/assets/front/images/outdoor/hero-4.jpg").default.src,
+    image: require("@/assets/front/images/newProductImages/Pinnacle.jpg").default.src,
   },
   {
     badges: [],
@@ -399,7 +399,7 @@ export const   products = [
     descriptionKey: "aeroProductDescription",
     priceKey: "aeroProductPrice".replace("{price}", productsPrice["AERO"]),
     featuresKeys: ["aeroFeature1", "aeroFeature2", "aeroFeature3"],
-    image: require("@/assets/front/images/outdoor/hero-5.webp").default.src,
+    image: require("@/assets/front/images/newProductImages/Aero.jpg").default.src,
   },
 ];
 
@@ -763,10 +763,7 @@ export const fridgeStyle = {
       key: "Silver_Glass",
       priceAddition: 0,
     },
-    {
-      key: "Black_Glass",
-      priceAddition: 0,
-    },
+
     {
       key: "Stainless_Steel",
       priceAddition: 0,
