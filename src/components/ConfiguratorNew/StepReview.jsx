@@ -50,6 +50,7 @@ const StepReview = ({ backtoStart }) => {
   );
   const selectedApplianceGas = useAppSelector((state) => state.configurator.applianceGas);
   const selectedApplianceExtractor = useAppSelector((state) => state.configurator.applianceExtractor);
+  const selectedApplianceTv = useAppSelector((state) => state.configurator.applianceTv);
   const selectedApplianceSink = useAppSelector((state) => state.configurator.applianceSink);
   const selectedApplianceFridge = useAppSelector((state) => state.configurator.applianceFridge);
 
@@ -116,6 +117,7 @@ const StepReview = ({ backtoStart }) => {
         ? `${t(selectedApplianceGas.key)}${selectedApplianceGas.size ? ` — ${selectedApplianceGas.size}` : ''}`
         : undefined,
       applianceExtractor: selectedApplianceExtractor ? t(selectedApplianceExtractor.key) : undefined,
+      applianceTv: selectedApplianceTv ? t(selectedApplianceTv.key) : undefined,
       applianceSink: selectedApplianceSink ? t(selectedApplianceSink.key) : undefined,
       applianceFridge: selectedApplianceFridge ? t(selectedApplianceFridge.key) : undefined,
       installationRequirements: selectedInstallationRequirementOptions.map(

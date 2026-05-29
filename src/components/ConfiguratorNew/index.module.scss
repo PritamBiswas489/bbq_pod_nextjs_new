@@ -619,6 +619,32 @@
     }
   }
 }
+
+.summaryTotalPrice {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(247, 80, 47, 0.12);
+  border: 1px solid rgba(247, 80, 47, 0.35);
+}
+
+.summaryTotalLabel {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+}
+
+.summaryTotalValue {
+  font-size: 1.95rem;
+  font-weight: 800;
+  line-height: 1;
+  color: $primary;
+}
 /* ===== FLOATING PRICE BAR ===== */
 @keyframes slideUp {
   from {
@@ -647,7 +673,7 @@
 }
 
 .floatingPriceInner {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -693,10 +719,54 @@
   letter-spacing: 0.01em;
 }
 
-@media only screen and (max-width: 480px) {
-  .floatingPriceInner {
-    gap: 1.25rem;
+.floatingPriceActions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+
+  .previous,
+  .next {
+    margin: 0;
+    min-width: 120px;
+    padding: 0.5rem 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
   }
+}
+
+@media only screen and (max-width: 480px) {
+  .floatingPrice {
+    padding: 0.75rem 0.8rem;
+  }
+
+  .floatingPriceInner {
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .floatingPriceDivider {
+    display: none;
+  }
+
+  .floatingPriceLeft,
+  .floatingPriceRight,
+  .floatingPriceActions {
+    width: 100%;
+  }
+
+  .floatingPriceActions {
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    .previous,
+    .next {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+
   .floatingPriceModelName,
   .floatingPriceValue {
     font-size: 0.95rem;
@@ -948,6 +1018,16 @@
     margin-top: 1rem;
     padding: 1rem;
     top: 10rem;
+
+    .summaryTotalPrice {
+      margin-bottom: 0.8rem;
+      padding: 0.75rem 0.85rem;
+    }
+
+    .summaryTotalValue {
+      font-size: 1.6rem;
+    }
+
     p {
       font-weight: 600;
       font-size: 0.875rem;

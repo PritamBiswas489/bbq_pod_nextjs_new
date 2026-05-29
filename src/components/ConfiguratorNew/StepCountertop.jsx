@@ -62,6 +62,7 @@ const StepCountertop = () => {
                     </div>
                     <div className={styles.info}>
                       <p className={styles.name}>{c.colorName}</p>
+                     
                     </div>
                   </div>
                 ))}
@@ -69,7 +70,7 @@ const StepCountertop = () => {
             </div>
       
        <div className={styles.divider}>
-              <h5>{t('sintered_stone').replace('{price}', sinteredStonePriceValue)} ({countertopSinteredStoneTitle.length})</h5>
+              <h5>{t('sintered_stone')}</h5>
               <div className={styles.grid}>
                 {countertopSinteredStoneTitle.map((c) => (
                   <div
@@ -89,6 +90,11 @@ const StepCountertop = () => {
                     </div>
                     <div className={styles.info}>
                       <p className={styles.name}>{c.colorName}</p>
+                       {sinteredStonePriceValue > 0 && (
+                        <p className={`${styles.cardPrice} ${styles.priceAdded}`}>
+                          + €{sinteredStonePriceValue.toLocaleString()}
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}

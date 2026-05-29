@@ -27,6 +27,7 @@ export default async function handler(req, res) {
     const bbqStyle = req.body?.bbqStyle;
     const applianceGas = req.body?.applianceGas;
     const applianceExtractor = req.body?.applianceExtractor;
+    const applianceTv = req.body?.applianceTv;
     const applianceSink = req.body?.applianceSink;
     const applianceFridge = req.body?.applianceFridge;
     const installationRequirements = req.body?.installationRequirements;
@@ -55,6 +56,7 @@ export default async function handler(req, res) {
     htmlBody = htmlBody.replace(/\[\s*bbq_style\s*\]/g, bbqStyle );
     htmlBody = htmlBody.replace(/\[\s*appliance_gas\s*\]/g, applianceGas ?? '' );
     htmlBody = htmlBody.replace(/\[\s*appliance_extractor\s*\]/g, applianceExtractor ?? '' );
+    htmlBody = htmlBody.replace(/\[\s*appliance_tv\s*\]/g, applianceTv ?? '' );
     htmlBody = htmlBody.replace(/\[\s*appliance_sink\s*\]/g, applianceSink ?? '' );
     htmlBody = htmlBody.replace(/\[\s*appliance_fridge\s*\]/g, applianceFridge ?? '' );
     htmlBody = htmlBody.replace(/\[\s*additional_notes\s*\]/g, additionalNotes );

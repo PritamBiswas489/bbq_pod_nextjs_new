@@ -34,6 +34,7 @@ import { productsPrice } from "./productsPrice";
 
 import liftup from "@/assets/front/images/liftup.png";
 import roller from "@/assets/front/images/flrr.png";
+import metalBlind from "@/assets/front/images/metalBlind.png";
 
 import charcoal from "@/assets/front/images/charcoal.jpg";
 import gasStove from "@/assets/front/images/GasStove.png";
@@ -290,6 +291,12 @@ export const doorCongiguration = [
     id: "roller_style",
     img: roller.src,
   },
+
+  {
+    title: "Metal Blind",
+    id: "metal_blind",
+    img: metalBlind.src,
+  },
 ];
 
 export const bbqStyle = [
@@ -412,8 +419,8 @@ export const gasOptions = {
     },
     {
       key: "Big_Green_Egg_Kamado",
-      size: "18.1 inch",
-      priceAddition: 2099.99,
+      size: "22 inch",
+      priceAddition: 1799.99,
     },
   ],
   PRIME: [
@@ -429,8 +436,8 @@ export const gasOptions = {
     },
     {
       key: "Big_Green_Egg_Kamado",
-      size: "18.1 inch",
-      priceAddition: 2099.99,
+      size: "22 inch",
+      priceAddition: 1799.99,
     },
   ],
   
@@ -457,8 +464,8 @@ export const gasOptions = {
     },
     {
       key: "Big_Green_Egg_Kamado",
-      size: "18.1 inch",
-      priceAddition: 2099.99,
+      size: "22 inch",
+      priceAddition: 1799.99,
     },
     {
       key: "Gas_Grill_and_Kamado",
@@ -467,17 +474,17 @@ export const gasOptions = {
     },
     {
       key: "Gas_Grill_and_Big_Green_Egg",
-      size: "30 inch",
-      priceAddition: 2499.99,
+      size: "30 inch + 22 inch",
+      priceAddition: 2099.99,
     },
     {
       key: "Gas_Grill_and_Small_Kamado",
-      size: "42 inch",
+      size: "42 inch + 18 inch",
       priceAddition: 450,
     },
     {
       key: "Gas_Grill_with_Hob_and_Small_Kamado",
-      size: "46 inch",
+      size: "46 inch + 18 inch",
       priceAddition: 450,
     },
   ],
@@ -504,8 +511,8 @@ export const gasOptions = {
     },
     {
       key: "Big_Green_Egg_Kamado",
-      size: "18.1 inch",
-      priceAddition: 2099.99,
+      size: "22 inch",
+      priceAddition: 1799.99,
     },
     {
       key: "Gas_Grill_and_Kamado",
@@ -514,17 +521,17 @@ export const gasOptions = {
     },
     {
       key: "Gas_Grill_and_Big_Green_Egg",
-      size: "30 inch",
-      priceAddition: 2499.99,
+      size: "30 inch + 22 inch",
+      priceAddition: 2099.99,
     },
     {
       key: "Gas_Grill_and_Small_Kamado",
-      size: "42 inch",
+      size: "42 inch + 18 inch",
       priceAddition: 450,
     },
     {
       key: "Gas_Grill_with_Hob_and_Small_Kamado",
-      size: "46 inch",
+      size: "46 inch + 18 inch",
       priceAddition: 450,
     },
   ],
@@ -551,8 +558,8 @@ export const gasOptions = {
     },
     {
       key: "Big_Green_Egg_Kamado",
-      size: "18.1 inch",
-      priceAddition: 2099.99,
+      size: "22 inch",
+      priceAddition: 1799.99,
     },
   ],
 };
@@ -571,11 +578,120 @@ export const extractorAndTv = {
       key: "TV_32_inch",
       priceAddition: 0,
     },
+    {
+      key: "No_TV_Extractor",
+      priceAddition: -125,
+    },
   ],
-  PRIME: [],
+  PRIME: [
+  
+  ],
   APEX: [],
   PINNACLE: [],
   AERO: [],
+}
+export const onlyextractor = {
+  CORE:[],
+  PRIME:  [
+    {
+      key: "Extractor_Hood_Low",
+      priceAddition: 0,
+    },
+    {
+      key: "Extractor_Hood_Ceiling",
+      priceAddition: 0,
+    },
+    {
+      key: "No_Extractor",
+      priceAddition: -125,
+    },
+  ],
+  APEX:[
+      {
+      key: "Extractor_Hood_Low",
+      priceAddition: 0,
+    },
+    {
+      key: "Extractor_Hood_Ceiling",
+      priceAddition: 0,
+    },
+    {
+      key: "No_Extractor",
+      priceAddition: -125,
+    },
+  ],
+  PINNACLE: [
+     {
+      key: "Extractor_Hood_Low",
+      priceAddition: 0,
+    },
+    {
+      key: "Extractor_Hood_Ceiling",
+      priceAddition: 0,
+    },
+    {
+      key: "No_Extractor",
+      priceAddition: -125,
+    },
+  ],
+  AERO: [
+     {
+      key: "Extractor_Hood_Low",
+      priceAddition: 0,
+    },
+    {
+      key: "Extractor_Hood_Ceiling",
+      priceAddition: 0,
+    },
+    {
+      key: "No_Extractor",
+      priceAddition: -125,
+    },
+  ],
+
+}
+export const onlyTv = {
+  CORE:[],
+  PRIME: [
+    {
+      key: "TV_32_inch",
+      priceAddition: 0,
+    },
+    {
+      key: "No_TV",
+      priceAddition: -250,
+    },
+  ],
+  APEX:[
+    {
+      key: "TV_43_inch",
+      priceAddition: 0,
+    },
+    {
+      key: "No_TV",
+      priceAddition: -250,
+    },
+  ],
+  PINNACLE: [
+    {
+      key: "TV_43_inch",
+      priceAddition: 0,
+    },
+    {
+      key: "No_TV",
+      priceAddition: -250,
+    },
+  ],
+  AERO: [
+    {
+      key: "TV_43_inch",
+      priceAddition: 0,
+    },
+    {
+      key: "No_TV",
+      priceAddition: -250,
+    },
+  ],
 }
 
 export const sinkOptions = {
@@ -589,10 +705,46 @@ export const sinkOptions = {
       priceAddition: -100,
     },
   ],
-  PRIME: [],
-  APEX: [],
-  PINNACLE: [],
-  AERO: [],
+  PRIME: [
+    {
+      key: "Sink_Included",
+      priceAddition: 0,
+    },
+    {
+      key: "Remove_Sink",
+      priceAddition: -100,
+    },
+  ],
+  APEX: [
+     {
+      key: "Sink_Included",
+      priceAddition: 0,
+    },
+    {
+      key: "Remove_Sink",
+      priceAddition: -100,
+    },
+  ],
+  PINNACLE: [
+    {
+      key: "Sink_Included",
+      priceAddition: 0,
+    },
+    {
+      key: "Remove_Sink",
+      priceAddition: -100,
+    },
+  ],
+  AERO: [
+     {
+      key: "Sink_Included",
+      priceAddition: 0,
+    },
+    {
+      key: "Remove_Sink",
+      priceAddition: -100,
+    },
+  ],
 } 
 
 export const fridgeStyle = {
@@ -608,7 +760,11 @@ export const fridgeStyle = {
   ],
   PRIME: [
     {
-      key: "Glass",
+      key: "Silver_Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Black_Glass",
       priceAddition: 0,
     },
     {
@@ -630,10 +786,27 @@ export const fridgeStyle = {
       priceAddition: 0,
     },
   ],
-  PINNACLE: [],
+  PINNACLE: [
+     {
+      key: "Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Black_Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Stainless_Steel",
+      priceAddition: 0,
+    },
+  ],
   AERO: [
     {
-      key: "Glass",
+      key: "Silver_Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Black_Glass",
       priceAddition: 0,
     },
     {

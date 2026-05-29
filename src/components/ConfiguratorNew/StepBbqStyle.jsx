@@ -5,12 +5,15 @@ import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import {
   setApplianceGas,
   setApplianceExtractor,
+  setApplianceTv,
   setApplianceSink,
   setApplianceFridge,
 } from "@/store/configurator.slice";
 import {
   gasOptions,
   extractorAndTv,
+  onlyextractor,
+  onlyTv,
   sinkOptions,
   fridgeStyle,
 } from "@/utils/exteriorInteriorFinish";
@@ -23,7 +26,10 @@ const StepBbqStyle = () => {
   const modelKey = data.model?.replace("ProductName", "").toUpperCase() || "CORE";
 
   const gasOpts = gasOptions[modelKey] || [];
-  const extractorOpts = extractorAndTv[modelKey] || [];
+  const combinedExtractorTvOpts = extractorAndTv[modelKey] || [];
+  const extractorOpts = onlyextractor[modelKey] || [];
+  const tvOpts = onlyTv[modelKey] || [];
+  const showSeparateExtractorTv = extractorOpts.length > 0 || tvOpts.length > 0;
   const sinkOpts = sinkOptions[modelKey] || [];
   const fridgeOpts = fridgeStyle[modelKey] || [];
 
@@ -41,7 +47,7 @@ const StepBbqStyle = () => {
       <div className={styles.divider}>
         <h5>
           {t(titleKey)}
-          {badgeKey && <span className={styles[badgeType]}>{t(badgeKey)}</span>}
+          {badgeKey && <span className={styles[badgeType]}>{t('SelectOne')}</span>}
         </h5>
         <div className={styles.applianceGrid}>
           {options.map((opt, idx) => {
@@ -92,13 +98,35 @@ const StepBbqStyle = () => {
         (opt) => dispatch(setApplianceGas(opt))
       )}
 
-      {renderSection(
-        "extractor_tv_title",
-        "required_badge",
-        "reqired",
-        extractorOpts,
-        data.applianceExtractor,
-        (opt) => dispatch(setApplianceExtractor(opt))
+      {showSeparateExtractorTv ? (
+        <>
+          {renderSection(
+            "extractor_title",
+            "required_badge",
+            "reqired",
+            extractorOpts,
+            data.applianceExtractor,
+            (opt) => dispatch(setApplianceExtractor(opt))
+          )}
+
+          {renderSection(
+            "tv_title",
+            "required_badge",
+            "reqired",
+            tvOpts,
+            data.applianceTv,
+            (opt) => dispatch(setApplianceTv(opt))
+          )}
+        </>
+      ) : (
+        renderSection(
+          "extractor_tv_title",
+          "required_badge",
+          "reqired",
+          combinedExtractorTvOpts,
+          data.applianceExtractor,
+          (opt) => dispatch(setApplianceExtractor(opt))
+        )
       )}
 
       {renderSection(
@@ -118,29 +146,7 @@ const StepBbqStyle = () => {
         data.applianceFridge,
         (opt) => dispatch(setApplianceFridge(opt))
       )}
-      <div className={styles.designNotes}>
-        <div className={styles.designNotesHeader}>
-          <span className={styles.designNotesDot} />
-          <span className={styles.designNotesTitle}>{t("designNotes_title")}</span>
-        </div>
-        <ul className={styles.designNotesList}>
-          <li>
-            <strong>{t("designNotes_premiumTitle")}</strong> — {t("designNotes_premiumDesc")}
-          </li>
-          <li>
-            <strong>{t("designNotes_cardsTitle")}</strong> — {t("designNotes_cardsDesc")}
-          </li>
-          <li>
-            <strong>{t("designNotes_tagsTitle")}</strong> — {t("designNotes_tagsDesc")}
-            <span className={styles.designNotesTag}>{t("designNotes_tagGasCharcoal")}</span>
-            <span className={styles.designNotesTag}>{t("designNotes_tagMostPopular")}</span>
-            <span className={styles.designNotesTag}>{t("designNotes_tagPremiumOption")}</span>
-          </li>
-          <li>
-            <strong>{t("designNotes_pricingTitle")}</strong> — {t("designNotes_pricingDesc")}
-          </li>
-        </ul>
-      </div>
+      
     </div>
   );
 };

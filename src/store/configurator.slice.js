@@ -9,6 +9,7 @@ const initialState = {
       bbqStyle: null,
       applianceGas: null,
       applianceExtractor: null,
+    applianceTv: null,
       applianceSink: null,
       applianceFridge: null,
       installationRequirements: {},
@@ -43,6 +44,9 @@ export const configuratorSlice = createSlice({
         setApplianceExtractor: (state, action) => {
             state.applianceExtractor = action.payload;
         },
+        setApplianceTv: (state, action) => {
+            state.applianceTv = action.payload;
+        },
         setApplianceSink: (state, action) => {
             state.applianceSink = action.payload;
         },
@@ -60,5 +64,5 @@ export const configuratorSlice = createSlice({
         },
     },
 });
-export const { setModel, setColor, setInterior, setCounterTop, setDoorConfig, setBBQStyle, setApplianceGas, setApplianceExtractor, setApplianceSink, setApplianceFridge, setInstallationRequirements, setProductTotalPrice, setCheckoutData } = configuratorSlice.actions;
+export const { setModel, setColor, setInterior, setCounterTop, setDoorConfig, setBBQStyle, setApplianceGas, setApplianceExtractor, setApplianceTv, setApplianceSink, setApplianceFridge, setInstallationRequirements, setProductTotalPrice, setCheckoutData } = configuratorSlice.actions;
 export default configuratorSlice.reducer;

@@ -15,8 +15,9 @@ import { bbqStyle } from "@/utils/exteriorInteriorFinish";
 
 import { questions } from "@/utils/exteriorInteriorFinish";
 
-export default function ConfigSummary({isAero}) {
+export default function ConfigSummary({isAero, totalPrice}) {
   const selectedModel = useAppSelector((state) => state.configurator.model);
+  const selectedProductPrice = useAppSelector((state) => state.configurator.productTotalPrice);
   const selectedColor = useAppSelector((state) => state.configurator.color);
   const selectedInterior = useAppSelector((state) => state.configurator.interior);
   const selectedCountertop = useAppSelector((state) => state.configurator.counterTop);
@@ -24,6 +25,7 @@ export default function ConfigSummary({isAero}) {
   const selectedBBQStyle = useAppSelector((state) => state.configurator.bbqStyle);
   const selectedApplianceGas = useAppSelector((state) => state.configurator.applianceGas);
   const selectedApplianceExtractor = useAppSelector((state) => state.configurator.applianceExtractor);
+  const selectedApplianceTv = useAppSelector((state) => state.configurator.applianceTv);
   const selectedApplianceSink = useAppSelector((state) => state.configurator.applianceSink);
   const selectedApplianceFridge = useAppSelector((state) => state.configurator.applianceFridge);
 
@@ -47,6 +49,7 @@ export default function ConfigSummary({isAero}) {
   const additionalNotes = installationRequirements.additionalNotes || "";
 
   const { t } = useTranslation("common");
+  const summaryTotalPrice = totalPrice ?? selectedProductPrice?.toLocaleString();
 
   const ucFirst = (str) => {
     if (!str) return str;
@@ -57,6 +60,12 @@ export default function ConfigSummary({isAero}) {
     selectedModel || selectedInterior || selectedColor || selectedCountertop || selectedDoorConfig || selectedBBQStyle || (selectedInstallationRequirementOptions && selectedInstallationRequirementOptions.length > 0) || additionalNotes ? (
     <div className={styles.summary}>
       <h4>{t('your_config')}</h4>
+      {summaryTotalPrice && (
+        <div className={styles.summaryTotalPrice}>
+          <span className={styles.summaryTotalLabel}>Total Price</span>
+          <span className={styles.summaryTotalValue}>€{summaryTotalPrice}</span>
+        </div>
+      )}
      {selectedModel &&  <p>
         {t('model')} <span>{ucFirst(t(selectedModel || '--'))}</span>
       </p>}
@@ -92,7 +101,12 @@ export default function ConfigSummary({isAero}) {
       )}
       {selectedApplianceExtractor && (
         <p>
-          {t('extractor_tv_title')} <span>{ucFirst(t(selectedApplianceExtractor.key))}</span>
+          {t('extractor_title')} <span>{ucFirst(t(selectedApplianceExtractor.key))}</span>
+        </p>
+      )}
+      {selectedApplianceTv && (
+        <p>
+          {t('tv_title')} <span>{ucFirst(t(selectedApplianceTv.key))}</span>
         </p>
       )}
       {selectedApplianceSink && (

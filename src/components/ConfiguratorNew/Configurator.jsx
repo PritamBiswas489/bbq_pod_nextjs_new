@@ -17,8 +17,8 @@ import ConfigSummary from "./ConfigSummary";
 import StepBbqStyle from "./StepBbqStyle";
 import StepInstallationRequirements from "./StepInstallationRequirements";
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import {setModel, setColor, setInterior, setCounterTop, setDoorConfig, setBBQStyle, setApplianceGas, setApplianceExtractor, setApplianceSink, setApplianceFridge, setInstallationRequirements, setCheckoutData, setProductTotalPrice} from "@/store/configurator.slice";
-import { products, extractorAndTv, sinkOptions, fridgeStyle } from "@/utils/exteriorInteriorFinish";
+import {setModel, setColor, setInterior, setCounterTop, setDoorConfig, setBBQStyle, setApplianceGas, setApplianceExtractor, setApplianceTv, setApplianceSink, setApplianceFridge, setInstallationRequirements, setCheckoutData, setProductTotalPrice} from "@/store/configurator.slice";
+import { products, extractorAndTv, onlyextractor, onlyTv, sinkOptions, fridgeStyle } from "@/utils/exteriorInteriorFinish";
 import { productsPrice, sinteredStonePrice, rollerBlindPriceReduction } from "@/utils/productsPrice";
 import { countertopSinteredStoneTitle } from "@/utils/exteriorInteriorFinish";
 
@@ -62,6 +62,9 @@ export default function Configurator() {
     if (data.applianceExtractor) {
       totalPrice += data.applianceExtractor.priceAddition || 0;
     }
+    if (data.applianceTv) {
+      totalPrice += data.applianceTv.priceAddition || 0;
+    }
     if (data.applianceSink) {
       totalPrice += data.applianceSink.priceAddition || 0;
     }
@@ -70,7 +73,7 @@ export default function Configurator() {
     }
     
     dispatch(setProductTotalPrice(totalPrice));
-  },  [data.model, data.color, data.interior, data.counterTop, data.doorConfig, data.applianceGas, data.applianceExtractor, data.applianceSink, data.applianceFridge, data.installationRequirements]);
+  },  [data.model, data.color, data.interior, data.counterTop, data.doorConfig, data.applianceGas, data.applianceExtractor, data.applianceTv, data.applianceSink, data.applianceFridge, data.installationRequirements]);
 
   
 
@@ -87,24 +90,36 @@ export default function Configurator() {
         return data.counterTop;
       case 4: {
         const modelKey = data.model?.replace("ProductName", "").toUpperCase();
-        const hasExtractor = (extractorAndTv[modelKey] || []).length > 0;
+        const hasCombinedExtractorTv = (extractorAndTv[modelKey] || []).length > 0;
+        const hasExtractorOnly = (onlyextractor[modelKey] || []).length > 0;
+        const hasTvOnly = (onlyTv[modelKey] || []).length > 0;
+        const useSeparatePanels = hasExtractorOnly || hasTvOnly;
+        const needsExtractor = useSeparatePanels ? hasExtractorOnly : hasCombinedExtractorTv;
+        const needsTv = useSeparatePanels ? hasTvOnly : false;
         const hasSink = (sinkOptions[modelKey] || []).length > 0;
         const hasFridge = (fridgeStyle[modelKey] || []).length > 0;
         const applianceReady =
           data.applianceGas &&
-          (!hasExtractor || data.applianceExtractor) &&
+          (!needsExtractor || data.applianceExtractor) &&
+          (!needsTv || data.applianceTv) &&
           (!hasSink || data.applianceSink) &&
           (!hasFridge || data.applianceFridge);
         return isAero ? applianceReady : data.doorConfig;
       }
       case 5: {
         const modelKey = data.model?.replace("ProductName", "").toUpperCase();
-        const hasExtractor = (extractorAndTv[modelKey] || []).length > 0;
+        const hasCombinedExtractorTv = (extractorAndTv[modelKey] || []).length > 0;
+        const hasExtractorOnly = (onlyextractor[modelKey] || []).length > 0;
+        const hasTvOnly = (onlyTv[modelKey] || []).length > 0;
+        const useSeparatePanels = hasExtractorOnly || hasTvOnly;
+        const needsExtractor = useSeparatePanels ? hasExtractorOnly : hasCombinedExtractorTv;
+        const needsTv = useSeparatePanels ? hasTvOnly : false;
         const hasSink = (sinkOptions[modelKey] || []).length > 0;
         const hasFridge = (fridgeStyle[modelKey] || []).length > 0;
         const applianceReady =
           data.applianceGas &&
-          (!hasExtractor || data.applianceExtractor) &&
+          (!needsExtractor || data.applianceExtractor) &&
+          (!needsTv || data.applianceTv) &&
           (!hasSink || data.applianceSink) &&
           (!hasFridge || data.applianceFridge);
         return isAero
@@ -190,29 +205,9 @@ export default function Configurator() {
           </div>
         </Col>
         <Col md={4} className={styles.sidebar}>
-          <ConfigSummary isAero={isAero} />
+          <ConfigSummary isAero={isAero} totalPrice={selectedProductPrice?.toLocaleString()} />
         </Col>
       </Row>
-
-      <div className={styles.nav}>
-        <Button
-          className={styles.previous}
-          disabled={step === 0}
-          onClick={handlePrev}
-        >
-          <GrFormPreviousLink /> {t('previous')}
-        </Button>
-
-      {step < TOTAL_STEPS - 1 && (
-        <Button
-          className={styles.next}
-          disabled={!canNext()}
-          onClick={handleNext}
-        >
-          {t('continue')} <GrFormNextLink />
-        </Button>
-      )}
-      </div>
     </Container>
 
     
@@ -225,8 +220,28 @@ export default function Configurator() {
           </div>
           <div className={styles.floatingPriceDivider} />
           <div className={styles.floatingPriceRight}>
-            <span className={styles.floatingPriceSublabel}>Starting from</span>
+            <span className={styles.floatingPriceSublabel}>Total Price</span>
             <span className={styles.floatingPriceValue}>€{selectedProductPrice?.toLocaleString()}</span>
+          </div>
+          <div className={styles.floatingPriceDivider} />
+          <div className={styles.floatingPriceActions}>
+            <Button
+              className={styles.previous}
+              disabled={step === 0}
+              onClick={handlePrev}
+            >
+              <GrFormPreviousLink /> {t('previous')}
+            </Button>
+
+            {step < TOTAL_STEPS - 1 && (
+              <Button
+                className={styles.next}
+                disabled={!canNext()}
+                onClick={handleNext}
+              >
+                {t('continue')} <GrFormNextLink />
+              </Button>
+            )}
           </div>
         </div>
       </div>
