@@ -67,7 +67,7 @@ const StepBbqStyle = () => {
                 )}
                 <div className={styles.applianceCardContent}>
                   <span className={styles.applianceName}>{t(opt.key)}</span>
-                  {opt.size && <span className={styles.applianceSize}>{opt.size}</span>}
+                  {opt.size && <span className={styles.applianceSize}>{opt.size.replace(/inch/g, t('inch'))}</span>}
                   {priceInfo && (
                     <span className={`${styles.appliancePriceBadge} ${priceInfo.cls}`}>
                       {priceInfo.label}

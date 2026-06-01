@@ -3,7 +3,7 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Configurator from "@/components/Configurator/Configurator";
+import Configurator from "@/components/ConfiguratorNew/Configurator";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -16,6 +16,7 @@ import {products} from "@/utils/exteriorInteriorFinish";
 
 export default function ConfiguratorPage() {
   const { t } = useTranslation('common');
+  
    const router = useRouter();
     const currentLocale = router.locale;
     console.log("Current locale:", currentLocale);

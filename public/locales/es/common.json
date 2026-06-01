@@ -880,5 +880,10 @@
   "designNotes_tagPremiumOption": "Opción Premium",
   "designNotes_pricingTitle": "Precios en vivo",
   "designNotes_pricingDesc": "Los totales de precio deben actualizarse al instante cuando se selecciona una opción.",
-  "SelectOne": "Selecciona una opción"
+  "SelectOne": "Selecciona una opción",
+  "totalPrice": "PRECIO TOTAL",
+  "inch": "pulgadas",
+  "lift_up": "Apertura Elevable",
+  "roller_style": "Persiana Enrollable",
+  "metal_blind": "Persiana Metálica"
 }

@@ -62,7 +62,7 @@ export default function ConfigSummary({isAero, totalPrice}) {
       <h4>{t('your_config')}</h4>
       {summaryTotalPrice && (
         <div className={styles.summaryTotalPrice}>
-          <span className={styles.summaryTotalLabel}>Total Price</span>
+          <span className={styles.summaryTotalLabel}>{t('totalPrice')}</span>
           <span className={styles.summaryTotalValue}>{summaryTotalPrice} €</span>
         </div>
       )}
@@ -86,7 +86,7 @@ export default function ConfigSummary({isAero, totalPrice}) {
       )}
       {selectedDoorConfigOption && !isAero && (
         <p>
-          {t('door_configuration')} <span>{ucFirst(selectedDoorConfigOption?.title || '--')}</span>  
+          {t('door_configuration')} <span>{ucFirst(t(selectedDoorConfigOption?.id) || '--')}</span>  
         </p>
       )}
       {selectedBBQStyleOption && (

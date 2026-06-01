@@ -44,12 +44,12 @@ const StepDoorConfig = () => {
               >
                 <Image
                   src={item.img}
-                  alt={item.title}
+                  alt={t(item.id)}
                   width={600}
                   height={600}
                 />
                 <div className={styles.cardInfo}>
-                  <div className={styles.cardLabel}>{item.title}</div>
+                  <div className={styles.cardLabel}>{t(item.id)}</div>
                   {item.id === "roller_style" && rollerReduction > 0 && (
                     <div className={styles.cardPrice}>− {rollerReduction.toLocaleString()}€</div>
                   )}

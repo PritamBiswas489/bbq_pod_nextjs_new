@@ -880,5 +880,10 @@
   "designNotes_tagPremiumOption": "Premium Option",
   "designNotes_pricingTitle": "Live pricing",
   "designNotes_pricingDesc": "Price totals must update instantly whenever an option is selected.",
-  "SelectOne": "Select One"
+  "SelectOne": "Select One",
+  "totalPrice": "TOTAL PRICE",
+  "inch": "inch",
+  "lift_up": "Lift Up",
+  "roller_style": "Roller Style",
+  "metal_blind": "Metal Blind"
 }
