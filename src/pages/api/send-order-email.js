@@ -32,6 +32,7 @@ export default async function handler(req, res) {
     const applianceFridge = req.body?.applianceFridge;
     const installationRequirements = req.body?.installationRequirements;
     const additionalNotes = req.body?.additionalNotes;
+    const selectedProductPrice = req.body?.selectedProductPrice;
 
 
 
@@ -60,7 +61,7 @@ export default async function handler(req, res) {
     htmlBody = htmlBody.replace(/\[\s*appliance_sink\s*\]/g, applianceSink ?? '' );
     htmlBody = htmlBody.replace(/\[\s*appliance_fridge\s*\]/g, applianceFridge ?? '' );
     htmlBody = htmlBody.replace(/\[\s*additional_notes\s*\]/g, additionalNotes );
-
+    htmlBody = htmlBody.replace(/\[\s*selected_product_price\s*\]/g, selectedProductPrice ?? '' );
     const installationReqsFormatted = installationRequirements
       .map((q) => ` <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:0;background:#1a1a1a;border:1px solid #252525;">
                       <tr>

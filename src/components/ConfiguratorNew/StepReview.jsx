@@ -53,6 +53,7 @@ const StepReview = ({ backtoStart }) => {
   const selectedApplianceTv = useAppSelector((state) => state.configurator.applianceTv);
   const selectedApplianceSink = useAppSelector((state) => state.configurator.applianceSink);
   const selectedApplianceFridge = useAppSelector((state) => state.configurator.applianceFridge);
+    const selectedProductPrice = useAppSelector((state) => state.configurator.productTotalPrice);
 
   const margedInteriorOptions = [
     ...interiorCabinetBlockColours,
@@ -128,6 +129,7 @@ const StepReview = ({ backtoStart }) => {
       ),
       additionalNotes: additionalNotes || "--",
       currentLocale,
+      selectedProductPrice: selectedProductPrice ? `${selectedProductPrice.toLocaleString()} €` : undefined,
     };
 
     console.log(
