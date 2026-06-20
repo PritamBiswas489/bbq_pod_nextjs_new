@@ -20,6 +20,11 @@ const StepDoorConfig = () => {
   };
   const modelKey = model?.replace("ProductName", "").toUpperCase();
   const rollerReduction = modelKey ? rollerBlindPriceReduction[modelKey] : 0;
+  let filteredDoorConfig = [...doorCongiguration];
+  if(modelKey === 'PINNACLE') {
+    console.log('Removing metal blind option for Pinnacle model');
+      filteredDoorConfig = filteredDoorConfig.filter(item => item.id !== 'metal_blind');
+  }
   return (
     <>
       <div className="">
@@ -34,7 +39,7 @@ const StepDoorConfig = () => {
         <div className={styles.divider}>
            
           <div className={styles.gridDoorConfig}>
-            {doorCongiguration.map((item) => (
+            {filteredDoorConfig.map((item) => (
               <div
                 key={item.id}
                 className={`${styles.imageCard} ${
