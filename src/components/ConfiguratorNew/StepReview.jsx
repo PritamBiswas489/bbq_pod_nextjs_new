@@ -27,6 +27,7 @@ import ConfirmationModal from "./ConfirmationModal";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { Col, Row } from "react-bootstrap";
+import {gaEvent} from "@/lib/gtag";
 
 const StepReview = ({ backtoStart }) => {
   const dispatch = useAppDispatch();
@@ -138,6 +139,7 @@ const StepReview = ({ backtoStart }) => {
     );
     // Reset form or show success message as needed
     const sendEmail = async () => {
+      gaEvent('configurator_submit', { locale: currentLocale });
       try {
         await axios.post("/api/send-order-email", submissionData);
         setModalOpen(true);

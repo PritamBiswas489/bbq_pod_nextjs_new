@@ -8,6 +8,7 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
   FaClock,
+  FaWhatsapp,
 } from "react-icons/fa";
 import logo from "@/assets/front/images/logo.png";
 import styles from "./index.module.scss";
@@ -22,15 +23,43 @@ import partnerImageFour from "@/assets/front/images/partnerimages/futureshade.sv
 import partnerImageFive from "@/assets/front/images/partnerimages/LOGO-NOX-LIGHT-1.svg";
 import partnerImageSix from "@/assets/front/images/partnerimages/pmklogo.png";
 import partnerImageSeven from "@/assets/front/images/partnerimages/elite-pods-logo.png";
+import {useState, useEffect} from "react";
+import { gaEvent } from "@/lib/gtag";
 
 
+
+const WHATSAPP_NUMBER = "+34672021437"; // TODO: replace with your real WhatsApp number, international format, no + or spaces
 
 const Footer = () => {
   const { t } = useTranslation('common');
   const router = useRouter();
   const currentLocale = router.locale;
+  const [whatsappLink, setWhatsappLink] = useState(null);
+
+  useEffect(() => {
+    if(currentLocale === 'es') {
+      setWhatsappLink(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("¡Hola! 👋 He visto vuestra página web y me gustaría recibir más información sobre las BBQ Pods y sus precios. Gracias.")}`);
+    } else {
+      setWhatsappLink(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! 👋 I’ve been looking at your website and would like some more information about your BBQ Pods and prices. Thank you")}`);
+    }
+  }, [currentLocale]);
+
   const pageUrls = pageURLS[currentLocale];
+
   return (
+    <>
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={styles.whatsappFloat}
+        aria-label="Chat with us on WhatsApp"
+        title="Chat with us on WhatsApp"
+        onClick={() => gaEvent('whatsapp_click', { locale: currentLocale })}
+      >
+      
+        <FaWhatsapp />
+      </a>
     <footer className={styles.footer}>
       <Container>
         <div className={styles.statsWrapper}>
@@ -186,6 +215,7 @@ const Footer = () => {
         </Row>
       </Container>
     </footer>
+    </>
   );
 };
 
