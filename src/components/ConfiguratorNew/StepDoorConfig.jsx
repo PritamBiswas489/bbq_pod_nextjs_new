@@ -23,7 +23,7 @@ const StepDoorConfig = () => {
   let filteredDoorConfig = [...doorCongiguration];
   if(modelKey === 'PINNACLE') {
     console.log('Removing metal blind option for Pinnacle model');
-      filteredDoorConfig = filteredDoorConfig.filter(item => item.id !== 'metal_blind');
+      filteredDoorConfig = filteredDoorConfig.filter(item => item.id !== 'metal_blind' && item.id!="roller_style");
   }
   return (
     <>
