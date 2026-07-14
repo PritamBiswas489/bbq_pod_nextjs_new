@@ -17,6 +17,15 @@ const ComparisonTable = () => {
       color: "blue",
       link: "/core",
     },
+      {
+      modelKey: "horizon220TableModel",
+      lengthKey: "horizon220TableLength",
+      grillSizeKey: "horizon220TableGrillSize",
+      keyFeatureKey: "horizon220TableKeyFeature",
+      bestForKey: "horizon220TableBestFor",
+      color: "teal",
+      link: "/horizon220",
+    },
     {
       modelKey: "primeTableModel",
       lengthKey: "primeTableLength",
@@ -26,7 +35,17 @@ const ComparisonTable = () => {
       color: "purple",
       link: "/prime",
     },
+    
     {
+      modelKey: "horizon270TableModel",
+      lengthKey: "horizon270TableLength",
+      grillSizeKey: "horizon270TableGrillSize",
+      keyFeatureKey: "horizon270TableKeyFeature",
+      bestForKey: "horizon270TableBestFor",
+      color: "navy",
+      link: "/horizon270",
+    },
+        {
       modelKey: "apexTableModel",
       lengthKey: "apexTableLength",
       grillSizeKey: "apexTableGrillSize",
@@ -44,15 +63,12 @@ const ComparisonTable = () => {
       color: "red",
       link: "/pinnacle",
     },
-    {
-      modelKey: "aeroTableModel",
-      lengthKey: "aeroTableLength",
-      grillSizeKey: "aeroTableGrillSize",
-      keyFeatureKey: "aeroTableKeyFeature",
-      bestForKey: "aeroTableBestFor",
-      color: "green",
-      link: "/aero",
-    },
+
+  
+
+
+
+    
   ];
 
   return (

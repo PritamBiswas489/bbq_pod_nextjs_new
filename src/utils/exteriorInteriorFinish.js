@@ -393,14 +393,24 @@ export const   products = [
     featuresKeys: ["pinnacleFeature1", "pinnacleFeature2", "pinnacleFeature3"],
     image: require("@/assets/front/images/newProductImages/Pinnacle.jpg").default.src,
   },
+
   {
     badges: [],
-    nameKey: "aeroProductName",
-    descriptionKey: "aeroProductDescription",
-    priceKey: "aeroProductPrice".replace("{price}", productsPrice["AERO"]),
-    featuresKeys: ["aeroFeature1", "aeroFeature2", "aeroFeature3"],
-    image: require("@/assets/front/images/newProductImages/Aero.jpg").default.src,
+    nameKey: "horizon220ProductName",
+    descriptionKey: "horizon220ProductDescription",
+    priceKey: "horizon220ProductPrice".replace("{price}", productsPrice["HORIZON220"]),
+    featuresKeys: ["horizon220Feature1", "horizon220Feature2", "horizon220Feature3"],
+    image: require("@/assets/front/images/horizon_220/Image.jpg").default.src,
   },
+   {
+    badges: [],
+    nameKey: "horizon270ProductName",
+    descriptionKey: "horizon270ProductDescription",
+    priceKey: "horizon270ProductPrice".replace("{price}", productsPrice["HORIZON270"]),
+    featuresKeys: ["horizon270Feature1", "horizon270Feature2", "horizon270Feature3"],
+    image: require("@/assets/front/images/horizon_270/Image.jpg").default.src,
+  },
+  
 ];
 
 
@@ -421,6 +431,31 @@ export const gasOptions = {
       key: "Big_Green_Egg_Kamado",
       size: "22 inch",
       priceAddition: 1799.99,
+    },
+  ],
+  HORIZON220: [
+     {
+      key: "Gas_Grill",
+      size: "30 inch",
+      priceAddition: 0,
+    },
+
+  ],
+  HORIZON270: [
+     {
+      key: "Gas_Grill",
+      size: "30 inch",
+      priceAddition: 0,
+    },
+     {
+      key: "Gas_Grill",
+      size: "36 inch",
+      priceAddition: 50,
+    },
+    {
+      key: "Gas_Grill",
+      size: "46 inch with Hob",
+      priceAddition: 100,
     },
   ],
   PRIME: [
@@ -662,6 +697,17 @@ export const onlyTv = {
       priceAddition: -250,
     },
   ],
+  HORIZON270: [
+    {
+      key: "TV_43_inch",
+      priceAddition: 0,
+    },
+    {
+      key: "No_TV",
+      priceAddition: -250,
+    },
+  ],
+   
   APEX:[
     {
       key: "TV_43_inch",
@@ -705,6 +751,28 @@ export const sinkOptions = {
       priceAddition: -100,
     },
   ],
+  HORIZON220:[
+     {
+      key: "Sink_Included",
+      priceAddition: 0,
+    },
+    {
+      key: "Remove_Sink",
+      priceAddition: -100,
+    },
+
+  ],
+  HORIZON270:[  
+ {
+      key: "Sink_Included",
+      priceAddition: 0,
+    },
+    {
+      key: "Remove_Sink",
+      priceAddition: -100,
+    },
+
+  ],    
   PRIME: [
     {
       key: "Sink_Included",
@@ -751,6 +819,26 @@ export const fridgeStyle = {
   CORE:[
     {
       key: "Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Stainless_Steel",
+      priceAddition: 0,
+    },
+  ],
+  HORIZON220:[
+    {
+      key: "Silver_Glass",
+      priceAddition: 0,
+    },
+    {
+      key: "Stainless_Steel",
+      priceAddition: 0,
+    },
+  ],
+   HORIZON270:[
+    {
+      key: "Silver_Glass",
       priceAddition: 0,
     },
     {

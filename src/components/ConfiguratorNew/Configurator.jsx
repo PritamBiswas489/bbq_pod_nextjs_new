@@ -28,7 +28,8 @@ export default function Configurator() {
    
   const data = useAppSelector((state) => state.configurator);
   const isAero = data.model?.replace('ProductName', '').toUpperCase() === 'AERO';
-  const TOTAL_STEPS = isAero ? 7 : 8;
+  const isHorizon = data.model?.replace('ProductName', '').toUpperCase() === 'HORIZON220' || data.model?.replace('ProductName', '').toUpperCase() === 'HORIZON270';
+  const TOTAL_STEPS = isAero || isHorizon ? 7 : 8;
   const selectedProduct = products.find((p) => p.nameKey === data.model);
   const dispatch = useAppDispatch();
   const selectedProductPrice = useAppSelector((state) => state.configurator.productTotalPrice);
@@ -104,7 +105,7 @@ export default function Configurator() {
           (!needsTv || data.applianceTv) &&
           (!hasSink || data.applianceSink) &&
           (!hasFridge || data.applianceFridge);
-        return isAero ? applianceReady : data.doorConfig;
+        return isAero || isHorizon ? applianceReady : data.doorConfig;
       }
       case 5: {
         const modelKey = data.model?.replace("ProductName", "").toUpperCase();
@@ -191,17 +192,17 @@ export default function Configurator() {
                <StepCountertop
               />
             )}
-            {step === 4 && !isAero && (
+            {step === 4 && !isAero && !isHorizon && (
               <StepDoorConfig
               />
             )}
-            {((!isAero && step === 5) || (isAero && step === 4)) && (
+            {(((!isAero && !isHorizon) && step === 5) || (isAero || isHorizon) && step === 4) && (
               <StepBbqStyle   
               />
             )}
-            {((!isAero && step === 6) || (isAero && step === 5)) && <StepInstallationRequirements
+            {((!isAero && !isHorizon && step === 6) || (isAero || isHorizon) && step === 5) && <StepInstallationRequirements
               />}
-            {((!isAero && step === 7) || (isAero && step === 6)) && <StepReview  backtoStart={backtoStart} />}
+            {((!isAero && !isHorizon && step === 7) || (isAero || isHorizon) && step === 6) && <StepReview  backtoStart={backtoStart} />}
           </div>
         </Col>
         <Col md={4} className={styles.sidebar}>

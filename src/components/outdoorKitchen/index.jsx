@@ -14,6 +14,12 @@ import hero2 from "@/assets/front/images/newProductImages/prime.jpg";
 import hero3 from "@/assets/front/images/newProductImages/Apex.jpg";
 import hero4 from "@/assets/front/images/newProductImages/Pinnacle.jpg";
 import hero5 from "@/assets/front/images/newProductImages/Aero.jpg";
+
+
+import hero6 from "@/assets/front/images/horizon_220/Image.jpg";
+import hero7 from "@/assets/front/images/horizon_270/Image.jpg";
+
+
 import { useRouter } from "next/router";
 import { productsPrice } from "@/utils/productsPrice";
  
@@ -65,15 +71,35 @@ const OutdoorKitchens = () => {
       image: hero4.src,
       link: `/${currentLocale}/pinnacle`,
     },
+
     {
       badges: [],
-      nameKey: "aeroProductName",
-      descriptionKey: "aeroProductDescription",
-      priceKey: "aeroProductPrice",
-      featuresKeys: ["aeroFeature1", "aeroFeature2", "aeroFeature3"],
-      image: hero5.src,
-      link: `/${currentLocale}/aero`,
+      nameKey: "horizon220ProductName",
+      descriptionKey: "horizon220ProductDescription",
+      priceKey: "horizon220ProductPrice",
+      featuresKeys: [
+        "horizon220Feature1",
+        "horizon220Feature2",
+        "horizon220Feature3",
+      ],
+      image: hero6.src,
+      link: `/${currentLocale}/horizon220`,
     },
+
+    {
+      badges: [],
+      nameKey: "horizon270ProductName",
+      descriptionKey: "horizon270ProductDescription",
+      priceKey: "horizon270ProductPrice",
+      featuresKeys: [
+        "horizon270Feature1",
+        "horizon270Feature2",
+        "horizon270Feature3",
+      ],
+      image: hero7.src,
+      link: `/${currentLocale}/horizon270`,
+    },
+  
   ];
 
   return (
@@ -127,7 +153,7 @@ const OutdoorKitchens = () => {
                         </Badge>
                       </div>
                     )}
-                    {(t(product.priceKey).replace("{price}",productsPrice[product.nameKey.split("ProductName")[0].toUpperCase()].toLocaleString()))}
+                    {(t(product.priceKey).replace("{price}",productsPrice?.[product?.nameKey.split("ProductName")?.[0]?.toUpperCase()]?.toLocaleString()))}
                   </div>
                   <ul className={`list-unstyled ${styles.featureList}`}>
                     {product.featuresKeys.map((featureKey, fIndex) => (

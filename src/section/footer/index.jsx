@@ -117,7 +117,10 @@ const Footer = () => {
                 <Link href={pageUrls.pinnacle}>{t('footerProductPinnacle')}</Link>
               </li>
               <li>
-                <Link href={pageUrls.aero}>{t('footerProductAero')}</Link>
+                <Link href={pageUrls.horizon220}>{t('horizon220ProductName')}</Link>
+              </li>
+               <li>
+                <Link href={pageUrls.horizon270}>{t('horizon270ProductName')}</Link>
               </li>
             </ul>
           </Col>

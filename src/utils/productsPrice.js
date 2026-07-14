@@ -4,6 +4,8 @@ export const productsPrice = {
   "APEX": 17900,
   "PINNACLE": 18900,
   "AERO": 15900,
+  "HORIZON220": 10400,
+  "HORIZON270": 13400
 };
 
 export const sinteredStonePrice = {
@@ -12,6 +14,8 @@ export const sinteredStonePrice = {
   "APEX": 400,
   "PINNACLE": 400,
   "AERO": 350,
+ 
+   
 }
 
 export const rollerBlindPriceReduction = {

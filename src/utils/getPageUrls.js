@@ -14,6 +14,8 @@ export const pageURLS = {
       'aero': '/en/aero',
       'pinnacle': '/en/pinnacle',
       'apex': '/en/apex',
+      'horizon220':'/en/horizon220',
+      'horizon270':'/en/horizon270'
    },
    'es': {
       'home': '/es',
@@ -30,6 +32,8 @@ export const pageURLS = {
       'aero': '/es/aero',
       'pinnacle': '/es/pinnacle',
       'apex': '/es/apex',
+      'horizon220':'/es/horizon220',
+      'horizon270':'/es/horizon270'
    }
 }
 
