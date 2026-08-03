@@ -127,9 +127,13 @@ const PrimeProductDetails = () => {
             value: t("workhorizon270OverallDimensionsHeightOpenValue"),
           },
           {
-            heading: t("workhorizon270OverallDimensionsRoofWidth"),
-            value: t("workhorizon270OverallDimensionsRoofWidthValue"),
+            heading: t("workhorizon270OverallDimensionsMaximumHeight"),
+            value: t("workhorizon270OverallDimensionsMaximumHeightValue"),
           },
+          // {
+          //   heading: t("workhorizon270OverallDimensionsRoofWidth"),
+          //   value: t("workhorizon270OverallDimensionsRoofWidthValue"),
+          // },
         ],
       },
       Weight: {
