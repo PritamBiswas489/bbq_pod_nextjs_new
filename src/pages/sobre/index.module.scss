@@ -1,0 +1,19 @@
+@import "@/assets/front/styles/variable.scss";
+.companyTimeline {
+  padding: 4rem 0;
+}
+.lifetime {
+  padding: 4rem 0 6rem;
+}
+
+.benefitsSection {
+  padding: 4rem 0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+@media only screen and (max-width: 767px) {
+  .companyTimeline,
+  .lifetime {
+    padding: 2rem 0;
+  }
+}

@@ -11,6 +11,8 @@ import { MdOutlineCall } from "react-icons/md";
 import enFlag from "@/assets/front/images/united-kingdom.png";
 import esFlag from "@/assets/front/images/spain-flag.png";
 
+import ptFlag from "@/assets/front/images/pt.jpg";
+
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { useRouter } from "next/router";
 import { pageURLS, pageURLSES } from "@/utils/getPageUrls";
@@ -119,14 +121,15 @@ const path =
                   title={t('headerLanguageSwitchTitle')}
                   onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                 >
-                  <Image src={currentLocale === 'es' ? esFlag : enFlag} alt={t('headerLanguageAlt')} width={22} height={22} />
-                  <span>{currentLocale === 'es' ? 'ES' : 'EN'}</span> <MdOutlineArrowDropDown/>
+                  <Image src={currentLocale === 'es' ? esFlag : currentLocale === 'pt' ? ptFlag : enFlag} alt={t('headerLanguageAlt')} width={22} height={22} />
+                  <span>{currentLocale === 'es' ? 'ES' : currentLocale === 'pt' ? 'PT' : 'EN'}</span> <MdOutlineArrowDropDown/>
                 </button>
                 
                 {langDropdownOpen && (
                   <ul className={`${style.langMenu}`} style={{position: 'absolute', top: '100%', right: 0, backgroundColor: '#fff', border: '1px solid #e0e0e0', borderRadius: '8px', zIndex: 1000, padding: '8px 0', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)', minWidth: '150px'}}>
                     <li style={{padding: '0'}}><button disabled={currentLocale === 'en'} onClick={() => handleLanguageChange('en')} style={{backgroundColor:"transparent", color: "black", padding: '12px 20px', width: '100%', textAlign: 'left', border: 'none', cursor: 'pointer', transition: 'background-color 0.2s', fontSize: '14px'}} onMouseEnter={(e) => e.target.style.backgroundColor = '#f5f5f5'} onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}>English</button></li>
                     <li style={{padding: '0'}}><button disabled={currentLocale === 'es'} onClick={() => handleLanguageChange('es')} style={{backgroundColor:"transparent", color: "black", padding: '12px 20px', width: '100%', textAlign: 'left', border: 'none', cursor: 'pointer', transition: 'background-color 0.2s', fontSize: '14px'}} onMouseEnter={(e) => e.target.style.backgroundColor = '#f5f5f5'} onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}>Español</button></li>
+                    <li style={{padding: '0'}}><button disabled={currentLocale === 'pt'} onClick={() => handleLanguageChange('pt')} style={{backgroundColor:"transparent", color: "black", padding: '12px 20px', width: '100%', textAlign: 'left', border: 'none', cursor: 'pointer', transition: 'background-color 0.2s', fontSize: '14px'}} onMouseEnter={(e) => e.target.style.backgroundColor = '#f5f5f5'} onMouseLeave={(e) => e.target.style.backgroundColor = 'transparent'}>Português</button></li>
                   </ul>
                 )}
               </div>

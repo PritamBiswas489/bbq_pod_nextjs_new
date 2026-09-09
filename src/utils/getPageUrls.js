@@ -34,6 +34,24 @@ export const pageURLS = {
       'apex': '/es/apex',
       'horizon220':'/es/horizon220',
       'horizon270':'/es/horizon270'
+   },
+   'pt': {
+    'home': '/pt',
+      'about': '/pt/sobre',
+      'products': '/pt/produtos',
+      'in-stock': '/pt/em-stock',
+      'configurator': '/pt/configurador',
+      'privacyPolicy': '/pt/politica-de-privacidade',
+      'legalNotice': '/pt/aviso-legal',
+      'warranty': '/pt/garantia',
+      'cookiePolicy': '/pt/politica-de-cookies',
+      'prime': '/pt/prime',
+      'core': '/pt/core',
+      'aero': '/pt/aero',
+      'pinnacle': '/pt/pinnacle',
+      'apex': '/pt/apex',
+      'horizon220':'/pt/horizon220',
+      'horizon270':'/pt/horizon270'
    }
 }
 
@@ -83,6 +101,23 @@ export const getAllPageUrls = (siteUrl = 'https://bbqpodspain.com') => {
            'aero': '/es/aero',
            'pinnacle': '/es/pinnacle',
            'apex':'/es/apex',      
+        },
+        'pt':{
+           'home': '/pt',
+            'about': '/pt/sobre',
+            'products': '/pt/produtos',
+            'in-stock': '/pt/em-stock',
+            'configurator': '/pt/configurador',
+            'privacyPolicy': '/pt/politica-de-privacidade',
+            'legalNotice': '/pt/aviso-legal',
+            'warranty': '/pt/garantia',
+            'cookiePolicy': '/pt/politica-de-cookies',
+           'prime': '/pt/prime',
+           'core': '/pt/core',
+           'aero': '/pt/aero',
+           'pinnacle': '/pt/pinnacle',
+           'apex':'/pt/apex',      
         }
+
     }
 

@@ -3,7 +3,7 @@ const nextI18NextConfig = {
   i18n: {
     defaultLocale: 'es',
     localeDetection: false,
-    locales: ['en', 'es'],
+    locales: ['en', 'es','pt'],
   },
   ns: ['common'],
   defaultNS: 'common',
