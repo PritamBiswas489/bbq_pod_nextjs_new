@@ -47,10 +47,13 @@ export default function InStock() {
   }, [router, currentLocale]);
 
 
-   let metatitle = "BBQ Pod Models | Explore Our Outdoor Kitchens";
-   let metaDescription = "Discover the full range of BBQ Pods — Core, Prime, Apex, Aero and Pinnacle. Premium outdoor kitchens built for Spanish outdoor living.";
-   let ogTitle =  "BBQ Pod Models | Explore Our Outdoor Kitchens";
-   let ogDescription = "Discover the full range of BBQ Pods — Core, Prime, Apex, Aero and Pinnacle. Premium outdoor kitchens built for Spanish outdoor living.";
+  let metatitle = "Modelos de BBQ Pods | Descubre nuestras cocinas de exterior";
+
+let metaDescription = "Descubre toda la gama de BBQ Pods — Core, Prime, Apex, Aero y Pinnacle. Cocinas de exterior premium diseñadas para disfrutar de la vida al aire libre en España.";
+
+let ogTitle = "Modelos de BBQ Pods | Descubre nuestras cocinas de exterior";
+
+let ogDescription = "Descubre toda la gama de BBQ Pods — Core, Prime, Apex, Aero y Pinnacle. Cocinas de exterior premium diseñadas para disfrutar de la vida al aire libre en España.";
    const ogImage = products.filter((d)=>d.nameKey === "apexProductName")[0].image;
   return (
     <>

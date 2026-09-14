@@ -27,15 +27,13 @@ import TitleHeader from "@/components/titleHeader";
 import bannerBg from "@/assets/front/images/home-banner.avif";
 
 import { TiArrowRightOutline } from "react-icons/ti";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import nextI18NextConfig from "@/../next-i18next.config.js"; 
-import { useTranslation } from 'next-i18next'
-import { useRouter } from 'next/router';
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import nextI18NextConfig from "@/../next-i18next.config.js";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 import { pageURLS } from "@/utils/getPageUrls";
 import BrochureModal from "@/components/brochureModal";
-import {products} from "@/utils/exteriorInteriorFinish";
-
-
+import { products } from "@/utils/exteriorInteriorFinish";
 
 export const homeFaqs = [
   {
@@ -73,37 +71,50 @@ export const homeFaqs = [
 ];
 
 const Home = () => {
-    const { t } = useTranslation('common')
-    const [openModal, setOpenModal] = useState(false); 
-    const router = useRouter()
-    let currentLocale = router.locale
-    
-    console.log('Current locale:', currentLocale)
-     const pageUrls = pageURLS[currentLocale];
+  const { t } = useTranslation("common");
+  const [openModal, setOpenModal] = useState(false);
+  const router = useRouter();
+  let currentLocale = router.locale;
 
-     
-  const currentUrl = `${typeof window !== 'undefined' ? window.location.origin : ''}${router.asPath}`
-  console.log('Current URL:', currentUrl)
+  console.log("Current locale:", currentLocale);
+  const pageUrls = pageURLS[currentLocale];
+
+  const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
+  console.log("Current URL:", currentUrl);
   React.useEffect(() => {
     if (!router.query.locale && currentLocale) {
-      const newUrl = pageURLS[currentLocale]?.home || `/${currentLocale}${router.asPath}`;
-       
-      window.history.replaceState(null, '', newUrl);
+      const newUrl =
+        pageURLS[currentLocale]?.home || `/${currentLocale}${router.asPath}`;
+
+      window.history.replaceState(null, "", newUrl);
     }
   }, [router, currentLocale]);
 
   let metatitle = "BBQ Pod Spain | Premium Outdoor Kitchens";
-  let metaDescription = "Luxury outdoor kitchens designed for life in Spain. Built to handle sun, heat and year-round outdoor living.";
+  let metaDescription =
+    "Luxury outdoor kitchens designed for life in Spain. Built to handle sun, heat and year-round outdoor living.";
   let ogTitle = "BBQ Pod Spain | Premium Outdoor Kitchens";
-  let ogDescription = "Luxury outdoor kitchens designed for life in Spain. Built to handle sun, heat and year-round outdoor living.";
-  const ogImage = products.filter((d)=>d.nameKey === "pinnacleProductName")[0].image;
+  let ogDescription =
+    "Luxury outdoor kitchens designed for life in Spain. Built to handle sun, heat and year-round outdoor living.";
+  const ogImage = products.filter((d) => d.nameKey === "pinnacleProductName")[0]
+    .image;
 
+  if (currentLocale === "es") {
+    metatitle = "BBQ Pod Spain | Cocinas Exteriores Premium";
+    metaDescription =
+      "Cocinas exteriores de alta calidad diseñadas para disfrutar del estilo de vida al aire libre en España.";
+    ogTitle = "BBQ Pod Spain | Cocinas Exteriores Premium";
+    ogDescription =
+      "Cocinas exteriores de alta calidad diseñadas para disfrutar del estilo de vida al aire libre en España.";
+  }
 
-  if(currentLocale === 'es') {
-     metatitle = "BBQ Pod Spain | Cocinas Exteriores Premium";
-     metaDescription = "Cocinas exteriores de alta calidad diseñadas para disfrutar del estilo de vida al aire libre en España.";
-     ogTitle = "BBQ Pod Spain | Cocinas Exteriores Premium";
-     ogDescription = "Cocinas exteriores de alta calidad diseñadas para disfrutar del estilo de vida al aire libre en España.";
+  if (currentLocale === "pt") {
+    metatitle = "BBQ Pod Spain | Cozinhas de Exterior Premium";
+    metaDescription =
+      "Cozinhas de exterior de luxo, concebidas para a vida em Espanha. Construídas para suportar o sol, o calor e a utilização no exterior durante todo o ano.";
+    ogTitle = "BBQ Pod Spain | Cozinhas de Exterior Premium";
+    ogDescription =
+      "Cozinhas de exterior de luxo, concebidas para a vida em Espanha. Construídas para suportar o sol, o calor e a utilização no exterior durante todo o ano.";
   }
 
   return (
@@ -133,14 +144,12 @@ const Home = () => {
               {/* LEFT CONTENT */}
               <Col md={12}>
                 <div className={style.bannerContent}>
-                   
-
                   <h1
                     data-aos="fade-right"
                     data-aos-duration="2000"
                     data-aos-once="true"
                   >
-                    {t('tagline')}
+                    {t("tagline")}
                     {/* Luxury Outdoor Kitchen Pods */}
                   </h1>
 
@@ -149,10 +158,8 @@ const Home = () => {
                     data-aos-duration="2500"
                     data-aos-once="true"
                   >
-                    {t('bannerSubtitle')}
+                    {t("bannerSubtitle")}
                   </h3>
-
-                   
 
                   <div className={style.actions}>
                     <Link
@@ -162,16 +169,12 @@ const Home = () => {
                       data-aos-duration="2500"
                       data-aos-once="true"
                     >
-                      {t('exploreButton')} <TiArrowRightOutline className="ms-1" />
+                      {t("exploreButton")}{" "}
+                      <TiArrowRightOutline className="ms-1" />
                     </Link>
-          
                   </div>
-
-                
                 </div>
               </Col>
-
-             
             </Row>
           </Container>
         </section>
@@ -180,30 +183,30 @@ const Home = () => {
         <OutdoorKitchens />
         <ComparisonTable />
         <YourGarden
-          title={t('brochureTitle')}
-          description={t('brochureDescription')}
+          title={t("brochureTitle")}
+          description={t("brochureDescription")}
           backgroundImage={heroImage}
           setOpenModal={setOpenModal}
           badges={[
             {
               icon: <FaArrowRight />,
-              text: t('badge1'),
+              text: t("badge1"),
             },
-            { icon: <FaArrowRight />, text: t('badge2') },
+            { icon: <FaArrowRight />, text: t("badge2") },
             {
               icon: <FaArrowRight />,
-              text: t('badge3'),
+              text: t("badge3"),
             },
           ]}
           primaryButton={{
-            label: t('primaryButtonLabel'),
+            label: t("primaryButtonLabel"),
             href: "",
           }}
           secondaryButton={{
-            label: t('secondaryButtonLabel'),
+            label: t("secondaryButtonLabel"),
             href: "",
           }}
-          footerText={t('footerText')}
+          footerText={t("footerText")}
         />
         <ExteriorColours />
         {/* <StainlessSteel /> */}
@@ -213,19 +216,15 @@ const Home = () => {
         <section className={style.faqs}>
           <TitleHeader
             whyChoose={[]}
-            title={t('faqsTitle')}
-            subtitle={t('faqsSubtitle')}
+            title={t("faqsTitle")}
+            subtitle={t("faqsSubtitle")}
           />
           {/* <Faqs /> */}
           <Faqs faqs={homeFaqs} />
         </section>
         <Cta />
-         <BrochureModal
-                    open={openModal}
-                    onClose={() => setOpenModal(false)}
-                  />
+        <BrochureModal open={openModal} onClose={() => setOpenModal(false)} />
       </Layout>
-      
     </>
   );
 };
@@ -233,12 +232,13 @@ export async function getStaticProps({ locale }) {
   const defaultLocale = nextI18NextConfig.i18n.defaultLocale;
   const localeToUse = locale || defaultLocale;
 
-   
-
- 
   return {
     props: {
-      ...(await serverSideTranslations(localeToUse, ['common'], nextI18NextConfig)),
+      ...(await serverSideTranslations(
+        localeToUse,
+        ["common"],
+        nextI18NextConfig,
+      )),
     },
   };
 }

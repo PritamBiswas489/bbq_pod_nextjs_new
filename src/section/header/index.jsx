@@ -15,7 +15,7 @@ import ptFlag from "@/assets/front/images/pt.jpg";
 
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import { useRouter } from "next/router";
-import { pageURLS, pageURLSES } from "@/utils/getPageUrls";
+import { pageURLS, pageURLSES, pageURLSPT } from "@/utils/getPageUrls";
 
 const Header = () => {
    
@@ -41,11 +41,17 @@ const Header = () => {
   const handleLanguageChange = (locale) => {
     //remove / from router.asPath to prevent double slashes when switching languages
    const cleanPath = (router.asPath || "").split("?")[0].split("#")[0].replace(/^\/+/, "");
+  //  alert('Clean path: ' + cleanPath);
+   console.log('Target locale:', locale);
 const path =
   pageURLS?.[locale]?.[cleanPath] ||
   pageURLSES?.[locale]?.[cleanPath] ||
+  pageURLSPT?.[locale]?.[cleanPath] ||
   pageURLS?.[locale]?.home ||
   "/";
+
+  // alert('Resolved path: ' + path);
+    
    //now add other query params and hash back to the path
    const queryString = router.asPath.includes("?") ? "?" + router.asPath.split("?")[1].split("#")[0] : "";
    const hashString = router.asPath.includes("#") ? "#" + router.asPath.split("#")[1] : "";

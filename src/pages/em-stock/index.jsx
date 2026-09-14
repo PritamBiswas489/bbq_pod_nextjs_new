@@ -18,12 +18,10 @@ import YourGarden from "@/components/yourGarden";
 import heroImage from "@/assets/front/images/hero-2.webp";
 import { FaArrowRight, FaStar } from "react-icons/fa";
 import Head from "next/head";
- 
 
- 
 import { pageURLS } from "@/utils/getPageUrls";
 import { products } from "@/utils/exteriorInteriorFinish";
- 
+
 import InStockProducts from "@/components/instockproducts";
 import PrimeModalDemoButton from "@/components/primeModal/demoButton";
 import PrimeModal from "@/components/primeModal";
@@ -40,22 +38,29 @@ export default function InStock() {
   console.log("Current URL:", currentUrl);
   React.useEffect(() => {
     if (!router.query.locale && currentLocale) {
-      const newUrl = pageURLS[currentLocale]?.enStock || `/${currentLocale}${router.asPath}`;
+      const newUrl =
+        pageURLS[currentLocale]?.enStock || `/${currentLocale}${router.asPath}`;
 
       window.history.replaceState(null, "", newUrl);
     }
   }, [router, currentLocale]);
 
+  let metatitle =
+    "Modelos de BBQ Pods | Descubra as nossas cozinhas de exterior";
 
-   let metatitle = "BBQ Pod Models | Explore Our Outdoor Kitchens";
-   let metaDescription = "Discover the full range of BBQ Pods — Core, Prime, Apex, Aero and Pinnacle. Premium outdoor kitchens built for Spanish outdoor living.";
-   let ogTitle =  "BBQ Pod Models | Explore Our Outdoor Kitchens";
-   let ogDescription = "Discover the full range of BBQ Pods — Core, Prime, Apex, Aero and Pinnacle. Premium outdoor kitchens built for Spanish outdoor living.";
-   const ogImage = products.filter((d)=>d.nameKey === "apexProductName")[0].image;
+  let metaDescription =
+    "Descubra toda a gama de BBQ Pods — Core, Prime, Apex, Aero e Pinnacle. Cozinhas de exterior premium, concebidas para desfrutar da vida ao ar livre em Espanha.";
+
+  let ogTitle = "Modelos de BBQ Pods | Descubra as nossas cozinhas de exterior";
+
+  let ogDescription =
+    "Descubra toda a gama de BBQ Pods — Core, Prime, Apex, Aero e Pinnacle. Cozinhas de exterior premium, concebidas para desfrutar da vida ao ar livre em Espanha.";
+  const ogImage = products.filter((d) => d.nameKey === "apexProductName")[0]
+    .image;
   return (
     <>
       <Head>
-       <title>{metatitle}</title>
+        <title>{metatitle}</title>
         <meta name="description" content={metaDescription} />
         <meta property="og:title" content={ogTitle} />
         <meta property="og:description" content={ogDescription} />
@@ -64,22 +69,22 @@ export default function InStock() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
-       <InnerBanner
-          badgeText={''}
-          title={''}
-          subtitle={t('Available_Pods')}
-          description1={t('Available_Pods_Description')}
-          description2={t('Available_Pods_Details')}
-          description3={t('Available_Pods_Instruction')}
+        <InnerBanner
+          badgeText={""}
+          title={""}
+          subtitle={t("Available_Pods")}
+          description1={t("Available_Pods_Description")}
+          description2={t("Available_Pods_Details")}
+          description3={t("Available_Pods_Instruction")}
           backgroundImage={hero1.src}
           links={[]}
         />
-        <InStockProducts openModal={() => setOpen(true)} setModalContent={setModalContent} />
+        <InStockProducts
+          openModal={() => setOpen(true)}
+          setModalContent={setModalContent}
+        />
         {/* Demo button for Prime Modal - remove or move as needed */}
-      
-        
-        
-       
+
         <ModelConfiguratorBanner
           title={t("in_stock_Looking_For_Different_Configuration")}
           description={t("in_stock_Design_Your_Own")}
@@ -92,8 +97,11 @@ export default function InStock() {
           leftButtonLinkTarget="_blank"
         />
       </Layout>
-         <PrimeModal open={open} onClose={() => setOpen(false)} modalContent={modalContent} />
-     
+      <PrimeModal
+        open={open}
+        onClose={() => setOpen(false)}
+        modalContent={modalContent}
+      />
     </>
   );
 }

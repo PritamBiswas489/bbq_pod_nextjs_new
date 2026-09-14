@@ -221,6 +221,13 @@ const AeroProductDetails = () => {
       ogTitle = "Aero Pod | BBQ Pod Spain"; 
       ogDescription = "El Aero Pod — una cocina exterior elegante y moderna con un diseño contemporáneo distintivo.";
    }
+
+   if(currentLocale === "pt"){
+      metatitle = "Aero Pod | BBQ Pod Spain";
+      metaDescription = "O Aero Pod — uma cozinha exterior elegante e moderna com um design contemporâneo distintivo.";
+      ogTitle = "Aero Pod | BBQ Pod Spain"; 
+      ogDescription = "O Aero Pod — uma cozinha exterior elegante e moderna com um design contemporâneo distintivo.";
+   }
  
 
   return (

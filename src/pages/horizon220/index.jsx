@@ -232,6 +232,13 @@ const PrimeProductDetails = () => {
         ogDescription = "El Horizon 220 combina espacio, funcionalidad y diseño premium para una cocina exterior completa.";
      }
 
+     if(currentLocale === "pt"){
+        metatitle = "Horizon 220 | BBQ Pod Spain";
+        metaDescription = "O Horizon 220 — uma cozinha exterior espaçosa que combina materiais premium com um design funcional.";
+        ogTitle = "Horizon 220 | BBQ Pod Spain"; 
+        ogDescription = "O Horizon 220 — uma cozinha exterior espaçosa que combina materiais premium com um design funcional.";
+     }
+
   return (
     <>
          <Head>

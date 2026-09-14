@@ -222,6 +222,13 @@ const PinnacleProductDetails = () => {
         ogDescription = "El Pinnacle Pod representa la máxima experiencia en cocina exterior con diseño y prestaciones premium.";
      }
 
+     if(currentLocale === "pt"){
+        metatitle = "Pinnacle Pod | BBQ Pod Spain";
+        metaDescription = "O Pinnacle Pod — a experiência definitiva em cozinha exterior com máximo espaço, design e desempenho.";
+        ogTitle = "Pinnacle Pod | BBQ Pod Spain"; 
+        ogDescription = "O Pinnacle Pod — a experiência definitiva em cozinha exterior com máximo espaço, design e desempenho.";
+     }
+
   return (
     <>
       <Head>

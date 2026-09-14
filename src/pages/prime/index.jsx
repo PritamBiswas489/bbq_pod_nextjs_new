@@ -217,6 +217,13 @@ const PrimeProductDetails = () => {
         ogDescription = "El Prime Pod combina espacio, funcionalidad y diseño premium para una cocina exterior completa.";
      }
 
+     if(currentLocale === "pt"){
+        metatitle = "Prime Pod | BBQ Pod Spain";
+        metaDescription = "O Prime Pod — uma cozinha exterior espaçosa que combina materiais premium com design funcional.";
+        ogTitle = "Prime Pod | BBQ Pod Spain"; 
+        ogDescription = "O Prime Pod — uma cozinha exterior espaçosa que combina materiais premium com design funcional.";
+     }
+
   return (
     <>
          <Head>

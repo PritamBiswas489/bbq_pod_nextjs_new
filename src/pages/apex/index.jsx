@@ -222,6 +222,13 @@ const ApexProductDetails = () => {
         ogDescription = "El Apex Pod es una cocina exterior diseñada para reuniones, barbacoas y entretenimiento al aire libre.";
      }
 
+     if(currentLocale === "pt"){
+        metatitle = "Apex Pod | BBQ Pod Spain";
+        metaDescription = "O Apex Pod — uma cozinha exterior elegante e moderna com um design contemporâneo distintivo.";
+        ogTitle = "Apex Pod | BBQ Pod Spain"; 
+        ogDescription = "O Apex Pod — uma cozinha exterior elegante e moderna com um design contemporâneo distintivo.";
+     }
+
   return (
     <>
       <Head>

@@ -17,32 +17,38 @@ import QualityFeatureCard from "@/components/qualityFeatureCard";
 import shieldIcon from "@/assets/front/images/difference/1.svg";
 import { useRouter } from "next/router";
 import { pageURLS } from "@/utils/getPageUrls";
-import {products} from "@/utils/exteriorInteriorFinish";
- 
+import { products } from "@/utils/exteriorInteriorFinish";
 
 const About = () => {
   const { t } = useTranslation("common");
-   const router = useRouter();
-    const currentLocale = router.locale;
-    console.log("Current locale:", currentLocale);
-    const pageUrls = pageURLS[currentLocale];
-  
-    const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
-    console.log("Current URL:", currentUrl);
-    React.useEffect(() => {
-      if (!router.query.locale && currentLocale) {
-        const newUrl = pageURLS[currentLocale]?.about || `/${currentLocale}${router.asPath}`;
-  
-        window.history.replaceState(null, "", newUrl);
-      }
-    }, [router, currentLocale]);
+  const router = useRouter();
+  const currentLocale = router.locale;
+  console.log("Current locale:", currentLocale);
+  const pageUrls = pageURLS[currentLocale];
 
-      let metatitle = "About BBQ Pod Spain";
-      let metaDescription = "BBQ Pod Spain specialises in premium outdoor kitchens built for Spain’s climate and outdoor lifestyle.";
-      let ogTitle =  "About BBQ Pod Spain";
-      let ogDescription = "BBQ Pod Spain specialises in premium outdoor kitchens built for Spain’s climate and outdoor lifestyle.";
-      const ogImage = products.filter((d)=>d.nameKey === "pinnacleProductName")[0].image;
-    
+  const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
+  console.log("Current URL:", currentUrl);
+  React.useEffect(() => {
+    if (!router.query.locale && currentLocale) {
+      const newUrl =
+        pageURLS[currentLocale]?.about || `/${currentLocale}${router.asPath}`;
+
+      window.history.replaceState(null, "", newUrl);
+    }
+  }, [router, currentLocale]);
+
+  let metatitle = "Sobre a BBQ Pod Spain";
+
+  let metaDescription =
+    "A BBQ Pod Spain é especializada em cozinhas de exterior premium, concebidas para o clima e o estilo de vida ao ar livre em Espanha.";
+
+  let ogTitle = "Sobre a BBQ Pod Spain";
+
+  let ogDescription =
+    "A BBQ Pod Spain é especializada em cozinhas de exterior premium, concebidas para o clima e o estilo de vida ao ar livre em Espanha.";
+  const ogImage = products.filter((d) => d.nameKey === "pinnacleProductName")[0]
+    .image;
+
   return (
     <>
       <Head>
@@ -56,19 +62,18 @@ const About = () => {
       </Head>
       <Layout>
         <InnerBanner
-          
-          title={t('aboutusHeroTitle')}
-          subtitle={t('aboutusHeroSubtitle')}
-          description1={t('aboutusHeroDescription1')}
+          title={t("aboutusHeroTitle")}
+          subtitle={t("aboutusHeroSubtitle")}
+          description1={t("aboutusHeroDescription1")}
           description2={[]}
           links={[
             {
-              label: t('aboutusRequestQuoteLink'),
+              label: t("aboutusRequestQuoteLink"),
               href: pageUrls.configurator,
               className: "primaryLink",
             },
             {
-              label: t('aboutusExplorePodsLink'),
+              label: t("aboutusExplorePodsLink"),
               href: pageUrls.products,
               className: "secondaryLink",
             },
@@ -78,50 +83,48 @@ const About = () => {
         <div className={style.companyTimeline}>
           <TitleHeader
             whyChoose={[]}
-            title={t('aboutusTimelineTitle')}
-            subtitle={t('aboutusTimelineSubtitle')}
-            subtitle2={t('aboutusTimelineSubtitle2')}
+            title={t("aboutusTimelineTitle")}
+            subtitle={t("aboutusTimelineSubtitle")}
+            subtitle2={t("aboutusTimelineSubtitle2")}
           />
           <CompanyTimeline />
         </div>
         <HeritageSection />
         <div className={style.benefitsSection}>
           <TitleHeader
-            whyChoose={t('aboutusWhyChooseLabel')}
-            title={t('aboutusBenefitsTitle')}
-            subtitle={t('aboutusBenefitsSubtitle')}
+            whyChoose={t("aboutusWhyChooseLabel")}
+            title={t("aboutusBenefitsTitle")}
+            subtitle={t("aboutusBenefitsSubtitle")}
           />
           <BenefitsGrid />
         </div>
 
         <OperationsSection
           badgeText=""
-          title={t('aboutusOperationsTitle')}
-          titleHighlight={t('aboutusOperationsTitleHighlight')}
-          description={t('aboutusOperationsDescription')}
-          description2={t('aboutusOperationsDescription2')}
+          title={t("aboutusOperationsTitle")}
+          titleHighlight={t("aboutusOperationsTitleHighlight")}
+          description={t("aboutusOperationsDescription")}
+          description2={t("aboutusOperationsDescription2")}
           image={podImage}
           features={[
             {
-              title: t('aboutusFeature1Title'),
-              text: t('aboutusFeature1Text'),
+              title: t("aboutusFeature1Title"),
+              text: t("aboutusFeature1Text"),
             },
             {
-              title: t('aboutusFeature2Title'),
-              text: t('aboutusFeature2Text'),
+              title: t("aboutusFeature2Title"),
+              text: t("aboutusFeature2Text"),
             },
             {
-              title: t('aboutusFeature3Title'),
-              text: t('aboutusFeature3Text'),
+              title: t("aboutusFeature3Title"),
+              text: t("aboutusFeature3Text"),
             },
           ]}
           address={{
-            title: t('aboutusAddressTitle'),
-            text: t('aboutusAddressText'),
+            title: t("aboutusAddressTitle"),
+            text: t("aboutusAddressText"),
           }}
         />
-
-         
       </Layout>
     </>
   );

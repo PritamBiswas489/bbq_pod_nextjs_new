@@ -237,6 +237,13 @@ const PrimeProductDetails = () => {
         ogDescription = "El Horizon 270 combina espacio, funcionalidad y diseño premium para una cocina exterior completa.";
      }
 
+     if(currentLocale === "pt"){
+        metatitle = "Horizon 270 | BBQ Pod Spain";
+        metaDescription = "O Horizon 270 — uma cozinha exterior espaçosa que combina materiais premium com um design funcional.";
+        ogTitle = "Horizon 270 | BBQ Pod Spain"; 
+        ogDescription = "O Horizon 270 — uma cozinha exterior espaçosa que combina materiais premium com um design funcional.";
+     }
+
   return (
     <>
          <Head>

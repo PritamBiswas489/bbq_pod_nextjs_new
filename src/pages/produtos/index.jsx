@@ -29,12 +29,12 @@ import REF001ES from "@/assets/front/images/RefImage/ExteriorInteriroDEMOSPAIN.p
 import REF002ES from "@/assets/front/images/RefImage/CabinetcolourDEMOspanish.png";
 import { pageURLS } from "@/utils/getPageUrls";
 import { products } from "@/utils/exteriorInteriorFinish";
-import { 
-  exteriorFinishes, 
-  interiorCabinetBlockColours, 
-  interiorCabinetsWoodGrainTransfer, 
-  countertopSinteredStoneTitle, 
-  countertopStainlessSteelTitle 
+import {
+  exteriorFinishes,
+  interiorCabinetBlockColours,
+  interiorCabinetsWoodGrainTransfer,
+  countertopSinteredStoneTitle,
+  countertopStainlessSteelTitle,
 } from "@/utils/exteriorInteriorFinish";
 
 export default function Products() {
@@ -47,22 +47,30 @@ export default function Products() {
   console.log("Current URL:", currentUrl);
   React.useEffect(() => {
     if (!router.query.locale && currentLocale) {
-      const newUrl = pageURLS[currentLocale]?.products || `/${currentLocale}${router.asPath}`;
+      const newUrl =
+        pageURLS[currentLocale]?.products ||
+        `/${currentLocale}${router.asPath}`;
 
       window.history.replaceState(null, "", newUrl);
     }
   }, [router, currentLocale]);
 
+  let metatitle =
+    "Modelos de BBQ Pods | Descubra as nossas cozinhas de exterior";
 
-   let metatitle = "BBQ Pod Models | Explore Our Outdoor Kitchens";
-   let metaDescription = "Discover the full range of BBQ Pods — Core, Prime, Apex, Aero and Pinnacle. Premium outdoor kitchens built for Spanish outdoor living.";
-   let ogTitle =  "BBQ Pod Models | Explore Our Outdoor Kitchens";
-   let ogDescription = "Discover the full range of BBQ Pods — Core, Prime, Apex, Aero and Pinnacle. Premium outdoor kitchens built for Spanish outdoor living.";
-   const ogImage = products.filter((d)=>d.nameKey === "apexProductName")[0].image;
+  let metaDescription =
+    "Descubra toda a gama de BBQ Pods — Core, Prime, Apex, Aero e Pinnacle. Cozinhas de exterior premium, concebidas para desfrutar da vida ao ar livre em Espanha.";
+
+  let ogTitle = "Modelos de BBQ Pods | Descubra as nossas cozinhas de exterior";
+
+  let ogDescription =
+    "Descubra toda a gama de BBQ Pods — Core, Prime, Apex, Aero e Pinnacle. Cozinhas de exterior premium, concebidas para desfrutar da vida ao ar livre em Espanha.";
+  const ogImage = products.filter((d) => d.nameKey === "apexProductName")[0]
+    .image;
   return (
     <>
       <Head>
-       <title>{metatitle}</title>
+        <title>{metatitle}</title>
         <meta name="description" content={metaDescription} />
         <meta property="og:title" content={ogTitle} />
         <meta property="og:description" content={ogDescription} />
@@ -108,47 +116,47 @@ export default function Products() {
         />
         <ComparisonTable />
         <div id="color-options">
-        <TitleHeader
-          whyChoose={[]}
-          title={t("customizeYourPodTitle")}
-          subtitle={t("customizeYourPodSubtitle")}
-        />
-        <ExteriorProductPage
-          title={t("exteriorPodFrameTitle")}
-          subtitle={t("exteriorPodFrameSubtitle")}
-          imageRef={currentLocale === "es" ? REF001ES : REF001}
-          imageReftwo={null}
-          items={exteriorFinishes}
-        />
-        <ExteriorProductPage
-          title={t("interiorCabinetColoursTitle")}
-          subtitle={t("interiorCabinetColoursSubtitle")}
-          imageRef={currentLocale === "es" ? REF002ES : REF002}
-          imageReftwo={null}
-          items={interiorCabinetBlockColours}
-        />
-        <ExteriorProductPage
-          title={t("interiorCabinetsWoodTitle")}
-          subtitle={t("interiorCabinetsWoodSubtitle")}
-          imageRef={null}
-          imageReftwo={null}
-          items={interiorCabinetsWoodGrainTransfer}
-        />
-        <ExteriorProductPage
-          title={t("countertopStainlessSteelTitle")}
-          subtitle={t("countertopStainlessSteelSubtitle")}
-          imageRef={REF003}
-          imageReftwo={REF004}
-          gridCols={2}
-          items={countertopStainlessSteelTitle}
-        />
-        <ExteriorProductPage
-          title={t("countertopSinteredStoneTitle")}
-          subtitle={t("countertopSinteredStoneSubtitle")}
-          imageRef={REF005}
-          imageReftwo={null}
-          items={countertopSinteredStoneTitle}
-        />
+          <TitleHeader
+            whyChoose={[]}
+            title={t("customizeYourPodTitle")}
+            subtitle={t("customizeYourPodSubtitle")}
+          />
+          <ExteriorProductPage
+            title={t("exteriorPodFrameTitle")}
+            subtitle={t("exteriorPodFrameSubtitle")}
+            imageRef={currentLocale === "es" ? REF001ES : REF001}
+            imageReftwo={null}
+            items={exteriorFinishes}
+          />
+          <ExteriorProductPage
+            title={t("interiorCabinetColoursTitle")}
+            subtitle={t("interiorCabinetColoursSubtitle")}
+            imageRef={currentLocale === "es" ? REF002ES : REF002}
+            imageReftwo={null}
+            items={interiorCabinetBlockColours}
+          />
+          <ExteriorProductPage
+            title={t("interiorCabinetsWoodTitle")}
+            subtitle={t("interiorCabinetsWoodSubtitle")}
+            imageRef={null}
+            imageReftwo={null}
+            items={interiorCabinetsWoodGrainTransfer}
+          />
+          <ExteriorProductPage
+            title={t("countertopStainlessSteelTitle")}
+            subtitle={t("countertopStainlessSteelSubtitle")}
+            imageRef={REF003}
+            imageReftwo={REF004}
+            gridCols={2}
+            items={countertopStainlessSteelTitle}
+          />
+          <ExteriorProductPage
+            title={t("countertopSinteredStoneTitle")}
+            subtitle={t("countertopSinteredStoneSubtitle")}
+            imageRef={REF005}
+            imageReftwo={null}
+            items={countertopSinteredStoneTitle}
+          />
         </div>
         <ModelConfiguratorBanner
           title={t("StillUnsureWhichModel")}

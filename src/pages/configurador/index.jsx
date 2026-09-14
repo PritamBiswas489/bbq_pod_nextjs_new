@@ -11,34 +11,47 @@ import nextI18NextConfig from "../../../next-i18next.config";
 import Layout from "@/section/layout";
 import Head from "next/head";
 import { pageURLS } from "@/utils/getPageUrls";
-import {products} from "@/utils/exteriorInteriorFinish"; 
- 
+import { products } from "@/utils/exteriorInteriorFinish";
 
 export default function ConfiguratorPage() {
-  const { t } = useTranslation('common');
-  
-   const router = useRouter();
-    const currentLocale = router.locale;
-    console.log("Current locale:", currentLocale);
-  
-    const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
-    console.log("Current URL:", currentUrl);
-    React.useEffect(() => {
-      if (!router.query.locale && currentLocale) {
-        const newUrl = pageURLS[currentLocale]?.configurator || `/${currentLocale}${router.asPath}`;
-  
-        window.history.replaceState(null, "", newUrl);
-      }
-    }, [router, currentLocale]);
+  const { t } = useTranslation("common");
 
-       let metatitle = "Configurador BBQ Pod | Diseña tu Cocina Exterior";
-    let metaDescription = "Diseña tu BBQ Pod perfecta con nuestro configurador. Elige modelo, acabados y configuración.";
-    let ogTitle =  "Configurador BBQ Pod | Diseña tu Cocina Exterior";
-    let ogDescription = "Diseña tu BBQ Pod perfecta con nuestro configurador. Elige modelo, acabados y configuración.";
-    const ogImage = products.filter((d)=>d.nameKey === "pinnacleProductName")[0].image;
+  const router = useRouter();
+  const currentLocale = router.locale;
+  console.log("Current locale:", currentLocale);
+
+  const currentUrl = `${typeof window !== "undefined" ? window.location.origin : ""}${router.asPath}`;
+  console.log("Current URL:", currentUrl);
+  React.useEffect(() => {
+    if (!router.query.locale && currentLocale) {
+      const newUrl =
+        pageURLS[currentLocale]?.configurator ||
+        `/${currentLocale}${router.asPath}`;
+
+      window.history.replaceState(null, "", newUrl);
+    }
+  }, [router, currentLocale]);
+
+  let metatitle = "Configurador BBQ Pod | Diseña tu Cocina Exterior";
+  let metaDescription =
+    "Diseña tu BBQ Pod perfecta con nuestro configurador. Elige modelo, acabados y configuración.";
+  let ogTitle = "Configurador BBQ Pod | Diseña tu Cocina Exterior";
+  let ogDescription =
+    "Diseña tu BBQ Pod perfecta con nuestro configurador. Elige modelo, acabados y configuración.";
+
+  if (currentLocale === "pt") {
+    metatitle = "Configurador BBQ Pod | Desenhe a sua Cozinha Exterior";
+    metaDescription =
+      "Desenhe o seu BBQ Pod perfeito com o nosso configurador. Escolha modelo, acabamentos e configuração.";
+    ogTitle = "Configurador BBQ Pod | Desenhe a sua Cozinha Exterior";
+    ogDescription =
+      "Desenhe o seu BBQ Pod perfeito com o nosso configurador. Escolha modelo, acabamentos e configuração.";
+  }
+  const ogImage = products.filter((d) => d.nameKey === "pinnacleProductName")[0]
+    .image;
   return (
     <>
-    <Head>
+      <Head>
         <title>{metatitle}</title>
         <meta name="description" content={metaDescription} />
         <meta property="og:title" content={ogTitle} />
@@ -60,13 +73,13 @@ export default function ConfiguratorPage() {
           >
             <Container>
               <h1 style={{ fontSize: "42px", marginBottom: "16px" }}>
-                {t('design_your_bbq_pod')}
+                {t("design_your_bbq_pod")}
               </h1>
               <p style={{ color: "#ccc", maxWidth: "680px", margin: "0 auto" }}>
-                {t('follow_the_steps')}
+                {t("follow_the_steps")}
               </p>
               <p style={{ color: "#ccc", maxWidth: "680px", margin: "0 auto" }}>
-                {t('no_payment_required')}
+                {t("no_payment_required")}
               </p>
             </Container>
           </section>

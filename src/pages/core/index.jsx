@@ -208,6 +208,13 @@ const CoreProductDetails = () => {
       ogTitle = "Core Pod | BBQ Pod Spain"; 
       ogDescription = "El Core Pod es una cocina exterior compacta y elegante diseñada para disfrutar al máximo del espacio exterior.";
    }
+
+   if(currentLocale === "pt"){
+      metatitle = "Core Pod | BBQ Pod Spain";
+      metaDescription = "O Core Pod — uma cozinha exterior compacta e premium, projetada para a vida moderna ao ar livre.";
+      ogTitle = "Core Pod | BBQ Pod Spain"; 
+      ogDescription = "O Core Pod — uma cozinha exterior compacta e premium, projetada para a vida moderna ao ar livre.";
+   }
   return (
     <>
       <Head>
