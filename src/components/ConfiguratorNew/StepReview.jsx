@@ -142,7 +142,15 @@ const StepReview = ({ backtoStart }) => {
       gaEvent('configurator_submit', { locale: currentLocale });
       try {
         await axios.post("/api/send-order-email", submissionData);
-        setModalOpen(true);
+        if(currentLocale === 'en'){
+          router.push('/configurator/thankyou');
+        } else if(currentLocale === 'pt'){
+          router.push('/configurador/obrigado');
+        } else if(currentLocale === 'es'){
+          router.push('/configurador/gracias');
+        }else{
+          setModalOpen(true);
+        }
 
         setFormData({});
         setSubmitbtndisabled(false);
@@ -151,7 +159,7 @@ const StepReview = ({ backtoStart }) => {
         alert(t("stepReview.errorSubmit"));
         setSubmitbtndisabled(false);
       }
-    };
+    }
 
     sendEmail();
   };
