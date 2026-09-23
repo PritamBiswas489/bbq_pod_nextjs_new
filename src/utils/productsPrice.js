@@ -14,9 +14,9 @@ export const sinteredStonePrice = {
   "APEX": 400,
   "PINNACLE": 400,
   "AERO": 350,
- 
-   
-}
+  "HORIZON220":400,
+  "HORIZON270":450
+};
 
 export const rollerBlindPriceReduction = {
   "CORE": 250,
