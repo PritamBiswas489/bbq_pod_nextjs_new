@@ -53,10 +53,7 @@ const ApexProductDetails = () => {
           icon: "fa-solid fa-umbrella-beach",
           text: t("workapexBannerItemThree"),
         },
-         {
-          icon: "fa-solid fa-tv",
-          text: t("workapexBannerItemFour"),
-        },
+        
       ],
       bannerBg: bannerImage,
       bannerImage: bannerImage,

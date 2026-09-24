@@ -49,10 +49,7 @@ const PrimeProductDetails = () => {
         icon: "fa-solid fa-umbrella-beach",
         text: t("workprimeBannerItemThree"),
       },
-       {
-        icon: "fa-solid fa-tv",
-        text: t("workprimeBannerItemFour"),
-      },
+      
     ],
     bannerBg: bannerImage,
     bannerImage: bannerImage,

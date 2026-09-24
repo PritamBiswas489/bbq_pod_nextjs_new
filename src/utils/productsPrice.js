@@ -9,10 +9,10 @@ export const productsPrice = {
 };
 
 export const sinteredStonePrice = {
-  "CORE": 300,
-  "PRIME": 350,
-  "APEX": 400,
-  "PINNACLE": 400,
+  "CORE": 400,
+  "PRIME": 450,
+  "APEX": 550,
+  "PINNACLE": 550,
   "AERO": 350,
   "HORIZON220":400,
   "HORIZON270":450

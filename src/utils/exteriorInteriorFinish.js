@@ -603,19 +603,19 @@ export const extractorAndTv = {
   CORE:[
     {
       key: "Extractor_Hood_Low",
-      priceAddition: 0,
+      priceAddition: 125,
     },
     {
       key: "Extractor_Hood_Ceiling",
-      priceAddition: 0,
+      priceAddition: 125,
     },
     {
       key: "TV_32_inch",
-      priceAddition: 0,
+      priceAddition: 200,
     },
     {
       key: "No_TV_Extractor",
-      priceAddition: -125,
+      priceAddition: 0,
     },
   ],
   PRIME: [
@@ -690,42 +690,42 @@ export const onlyTv = {
   PRIME: [
     {
       key: "TV_32_inch",
-      priceAddition: 0,
+      priceAddition: 200,
     },
     {
       key: "No_TV",
-      priceAddition: -250,
+      priceAddition: 0,
     },
   ],
   HORIZON270: [
     {
       key: "TV_43_inch",
-      priceAddition: 0,
+      priceAddition: 250,
     },
     {
       key: "No_TV",
-      priceAddition: -250,
+      priceAddition: 0,
     },
   ],
    
   APEX:[
     {
       key: "TV_43_inch",
-      priceAddition: 0,
+      priceAddition: 250,
     },
     {
       key: "No_TV",
-      priceAddition: -250,
+      priceAddition: 0,
     },
   ],
   PINNACLE: [
     {
       key: "TV_43_inch",
-      priceAddition: 0,
+      priceAddition: 250,
     },
     {
       key: "No_TV",
-      priceAddition: -250,
+      priceAddition: 0,
     },
   ],
   AERO: [

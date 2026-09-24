@@ -50,11 +50,7 @@ const PinnacleProductDetails = () => {
          {
            icon: "fa-solid fa-umbrella-beach",
            text: t("workpinnacleBannerItemThree"),
-         },
-          {
-           icon: "fa-solid fa-tv",
-           text: t("workpinnacleBannerItemFour"),
-         },
+         }
        ],
        bannerBg: bannerImage,
        bannerImage: bannerImage,
