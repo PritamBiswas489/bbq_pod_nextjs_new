@@ -1133,7 +1133,7 @@
   "stepReview.deliveryCharged": "Entrega e instalación estándar: {{amount}}€",
   "stepReview.deliveryError": "No pudimos calcular la entrega para esta dirección. Por favor, prueba con otra dirección o contáctanos.",
   "stepReview.addressRequired": "Por favor, selecciona tu dirección de las sugerencias.",
-  "stepReview.`craneNote": "Instalación estándar con grúa incluida. El equipo de elevación especializado o los requisitos de acceso excepcionales pueden incurrir en un cargo adicional y se confirmarán antes de realizar el pedido."
+  "stepReview.craneNote": "Instalación estándar con grúa incluida. El equipo de elevación especializado o los requisitos de acceso excepcionales pueden incurrir en un cargo adicional y se confirmarán antes de realizar el pedido."
 
 
 }
