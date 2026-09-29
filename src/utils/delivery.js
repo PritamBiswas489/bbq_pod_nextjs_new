@@ -4,6 +4,16 @@
 export const FREE_MINUTES = 4 * 60; // up to 4h00m is free
 export const RATE_PER_HOUR = 100; // € per additional started hour
 
+// Balearic Islands (Mallorca, Menorca, Ibiza, Formentera): fixed charge,
+// driving time is NOT used for the price.
+export const BALEARIC_CHARGE = 1500;
+
+// Bounding box that contains only the Balearic archipelago.
+// (Mainland Spain's coast at these latitudes never reaches east of ~0.4°E.)
+export function isBalearic(lat, lng) {
+  return lat >= 38.5 && lat <= 40.2 && lng >= 1.0 && lng <= 4.5;
+}
+
 // totalMinutes = one-way driving time, rounded to whole minutes
 export function calcDeliveryCharge(totalMinutes) {
   const extra = totalMinutes - FREE_MINUTES;

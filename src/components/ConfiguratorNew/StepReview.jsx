@@ -172,8 +172,12 @@ const StepReview = ({ backtoStart }) => {
       installationPlaceId: address.placeId,
       installationLat: address.lat,
       installationLng: address.lng,
-      drivingTimeMinutes: quote.drivingMinutes,
-      drivingTime: quote.drivingTimeText,
+      deliveryZone: quote.zone, // "mainland" | "balearic"
+      drivingTimeMinutes: quote.drivingMinutes, // null for Balearic Islands
+      drivingTime:
+        quote.zone === "balearic"
+          ? "N/A (Balearic Islands – fixed charge)"
+          : quote.drivingTimeText,
       deliveryCharge, // number, €
       deliveryChargeText:
         deliveryCharge === 0 ? "FREE" : `${deliveryCharge.toLocaleString()} €`,

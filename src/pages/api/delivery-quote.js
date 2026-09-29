@@ -1,10 +1,26 @@
 // src/pages/api/delivery-quote.js
-import { calcDeliveryCharge, formatDuration } from "@/utils/delivery";
+import {
+  calcDeliveryCharge,
+  formatDuration,
+  isBalearic,
+  BALEARIC_CHARGE,
+} from "@/utils/delivery";
 
-const ORIGIN = { latitude: 36.6647, longitude: -4.561 };
+const ORIGIN = "C. Doña Carmen, 15, 29130 Alhaurín de la Torre, Málaga, Spain";
 
 // Reusable so /api/send-order-email can re-verify the charge before sending.
 export async function getDeliveryQuote(lat, lng) {
+  // Balearic Islands: fixed price, skip the driving-time calculation
+  if (isBalearic(lat, lng)) {
+    return {
+      zone: "balearic",
+      drivingMinutes: null,
+      drivingTimeText: null,
+      distanceKm: null,
+      deliveryCharge: BALEARIC_CHARGE,
+    };
+  }
+
   const r = await fetch(
     "https://routes.googleapis.com/directions/v2:computeRoutes",
     {
@@ -15,7 +31,7 @@ export async function getDeliveryQuote(lat, lng) {
         "X-Goog-FieldMask": "routes.duration,routes.distanceMeters",
       },
       body: JSON.stringify({
-        origin: { location: { latLng: ORIGIN } },
+        origin: { address: ORIGIN },
         destination: { location: { latLng: { latitude: lat, longitude: lng } } },
         travelMode: "DRIVE",
         // "normal" driving time: no live/predicted traffic
@@ -25,12 +41,27 @@ export async function getDeliveryQuote(lat, lng) {
     },
   );
   const data = await r.json();
+
+  // Google returned an error (bad/missing key, API not enabled, restriction...)
+  if (!r.ok) {
+    console.error(
+      "Routes API error:",
+      r.status,
+      JSON.stringify(data.error || data),
+    );
+    throw new Error(data.error?.message || `Routes API HTTP ${r.status}`);
+  }
+
   const route = data.routes?.[0];
-  if (!r.ok || !route) return null;
+  if (!route) {
+    console.error("Routes API returned no route for", lat, lng, JSON.stringify(data));
+    return null; // genuinely no drivable route
+  }
 
   const seconds = parseInt(route.duration, 10); // e.g. "14523s"
   const minutes = Math.round(seconds / 60);
   return {
+    zone: "mainland",
     drivingMinutes: minutes,
     drivingTimeText: formatDuration(minutes),
     distanceKm: Math.round((route.distanceMeters || 0) / 1000),
