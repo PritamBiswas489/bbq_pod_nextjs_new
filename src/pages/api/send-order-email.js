@@ -12,6 +12,7 @@ export default async function handler(req, res) {
     const name = req.body?.fullName ;
     const email = req.body?.email;
     const phone = req.body?.phone;
+    const installationAddress = req.body?.installationAddress;
     const installStreet = req.body?.installStreet;
     const installCity = req.body?.installCity;
     const installPostcode = req.body?.installPostcode;
@@ -33,6 +34,9 @@ export default async function handler(req, res) {
     const installationRequirements = req.body?.installationRequirements;
     const additionalNotes = req.body?.additionalNotes;
     const selectedProductPrice = req.body?.selectedProductPrice;
+    const totalWithDelivery = req.body?.totalWithDelivery;
+    const drivingTime = req.body?.drivingTime;
+    const deliveryCharges = req.body?.deliveryChargeText;
 
 
 
@@ -43,6 +47,9 @@ export default async function handler(req, res) {
     htmlBody = htmlBody.replace(/\[\s*customer_name\s*\]/g, name );
     htmlBody = htmlBody.replace(/\[\s*customer_phone\s*\]/g, phone );
     htmlBody = htmlBody.replace(/\[\s*customer_email\s*\]/g, email );
+    htmlBody = htmlBody.replace(/\[\s*installation_full_address\s*\]/g, installationAddress );
+    htmlBody = htmlBody.replace(/\[\s*installation_driving_time\s*\]/g, drivingTime );
+    htmlBody = htmlBody.replace(/\[\s*installation_delivery_charges\s*\]/g, deliveryCharges );
     htmlBody = htmlBody.replace(/\[\s*installation_address\s*\]/g, installStreet );
     htmlBody = htmlBody.replace(/\[\s*installation_city\s*\]/g, installCity );
     htmlBody = htmlBody.replace(/\[\s*installation_state\s*\]/g, installProvince );
@@ -61,7 +68,7 @@ export default async function handler(req, res) {
     htmlBody = htmlBody.replace(/\[\s*appliance_sink\s*\]/g, applianceSink ?? '' );
     htmlBody = htmlBody.replace(/\[\s*appliance_fridge\s*\]/g, applianceFridge ?? '' );
     htmlBody = htmlBody.replace(/\[\s*additional_notes\s*\]/g, additionalNotes );
-    htmlBody = htmlBody.replace(/\[\s*selected_product_price\s*\]/g, selectedProductPrice ?? '' );
+    htmlBody = htmlBody.replace(/\[\s*selected_product_price\s*\]/g, totalWithDelivery ?? '' );
     const installationReqsFormatted = installationRequirements
       .map((q) => ` <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:0;background:#1a1a1a;border:1px solid #252525;">
                       <tr>

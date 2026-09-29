@@ -1093,5 +1093,16 @@
   "workhorizon270PointOneDescription": "A cobertura elétrica abre sem esforço para criar abrigo enquanto cozinha. Quando fechada, protege o BBQ, as bancadas e os aparelhos da chuva, folhas e pó, mantendo tudo limpo e pronto para o próximo encontro.",
   "workhorizon270PointTwoHeading": "Concebido para receber",
   "workhorizon270PointTwoDescription": "A maior dimensão oferece espaço adicional para preparação, juntamente com uma TV exterior Samsung integrada e um sistema de colunas Bluetooth, criando uma cozinha exterior igualmente adequada para cozinhar, relaxar e receber família e amigos.",
-  "workhorizon270PointTwoDescriptionTwo": "Cada Horizon foi concebido para estar pronto quando estiver — protegido quando fechado, impressionante quando aberto."
+  "workhorizon270PointTwoDescriptionTwo": "Cada Horizon foi concebido para estar pronto quando estiver — protegido quando fechado, impressionante quando aberto.",
+
+
+  "stepReview.addressPlaceholder": "Comece a escrever a sua morada de instalação",
+  "stepReview.deliveryInfoLine1": "Entrega e instalação padrão gratuitas até 4 horas da nossa base em Málaga.",
+  "stepReview.deliveryInfoLine2": "Localizações mais distantes têm um custo de 100€ por cada hora adicional de deslocação, arredondada por excesso.",
+  "stepReview.deliveryCalculating": "A calcular a entrega…",
+  "stepReview.deliveryFree": "Entrega e instalação padrão GRATUITAS",
+  "stepReview.deliveryCharged": "Entrega e instalação padrão: {{amount}}€",
+  "stepReview.deliveryError": "Não foi possível calcular a entrega para esta morada. Tente outra morada ou contacte-nos.",
+  "stepReview.addressRequired": "Selecione a sua morada a partir das sugestões.",
+  "stepReview.craneNote": "Instalação padrão com grua incluída. Equipamentos de elevação especializados ou requisitos de acesso excecionais poderão implicar um custo adicional, que será confirmado antes da encomenda."
 }

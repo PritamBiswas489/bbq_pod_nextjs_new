@@ -33,6 +33,7 @@ export default function Configurator() {
   const selectedProduct = products.find((p) => p.nameKey === data.model);
   const dispatch = useAppDispatch();
   const selectedProductPrice = useAppSelector((state) => state.configurator.productTotalPrice);
+  const deliveryCharge = useAppSelector((state) => state.configurator.deliveryCharge);
  
 
 
@@ -206,7 +207,7 @@ export default function Configurator() {
           </div>
         </Col>
         <Col md={4} className={styles.sidebar}>
-          <ConfigSummary isAero={isAero} totalPrice={selectedProductPrice?.toLocaleString()} />
+          <ConfigSummary isAero={isAero} totalPrice={(selectedProductPrice + deliveryCharge)?.toLocaleString()} />
         </Col>
       </Row>
     </Container>
@@ -222,7 +223,7 @@ export default function Configurator() {
           <div className={styles.floatingPriceDivider} />
           <div className={styles.floatingPriceRight}>
             <span className={styles.floatingPriceSublabel}>{t('totalPrice')}</span>
-            <span className={styles.floatingPriceValue}>{selectedProductPrice?.toLocaleString()} €</span>
+            <span className={styles.floatingPriceValue}>{(selectedProductPrice + deliveryCharge)?.toLocaleString()} €</span>
           </div>
           <div className={styles.floatingPriceDivider} />
           <div className={styles.floatingPriceActions}>

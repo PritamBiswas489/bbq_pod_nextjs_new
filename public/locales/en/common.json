@@ -1121,7 +1121,18 @@
   "workhorizon270PointOneDescription": "The electric roof opens effortlessly to create overhead shelter while cooking. When closed, it protects your BBQ, worktops and appliances from rain, leaves and dust, keeping everything clean and ready for your next gathering.",
   "workhorizon270PointTwoHeading": "Designed for entertaining",
   "workhorizon270PointTwoDescription": "The larger footprint provides additional preparation space alongside an integrated Samsung outdoor TV and Bluetooth speaker system, creating an outdoor kitchen that’s equally suited to cooking, relaxing and hosting family and friends.",
-  "workhorizon270PointTwoDescriptionTwo": "Every Horizon is engineered to be ready whenever you are — protected when closed, impressive when open."
+  "workhorizon270PointTwoDescriptionTwo": "Every Horizon is engineered to be ready whenever you are — protected when closed, impressive when open.",
+
+
+"stepReview.addressPlaceholder": "Start typing your installation address",
+"stepReview.deliveryInfoLine1": "Free delivery & standard installation within 4 hours of our Málaga base.",
+"stepReview.deliveryInfoLine2": "Locations further away are charged 100€ per additional hour of driving time, rounded up.",
+"stepReview.deliveryCalculating": "Calculating delivery…",
+"stepReview.deliveryFree": "FREE delivery & standard installation",
+"stepReview.deliveryCharged": "Delivery & standard installation: {{amount}}€",
+"stepReview.deliveryError": "We couldn't calculate delivery for this address. Please try another address or contact us.",
+"stepReview.addressRequired": "Please select your address from the suggestions.",
+"stepReview.craneNote": "Standard crane installation included. Specialist lifting equipment or exceptional access requirements may incur an additional charge and will be confirmed before ordering."
 
   
 

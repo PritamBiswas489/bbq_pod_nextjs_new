@@ -14,6 +14,7 @@ const initialState = {
       applianceFridge: null,
       installationRequirements: {},
       productTotalPrice: 0,
+      deliveryCharge: 0,
       checkoutData: {}
 };
 export const configuratorSlice = createSlice({
@@ -59,10 +60,13 @@ export const configuratorSlice = createSlice({
         setProductTotalPrice: (state, action) => {
             state.productTotalPrice = action.payload;
         },
+        setDeliveryCharge: (state, action) => {
+            state.deliveryCharge = action.payload;
+        },
         setCheckoutData: (state, action) => {
             state.checkoutData = action.payload;
         },
     },
 });
-export const { setModel, setColor, setInterior, setCounterTop, setDoorConfig, setBBQStyle, setApplianceGas, setApplianceExtractor, setApplianceTv, setApplianceSink, setApplianceFridge, setInstallationRequirements, setProductTotalPrice, setCheckoutData } = configuratorSlice.actions;
+export const { setModel, setColor, setInterior, setCounterTop, setDoorConfig, setBBQStyle, setApplianceGas, setApplianceExtractor, setApplianceTv, setApplianceSink, setApplianceFridge, setInstallationRequirements, setProductTotalPrice, setDeliveryCharge, setCheckoutData } = configuratorSlice.actions;
 export default configuratorSlice.reducer;

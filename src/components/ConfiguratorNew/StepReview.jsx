@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./index.module.scss";
 import Image from "next/image";
 import hero1 from "@/assets/front/images/hero-1.jpg";
@@ -21,13 +21,14 @@ import { bbqStyle } from "@/utils/exteriorInteriorFinish";
 import { questions } from "@/utils/exteriorInteriorFinish";
 
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
-import { setCheckoutData } from "@/store/configurator.slice";
+import { setCheckoutData, setDeliveryCharge } from "@/store/configurator.slice";
 
 import ConfirmationModal from "./ConfirmationModal";
+import AddressAutocomplete from "./AddressAutocomplete";
 import { useRouter } from "next/router";
 import axios from "axios";
 import { Col, Row } from "react-bootstrap";
-import {gaEvent} from "@/lib/gtag";
+import { gaEvent } from "@/lib/gtag";
 
 const StepReview = ({ backtoStart }) => {
   const dispatch = useAppDispatch();
@@ -54,7 +55,7 @@ const StepReview = ({ backtoStart }) => {
   const selectedApplianceTv = useAppSelector((state) => state.configurator.applianceTv);
   const selectedApplianceSink = useAppSelector((state) => state.configurator.applianceSink);
   const selectedApplianceFridge = useAppSelector((state) => state.configurator.applianceFridge);
-    const selectedProductPrice = useAppSelector((state) => state.configurator.productTotalPrice);
+  const selectedProductPrice = useAppSelector((state) => state.configurator.productTotalPrice);
 
   const margedInteriorOptions = [
     ...interiorCabinetBlockColours,
@@ -95,6 +96,49 @@ const StepReview = ({ backtoStart }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [formData, setFormData] = useState({});
 
+  // ---- Delivery / address ----
+  const [address, setAddress] = useState(null); // selected Google place
+  // quote: { status: 'idle'|'loading'|'ok'|'error', drivingMinutes, drivingTimeText, deliveryCharge }
+  const [quote, setQuote] = useState({ status: "idle" });
+  const [addressError, setAddressError] = useState(false);
+  const quoteRequestId = useRef(0);
+
+  // Clear the delivery charge from the price summary if the user leaves this step
+  useEffect(() => {
+    return () => {
+      dispatch(setDeliveryCharge(0));
+    };
+  }, [dispatch]);
+
+  const resetQuote = () => {
+    quoteRequestId.current++; // ignore any in-flight response
+    setAddress(null);
+    setQuote({ status: "idle" });
+    setAddressError(false);
+    dispatch(setDeliveryCharge(0));
+  };
+
+  const handleAddressSelect = async (place) => {
+    const requestId = ++quoteRequestId.current;
+    setAddress(place);
+    setAddressError(false);
+    setQuote({ status: "loading" });
+    dispatch(setDeliveryCharge(0));
+    try {
+      const { data } = await axios.post("/api/delivery-quote", {
+        lat: place.lat,
+        lng: place.lng,
+      });
+      if (requestId !== quoteRequestId.current) return; // stale
+      setQuote({ status: "ok", ...data });
+      dispatch(setDeliveryCharge(data.deliveryCharge));
+    } catch (err) {
+      if (requestId !== quoteRequestId.current) return;
+      console.error("Delivery quote failed:", err);
+      setQuote({ status: "error" });
+    }
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -102,12 +146,40 @@ const StepReview = ({ backtoStart }) => {
   // handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Address must be picked from the list and the quote calculated
+    if (!address || quote.status !== "ok") {
+      setAddressError(true);
+      return;
+    }
+
     setSubmitbtndisabled(true);
     dispatch(setCheckoutData(formData));
-    // setModalOpen(true);
-    // // Here you would also send the email to sales@bbqpodspain.com
+
+    const deliveryCharge = quote.deliveryCharge;
+    const totalWithDelivery =
+      (selectedProductPrice || 0) + deliveryCharge;
+
     const submissionData = {
       ...formData,
+      // Address fields kept under the old names so the email template keeps working
+      installStreet: address.street || address.fullAddress,
+      installCity: address.city,
+      installPostcode: address.postcode,
+      installProvince: address.province,
+      // New delivery info
+      installationAddress: address.fullAddress,
+      installationPlaceId: address.placeId,
+      installationLat: address.lat,
+      installationLng: address.lng,
+      drivingTimeMinutes: quote.drivingMinutes,
+      drivingTime: quote.drivingTimeText,
+      deliveryCharge, // number, €
+      deliveryChargeText:
+        deliveryCharge === 0 ? "FREE" : `${deliveryCharge.toLocaleString()} €`,
+      totalWithDelivery: totalWithDelivery
+        ? `${totalWithDelivery.toLocaleString()} €`
+        : undefined,
       model: t(selectedModel),
       color: exteriorFinishes.find((c) => c.modelName === selectedColor)
         ?.colorName,
@@ -137,18 +209,20 @@ const StepReview = ({ backtoStart }) => {
       "Final form data to submit:",
       JSON.stringify(submissionData, null, 2),
     );
-    // Reset form or show success message as needed
+
+ 
+
     const sendEmail = async () => {
       gaEvent('configurator_submit', { locale: currentLocale });
       try {
         await axios.post("/api/send-order-email", submissionData);
-        if(currentLocale === 'en'){
+        if (currentLocale === 'en') {
           router.push('/configurator/thankyou');
-        } else if(currentLocale === 'pt'){
+        } else if (currentLocale === 'pt') {
           router.push('/configurador/obrigado');
-        } else if(currentLocale === 'es'){
+        } else if (currentLocale === 'es') {
           router.push('/configurador/gracias');
-        }else{
+        } else {
           setModalOpen(true);
         }
 
@@ -159,10 +233,12 @@ const StepReview = ({ backtoStart }) => {
         alert(t("stepReview.errorSubmit"));
         setSubmitbtndisabled(false);
       }
-    }
+    };
 
     sendEmail();
   };
+
+  const hintStyle = { fontSize: 16, color: "#666", marginTop: 6, lineHeight: 1.45, fontWeight: "bold" };
 
   return (
     <>
@@ -170,7 +246,6 @@ const StepReview = ({ backtoStart }) => {
         <h2>{t("stepReview.yourDetails")}</h2>
         <p>{t("stepReview.provideInfo")}</p>
       </div>
- 
 
       <div className={styles.infoWrap}>
         <h3>{t("stepReview.yourContactInfo")}</h3>
@@ -218,70 +293,68 @@ const StepReview = ({ backtoStart }) => {
                 />
               </div>
             </Col>
+
+            {/* Single Google autocomplete address field */}
             <Col lg={12} md={12} sm={12} xs={12}>
               <div className={styles.formGroup}>
-                <label>
+                <label htmlFor="installAddress">
                   {t("stepReview.installationAddress")}{" "}
                   <span style={{ color: "red" }}>*</span>
                 </label>
+                <AddressAutocomplete
+                  id="installAddress"
+                  placeholder={t("stepReview.addressPlaceholder")}
+                  onSelect={handleAddressSelect}
+                  onEdit={resetQuote}
+                  invalid={addressError}
+                />
+
+                {/* Before an address is chosen */}
+                {quote.status === "idle" && (
+                  <div style={hintStyle}>
+                    <div>{t("stepReview.deliveryInfoLine1")}</div>
+                    <div>{t("stepReview.deliveryInfoLine2")}</div>
+                  </div>
+                )}
+
+                {quote.status === "loading" && (
+                  <div style={hintStyle}>{t("stepReview.deliveryCalculating")}</div>
+                )}
+
+                {quote.status === "ok" && (
+                  <div
+                    style={{
+                      marginTop: 8,
+                      fontWeight: 600,
+                      fontSize:16,
+                      fontWeight: "bold",
+                      color: quote.deliveryCharge === 0 ? "#1e7e34" : "inherit",
+                    }}
+                  >
+                    {quote.deliveryCharge === 0
+                      ? t("stepReview.deliveryFree")
+                      : t("stepReview.deliveryCharged", {
+                          amount: quote.deliveryCharge.toLocaleString(),
+                        })}
+                  </div>
+                )}
+
+                {quote.status === "error" && (
+                  <div style={{ ...hintStyle, color: "#c0392b" }}>
+                    {t("stepReview.deliveryError")}
+                  </div>
+                )}
+
+                {addressError && quote.status !== "error" && (
+                  <div style={{ ...hintStyle, color: "#c0392b" }}>
+                    {t("stepReview.addressRequired")}
+                  </div>
+                )}
+
+                <div style={hintStyle}>{t("stepReview.craneNote")}</div>
               </div>
-              <Row>
-                <Col lg={6} md={6} sm={6} xs={12}>
-                  <div className={styles.formGroup}>
-                    <input
-                      type="text"
-                      name="installStreet"
-                      placeholder={t("stepReview.streetAddress")}
-                      className={styles.formInput}
-                      value={formData.installStreet || ""}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </Col>
-                <Col lg={6} md={6} sm={6} xs={12}>
-                  <div className={styles.formGroup}>
-                    <input
-                      type="text"
-                      name="installCity"
-                      placeholder={t("stepReview.townCity")}
-                      className={styles.formInput}
-                      value={formData.installCity || ""}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
-                </Col>
-                <Col lg={6} md={6} sm={6} xs={12}>
-                  <div className={styles.formGroup}>
-                    <input
-                      type="text"
-                      name="installPostcode"
-                      placeholder={t("stepReview.postcode")}
-                      className={styles.formInput}
-                      value={formData.installPostcode || ""}
-                      onChange={handleChange}
-                      required
-                      style={{ marginTop: 8 }}
-                    />
-                  </div>
-                </Col>
-                <Col lg={6} md={6} sm={6} xs={12}>
-                  <div className={styles.formGroup}>
-                    <input
-                      type="text"
-                      name="installProvince"
-                      placeholder={t("stepReview.province")}
-                      className={styles.formInput}
-                      value={formData.installProvince || ""}
-                      onChange={handleChange}
-                      required
-                      style={{ marginTop: 8 }}
-                    />
-                  </div>
-                </Col>
-              </Row>
             </Col>
+
             <Col lg={6} md={6} sm={6} xs={12}>
               <div className={styles.formGroup}>
                 <label htmlFor="howDidYouHear">
@@ -328,7 +401,7 @@ const StepReview = ({ backtoStart }) => {
               <div className={styles.informationBtm}>
                 <button
                   type="submit"
-                  disabled={submitbtndisabled}
+                  disabled={submitbtndisabled || quote.status === "loading"}
                   className={styles.submitBtn}
                 >
                   {submitbtndisabled ? (
@@ -351,19 +424,6 @@ const StepReview = ({ backtoStart }) => {
               </div>
             </Col>
           </Row>
-          {/* <div className={styles.information}>
-            <div className={styles.informationLeft}>
-              
-              
-              
-              
-             
-            </div>
-            <div className={styles.informationRight}>
-              
-            </div>
-            
-          </div> */}
         </form>
       </div>
       <ConfirmationModal

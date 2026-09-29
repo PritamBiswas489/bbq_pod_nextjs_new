@@ -1123,7 +1123,17 @@
   "workhorizon270PointOneDescription": "El techo eléctrico se abre sin esfuerzo para crear un refugio superior mientras cocinas. Cuando está cerrado, protege tu BBQ, encimeras y electrodomésticos de la lluvia, las hojas y el polvo, manteniendo todo limpio y listo para tu próxima reunión.",
   "workhorizon270PointTwoHeading": "Diseñado para entretener",
   "workhorizon270PointTwoDescription": "El mayor tamaño ofrece espacio de preparación adicional junto con una TV exterior Samsung integrada y un sistema de altavoces Bluetooth, creando una cocina exterior igualmente apta para cocinar, relajarse y recibir a familiares y amigos.",
-  "workhorizon270PointTwoDescriptionTwo": "Cada Horizon está diseñado para estar listo cuando tú lo estés: protegido cuando está cerrado, impresionante cuando está abierto."
+  "workhorizon270PointTwoDescriptionTwo": "Cada Horizon está diseñado para estar listo cuando tú lo estés: protegido cuando está cerrado, impresionante cuando está abierto.",
+
+  "stepReview.addressPlaceholder": "Comienza a escribir la dirección de instalación",
+  "stepReview.deliveryInfoLine1": "Entrega gratuita e instalación estándar dentro de las 4 horas desde nuestra base en Málaga.",
+  "stepReview.deliveryInfoLine2": "Las ubicaciones más alejadas tienen un cargo de 100€ por cada hora adicional de tiempo de conducción, redondeado hacia arriba.",
+  "stepReview.deliveryCalculating": "Calculando entrega…",
+  "stepReview.deliveryFree": "Entrega gratuita e instalación estándar",
+  "stepReview.deliveryCharged": "Entrega e instalación estándar: {{amount}}€",
+  "stepReview.deliveryError": "No pudimos calcular la entrega para esta dirección. Por favor, prueba con otra dirección o contáctanos.",
+  "stepReview.addressRequired": "Por favor, selecciona tu dirección de las sugerencias.",
+  "stepReview.`craneNote": "Instalación estándar con grúa incluida. El equipo de elevación especializado o los requisitos de acceso excepcionales pueden incurrir en un cargo adicional y se confirmarán antes de realizar el pedido."
 
 
 }
