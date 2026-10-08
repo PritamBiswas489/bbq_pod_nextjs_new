@@ -142,7 +142,7 @@ useEffect(() => {
 
   const slideTimer = window.setInterval(() => {
     setActiveBannerSlide((currentSlide) => (currentSlide + 1) % bannerSlides.length);
-  }, 5000);
+  }, 12000);
 
   return () => window.clearInterval(slideTimer);
 }, []);
