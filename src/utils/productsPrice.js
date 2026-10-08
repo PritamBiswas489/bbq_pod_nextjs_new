@@ -4,7 +4,7 @@ export const productsPrice = {
   "APEX": 17900,
   "PINNACLE": 18900,
   "AERO": 15900,
-  "HORIZON220": 10400,
+  "HORIZON220": 11400,
   "HORIZON270": 13400
 };
 

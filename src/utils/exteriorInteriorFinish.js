@@ -286,17 +286,16 @@ export const doorCongiguration = [
     id: "lift_up",
     img: liftup.src,
   },
-  // {
-  //   title: "Roller Style",
-  //   id: "roller_style",
-  //   img: roller.src,
-  // },
-
   {
-    title: "Metal Blind",
-    id: "metal_blind",
-    img: metalBlind.src,
+    title: "Roller Style",
+    id: "roller_style",
+    img: roller.src,
   },
+  // {
+  //   title: "Metal Blind",
+  //   id: "metal_blind",
+  //   img: metalBlind.src,
+  // },
 ];
 
 export const bbqStyle = [
