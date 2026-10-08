@@ -208,6 +208,7 @@
   "footerCompanyBrochure": "Brochure",
   "footerCompanyContact": "Contact",
   "footerContactHeading": "Contact Us",
+  "footerSocialHeading": "Follow BBQ Pod Spain",
   "footerContactLocation": "C. Doña Carmen, 15, 29130 Alhaurín de la Torre, Málaga",
   "footerContactEmail": "sales@bbqpodspain.com",
   "footerContactPhone": "+34 672 021 437",
@@ -1132,9 +1133,35 @@
 "stepReview.deliveryCharged": "Delivery & standard installation: {{amount}}€",
 "stepReview.deliveryError": "We couldn't calculate delivery for this address. Please try another address or contact us.",
 "stepReview.addressRequired": "Please select your address from the suggestions.",
-"stepReview.craneNote": "Standard crane installation included. Specialist lifting equipment or exceptional access requirements may incur an additional charge and will be confirmed before ordering."
+"stepReview.craneNote": "Standard crane installation included. Specialist lifting equipment or exceptional access requirements may incur an additional charge and will be confirmed before ordering.",
 
-  
+ 
+
+"home.banner.Overline":"PREMIUM OUTDOOR KITCHENS",
+"home.banner.Headline":"Your garden. Your favourite place.",
+"home.banner.SupportingText": "Bring cooking, entertaining and great design into your garden.",
+"home.banner.Primarybutton": "Explore models & prices",
+"home.banner.Secondarybutton": "Make it yours",
+
+
+
+"home.banner2.Overline":"YOUR SPACE. YOUR STYLE.",
+"home.banner2.Headline":"Make it yours",
+"home.banner2.SupportingText": "Choose the finishes and features to create your ideal outdoor kitchen.",
+"home.banner2.Primarybutton": "Configure your BBQ Pod",
+"home.banner2.Secondarybutton": "Compare models",
+
+
+
+"home.banner3.Overline":"MADE FOR SHARING",
+"home.banner3.Headline":"Great food. Even better company.",
+"home.banner3.SupportingText": "Bring everyone together with an outdoor kitchen made for good times.",
+"home.banner3.Primarybutton": "Find your BBQ Pod",
+"home.banner3.Secondarybutton": "Visit our showroom"
+
+
+
+
 
 
 }

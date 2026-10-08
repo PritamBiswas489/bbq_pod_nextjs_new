@@ -8,6 +8,14 @@
   "bannerTagline": "Pods de Cocina Exterior de Lujo",
   "bannerSubtitle": "Parrilla. Reunión. Disfruta.",
   "exploreButton": "Explorar Productos",
+  "bannerEyebrow": "Cocinas de exterior premium",
+  "customizeButton": "Personaliza el tuyo",
+  "bannerSlide2Title": "Tu jardín. Tu mejor plan.",
+  "bannerSlide2Subtitle": "Diseño, cocina y ambiente para disfrutar al aire libre.",
+  "bannerSlide2Button": "Ver modelos y precios",
+  "bannerSlide3Title": "Disfruta cada momento al aire libre.",
+  "bannerSlide3Subtitle": "Un espacio para cocinar, reunirse y disfrutar más del exterior.",
+  "bannerSlide3Button": "Encuentra tu cocina",
   "brochureTitle": "Descubre la Gama BBQ Pod España",
   "brochureDescription": "Recibe nuestro folleto completo por correo electrónico y explora todos los modelos, características y acabados a tu propio ritmo.",
   "badge1": "Rango de modelos completo y especificaciones",
@@ -208,6 +216,7 @@
   "footerCompanyBrochure": "Folleto",
   "footerCompanyContact": "Contacto",
   "footerContactHeading": "Contacta con Nosotros",
+  "footerSocialHeading": "Sigue a BBQ Pod Spain",
   "footerContactLocation": "C. Doña Carmen, 15, 29130 Alhaurín de la Torre, Málaga",
   "footerContactEmail": "sales@bbqpodspain.com",
   "footerContactPhone": "+34 672 021 437",
@@ -1133,7 +1142,29 @@
   "stepReview.deliveryCharged": "Entrega e instalación estándar: {{amount}}€",
   "stepReview.deliveryError": "No pudimos calcular la entrega para esta dirección. Por favor, prueba con otra dirección o contáctanos.",
   "stepReview.addressRequired": "Por favor, selecciona tu dirección de las sugerencias.",
-  "stepReview.craneNote": "Instalación estándar con grúa incluida. El equipo de elevación especializado o los requisitos de acceso excepcionales pueden incurrir en un cargo adicional y se confirmarán antes de realizar el pedido."
+  "stepReview.craneNote": "Instalación estándar con grúa incluida. El equipo de elevación especializado o los requisitos de acceso excepcionales pueden incurrir en un cargo adicional y se confirmarán antes de realizar el pedido.",
+
+  "home.banner.Overline":"COCINAS EXTERIORES PREMIUM",
+  "home.banner.Headline":"Tu jardín. Tu lugar favorito.",
+  "home.banner.SupportingText": "Lleva la cocina, el entretenimiento y el gran diseño a tu jardín.",
+  "home.banner.Primarybutton": "Ver modelos y precios",
+  "home.banner.Secondarybutton": "Personaliza el tuyo",
+
+
+
+"home.banner2.Overline":"TU ESPACIO. TU ESTILO.",
+"home.banner2.Headline":"Hazlo tuyo",
+"home.banner2.SupportingText": "Elige los acabados y características para crear tu cocina exterior ideal.",
+"home.banner2.Primarybutton": "Personaliza tu BBQ Pod",
+"home.banner2.Secondarybutton": "Comparar modelos",
+
+
+
+"home.banner3.Overline":"HECHO PARA COMPARTIR",
+"home.banner3.Headline":"Buena comida. Mejor compañía.",
+"home.banner3.SupportingText": "Reúne a todos con una cocina exterior hecha para buenos momentos.",
+"home.banner3.Primarybutton": "Encuentra tu BBQ Pod",
+"home.banner3.Secondarybutton": "Visita el showroom"
 
 
 }

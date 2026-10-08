@@ -10,6 +10,7 @@ import {
   FaClock,
   FaWhatsapp,
 } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
 import logo from "@/assets/front/images/logo.png";
 import styles from "./index.module.scss";
 import Image from "next/image";
@@ -29,6 +30,34 @@ import { gaEvent } from "@/lib/gtag";
 
 
 const WHATSAPP_NUMBER = "+34672021437"; // TODO: replace with your real WhatsApp number, international format, no + or spaces
+
+const socialLinks = [
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/bbqpodspain/",
+    icon: <FaInstagram />,
+  },
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/p/BBQ-POD-SPAIN-61587208801907/",
+    icon: <FaFacebookF />,
+  },
+  {
+    name: "TikTok",
+    href: "https://www.tiktok.com/@bbqpodspain",
+    icon: <FaTiktok />,
+  },
+  {
+    name: "YouTube",
+    href: "https://www.youtube.com/@BBQPODSPAIN",
+    icon: <FaYoutube />,
+  },
+  {
+    name: "Google Business Profile",
+    href: "https://share.google/Veh0eqgaOu8Sz7LEn",
+    icon: <FaMapMarkerAlt />,
+  },
+];
 
 const Footer = () => {
   const { t } = useTranslation('common');
@@ -160,6 +189,8 @@ const Footer = () => {
           </Col>
         </Row>
 
+      
+
         <div className={styles.partnersSection}>
           <h5 className={styles.partnersHeading}>{t('Trusted_International_Partners')}</h5>
           <div className={styles.partnersGrid}>
@@ -216,6 +247,27 @@ const Footer = () => {
             <p>{t('footerCompanyId')}</p>
           </Col>
         </Row>
+
+          <section className={styles.socialSection} aria-labelledby="footer-social-heading">
+          <h5 id="footer-social-heading" className={styles.socialHeading}>
+            {t("footerSocialHeading")}
+          </h5>
+          <div className={styles.socialLinks}>
+            {socialLinks.map(({ name, href, icon }) => (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.socialLink}
+                aria-label={`BBQ Pod Spain on ${name}`}
+              >
+                {icon}
+                <span>{name}</span>
+              </a>
+            ))}
+          </div>
+        </section>
       </Container>
     </footer>
     </>

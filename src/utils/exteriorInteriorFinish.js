@@ -286,11 +286,11 @@ export const doorCongiguration = [
     id: "lift_up",
     img: liftup.src,
   },
-  {
-    title: "Roller Style",
-    id: "roller_style",
-    img: roller.src,
-  },
+  // {
+  //   title: "Roller Style",
+  //   id: "roller_style",
+  //   img: roller.src,
+  // },
 
   {
     title: "Metal Blind",

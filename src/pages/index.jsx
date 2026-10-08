@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import style from "./index.module.scss";
@@ -35,6 +35,15 @@ import { pageURLS } from "@/utils/getPageUrls";
 import BrochureModal from "@/components/brochureModal";
 import { products } from "@/utils/exteriorInteriorFinish";
 
+import  homeBannerImageOne from "@/assets/front/images/homePageBanner/01-blue-desktop.jpg";
+import  homeBannerImageTwo from "@/assets/front/images/homePageBanner/02-violet-desktop.jpg";
+import  homeBannerImageThree from "@/assets/front/images/homePageBanner/03-food-desktop.jpg";
+
+
+import  mobileBannerImageOne from "@/assets/front/images/mobileBanner/01-blue-mobile.jpg";
+import  mobileBannerImageTwo from "@/assets/front/images/mobileBanner/02-violet-mobile.jpg";
+import  mobileBannerImageThree from "@/assets/front/images/mobileBanner/03-food-mobile.jpg";
+
 export const homeFaqs = [
   {
     question: "faq1Question",
@@ -69,12 +78,82 @@ export const homeFaqs = [
     answer: "faq8Answer",
   },
 ];
-
+const WHATSAPP_NUMBER = "+34672021437"; 
 const Home = () => {
   const { t } = useTranslation("common");
   const [openModal, setOpenModal] = useState(false);
+  const [activeBannerSlide, setActiveBannerSlide] = useState(0);
   const router = useRouter();
   let currentLocale = router.locale;
+
+
+   const [whatsappLink, setWhatsappLink] = useState(null);
+  
+    useEffect(() => {
+      if(currentLocale === 'es') {
+        setWhatsappLink(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("¡Hola! 👋 He visto vuestra página web y me gustaría recibir más información sobre las BBQ Pods y sus precios. Gracias.")}`);
+      } else {
+        setWhatsappLink(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! 👋 I’ve been looking at your website and would like some more information about your BBQ Pods and prices. Thank you")}`);
+      }
+    }, [currentLocale]);
+  
+
+
+ // banner  slides 
+const bannerSlides = [
+  {
+    image: homeBannerImageOne,
+    mobileImage: mobileBannerImageOne,
+    Overline: "home.banner.Overline",
+    Headline: "home.banner.Headline",
+    SupportingText: "home.banner.SupportingText",
+    Primarybutton: "home.banner.Primarybutton",
+    PrimarybuttonLink: pageURLS[currentLocale].products,
+    Secondarybutton: "home.banner.Secondarybutton",
+    SecondarybuttonLink: pageURLS[currentLocale].configurator,
+  },
+  {
+    image: homeBannerImageTwo,
+    mobileImage: mobileBannerImageTwo,
+    Overline: "home.banner2.Overline",
+    Headline: "home.banner2.Headline",
+    SupportingText: "home.banner2.SupportingText",
+    Primarybutton: "home.banner2.Primarybutton",
+    PrimarybuttonLink: pageURLS[currentLocale].configurator,
+    Secondarybutton: "home.banner2.Secondarybutton",
+    SecondarybuttonLink: pageURLS[currentLocale].products,
+  },
+  {
+    image: homeBannerImageThree,
+    mobileImage: mobileBannerImageThree,
+    Overline: "home.banner3.Overline",
+    Headline: "home.banner3.Headline",
+    SupportingText: "home.banner3.SupportingText",
+    Primarybutton: "home.banner3.Primarybutton",
+    PrimarybuttonLink: pageURLS[currentLocale].products,
+    Secondarybutton: "home.banner3.Secondarybutton",
+     
+  },
+];
+useEffect(() => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
+
+  const slideTimer = window.setInterval(() => {
+    setActiveBannerSlide((currentSlide) => (currentSlide + 1) % bannerSlides.length);
+  }, 5000);
+
+  return () => window.clearInterval(slideTimer);
+}, []);
+
+const mobileBannerHeight = `${
+  (bannerSlides[activeBannerSlide].mobileImage.height /
+    bannerSlides[activeBannerSlide].mobileImage.width) *
+  100
+}vw`;
+console.warn("Banner slides:", bannerSlides);
+
 
   console.log("Current locale:", currentLocale);
   const pageUrls = pageURLS[currentLocale];
@@ -132,24 +211,35 @@ const Home = () => {
       <Layout>
         <section
           className={style.banner}
-          style={{
-            backgroundImage: `url(${bannerBg.src})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
+          aria-roledescription="carousel"
+          aria-label={t(bannerSlides[activeBannerSlide].Overline)}
+          style={{ "--mobile-banner-height": mobileBannerHeight }}
         >
+          {bannerSlides.map((slide, index) => (
+            <div
+              key={slide.image.src}
+              className={`${style.bannerSlide} ${
+                activeBannerSlide === index ? style.activeBannerSlide : ""
+              }`}
+              style={{
+                "--desktop-banner-image": `url(${slide.image.src})`,
+                "--mobile-banner-image": `url(${slide.mobileImage.src})`,
+              }}
+              aria-hidden="true"
+            />
+          ))}
           <Container>
             <Row className="align-items-center">
               {/* LEFT CONTENT */}
               <Col md={12}>
                 <div className={style.bannerContent}>
+                  <p className={style.bannerEyebrow}>{t("bannerEyebrow")}</p>
                   <h1
                     data-aos="fade-right"
                     data-aos-duration="2000"
                     data-aos-once="true"
                   >
-                    {t("tagline")}
+                    {t(bannerSlides[activeBannerSlide].Headline)}
                     {/* Luxury Outdoor Kitchen Pods */}
                   </h1>
 
@@ -158,25 +248,56 @@ const Home = () => {
                     data-aos-duration="2500"
                     data-aos-once="true"
                   >
-                    {t("bannerSubtitle")}
+                    {t(bannerSlides[activeBannerSlide].SupportingText)}
                   </h3>
 
                   <div className={style.actions}>
                     <Link
-                      href={pageUrls.products}
+                      href={
+                        bannerSlides[activeBannerSlide]?.PrimarybuttonLink ||
+                        "#"
+                      }
                       className={style.exploreBtn}
                       data-aos="zoom-out"
                       data-aos-duration="2500"
-                      data-aos-once="true"
                     >
-                      {t("exploreButton")}{" "}
+                      {t(bannerSlides[activeBannerSlide].Primarybutton)}{" "}
                       <TiArrowRightOutline className="ms-1" />
                     </Link>
+                    {bannerSlides[activeBannerSlide]?.SecondarybuttonLink ? (
+                      <Link
+                        href={
+                          bannerSlides[activeBannerSlide]
+                            ?.SecondarybuttonLink || "#"
+                        }
+                        className={style.customizeLink}
+                      >
+                        {t(bannerSlides[activeBannerSlide].Secondarybutton)}
+                      </Link>
+                    ) : (
+                       <Link  href={whatsappLink} target="_blank" className={style.customizeLink}>
+                           {t(bannerSlides[activeBannerSlide].Secondarybutton)}
+                      </Link>
+                    )}
                   </div>
                 </div>
               </Col>
             </Row>
           </Container>
+          <div className={style.bannerDots} aria-label="Choose a slide">
+            {bannerSlides.map((slide, index) => (
+              <button
+                key={slide.image.src}
+                type="button"
+                className={`${style.bannerDot} ${
+                  activeBannerSlide === index ? style.activeBannerDot : ""
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+                aria-pressed={activeBannerSlide === index}
+                onClick={() => setActiveBannerSlide(index)}
+              />
+            ))}
+          </div>
         </section>
         <FeaturesSection />
         <CounterSection />
