@@ -5,6 +5,7 @@ import styles from "./index.module.scss";
 const languages = [
   { id: "en", label: "English" },
   { id: "es", label: "Español" },
+  { id: "pt", label: "Português" },
 ];
 
 
