@@ -15,6 +15,7 @@ const ExteriorProductPage = ({
   items,
   gridCols = 4, // ✅ default
 }) => {
+  const { t } = useTranslation("common");
   return (
     <div className={styles.exteriorColours}>
       <TitleHeader whyChoose={[]} title={title} subtitle={subtitle} />
@@ -50,7 +51,7 @@ const ExteriorProductPage = ({
                     height={160}
                     style={{ borderRadius: "20px" }}
                   />
-                  <h6>{item.colorName}</h6>
+                  <h6>{t(item.modelName)}</h6>
                 </div>
               </div>
             ))}
