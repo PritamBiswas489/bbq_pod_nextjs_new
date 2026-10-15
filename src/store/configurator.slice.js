@@ -1,10 +1,10 @@
 import { bbqStyle } from "@/utils/exteriorInteriorFinish";
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-      model: null,
-      color: null,
-      interior: null,
-      counterTop: null,
+      model: "coreProductName",
+      color: "SP00321",
+      interior: "SP00321",
+      counterTop: "CALACATTA_WHITE",
       doorConfig: null,
       bbqStyle: null,
       applianceGas: null,

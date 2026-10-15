@@ -19,6 +19,7 @@ import { countertopStainlessSteelTitle, countertopSinteredStoneTitle  } from "@/
 import { FaCheck } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
 import { sinteredStonePrice } from "@/utils/productsPrice";
+import PodPreview from "./PodPreview";
  
 const StepCountertop = () => {
   const { t } = useTranslation("common");
@@ -102,7 +103,7 @@ const StepCountertop = () => {
             </div>
       
 
-       
+       <PodPreview />
     </>
   );
 };

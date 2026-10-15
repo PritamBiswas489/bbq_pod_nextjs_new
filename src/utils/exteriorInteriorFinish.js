@@ -114,21 +114,25 @@ export const exteriorFinishes = [
     colorName: "Athens White",
     modelName: "SP00321",
     image: bg1,
+    previewId: 'p13-0'
   },
   {
     colorName: "Medium Gray",
     modelName: "SP00071",
     image: bg2,
+    previewId: 'p13-1'
   },
   {
     colorName: "Purple Gray",
     modelName: "CP63203SF",
     image: bg3,
+    previewId: 'p13-12'
   },
   {
     colorName: "Black Sand",
     modelName: "SP00368",
     image: bg4,
+    previewId: 'p13-14'
   },
   // {
   //   colorName: "Olive Green",
@@ -142,81 +146,97 @@ export const interiorCabinetBlockColours = [
     colorName: "Athens White",
     modelName: "SP00321",
     image: bg1,
+    previewId: 'p13-0'
   },
   {
     colorName: "Medium Gray",
     modelName: "SP00071",
     image: bg2,
+    previewId: 'p13-1'
   },
   {
     colorName: "Purple Gray",
     modelName: "CP63203SF",
     image: bg3,
+    previewId: 'p13-12'
   },
   {
     colorName: "Black Sand",
     modelName: "SP00368",
     image: bg4,
+    previewId: 'p13-14'
   },
   {
     colorName: "Beige Matte",
     modelName: "CY0011",
     image: bg5,
+    previewId: 'p13-19'
   },
   {
     colorName: "Starry Silver",
     modelName: "CPJ103",
     image: bg6,
+    previewId: 'p13-20'
   },
   {
     colorName: "Khaki Gray",
     modelName: "FTE1014898T",
     image: bg7,
+    previewId: 'p13-2'
   },
   {
     colorName: "Morandi Gray",
     modelName: "CY0037",
     image: bg8,
+    previewId: 'p13-3'
   },
   {
     colorName: "Light Gray",
     modelName: "SP00598",
     image: bg9,
+    previewId: 'p13-4'
   },
   {
     colorName: "Silver Gray",
     modelName: "CP61773SF",
     image: bg10,
+    previewId: 'p13-5'
   },
   {
     colorName: "Traffic Gray",
     modelName: "FTE101554",
     image: bg11,
+    previewId: 'p13-6'
   },
   {
     colorName: "Gray Flash",
     modelName: "SP00111",
     image: bg12,
+    previewId: 'p13-7'
   },
   {
     colorName: "Light Green",
     modelName: "CY35109",
     image: bg13,
+    previewId: 'p13-8'
   },
   {
     colorName: "Retro Green",
     modelName: "CY0047",
     image: bg14,
+    previewId: 'p13-9'
   },
   {
     colorName: "Olive Green",
     modelName: "CP71732C",
     image: bg15,
+    previewId: 'p13-10'
   },
   {
     colorName: "Lake Green",
     modelName: "JXBD0089",
     image: bg16,
+    previewId: 'p13-11'
   },
   
 ];
@@ -226,21 +246,25 @@ export const interiorCabinetsWoodGrainTransfer = [
     colorName: "Camel Gray",
     modelName: "CP63195S + JC-8193Y-2",
     image: bg17,
+    previewId: 'p14-0'
   },
   {
     colorName: "Khaki Wood",
     modelName: "XGHY-P2412 + XCH-PS9015",
     image: bg18,
+    previewId: 'p14-1'
   },
   {
     colorName: "Black Walnut",
     modelName: "CP24938SF + JT4K9015-3",
     image: bg19,
+    previewId: 'p14-4'
   },
   {
     colorName: "Cherry Blossom",
     modelName: "M243556P + JR-H1823",
     image: bg20,
+    previewId: 'p14-5'
   },
 ];
 //counter top stainless steel
@@ -249,11 +273,13 @@ export const countertopStainlessSteelTitle = [
     colorName: "Tree Bark",
     modelName: "TREE_BARK",
     image: bg21,
+    previewId: 'p14-11'
   },
   {
     colorName: "Rhino Skin",
     modelName: "RHINO_SKIN",
     image: bg22,
+    previewId: 'p14-10'
   },
 ];
 //counter top sintered stone
@@ -262,21 +288,25 @@ export const countertopSinteredStoneTitle = [
     colorName: "Calacatta White",
     modelName: "CALACATTA_WHITE",
     image: bg23,
+    previewId: 'p14-6'
   },
   {
     colorName: "Cave Stone Beige",
     modelName: "CAVE_STONE_BEIGE",
     image: bg24,
+    previewId: 'p14-7'
   },
   {
     colorName: "Bosnia Grey",
     modelName: "BOSNIA_GREY",
     image: bg25,
+    previewId: 'p14-8'
   },
   {
     colorName: "Spanish Black And White Root",
     modelName: "SPANISH_BLACK_AND_WHITE_ROOT",
     image: bg26,
+    previewId: 'p14-9'
   },
 ];
 

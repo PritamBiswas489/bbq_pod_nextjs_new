@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#222820" />
+    <meta
+      name="description"
+      content="Explore six BBQ Pod Spain models and personalise your pod, cabinets and worktop in real time."
+    />
+    <title>Design your pod · BBQ Pod Spain</title>
+    <link rel="stylesheet" href="style.css?v=2" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./" aria-label="BBQ Pod Spain home"
+        >BBQ<span>POD</span><small>S P A I N</small></a
+      >
+      <div class="header-label">THE OUTDOOR DESIGN STUDIO</div>
+      <span class="badge">TEST EDITION</span>
+    </header>
+    <main>
+      <section class="studio">
+        <div class="intro">
+          <p class="eyebrow">YOUR SPACE. YOUR FINISH.</p>
+          <h1>Your kitchen. <em>Your colours.</em></h1>
+          <p>Explore the collection and find your finish.</p>
+        </div>
+        <div class="canvas-wrap">
+          <div class="view-label">
+            <span class="live-dot"></span><span id="preview-kind">LIVE PHOTOREAL PREVIEW</span>
+          </div>
+          <div id="render" aria-busy="true" aria-label="Your configured BBQ Pod"></div>
+          <span id="render-loading" class="render-loading">Preparing your preview…</span>
+          <div id="render-error" class="render-error" hidden>
+            Preview could not load.<button id="retry-render">Try again</button>
+          </div>
+          <div class="view-tools">
+            <button id="dimension-toggle" aria-pressed="false">↔ Dimensions</button
+            ><button id="zoom-toggle" aria-pressed="false">⊕ Detail view</button>
+          </div>
+        </div>
+        <div class="scene-footer">
+          <div>
+            <span class="eyebrow">YOUR DESIGN</span>
+            <h2 id="model-name">Core</h2>
+            <p id="model-caption"></p>
+          </div>
+          <div class="material-stamps" id="stamps"></div>
+        </div>
+        <p id="preview-note" class="preview-note">
+          Original AFA material renders · Stainless-steel burner panel
+        </p>
+      </section>
+      <aside class="controls">
+        <div class="controls-head">
+          <span class="eyebrow">BUILT AROUND YOU</span>
+          <h2>Design your pod</h2>
+          <p>Choose a model, then make it yours.</p>
+        </div>
+        <section class="control-section">
+          <h3><span>01</span> Your model</h3>
+          <div id="models" class="models"></div>
+        </section>
+        <section class="control-section">
+          <div class="section-title">
+            <h3><span>02</span> Pod colour</h3>
+            <span id="pod-value" class="selected-value"></span>
+          </div>
+          <p class="helper">Outer frame & interior shell</p>
+          <div id="pod-swatches" class="swatches"></div>
+        </section>
+        <section class="control-section">
+          <div class="section-title">
+            <h3><span>03</span> Cabinet finish</h3>
+          </div>
+          <div class="tabs" role="group" aria-label="Cabinet finish type">
+            <button data-group="Powder coating" aria-pressed="true">Solid colours</button
+            ><button data-group="Transfer printing" aria-pressed="false">Textured finishes</button>
+          </div>
+          <p id="cabinet-value" class="selected-value"></p>
+          <div id="cabinet-swatches" class="swatches"></div>
+        </section>
+        <section class="control-section">
+          <div class="section-title">
+            <h3><span>04</span> Worktop</h3>
+            <span id="worktop-value" class="selected-value"></span>
+          </div>
+          <div id="worktop-swatches" class="swatches tops"></div>
+          <p id="worktop-note" class="fine" hidden>
+            Rhino Skin preview awaiting the correct manufacturer render.
+          </p>
+        </section>
+        <div class="actions">
+          <button class="primary" id="review">Review your design <span>↗</span></button>
+          <div class="minor-actions">
+            <button id="copy-link">Copy design link</button
+            ><button id="copy-embed">Copy iframe code</button
+            ><button id="save-image">Save image</button><button id="reset">Reset</button>
+          </div>
+          <p class="fine">Test your design freely. No order is placed.</p>
+        </div>
+        <details class="notes">
+          <summary>About the finishes</summary>
+          <p>
+            Core, Prime, Apex and Pinnacle use the original AFA model, shell, cabinet and worktop
+            render layers. Colour swatches are the AFA samples you supplied.
+          </p>
+          <p>
+            Horizon 220 and 270 use your product photography with simulated finishes. Screen
+            colours, texture scale, appliances and final specifications should be confirmed before
+            ordering.
+          </p>
+          <p>
+            The burner control panel stays stainless steel in every configuration. This private test
+            does not submit enquiries or place orders.
+          </p>
+        </details>
+      </aside>
+    </main>
+    <footer>
+      <span>BBQ POD SPAIN</span><span>Made for life outside.</span
+      ><span>Design studio / Edition 02</span>
+    </footer>
+    <dialog id="summary">
+      <div class="dialog-head">
+        <p class="eyebrow">A LITTLE MORE YOU.</p>
+        <button id="close-summary" aria-label="Close design summary">×</button>
+      </div>
+      <h2>Your outdoor kitchen.</h2>
+      <div id="summary-render"></div>
+      <dl id="summary-lines"></dl>
+      <p class="fine">
+        Exploratory configuration. Finishes, layout and availability require confirmation. No order
+        or enquiry is sent.
+      </p>
+      <button id="download" class="primary">Download configuration <span>↓</span></button
+      ><button id="continue" class="text-button">Continue designing</button>
+    </dialog>
+    <div role="status" id="toast" aria-live="polite"></div>
+    <script type="module" src="app.js?v=2"></script>
+  </body>
+</html>

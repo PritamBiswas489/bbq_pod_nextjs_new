@@ -14,6 +14,7 @@ import {
 
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import { setInterior } from "@/store/configurator.slice";
+import PodPreview from "./PodPreview";
 
  
 const StepInterior = () => {
@@ -85,6 +86,7 @@ const StepInterior = () => {
       </div>
 
 
+ <PodPreview />
 
 
 

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BBQ Pod Spain · Design canvas</title>
+    <link rel="stylesheet" href="iframe.css?v=1" />
+  </head>
+  <body>
+    <div id="stage">
+      <div id="render" aria-busy="true" aria-label="Your configured BBQ Pod"></div>
+      <span id="render-loading" class="render-loading">Preparing your preview…</span>
+      <div id="render-error" class="render-error" hidden>
+        Preview could not load.<button id="retry-render" type="button">Try again</button>
+      </div>
+    </div>
+    <script type="module" src="iframe.js?v=1"></script>
+  </body>
+</html>

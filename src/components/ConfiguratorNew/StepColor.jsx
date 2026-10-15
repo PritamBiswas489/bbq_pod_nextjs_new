@@ -6,6 +6,9 @@ import Image from "next/image";
 import { useAppSelector, useAppDispatch } from "@/store/hooks";
 import { setColor } from "@/store/configurator.slice";
 import { useTranslation } from "next-i18next";
+import PodPreview from "./PodPreview";
+
+
 
 
 const StepColor = () => {
@@ -44,6 +47,8 @@ const StepColor = () => {
           </div>
         ))}
       </div>
+
+      <PodPreview />
     </div>
   );
 };
