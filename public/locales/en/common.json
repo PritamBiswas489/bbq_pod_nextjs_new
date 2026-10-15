@@ -1157,11 +1157,42 @@
 "home.banner3.Headline":"Great food. Even better company.",
 "home.banner3.SupportingText": "Bring everyone together with an outdoor kitchen made for good times.",
 "home.banner3.Primarybutton": "Find your BBQ Pod",
-"home.banner3.Secondarybutton": "Visit our showroom"
+"home.banner3.Secondarybutton": "Visit our showroom",
 
 
 
 
+"stepHorizonHeading": "Colour combination preview",
+"stepHorizonDescription": "Shown on a similar pod to help you visualise your chosen colours together. The design and layout of your selected Horizon model will differ.",
+
+
+
+ "SP00321": "Athens White",
+  "SP00071": "Medium Gray",
+  "CP63203SF": "Purple Gray",
+  "SP00368": "Black Sand",
+  "CP71732C": "Olive Green",
+  "JXBD0089": "Lake Green",
+  "CP24938SF + JT4K9015-3": "Black Walnut",
+  "M243556P + JR-H1823": "Cherry Blossom",
+  "CALACATTA_WHITE": "Calacatta White",
+  "SPANISH_BLACK_AND_WHITE_ROOT": "Spanish Black And White Root",
+  "CY0011": "Beige Matte",
+  "CPJ103": "Starry Silver",
+  "FTE1014898T": "Khaki Gray",
+  "CY0037": "Morandi Gray",
+  "SP00598": "Light Gray",
+  "CP61773SF": "Silver Gray",
+  "FTE101554": "Traffic Gray",
+  "SP00111": "Gray Flash",
+  "CY35109": "Light Green",
+  "CY0047": "Retro Green",
+  "CP63195S + JC-8193Y-2": "Camel Gray",
+  "XGHY-P2412 + XCH-PS9015": "Khaki Wood",
+  "TREE_BARK": "Tree Bark",
+  "RHINO_SKIN": "Rhino Skin",
+  "CAVE_STONE_BEIGE": "Cave Stone Beige",
+  "BOSNIA_GREY": "Bosnia Grey"
 
 
 }

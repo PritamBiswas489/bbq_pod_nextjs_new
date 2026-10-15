@@ -1126,5 +1126,37 @@
   "home.banner3.Headline": "Boa comida. Melhor companhia.",
   "home.banner3.SupportingText": "Reúna todos à volta de uma cozinha exterior pensada para criar bons momentos.",
   "home.banner3.Primarybutton": "Encontre o seu BBQ Pod",
-  "home.banner3.Secondarybutton": "Visite o nosso showroom"
+  "home.banner3.Secondarybutton": "Visite o nosso showroom",
+
+
+  "stepHorizonHeading": "Pré-visualização da combinação de cores",
+"stepHorizonDescription": "Utilizamos um modelo semelhante para que possa visualizar como ficam as cores escolhidas em conjunto. O design e a disposição dos elementos do modelo Horizon selecionado serão diferentes.",
+
+ "SP00321": "Branco Atenas",
+  "SP00071": "Cinzento médio",
+  "CP63203SF": "Cinzento arroxeado",
+  "SP00368": "Areia preta",
+  "CP71732C": "Verde azeitona",
+  "JXBD0089": "Verde lago",
+  "CP24938SF + JT4K9015-3": "Nogueira preta",
+  "M243556P + JR-H1823": "Flor de cerejeira",
+  "CALACATTA_WHITE": "Branco Calacatta",
+  "SPANISH_BLACK_AND_WHITE_ROOT": "Veio espanhol preto e branco",
+  "CY0011": "Bege mate",
+  "CPJ103": "Prateado estrelado",
+  "FTE1014898T": "Cinzento caqui",
+  "CY0037": "Cinzento Morandi",
+  "SP00598": "Cinzento-claro",
+  "CP61773SF": "Cinzento-prateado",
+  "FTE101554": "Cinzento de trânsito",
+  "SP00111": "Cinzento marmoreado",
+  "CY35109": "Verde-claro",
+  "CY0047": "Verde retro",
+  "CP63195S + JC-8193Y-2": "Cinzento camel",
+  "XGHY-P2412 + XCH-PS9015": "Madeira caqui",
+  "TREE_BARK": "Casca de árvore",
+  "RHINO_SKIN": "Pele de rinoceronte",
+  "CAVE_STONE_BEIGE": "Bege pedra de gruta",
+  "BOSNIA_GREY": "Cinzento da Bósnia"
+
 }

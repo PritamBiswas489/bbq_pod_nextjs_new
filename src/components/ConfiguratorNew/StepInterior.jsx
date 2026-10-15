@@ -51,7 +51,7 @@ const StepInterior = () => {
                 </div>
               </div>
               <div className={styles.info}>
-                <p className={styles.name}>{c.colorName}</p>
+                <p className={styles.name}>{t(c.modelName)}</p>
               </div>
             </div>
           ))}
@@ -78,7 +78,7 @@ const StepInterior = () => {
                 </div>
               </div>
               <div className={styles.info}>
-                <p className={styles.name}>{c.colorName}</p>
+                <p className={styles.name}>{t(c.modelName)}</p>
               </div>
             </div>
           ))}

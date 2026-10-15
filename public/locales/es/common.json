@@ -1164,7 +1164,39 @@
 "home.banner3.Headline":"Buena comida. Mejor compañía.",
 "home.banner3.SupportingText": "Reúne a todos con una cocina exterior hecha para buenos momentos.",
 "home.banner3.Primarybutton": "Encuentra tu BBQ Pod",
-"home.banner3.Secondarybutton": "Visita el showroom"
+"home.banner3.Secondarybutton": "Visita el showroom",
+
+
+"stepHorizonHeading": "Vista previa de la combinación de colores",
+"stepHorizonDescription": "Utilizamos un modelo similar para que puedas visualizar cómo quedan juntos los colores que has elegido. El diseño y la distribución del modelo Horizon seleccionado serán diferentes.",
+
+
+  "SP00321": "Blanco Atenas",
+  "SP00071": "Gris medio",
+  "CP63203SF": "Gris violáceo",
+  "SP00368": "Arena negra",
+  "CP71732C": "Verde oliva",
+  "JXBD0089": "Verde lago",
+  "CP24938SF + JT4K9015-3": "Nogal negro",
+  "M243556P + JR-H1823": "Flor de cerezo",
+  "CALACATTA_WHITE": "Blanco Calacatta",
+  "SPANISH_BLACK_AND_WHITE_ROOT": "Veta española en blanco y negro",
+  "CY0011": "Beige mate",
+  "CPJ103": "Plata estrellada",
+  "FTE1014898T": "Gris caqui",
+  "CY0037": "Gris Morandi",
+  "SP00598": "Gris claro",
+  "CP61773SF": "Gris plateado",
+  "FTE101554": "Gris tráfico",
+  "SP00111": "Gris veteado",
+  "CY35109": "Verde claro",
+  "CY0047": "Verde retro",
+  "CP63195S + JC-8193Y-2": "Gris camel",
+  "XGHY-P2412 + XCH-PS9015": "Madera caqui",
+  "TREE_BARK": "Corteza de árbol",
+  "RHINO_SKIN": "Piel de rinoceronte",
+  "CAVE_STONE_BEIGE": "Beige piedra de cueva",
+  "BOSNIA_GREY": "Gris Bosnia"
 
 
 }
