@@ -124,6 +124,7 @@
   "aeroFeature2": "Open-air configuration",
   "aeroFeature3": "Integrated shading system",
   "viewDetailsButton": "View Details →",
+  "priceTaxIncluded": "VAT included",
   "comparisonTableTitle": "Model Comparison",
   "comparisonTableSubtitle": "Our premium outdoor kitchen range at a glance",
   "tableHeaderModel": "Model",
@@ -823,6 +824,13 @@
   "In_stock_Wine_glass_holder": "Wine glass holder",
   "In_stock_Electric_spice_cupboard": "Electric spice cupboard",
   "In_stock_Dimensions": "Dimensions",
+  "In_stock_Dimensions_Note": "Send us a photo and the measurements of your space. We will help you check the location, the door opening and the access for installation.",
+  "In_stock_Delivery_Included_4h": "Delivery included up to 4 hours by road from our office in Alhaurín de la Torre, Málaga. For more distant destinations, a surcharge of €100 applies for each additional hour of travel.",
+  "In_stock_Delivery_Confirm_Date": "Contact us to confirm the delivery date and review the access and installation conditions.",
+  "In_stock_Prime_WhatsApp_Message": "Hello, I am interested in the Prime Athens White you have in stock for €15,250. Could you tell me about availability and delivery?",
+  "In_stock_Apex_WhatsApp_Message": "Hello, I am interested in the Apex Athens White you have in stock for €18,750. Could you tell me about availability and delivery?",
+  "In_stock_Calacatta_Stone": "Calacatta White stone",
+  "In_stock_Glass_Refrigerator": "Glass-door refrigerator",
   "In_stock_Width": "Width:",
   "In_stock_lmm_add_please": "lmm (add please)",
   "In_stock_Height": "Height:",
@@ -1192,7 +1200,39 @@
   "TREE_BARK": "Tree Bark",
   "RHINO_SKIN": "Rhino Skin",
   "CAVE_STONE_BEIGE": "Cave Stone Beige",
-  "BOSNIA_GREY": "Bosnia Grey"
+  "BOSNIA_GREY": "Bosnia Grey",
+
+  "GAS_BARBECUE_30": "30″ Gas Barbecue",
+  "SAMSUNG_SMART_TV_32": "32″ Samsung Smart TV",
+
+  "GAS_BARBECUE_46_KAMADO": "46″ Gas Barbecue + Kamado",
+  "SAMSUNG_SMART_TV_43": "43″ Samsung Smart TV",
+  "GAS_BARBECUE_46": "46″ Gas Barbecue",
+  "In_stock_Charcoal_Kamado": "Charcoal kamado",
+  "In_stock_Finishes": "Finishes",
+  "In_stock_Exterior_Finish_Label": "Exterior",
+  "In_stock_Cabinet_Finish_Label": "Cabinets",
+  "In_stock_Worktop_Finish_Label": "Stone worktop",
+  "In_stock_Closure_Label": "Closure",
+  "In_stock_Equip_Fridge_Glass_Door": "Stainless steel fridge with glass door",
+  "In_stock_Equip_Fridge_Glass_Door_Simple": "Fridge with glass door",
+  "In_stock_Equip_Side_Gas_Burner": "Side gas burner",
+  "In_stock_Equip_Sink_Pull_Out_Tap": "Sink with pull-out tap",
+  "In_stock_Equip_Electric_Spice_Rack": "Electric lift-up spice rack",
+  "In_stock_Equip_Ceiling_Extractor_Hood": "Extractor hood built into the roof",
+  "In_stock_Cabinet_Finish_Value": "{{finish}} finish",
+  "In_stock_One_Unit_Available": "1 unit available",
+  "In_stock_Product_Tagline": "More space. More possibilities.",
+  "In_stock_Equipment_Included": "Equipment included",
+  "In_stock_Delivery_Installation": "Delivery & installation",
+  "In_stock_Contact_WhatsApp": "Contact via WhatsApp",
+  "In_stock_WhatsApp_Message": "Hello, I'm interested in the {{product}} BBQ Pod.",
+  "In_stock_Close_Details": "Close product details",
+
+
+  "In_stock_Next_Plan": "Your next plan starts here.",
+  "In_stock_Prime_Description": "Cook outdoors, enjoy a drink, and extend the after-dinner conversation. This Prime has everything you need in a 2.69-meter outdoor kitchen, with elegant finishes and complete equipment included in the price.",
+  "In_stock_No_Manufacturing_Wait": "In stock, no manufacturing wait. Contact us to coordinate delivery and installation."
 
 
 }
