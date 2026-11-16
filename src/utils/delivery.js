@@ -8,10 +8,17 @@ export const RATE_PER_HOUR = 100; // € per additional started hour
 // driving time is NOT used for the price.
 export const BALEARIC_CHARGE = 1500;
 
+export const ANDORRA_CHARGE = 1250;
+
 // Bounding box that contains only the Balearic archipelago.
 // (Mainland Spain's coast at these latitudes never reaches east of ~0.4°E.)
 export function isBalearic(lat, lng) {
   return lat >= 38.5 && lat <= 40.2 && lng >= 1.0 && lng <= 4.5;
+}
+
+// Approximate bounding box for Andorra.
+export function isAndorra(lat, lng) {
+  return lat >= 42.4 && lat <= 42.7 && lng >= 1.4 && lng <= 1.8;
 }
 
 // totalMinutes = one-way driving time, rounded to whole minutes

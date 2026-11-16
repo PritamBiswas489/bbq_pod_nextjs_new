@@ -4,6 +4,8 @@ import {
   formatDuration,
   isBalearic,
   BALEARIC_CHARGE,
+  isAndorra,
+  ANDORRA_CHARGE
 } from "@/utils/delivery";
 
 const ORIGIN = "C. Doña Carmen, 15, 29130 Alhaurín de la Torre, Málaga, Spain";
@@ -20,6 +22,17 @@ export async function getDeliveryQuote(lat, lng) {
       deliveryCharge: BALEARIC_CHARGE,
     };
   }
+  if(isAndorra(lat, lng)){
+    return {
+      zone: "andorra",
+      drivingMinutes: null,
+      drivingTimeText: null,
+      distanceKm: null,
+      deliveryCharge: ANDORRA_CHARGE,
+    };
+  }
+
+ 
 
   const r = await fetch(
     "https://routes.googleapis.com/directions/v2:computeRoutes",
